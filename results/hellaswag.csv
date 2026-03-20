@@ -1,0 +1,2 @@
+Model name,Accuracy +- SD,TTFT ms +- SD,End-to-end latency ms +- SD,Tokens/sec +- SD,CPU percent avg +- SD,CPU percent peak,RAM used MB peak,Process RAM MB peak,Temp C avg +- SD,Temp C peak,Sequential sustained tokens/sec +- SD,Sequential sustained samples/sec +- SD
+Llama-3.2-1B-Instruct-Q8_0.gguf,0.3300 +- 0.1440,1901.2286 +- 678.1860,1955.1834 +- 678.4743,18.6164 +- 0.1801,13.7947 +- 0.6871,35.3,14692.0,190.41,66.6233 +- 0.3637,74.0,0.5488 +- 0.1743,0.5488 +- 0.1743
