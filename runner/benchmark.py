@@ -4,7 +4,8 @@ benchmark.py
 Unified benchmark runner for llama.cpp-backed OpenAI-compatible inference.
 
 What it does:
-- Runs one benchmark pass per dataset
+- Starts and stops llama.cpp server itself
+- Runs one benchmark pass per enabled dataset
 - Uses streaming for all datasets
 - Computes accuracy where applicable
 - Collects inline system metrics without extra threads
@@ -26,14 +27,17 @@ Expected outputs:
 
 import argparse
 import csv
+import os
 import re
+import shutil
 import statistics
 import subprocess
 import time
-import shutil
 from datetime import datetime
 from pathlib import Path
 from urllib.parse import urlparse
+from urllib.request import urlopen
+from urllib.error import URLError, HTTPError
 
 import yaml
 from openai import OpenAI
@@ -52,6 +56,29 @@ from system_metrics import get_system_metrics
 
 RESULTS_ROOT = Path("results")
 
+DATASET_REGISTRY = {
+    "mmlu": {
+        "loader_fn": load_tiny_mmlu,
+        "formatter_fn": format_mcq,
+        "scorer_name": "mmlu",
+    },
+    "hellaswag": {
+        "loader_fn": load_tiny_hellaswag,
+        "formatter_fn": format_mcq,
+        "scorer_name": "hellaswag",
+    },
+    "gsm8k": {
+        "loader_fn": load_tiny_gsm8k,
+        "formatter_fn": format_gsm8k,
+        "scorer_name": "gsm8k",
+    },
+    "dolly": {
+        "loader_fn": load_dolly_workload,
+        "formatter_fn": format_dolly,
+        "scorer_name": None,
+    },
+}
+
 
 # -----------------------------
 # CLI / config
@@ -63,7 +90,12 @@ def parse_args():
         "--config",
         type=str,
         default="configs/llama_cpp.yaml",
-        help="Path to llama.cpp benchmark config YAML",
+        help="Path to benchmark config YAML",
+    )
+    parser.add_argument(
+        "--no-server",
+        action="store_true",
+        help="Do not start/stop llama-server. Assume it is already running.",
     )
     return parser.parse_args()
 
@@ -71,23 +103,21 @@ def parse_args():
 def load_config(config_path: str):
     with open(config_path, "r", encoding="utf-8") as f:
         config = yaml.safe_load(f)
-
     return normalize_config(config)
 
 
 def normalize_config(config: dict):
     model_cfg = config.setdefault("model", {})
     server_cfg = config.setdefault("server", {})
-    bench_cfg = config.setdefault("benchmark", {})
-    gen_cfg = config.setdefault("generation", {})
+    benchmark_cfg = config.setdefault("benchmark", {})
+    generation_cfg = config.setdefault("generation", {})
     llama_bench_cfg = config.setdefault("llama_bench", {})
 
     model_path = model_cfg.get("path")
     if not model_path:
         raise ValueError("config.model.path is required")
 
-    if not model_cfg.get("name"):
-        model_cfg["name"] = Path(model_path).name
+    model_cfg.setdefault("name", Path(model_path).name)
 
     base_url = server_cfg.get("base_url", "http://127.0.0.1:8000/v1")
     server_cfg["base_url"] = base_url
@@ -97,15 +127,53 @@ def normalize_config(config: dict):
     server_cfg.setdefault("port", parsed.port or 8000)
     server_cfg.setdefault("ctx_size", 8192)
     server_cfg.setdefault("api_key", "dummy")
+    server_cfg.setdefault("binary", "engines/llama.cpp/build/bin/llama-server")
+    server_cfg.setdefault("startup_timeout_s", 60)
+    server_cfg.setdefault("log_path", "server.log")
+    server_cfg.setdefault("extra_args", [])
 
-    bench_cfg.setdefault("n_samples", 20)
-    bench_cfg.setdefault("n_runs", 5)
-    bench_cfg.setdefault("dolly_samples", 50)
-    bench_cfg.setdefault("dolly_runs", 5)
-    bench_cfg.setdefault("metrics_interval_s", 0.2)
+    benchmark_cfg.setdefault("metrics_interval_s", 0.2)
 
-    gen_cfg.setdefault("temperature", 0)
-    gen_cfg.setdefault("max_tokens", {})
+    defaults_cfg = benchmark_cfg.setdefault("defaults", {})
+    defaults_cfg.setdefault("samples", 20)
+    defaults_cfg.setdefault("runs", 5)
+
+    dataset_entries = benchmark_cfg.get("datasets")
+    if not dataset_entries:
+        raise ValueError("config.benchmark.datasets must be a non-empty list")
+
+    normalized_datasets = []
+    seen_names = set()
+
+    for entry in dataset_entries:
+        if not isinstance(entry, dict):
+            raise ValueError("Each item in config.benchmark.datasets must be a mapping")
+
+        name = entry.get("name")
+        if name not in DATASET_REGISTRY:
+            raise ValueError(
+                f"Unknown dataset '{name}'. Valid values: {sorted(DATASET_REGISTRY)}"
+            )
+        if name in seen_names:
+            raise ValueError(f"Duplicate dataset entry: {name}")
+        seen_names.add(name)
+
+        normalized = {
+            "name": name,
+            "enabled": bool(entry.get("enabled", False)),
+            "samples": entry.get("samples", defaults_cfg["samples"]),
+            "runs": entry.get("runs", defaults_cfg["runs"]),
+            "max_tokens": entry.get("max_tokens"),
+        }
+
+        if normalized["max_tokens"] is None:
+            raise ValueError(f"benchmark.datasets entry for '{name}' is missing max_tokens")
+
+        normalized_datasets.append(normalized)
+
+    benchmark_cfg["datasets"] = normalized_datasets
+
+    generation_cfg.setdefault("temperature", 0)
 
     llama_bench_cfg.setdefault("enabled", False)
     llama_bench_cfg.setdefault("binary", "engines/llama.cpp/build/bin/llama-bench")
@@ -166,7 +234,6 @@ def add_mean_sd_columns(row: dict, label: str, values, digits=4):
 # -----------------------------
 
 def extract_letter(text: str):
-    """Extract A/B/C/D from model output."""
     if not text:
         return None
 
@@ -184,7 +251,6 @@ def extract_letter(text: str):
 
 
 def extract_last_number(text: str):
-    """Extract the final numeric value from text."""
     if not text:
         return None
 
@@ -197,12 +263,6 @@ def extract_last_number(text: str):
 
 
 def estimate_token_count(text: str):
-    """
-    Approximate output token count.
-
-    This is not tokenizer-accurate. It is only a consistent proxy
-    until server-reported or tokenizer-based counts are added.
-    """
     if not text:
         return 0
     return len(re.findall(r"\S+", text))
@@ -230,6 +290,132 @@ def score_gsm8k(sample, output):
     return pred == gold
 
 
+SCORER_REGISTRY = {
+    "mmlu": score_mmlu,
+    "hellaswag": score_hellaswag,
+    "gsm8k": score_gsm8k,
+}
+
+
+# -----------------------------
+# Server management
+# -----------------------------
+
+def build_server_env():
+    env = os.environ.copy()
+    current_ld = env.get("LD_LIBRARY_PATH", "")
+    prefixes = [
+        "engines/llama.cpp/build/bin",
+        "engines/llama.cpp/build/lib",
+    ]
+    env["LD_LIBRARY_PATH"] = ":".join([*prefixes, current_ld]) if current_ld else ":".join(prefixes)
+    return env
+
+
+def check_server_ready(base_url: str, timeout_s: float = 1.0):
+    models_url = f"{base_url.rstrip('/')}/models"
+    try:
+        with urlopen(models_url, timeout=timeout_s) as response:
+            return 200 <= response.status < 300
+    except (URLError, HTTPError, TimeoutError):
+        return False
+
+
+def start_llama_server(config: dict):
+    server_cfg = config["server"]
+    model_path = config["model"]["path"]
+
+    server_bin = Path(server_cfg["binary"])
+    log_path = Path(server_cfg["log_path"])
+    ctx_size = server_cfg["ctx_size"]
+    host = server_cfg["host"]
+    port = server_cfg["port"]
+    base_url = server_cfg["base_url"]
+    startup_timeout_s = server_cfg["startup_timeout_s"]
+    extra_args = server_cfg.get("extra_args", [])
+
+    if not server_bin.is_file():
+        raise FileNotFoundError(f"Server binary not found: {server_bin}")
+    if not os.access(server_bin, os.X_OK):
+        raise PermissionError(f"Server binary is not executable: {server_bin}")
+    if not Path(model_path).is_file():
+        raise FileNotFoundError(f"Model file not found: {model_path}")
+
+    cmd = [
+        str(server_bin),
+        "-m", model_path,
+        "-c", str(ctx_size),
+        "--host", str(host),
+        "--port", str(port),
+        *map(str, extra_args),
+    ]
+
+    print("Starting llama.cpp server...")
+    print("Server binary:", server_bin)
+    print("Model:", model_path)
+    print("Host:", host)
+    print("Port:", port)
+    print("Context size:", ctx_size)
+    print("Log:", log_path)
+
+    log_file = log_path.open("w", encoding="utf-8")
+    proc = subprocess.Popen(
+        cmd,
+        stdout=log_file,
+        stderr=subprocess.STDOUT,
+        env=build_server_env(),
+    )
+
+    deadline = time.time() + startup_timeout_s
+    while time.time() < deadline:
+        if proc.poll() is not None:
+            log_file.flush()
+            raise RuntimeError(
+                f"llama-server exited early with code {proc.returncode}. "
+                f"Check {log_path}"
+            )
+
+        if check_server_ready(base_url):
+            print("Server is ready")
+            return proc, log_file
+
+        time.sleep(1)
+
+    proc.terminate()
+    try:
+        proc.wait(timeout=5)
+    except subprocess.TimeoutExpired:
+        proc.kill()
+
+    log_file.flush()
+    raise RuntimeError(f"Server failed to become ready within {startup_timeout_s}s. Check {log_path}")
+
+
+def stop_llama_server(proc: subprocess.Popen | None, log_file):
+    if log_file is not None:
+        try:
+            log_file.flush()
+        except Exception:
+            pass
+
+    if proc is None:
+        if log_file is not None:
+            log_file.close()
+        return
+
+    if proc.poll() is None:
+        print("Stopping llama.cpp server...")
+        proc.terminate()
+        try:
+            proc.wait(timeout=5)
+        except subprocess.TimeoutExpired:
+            proc.kill()
+            proc.wait(timeout=5)
+
+    if log_file is not None:
+        log_file.close()
+
+
 # -----------------------------
 # Streaming + inline system metrics
 # -----------------------------
@@ -242,24 +428,12 @@ def stream_model_with_inline_metrics(
     temperature: float,
     metrics_interval_s: float,
 ):
-    """
-    Run streaming inference and collect:
-    - TTFT
-    - end-to-end latency
-    - estimated tokens/sec
-    - inline system metrics
-
-    Metrics are sampled inline with best-effort cadence.
-    No background thread is used.
-    """
     start = time.perf_counter()
     first_token_time = None
     last_metric_time = start
 
     chunks = []
-    metric_samples = []
-
-    metric_samples.append(get_system_metrics())
+    metric_samples = [get_system_metrics()]
 
     stream = client.chat.completions.create(
         model=model_name,
@@ -286,7 +460,6 @@ def stream_model_with_inline_metrics(
                 last_metric_time = now
 
     end = time.perf_counter()
-
     metric_samples.append(get_system_metrics())
 
     output = "".join(chunks).strip()
@@ -369,9 +542,6 @@ def summarize_run(sample_rows, wall_time_s, include_accuracy: bool):
 # -----------------------------
 
 def get_sample_text_fields(dataset_name: str, sample: dict):
-    """
-    Normalize human-readable sample fields for sample-level CSV logging.
-    """
     if dataset_name in {"mmlu", "hellaswag"}:
         return {
             "question": sample.get("question"),
@@ -433,13 +603,6 @@ def run_dataset_benchmark(
     metrics_interval_s: float,
     scorer_fn=None,
 ):
-    """
-    Benchmark one dataset across repeated runs.
-
-    Returns:
-    - summary_row
-    - sample_log_rows
-    """
     include_accuracy = scorer_fn is not None
     run_rows = []
     all_sample_log_rows = []
@@ -485,7 +648,7 @@ def run_dataset_benchmark(
             sample_fields = get_sample_text_fields(dataset_name, sample)
             parsed_prediction = parse_prediction(dataset_name, result["raw_output"])
 
-            log_row = {
+            all_sample_log_rows.append({
                 "model_name": model_name,
                 "dataset_name": dataset_name,
                 "run_idx": run_idx,
@@ -509,8 +672,7 @@ def run_dataset_benchmark(
                 "process_ram_mb_peak": safe_round(result["process_ram_mb_peak"], 4),
                 "temp_c_avg": safe_round(result["temp_c_avg"], 4),
                 "temp_c_peak": safe_round(result["temp_c_peak"], 4),
-            }
-            all_sample_log_rows.append(log_row)
+            })
 
             msg = (
                 f"[{dataset_name} {i}/{len(dataset)}] "
@@ -522,9 +684,7 @@ def run_dataset_benchmark(
                 msg += f" correct={row['correct']}"
             print(msg)
 
-        dataset_end = time.perf_counter()
-        wall_time_s = dataset_end - dataset_start
-
+        wall_time_s = time.perf_counter() - dataset_start
         run_rows.append(
             summarize_run(
                 sample_rows=sample_rows,
@@ -548,18 +708,8 @@ def run_dataset_benchmark(
     add_mean_sd_columns(summary_row, "Tokens/sec", [r["tps_mean"] for r in run_rows], 4)
     add_mean_sd_columns(summary_row, "CPU percent avg", [r["cpu_avg_mean"] for r in run_rows], 4)
     add_mean_sd_columns(summary_row, "Temp C avg", [r["temp_avg_mean"] for r in run_rows], 4)
-    add_mean_sd_columns(
-        summary_row,
-        "Sequential sustained tokens/sec",
-        [r["sustained_tps"] for r in run_rows],
-        4,
-    )
-    add_mean_sd_columns(
-        summary_row,
-        "Sequential sustained samples/sec",
-        [r["sustained_sps"] for r in run_rows],
-        4,
-    )
+    add_mean_sd_columns(summary_row, "Sequential sustained tokens/sec", [r["sustained_tps"] for r in run_rows], 4)
+    add_mean_sd_columns(summary_row, "Sequential sustained samples/sec", [r["sustained_sps"] for r in run_rows], 4)
 
     summary_row["CPU percent peak"] = safe_round(max(cpu_peaks), 4) if cpu_peaks else None
     summary_row["RAM used MB peak"] = safe_round(max(ram_peaks), 4) if ram_peaks else None
@@ -574,11 +724,6 @@ def run_dataset_benchmark(
 # -----------------------------
 
 def run_llama_bench(llama_bench_cfg: dict):
-    """
-    Run llama-bench and return a flat dict of microbenchmark metrics.
-
-    Tries CSV output first. If parsing fails, falls back to returning raw output.
-    """
     if not llama_bench_cfg.get("enabled", False):
         return {}
 
@@ -593,12 +738,7 @@ def run_llama_bench(llama_bench_cfg: dict):
     if llama_bench_cfg.get("output_format", "csv") == "csv":
         cmd += ["--output", "csv"]
 
-    result = subprocess.run(
-        cmd,
-        capture_output=True,
-        text=True,
-        check=True,
-    )
+    result = subprocess.run(cmd, capture_output=True, text=True, check=True)
 
     stdout = result.stdout.strip()
     if not stdout:
@@ -631,6 +771,39 @@ def run_llama_bench(llama_bench_cfg: dict):
 
 
 # -----------------------------
+# Save helpers
+# -----------------------------
+
+def save_standard_dataset(output_dir: Path, dataset_name: str, summary_row: dict, sample_rows: list[dict]):
+    write_single_row_csv(output_dir / f"{dataset_name}.csv", summary_row)
+    write_rows_csv(output_dir / f"{dataset_name}_samples.csv", sample_rows)
+    print(f"\nSaved: {output_dir / f'{dataset_name}.csv'}")
+    print(f"Saved: {output_dir / f'{dataset_name}_samples.csv'}")
+
+
+def save_dolly_dataset(
+    output_dir: Path,
+    model_name: str,
+    dolly_row: dict,
+    dolly_samples_rows: list[dict],
+    llama_bench_cfg: dict,
+):
+    llama_bench_row = run_llama_bench(llama_bench_cfg)
+
+    combined_dolly_row = {"Model name": model_name}
+    combined_dolly_row.update(
+        prefix_keys({k: v for k, v in dolly_row.items() if k != "Model name"}, "Dolly ")
+    )
+    combined_dolly_row.update(llama_bench_row)
+
+    write_single_row_csv(output_dir / "dolly.csv", combined_dolly_row)
+    write_rows_csv(output_dir / "dolly_samples.csv", dolly_samples_rows)
+
+    print(f"\nSaved: {output_dir / 'dolly.csv'}")
+    print(f"Saved: {output_dir / 'dolly_samples.csv'}")
+
+
+# -----------------------------
 # Entry point
 # -----------------------------
 
@@ -639,18 +812,16 @@ def main():
     config = load_config(args.config)
 
     model_name = config["model"]["name"]
-
     base_url = config["server"]["base_url"]
     api_key = config["server"]["api_key"]
 
-    n_samples = config["benchmark"].get("n_samples", 20)
-    n_runs = config["benchmark"].get("n_runs", 5)
-    dolly_samples = config["benchmark"].get("dolly_samples", 50)
-    dolly_runs = config["benchmark"].get("dolly_runs", 5)
-    metrics_interval_s = config["benchmark"].get("metrics_interval_s", 0.2)
+    metrics_interval_s = config["benchmark"]["metrics_interval_s"]
+    temperature = config["generation"]["temperature"]
+    dataset_configs = config["benchmark"]["datasets"]
 
-    temperature = config["generation"].get("temperature", 0)
-    max_tokens = config["generation"]["max_tokens"]
+    enabled_datasets = [d for d in dataset_configs if d["enabled"]]
+    if not enabled_datasets:
+        raise ValueError("No datasets enabled in config.benchmark.datasets")
 
     run_id = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     output_dir = RESULTS_ROOT / run_id
@@ -658,94 +829,61 @@ def main():
 
     shutil.copy(args.config, output_dir / "config.yaml")
 
-    client = OpenAI(
-        base_url=base_url,
-        api_key=api_key,
-    )
+    server_proc = None
+    server_log_file = None
 
-    mmlu_row, mmlu_samples = run_dataset_benchmark(
-        client=client,
-        model_name=model_name,
-        dataset_name="mmlu",
-        loader_fn=load_tiny_mmlu,
-        formatter_fn=format_mcq,
-        max_tokens=max_tokens["mmlu"],
-        n_samples=n_samples,
-        n_runs=n_runs,
-        temperature=temperature,
-        metrics_interval_s=metrics_interval_s,
-        scorer_fn=score_mmlu,
-    )
-    write_single_row_csv(output_dir / "mmlu.csv", mmlu_row)
-    write_rows_csv(output_dir / "mmlu_samples.csv", mmlu_samples)
-    print(f"\nSaved: {output_dir / 'mmlu.csv'}")
-    print(f"Saved: {output_dir / 'mmlu_samples.csv'}")
+    try:
+        if not args.no_server:
+            server_proc, server_log_file = start_llama_server(config)
+        else:
+            print("Skipping server startup because --no-server was provided")
+            if not check_server_ready(base_url):
+                raise RuntimeError(f"No server detected at {base_url}")
 
-    hellaswag_row, hellaswag_samples = run_dataset_benchmark(
-        client=client,
-        model_name=model_name,
-        dataset_name="hellaswag",
-        loader_fn=load_tiny_hellaswag,
-        formatter_fn=format_mcq,
-        max_tokens=max_tokens["hellaswag"],
-        n_samples=n_samples,
-        n_runs=n_runs,
-        temperature=temperature,
-        metrics_interval_s=metrics_interval_s,
-        scorer_fn=score_hellaswag,
-    )
-    write_single_row_csv(output_dir / "hellaswag.csv", hellaswag_row)
-    write_rows_csv(output_dir / "hellaswag_samples.csv", hellaswag_samples)
-    print(f"\nSaved: {output_dir / 'hellaswag.csv'}")
-    print(f"Saved: {output_dir / 'hellaswag_samples.csv'}")
+        client = OpenAI(base_url=base_url, api_key=api_key)
 
-    gsm8k_row, gsm8k_samples = run_dataset_benchmark(
-        client=client,
-        model_name=model_name,
-        dataset_name="gsm8k",
-        loader_fn=load_tiny_gsm8k,
-        formatter_fn=format_gsm8k,
-        max_tokens=max_tokens["gsm8k"],
-        n_samples=n_samples,
-        n_runs=n_runs,
-        temperature=temperature,
-        metrics_interval_s=metrics_interval_s,
-        scorer_fn=score_gsm8k,
-    )
-    write_single_row_csv(output_dir / "gsm8k.csv", gsm8k_row)
-    write_rows_csv(output_dir / "gsm8k_samples.csv", gsm8k_samples)
-    print(f"\nSaved: {output_dir / 'gsm8k.csv'}")
-    print(f"Saved: {output_dir / 'gsm8k_samples.csv'}")
+        print("Enabled datasets:", ", ".join(d["name"] for d in enabled_datasets))
 
-    dolly_row, dolly_samples_rows = run_dataset_benchmark(
-        client=client,
-        model_name=model_name,
-        dataset_name="dolly",
-        loader_fn=load_dolly_workload,
-        formatter_fn=format_dolly,
-        max_tokens=max_tokens["dolly"],
-        n_samples=dolly_samples,
-        n_runs=dolly_runs,
-        temperature=temperature,
-        metrics_interval_s=metrics_interval_s,
-        scorer_fn=None,
-    )
+        for dataset_cfg in enabled_datasets:
+            dataset_name = dataset_cfg["name"]
+            spec = DATASET_REGISTRY[dataset_name]
+            scorer_name = spec["scorer_name"]
+            scorer_fn = SCORER_REGISTRY.get(scorer_name)
 
-    llama_bench_row = run_llama_bench(config.get("llama_bench", {}))
+            summary_row, sample_rows = run_dataset_benchmark(
+                client=client,
+                model_name=model_name,
+                dataset_name=dataset_name,
+                loader_fn=spec["loader_fn"],
+                formatter_fn=spec["formatter_fn"],
+                max_tokens=dataset_cfg["max_tokens"],
+                n_samples=dataset_cfg["samples"],
+                n_runs=dataset_cfg["runs"],
+                temperature=temperature,
+                metrics_interval_s=metrics_interval_s,
+                scorer_fn=scorer_fn,
+            )
 
-    combined_dolly_row = {"Model name": model_name}
-    dolly_prefixed = prefix_keys(
-        {k: v for k, v in dolly_row.items() if k != "Model name"},
-        "Dolly ",
-    )
-    combined_dolly_row.update(dolly_prefixed)
-    combined_dolly_row.update(llama_bench_row)
+            if dataset_name == "dolly":
+                save_dolly_dataset(
+                    output_dir=output_dir,
+                    model_name=model_name,
+                    dolly_row=summary_row,
+                    dolly_samples_rows=sample_rows,
+                    llama_bench_cfg=config["llama_bench"],
+                )
+            else:
+                save_standard_dataset(
+                    output_dir=output_dir,
+                    dataset_name=dataset_name,
+                    summary_row=summary_row,
+                    sample_rows=sample_rows,
+                )
 
-    write_single_row_csv(output_dir / "dolly.csv", combined_dolly_row)
-    write_rows_csv(output_dir / "dolly_samples.csv", dolly_samples_rows)
-    print(f"\nSaved: {output_dir / 'dolly.csv'}")
-    print(f"Saved: {output_dir / 'dolly_samples.csv'}")
-    print(f"\nSaved results to: {output_dir}")
+        print(f"\nSaved results to: {output_dir}")
+
+    finally:
+        stop_llama_server(server_proc, server_log_file)
 
 
 if __name__ == "__main__":
