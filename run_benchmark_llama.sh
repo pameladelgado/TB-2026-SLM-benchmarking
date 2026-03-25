@@ -1,26 +1,25 @@
 #!/usr/bin/env bash
 
-set -u
+set -euo pipefail
 
 CONFIG="configs/llama_cpp.yaml"
 SERVER_BIN="engines/llama.cpp/build/bin/llama-server"
-MODEL_PATH="models/Llama-3.2-1B-Instruct-Q8_0.gguf"
 PORT=8000
 
-# Add local build libraries for llama.cpp runtime linking
+MODEL_PATH="$(
+python -c '
+import sys, yaml
+with open(sys.argv[1], "r", encoding="utf-8") as f:
+    print(yaml.safe_load(f)["model"]["path"])
+' "$CONFIG"
+)"
+
 export LD_LIBRARY_PATH="engines/llama.cpp/build/bin:engines/llama.cpp/build/lib:${LD_LIBRARY_PATH:-}"
 
 echo "Starting llama.cpp server..."
 
-if [ ! -x "$SERVER_BIN" ]; then
-  echo "Server binary not found or not executable: $SERVER_BIN"
-  exit 1
-fi
-
-if [ ! -f "$MODEL_PATH" ]; then
-  echo "Model file not found: $MODEL_PATH"
-  exit 1
-fi
+[ -x "$SERVER_BIN" ] || { echo "Server binary not found or not executable: $SERVER_BIN"; exit 1; }
+[ -f "$MODEL_PATH" ] || { echo "Model file not found: $MODEL_PATH"; exit 1; }
 
 "$SERVER_BIN" \
   -m "$MODEL_PATH" \
@@ -40,7 +39,6 @@ trap cleanup EXIT
 
 echo "Waiting for server to be ready..."
 
-READY=0
 for i in $(seq 1 60); do
   if ! kill -0 "$SERVER_PID" 2>/dev/null; then
     echo "Server process exited early"
@@ -50,20 +48,19 @@ for i in $(seq 1 60); do
   fi
 
   if curl -s "http://127.0.0.1:$PORT/v1/models" > /dev/null; then
-    READY=1
     echo "Server is ready"
     break
   fi
 
   sleep 1
-done
 
-if [ "$READY" -ne 1 ]; then
-  echo "Server failed to start"
-  echo "---- server.log ----"
-  cat server.log
-  exit 1
-fi
+  if [ "$i" -eq 60 ]; then
+    echo "Server failed to start"
+    echo "---- server.log ----"
+    cat server.log
+    exit 1
+  fi
+done
 
 echo "Running benchmark..."
 python runner/benchmark.py --config "$CONFIG"

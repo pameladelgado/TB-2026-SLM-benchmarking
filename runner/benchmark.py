@@ -8,14 +8,20 @@ What it does:
 - Uses streaming for all datasets
 - Computes accuracy where applicable
 - Collects inline system metrics without extra threads
-- Writes one CSV per dataset
+- Writes one summary CSV per dataset
+- Writes one sample-level CSV per dataset
 - Adds llama-bench results next to Dolly results in dolly.csv
 
 Expected outputs:
-- results/mmlu.csv
-- results/hellaswag.csv
-- results/gsm8k.csv
-- results/dolly.csv
+- results/<run_id>/config.yaml
+- results/<run_id>/mmlu.csv
+- results/<run_id>/mmlu_samples.csv
+- results/<run_id>/hellaswag.csv
+- results/<run_id>/hellaswag_samples.csv
+- results/<run_id>/gsm8k.csv
+- results/<run_id>/gsm8k_samples.csv
+- results/<run_id>/dolly.csv
+- results/<run_id>/dolly_samples.csv
 """
 
 import argparse
@@ -24,7 +30,10 @@ import re
 import statistics
 import subprocess
 import time
+import shutil
+from datetime import datetime
 from pathlib import Path
+from urllib.parse import urlparse
 
 import yaml
 from openai import OpenAI
@@ -41,7 +50,7 @@ from dataset_loader import (
 from system_metrics import get_system_metrics
 
 
-OUTPUT_DIR = Path("results")
+RESULTS_ROOT = Path("results")
 
 
 # -----------------------------
@@ -61,7 +70,52 @@ def parse_args():
 
 def load_config(config_path: str):
     with open(config_path, "r", encoding="utf-8") as f:
-        return yaml.safe_load(f)
+        config = yaml.safe_load(f)
+
+    return normalize_config(config)
+
+
+def normalize_config(config: dict):
+    model_cfg = config.setdefault("model", {})
+    server_cfg = config.setdefault("server", {})
+    bench_cfg = config.setdefault("benchmark", {})
+    gen_cfg = config.setdefault("generation", {})
+    llama_bench_cfg = config.setdefault("llama_bench", {})
+
+    model_path = model_cfg.get("path")
+    if not model_path:
+        raise ValueError("config.model.path is required")
+
+    if not model_cfg.get("name"):
+        model_cfg["name"] = Path(model_path).name
+
+    base_url = server_cfg.get("base_url", "http://127.0.0.1:8000/v1")
+    server_cfg["base_url"] = base_url
+
+    parsed = urlparse(base_url)
+    server_cfg.setdefault("host", parsed.hostname or "127.0.0.1")
+    server_cfg.setdefault("port", parsed.port or 8000)
+    server_cfg.setdefault("ctx_size", 8192)
+    server_cfg.setdefault("api_key", "dummy")
+
+    bench_cfg.setdefault("n_samples", 20)
+    bench_cfg.setdefault("n_runs", 5)
+    bench_cfg.setdefault("dolly_samples", 50)
+    bench_cfg.setdefault("dolly_runs", 5)
+    bench_cfg.setdefault("metrics_interval_s", 0.2)
+
+    gen_cfg.setdefault("temperature", 0)
+    gen_cfg.setdefault("max_tokens", {})
+
+    llama_bench_cfg.setdefault("enabled", False)
+    llama_bench_cfg.setdefault("binary", "engines/llama.cpp/build/bin/llama-bench")
+    llama_bench_cfg.setdefault("model", model_path)
+    llama_bench_cfg.setdefault("n_prompt", 512)
+    llama_bench_cfg.setdefault("n_gen", 128)
+    llama_bench_cfg.setdefault("repetitions", 1)
+    llama_bench_cfg.setdefault("output_format", "csv")
+
+    return config
 
 
 # -----------------------------
@@ -77,13 +131,6 @@ def mean_sd(values):
     return statistics.mean(vals), statistics.stdev(vals)
 
 
-def fmt_mean_sd(values, digits=4):
-    m, sd = mean_sd(values)
-    if m is None:
-        return None
-    return f"{m:.{digits}f} +- {sd:.{digits}f}"
-
-
 def safe_round(x, digits=4):
     return round(x, digits) if x is not None else None
 
@@ -95,8 +142,23 @@ def write_single_row_csv(path: Path, row: dict):
         writer.writerow(row)
 
 
+def write_rows_csv(path: Path, rows: list[dict]):
+    if not rows:
+        return
+    with path.open("w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=rows[0].keys())
+        writer.writeheader()
+        writer.writerows(rows)
+
+
 def prefix_keys(d: dict, prefix: str):
     return {f"{prefix}{k}": v for k, v in d.items()}
+
+
+def add_mean_sd_columns(row: dict, label: str, values, digits=4):
+    mean_value, sd_value = mean_sd(values)
+    row[f"{label} mean"] = safe_round(mean_value, digits)
+    row[f"{label} sd"] = safe_round(sd_value, digits)
 
 
 # -----------------------------
@@ -197,7 +259,6 @@ def stream_model_with_inline_metrics(
     chunks = []
     metric_samples = []
 
-    # Initial snapshot
     metric_samples.append(get_system_metrics())
 
     stream = client.chat.completions.create(
@@ -220,14 +281,12 @@ def stream_model_with_inline_metrics(
 
             chunks.append(delta)
 
-            # Best-effort inline sampling
             if (now - last_metric_time) >= metrics_interval_s:
                 metric_samples.append(get_system_metrics())
                 last_metric_time = now
 
     end = time.perf_counter()
 
-    # Final snapshot
     metric_samples.append(get_system_metrics())
 
     output = "".join(chunks).strip()
@@ -306,6 +365,58 @@ def summarize_run(sample_rows, wall_time_s, include_accuracy: bool):
 
 
 # -----------------------------
+# Per-sample logging helpers
+# -----------------------------
+
+def get_sample_text_fields(dataset_name: str, sample: dict):
+    """
+    Normalize human-readable sample fields for sample-level CSV logging.
+    """
+    if dataset_name in {"mmlu", "hellaswag"}:
+        return {
+            "question": sample.get("question"),
+            "choices": " || ".join(sample.get("choices", [])),
+            "gold_answer": sample.get("answer"),
+            "instruction": None,
+            "context": None,
+        }
+
+    if dataset_name == "gsm8k":
+        return {
+            "question": sample.get("question"),
+            "choices": None,
+            "gold_answer": sample.get("answer"),
+            "instruction": None,
+            "context": None,
+        }
+
+    if dataset_name == "dolly":
+        return {
+            "question": None,
+            "choices": None,
+            "gold_answer": None,
+            "instruction": sample.get("instruction"),
+            "context": sample.get("context"),
+        }
+
+    return {
+        "question": None,
+        "choices": None,
+        "gold_answer": None,
+        "instruction": None,
+        "context": None,
+    }
+
+
+def parse_prediction(dataset_name: str, raw_output: str):
+    if dataset_name in {"mmlu", "hellaswag"}:
+        return extract_letter(raw_output)
+    if dataset_name == "gsm8k":
+        return extract_last_number(raw_output)
+    return None
+
+
+# -----------------------------
 # Main dataset benchmark
 # -----------------------------
 
@@ -325,10 +436,13 @@ def run_dataset_benchmark(
     """
     Benchmark one dataset across repeated runs.
 
-    Returns a one-row summary dict.
+    Returns:
+    - summary_row
+    - sample_log_rows
     """
     include_accuracy = scorer_fn is not None
     run_rows = []
+    all_sample_log_rows = []
 
     for run_idx in range(1, n_runs + 1):
         dataset = loader_fn(n=n_samples, seed=run_idx)
@@ -368,6 +482,36 @@ def run_dataset_benchmark(
 
             sample_rows.append(row)
 
+            sample_fields = get_sample_text_fields(dataset_name, sample)
+            parsed_prediction = parse_prediction(dataset_name, result["raw_output"])
+
+            log_row = {
+                "model_name": model_name,
+                "dataset_name": dataset_name,
+                "run_idx": run_idx,
+                "sample_idx": i,
+                "prompt": prompt,
+                "question": sample_fields["question"],
+                "choices": sample_fields["choices"],
+                "instruction": sample_fields["instruction"],
+                "context": sample_fields["context"],
+                "gold_answer": sample_fields["gold_answer"],
+                "parsed_prediction": parsed_prediction,
+                "correct": row.get("correct"),
+                "raw_output": result["raw_output"],
+                "output_tokens": result["output_tokens"],
+                "ttft_ms": safe_round(result["ttft_ms"], 4),
+                "end_to_end_latency_ms": safe_round(result["end_to_end_latency_ms"], 4),
+                "tokens_per_sec": safe_round(result["tokens_per_sec"], 4),
+                "cpu_percent_avg": safe_round(result["cpu_percent_avg"], 4),
+                "cpu_percent_peak": safe_round(result["cpu_percent_peak"], 4),
+                "ram_used_mb_peak": safe_round(result["ram_used_mb_peak"], 4),
+                "process_ram_mb_peak": safe_round(result["process_ram_mb_peak"], 4),
+                "temp_c_avg": safe_round(result["temp_c_avg"], 4),
+                "temp_c_peak": safe_round(result["temp_c_peak"], 4),
+            }
+            all_sample_log_rows.append(log_row)
+
             msg = (
                 f"[{dataset_name} {i}/{len(dataset)}] "
                 f"ttft_ms={safe_round(row['ttft_ms'], 2)} "
@@ -391,43 +535,38 @@ def run_dataset_benchmark(
 
     summary_row = {"Model name": model_name}
 
-    if include_accuracy:
-        summary_row["Accuracy +- SD"] = fmt_mean_sd(
-            [r["accuracy"] for r in run_rows],
-            4,
-        )
+    cpu_peaks = [r["cpu_peak"] for r in run_rows if r["cpu_peak"] is not None]
+    ram_peaks = [r["ram_peak"] for r in run_rows if r["ram_peak"] is not None]
+    proc_ram_peaks = [r["proc_ram_peak"] for r in run_rows if r["proc_ram_peak"] is not None]
+    temp_peaks = [r["temp_peak"] for r in run_rows if r["temp_peak"] is not None]
 
-    summary_row["TTFT ms +- SD"] = fmt_mean_sd([r["ttft_mean"] for r in run_rows], 4)
-    summary_row["End-to-end latency ms +- SD"] = fmt_mean_sd([r["latency_mean"] for r in run_rows], 4)
-    summary_row["Tokens/sec +- SD"] = fmt_mean_sd([r["tps_mean"] for r in run_rows], 4)
-    summary_row["CPU percent avg +- SD"] = fmt_mean_sd([r["cpu_avg_mean"] for r in run_rows], 4)
-    summary_row["CPU percent peak"] = safe_round(
-        max(r["cpu_peak"] for r in run_rows if r["cpu_peak"] is not None),
-        4,
-    ) if run_rows else None
-    summary_row["RAM used MB peak"] = safe_round(
-        max(r["ram_peak"] for r in run_rows if r["ram_peak"] is not None),
-        4,
-    ) if run_rows else None
-    summary_row["Process RAM MB peak"] = safe_round(
-        max(r["proc_ram_peak"] for r in run_rows if r["proc_ram_peak"] is not None),
-        4,
-    ) if run_rows else None
-    summary_row["Temp C avg +- SD"] = fmt_mean_sd([r["temp_avg_mean"] for r in run_rows], 4)
-    summary_row["Temp C peak"] = safe_round(
-        max(r["temp_peak"] for r in run_rows if r["temp_peak"] is not None),
-        4,
-    ) if run_rows else None
-    summary_row["Sequential sustained tokens/sec +- SD"] = fmt_mean_sd(
+    if include_accuracy:
+        add_mean_sd_columns(summary_row, "Accuracy", [r["accuracy"] for r in run_rows], 4)
+
+    add_mean_sd_columns(summary_row, "TTFT ms", [r["ttft_mean"] for r in run_rows], 4)
+    add_mean_sd_columns(summary_row, "End-to-end latency ms", [r["latency_mean"] for r in run_rows], 4)
+    add_mean_sd_columns(summary_row, "Tokens/sec", [r["tps_mean"] for r in run_rows], 4)
+    add_mean_sd_columns(summary_row, "CPU percent avg", [r["cpu_avg_mean"] for r in run_rows], 4)
+    add_mean_sd_columns(summary_row, "Temp C avg", [r["temp_avg_mean"] for r in run_rows], 4)
+    add_mean_sd_columns(
+        summary_row,
+        "Sequential sustained tokens/sec",
         [r["sustained_tps"] for r in run_rows],
         4,
     )
-    summary_row["Sequential sustained samples/sec +- SD"] = fmt_mean_sd(
+    add_mean_sd_columns(
+        summary_row,
+        "Sequential sustained samples/sec",
         [r["sustained_sps"] for r in run_rows],
         4,
     )
 
-    return summary_row
+    summary_row["CPU percent peak"] = safe_round(max(cpu_peaks), 4) if cpu_peaks else None
+    summary_row["RAM used MB peak"] = safe_round(max(ram_peaks), 4) if ram_peaks else None
+    summary_row["Process RAM MB peak"] = safe_round(max(proc_ram_peaks), 4) if proc_ram_peaks else None
+    summary_row["Temp C peak"] = safe_round(max(temp_peaks), 4) if temp_peaks else None
+
+    return summary_row, all_sample_log_rows
 
 
 # -----------------------------
@@ -465,7 +604,6 @@ def run_llama_bench(llama_bench_cfg: dict):
     if not stdout:
         return {}
 
-    # Try CSV parse first
     lines = [line for line in stdout.splitlines() if line.strip()]
     if len(lines) >= 2:
         try:
@@ -484,7 +622,6 @@ def run_llama_bench(llama_bench_cfg: dict):
         except Exception:
             pass
 
-    # Fallback: keep raw output if CSV parsing fails
     return {
         "llama_bench model": llama_bench_cfg["model"],
         "llama_bench n_prompt": llama_bench_cfg["n_prompt"],
@@ -506,24 +643,27 @@ def main():
     base_url = config["server"]["base_url"]
     api_key = config["server"]["api_key"]
 
-    n_samples = config["benchmark"]["n_samples"]
-    n_runs = config["benchmark"]["n_runs"]
-    dolly_samples = config["benchmark"]["dolly_samples"]
-    dolly_runs = config["benchmark"]["dolly_runs"]
-    metrics_interval_s = config["benchmark"]["metrics_interval_s"]
+    n_samples = config["benchmark"].get("n_samples", 20)
+    n_runs = config["benchmark"].get("n_runs", 5)
+    dolly_samples = config["benchmark"].get("dolly_samples", 50)
+    dolly_runs = config["benchmark"].get("dolly_runs", 5)
+    metrics_interval_s = config["benchmark"].get("metrics_interval_s", 0.2)
 
-    temperature = config["generation"]["temperature"]
+    temperature = config["generation"].get("temperature", 0)
     max_tokens = config["generation"]["max_tokens"]
+
+    run_id = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    output_dir = RESULTS_ROOT / run_id
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    shutil.copy(args.config, output_dir / "config.yaml")
 
     client = OpenAI(
         base_url=base_url,
         api_key=api_key,
     )
 
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-
-    # MMLU
-    mmlu_row = run_dataset_benchmark(
+    mmlu_row, mmlu_samples = run_dataset_benchmark(
         client=client,
         model_name=model_name,
         dataset_name="mmlu",
@@ -536,11 +676,12 @@ def main():
         metrics_interval_s=metrics_interval_s,
         scorer_fn=score_mmlu,
     )
-    write_single_row_csv(OUTPUT_DIR / "mmlu.csv", mmlu_row)
-    print(f"\nSaved: {OUTPUT_DIR / 'mmlu.csv'}")
+    write_single_row_csv(output_dir / "mmlu.csv", mmlu_row)
+    write_rows_csv(output_dir / "mmlu_samples.csv", mmlu_samples)
+    print(f"\nSaved: {output_dir / 'mmlu.csv'}")
+    print(f"Saved: {output_dir / 'mmlu_samples.csv'}")
 
-    # HellaSwag
-    hellaswag_row = run_dataset_benchmark(
+    hellaswag_row, hellaswag_samples = run_dataset_benchmark(
         client=client,
         model_name=model_name,
         dataset_name="hellaswag",
@@ -553,11 +694,12 @@ def main():
         metrics_interval_s=metrics_interval_s,
         scorer_fn=score_hellaswag,
     )
-    write_single_row_csv(OUTPUT_DIR / "hellaswag.csv", hellaswag_row)
-    print(f"\nSaved: {OUTPUT_DIR / 'hellaswag.csv'}")
+    write_single_row_csv(output_dir / "hellaswag.csv", hellaswag_row)
+    write_rows_csv(output_dir / "hellaswag_samples.csv", hellaswag_samples)
+    print(f"\nSaved: {output_dir / 'hellaswag.csv'}")
+    print(f"Saved: {output_dir / 'hellaswag_samples.csv'}")
 
-    # GSM8K
-    gsm8k_row = run_dataset_benchmark(
+    gsm8k_row, gsm8k_samples = run_dataset_benchmark(
         client=client,
         model_name=model_name,
         dataset_name="gsm8k",
@@ -570,11 +712,12 @@ def main():
         metrics_interval_s=metrics_interval_s,
         scorer_fn=score_gsm8k,
     )
-    write_single_row_csv(OUTPUT_DIR / "gsm8k.csv", gsm8k_row)
-    print(f"\nSaved: {OUTPUT_DIR / 'gsm8k.csv'}")
+    write_single_row_csv(output_dir / "gsm8k.csv", gsm8k_row)
+    write_rows_csv(output_dir / "gsm8k_samples.csv", gsm8k_samples)
+    print(f"\nSaved: {output_dir / 'gsm8k.csv'}")
+    print(f"Saved: {output_dir / 'gsm8k_samples.csv'}")
 
-    # Dolly
-    dolly_row = run_dataset_benchmark(
+    dolly_row, dolly_samples_rows = run_dataset_benchmark(
         client=client,
         model_name=model_name,
         dataset_name="dolly",
@@ -588,12 +731,9 @@ def main():
         scorer_fn=None,
     )
 
-    # Add llama-bench side-by-side with Dolly metrics
     llama_bench_row = run_llama_bench(config.get("llama_bench", {}))
 
     combined_dolly_row = {"Model name": model_name}
-
-    # Prefix Dolly keys except model name
     dolly_prefixed = prefix_keys(
         {k: v for k, v in dolly_row.items() if k != "Model name"},
         "Dolly ",
@@ -601,8 +741,11 @@ def main():
     combined_dolly_row.update(dolly_prefixed)
     combined_dolly_row.update(llama_bench_row)
 
-    write_single_row_csv(OUTPUT_DIR / "dolly.csv", combined_dolly_row)
-    print(f"\nSaved: {OUTPUT_DIR / 'dolly.csv'}")
+    write_single_row_csv(output_dir / "dolly.csv", combined_dolly_row)
+    write_rows_csv(output_dir / "dolly_samples.csv", dolly_samples_rows)
+    print(f"\nSaved: {output_dir / 'dolly.csv'}")
+    print(f"Saved: {output_dir / 'dolly_samples.csv'}")
+    print(f"\nSaved results to: {output_dir}")
 
 
 if __name__ == "__main__":
