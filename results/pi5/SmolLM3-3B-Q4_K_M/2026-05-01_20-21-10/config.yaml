@@ -1,0 +1,83 @@
+models:
+  # - name: "gemma-3-4b-it-q4_0_s.gguf"
+  #   path: "models/gemma-3-4b-it-q4_0_s.gguf"
+
+  # - name: "granite-4.0-h-tiny-Q4_K_M.gguf"
+  #   path: "models/granite-4.0-h-tiny-Q4_K_M.gguf"
+
+  # - name: "Phi-4-mini-instruct-Q4_K_M.gguf"
+  #   path: "models/Phi-4-mini-instruct-Q4_K_M.gguf"
+      
+  # - name: "Qwen3.5-0.8B-Q8_0.gguf"
+  #   path: "models/Qwen3.5-0.8B-Q8_0.gguf"
+
+  #  - name: "gemma-3-1b-it-Q8_0.gguf"
+  #    path: "models/gemma-3-1b-it-Q8_0.gguf"
+
+  #  - name: "llama-3.2-1b-instruct-q4_k_m.gguf"
+  #    path: "models/llama-3.2-1b-instruct-q4_k_m.gguf"
+
+   - name: "SmolLM3-3B-Q4_K_M.gguf"
+     path: "models/SmolLM3-3B-Q4_K_M.gguf"
+
+## to do next :
+  # - name: "Ministral-3-3B-Instruct-2512-Q4_K_M.gguf"
+  #   path: "models/Ministral-3-3B-Instruct-2512-Q4_K_M.gguf"
+
+  #  - name: "qwen3-4b-q4_k_m.gguf"
+  #    path: "models/qwen3-4b-q4_k_m.gguf"
+   
+  #  - name: "qwen2.5-3b-instruct-f16.gguf"
+  #    path: "models/qwen2.5-3b-instruct-f16.gguf"
+
+  
+  # - name: "Llama-3.2-1B-Instruct-Q8_0.gguf"
+  #   path: "models/Llama-3.2-1B-Instruct-Q8_0.gguf"
+
+  
+
+  #  - name: "Llama-3.1-8B-Instruct-UD-IQ2_XXS.gguf"
+  #    path: "models/Llama-3.1-8B-Instruct-UD-IQ2_XXS.gguf"
+
+server:
+  launch: true
+  binary: "engines/llama.cpp/build/bin/llama-server"   
+  base_url: "http://127.0.0.1:8000/v1"
+  api_key: "dummy"
+  ctx_size: 8192
+  startup_timeout_s: 360
+
+benchmark:
+  metrics_interval_s: 0.2
+  
+
+  defaults:
+    samples: 100
+    runs: 1
+    warmup_samples: 20
+    offset: 0
+    inter_sample_delay_s: 1.0 
+
+  datasets:
+    - name: "mmlu"
+      enabled: false
+      max_tokens: 5
+
+    - name: "hellaswag"
+      enabled: false
+      max_tokens: 5
+
+    - name: "gsm8k"
+      enabled: true
+      max_tokens: 256
+      inter_sample_delay_s: 2.0 
+
+    - name: "dolly"
+      enabled: false
+      samples: 100
+      runs: 1
+      max_tokens: 256
+      inter_sample_delay_s: 2.0 
+
+generation:
+  temperature: 0

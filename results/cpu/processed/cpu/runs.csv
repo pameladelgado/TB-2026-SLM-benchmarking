@@ -1,0 +1,9 @@
+platform,model_dir,run_id,run_dir
+cpu,Llama-3.2-1B-Instruct-Q8_0,2026-04-29_12-47-45,/home/stephane/llm-experiments/results/cpu/Llama-3.2-1B-Instruct-Q8_0/2026-04-29_12-47-45
+cpu,Ministral-3-3B-Instruct-2512-Q4_K_M,2026-04-29_12-47-45,/home/stephane/llm-experiments/results/cpu/Ministral-3-3B-Instruct-2512-Q4_K_M/2026-04-29_12-47-45
+cpu,Ministral-3-3B-Instruct-2512-Q4_K_M,2026-05-01_07-29-58,/home/stephane/llm-experiments/results/cpu/Ministral-3-3B-Instruct-2512-Q4_K_M/2026-05-01_07-29-58
+cpu,Ministral-3-3B-Instruct-2512-Q4_K_M,2026-05-01_08-47-34,/home/stephane/llm-experiments/results/cpu/Ministral-3-3B-Instruct-2512-Q4_K_M/2026-05-01_08-47-34
+cpu,Phi-4-mini-instruct-Q4_K_M,2026-04-30_11-07-28,/home/stephane/llm-experiments/results/cpu/Phi-4-mini-instruct-Q4_K_M/2026-04-30_11-07-28
+cpu,Phi-4-mini-instruct-Q4_K_M,2026-04-30_21-54-52,/home/stephane/llm-experiments/results/cpu/Phi-4-mini-instruct-Q4_K_M/2026-04-30_21-54-52
+cpu,Phi-4-mini-instruct-Q4_K_M,2026-05-01_07-29-58,/home/stephane/llm-experiments/results/cpu/Phi-4-mini-instruct-Q4_K_M/2026-05-01_07-29-58
+cpu,gemma-3-1b-it-Q8_0,2026-05-01_09-38-06,/home/stephane/llm-experiments/results/cpu/gemma-3-1b-it-Q8_0/2026-05-01_09-38-06

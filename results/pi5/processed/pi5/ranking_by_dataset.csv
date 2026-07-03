@@ -1,0 +1,17 @@
+platform,dataset,model,model_label,accuracy,latency_ms_mean,tokens_per_sec_mean,ram_used_mb_peak_max,temperature_c_peak_max,accuracy_per_second
+pi5,dolly,llama-3.2-1b-instruct-q4_k_m.gguf,pi5 | llama-3.2-1b-instruct-q4_k_m.gguf,,12406.9938112,9.383389800000002,2551.44,73.6,
+pi5,dolly,gemma-3-1b-it-Q8_0.gguf,pi5 | gemma-3-1b-it-Q8_0.gguf,,17764.864842799998,6.5835396,2782.97,72.5,
+pi5,dolly,SmolLM3-3B-Q4_K_M.gguf,pi5 | SmolLM3-3B-Q4_K_M.gguf,,37000.9700489,4.1383882000000005,5934.84,74.7,
+pi5,dolly,Phi-4-mini-instruct-Q4_K_M.gguf,pi5 | Phi-4-mini-instruct-Q4_K_M.gguf,,39450.1262313,3.3176024,7674.98,75.2,
+pi5,gsm8k,Phi-4-mini-instruct-Q4_K_M.gguf,pi5 | Phi-4-mini-instruct-Q4_K_M.gguf,0.638,41449.026976099994,3.1425837999999997,7203.09,72.5,0.020171440377968468
+pi5,gsm8k,SmolLM3-3B-Q4_K_M.gguf,pi5 | SmolLM3-3B-Q4_K_M.gguf,0.591,40657.7600775,3.9477309,5674.92,71.9,0.01597225548381475
+pi5,gsm8k,llama-3.2-1b-instruct-q4_k_m.gguf,pi5 | llama-3.2-1b-instruct-q4_k_m.gguf,0.5194736842105263,15998.56534605263,9.502284368421053,2507.66,70.3,0.04037563040688206
+pi5,gsm8k,gemma-3-1b-it-Q8_0.gguf,pi5 | gemma-3-1b-it-Q8_0.gguf,0.47736842105263155,23506.41734394737,6.1180047368421056,2632.81,69.2,0.02284225204312428
+pi5,hellaswag,Phi-4-mini-instruct-Q4_K_M.gguf,pi5 | Phi-4-mini-instruct-Q4_K_M.gguf,0.489,8861.698752100001,3.6275233,6939.64,71.4,0.06032299373457591
+pi5,hellaswag,gemma-3-1b-it-Q8_0.gguf,pi5 | gemma-3-1b-it-Q8_0.gguf,0.291,2055.9441019,5.2750442,2765.84,67.5,0.15557930140813958
+pi5,hellaswag,SmolLM3-3B-Q4_K_M.gguf,pi5 | SmolLM3-3B-Q4_K_M.gguf,0.29,7445.2861903,4.8776457,4530.36,71.4,0.05169240148255953
+pi5,hellaswag,llama-3.2-1b-instruct-q4_k_m.gguf,pi5 | llama-3.2-1b-instruct-q4_k_m.gguf,0.251,2432.4450844999997,12.3592585,2161.02,70.3,0.1465698142085471
+pi5,mmlu,Phi-4-mini-instruct-Q4_K_M.gguf,pi5 | Phi-4-mini-instruct-Q4_K_M.gguf,0.564,6552.3542381,3.5501428,6517.08,71.9,0.11592547657546132
+pi5,mmlu,SmolLM3-3B-Q4_K_M.gguf,pi5 | SmolLM3-3B-Q4_K_M.gguf,0.52,5666.3565537,4.6415998,3987.86,71.4,0.11994840903727182
+pi5,mmlu,llama-3.2-1b-instruct-q4_k_m.gguf,pi5 | llama-3.2-1b-instruct-q4_k_m.gguf,0.395,1775.790762,12.6970657,1968.19,70.8,0.29950486163467654
+pi5,mmlu,gemma-3-1b-it-Q8_0.gguf,pi5 | gemma-3-1b-it-Q8_0.gguf,0.315,1566.4855220000002,5.4054066,2548.55,67.5,0.26195373922561604

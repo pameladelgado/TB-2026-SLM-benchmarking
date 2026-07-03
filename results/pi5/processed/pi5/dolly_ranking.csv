@@ -1,0 +1,4 @@
+dataset,model,accuracy,latency,ttft,tps,sustained_tps,cpu,ram,process_ram,temp
+dolly,llama-3.2-1b-instruct-q4_k_m.gguf,,11711.0913,1349.6924,9.1656,7.0754,92.7037,2439.92,2804.52,65.3495
+dolly,gemma-3-1b-it-Q8_0.gguf,,17053.9643,1140.2888,6.4105,5.4496,94.1908,2667.55,3264.92,61.7426
+dolly,Phi-4-mini-instruct-Q4_K_M.gguf,,37395.0564,4638.8217,3.237,2.7941,97.1212,6771.2,7311.2,66.5617

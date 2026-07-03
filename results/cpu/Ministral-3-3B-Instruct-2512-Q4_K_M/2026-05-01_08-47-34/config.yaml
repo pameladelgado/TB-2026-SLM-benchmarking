@@ -1,0 +1,97 @@
+models:
+#  - name: "gemma-3-1b-it-Q8_0.gguf"
+#    path: "/app/models/gemma-3-1b-it-Q8_0.gguf"
+
+#  - name: "gemma-3-4b-it-q4_0_s.gguf"
+#    path: "/app/models/gemma-3-4b-it-q4_0_s.gguf"
+
+#  - name: "Llama-3.2-1B-Instruct-Q8_0.gguf"
+#    path: "/app/models/Llama-3.2-1B-Instruct-Q8_0.gguf"
+
+  - name: "Ministral-3-3B-Instruct-2512-Q4_K_M.gguf"
+    path: "/app/models/Ministral-3-3B-Instruct-2512-Q4_K_M.gguf"
+
+  # - name: "Phi-4-mini-instruct-Q4_K_M.gguf"
+  #   path: "/app/models/Phi-4-mini-instruct-Q4_K_M.gguf"
+
+  # - name: "qwen2_5_7b_instruct_q4_k_m.gguf"
+  #   path: "/app/models/qwen2_5_7b_instruct_q4_k_m.gguf"
+
+  # - name: "llama3_1_8b_q4_k_m.gguf"
+  #   path: "/app/models/llama3_1_8b_q4_k_m.gguf"
+  
+  # - name: "Qwen3-4B-Q4_K_M.gguf"
+  #   path: "/app/models/Qwen3-4B-Q4_K_M.gguf"
+
+  # - name: "SmolLM3-3B-Q4_K_M.gguf"
+  #   path: "/app/models/SmolLM3-3B-Q4_K_M.gguf"
+
+  # - name: "mistral_7b_instruct_q4_k_m.gguf"
+  #   path: "/app/models/mistral_7b_instruct_q4_k_m.gguf"   
+
+ 
+  # - name: "gemma2_9b_instruct_q4_k_m.gguf"
+  #   path: "/app/models/gemma2_9b_instruct_q4_k_m.gguf"
+
+  # - name: "granite-4.0-h-tiny-Q4_K_M.gguf"
+  #   path: "/app/models/granite-4.0-h-tiny-Q4_K_M.gguf"
+
+server:
+  launch: true
+  binary: "/app/llama-server"
+  base_url: "http://127.0.0.1:8000/v1"
+  api_key: "dummy"
+
+  # llama.cpp runtime
+  ctx_size: 8192
+  startup_timeout_s: 180
+
+  # optional but recommended (prevents weird behavior)
+  extra_args:
+    - "--parallel"
+    - "1"
+    - "--threads"
+    - "12"
+    - "--threads-batch"
+    - "12"
+
+benchmark:
+  metrics_interval_s: 0.2
+
+  defaults:
+    samples: 100
+    runs: 1
+    warmup_samples: 20
+    offset: 0
+
+  datasets:
+    - name: "mmlu"
+      enabled: false
+      max_tokens: 5
+
+    - name: "hellaswag"
+      enabled: false
+      max_tokens: 5
+
+    - name: "gsm8k"
+      enabled: true
+      max_tokens: 256
+
+    - name: "dolly"
+      enabled: false
+      samples: 100
+      runs: 1
+      max_tokens: 256
+
+
+generation:
+  temperature: 0
+
+
+llama_bench:
+  enabled: false
+  binary: "/app/llama-bench"
+  n_prompt: 512
+  n_gen: 128
+  repetitions: 3
+  output_format: "csv"

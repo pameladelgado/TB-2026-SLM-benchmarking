@@ -1,0 +1,158 @@
+backend:
+  type: "vllm"
+
+models:
+#    - id: "iqbalamo93/Phi-4-mini-instruct-GPTQ-4bit"
+#      alias: "phi4mini_gptq_4bit"
+#    - id: "mistralai/Ministral-3-12B-Instruct"
+#      alias: "ministral3_12b"
+
+#    - id: "/mnt/data/snascimen/models/Kimi-Linear-48B-A3B-Instruct"
+#      alias: "kimi_linear_48b_full"
+#    - id: "/mnt/data/snascimen/models/Apertus-70B-Instruct-2509"
+#      alias: "apertus_70b_instruct"
+#  # --- BF16 (full models, no gating hassle) ---
+
+#     - id: "/mnt/data/snascimen/models/Kimi-Linear-48B-A3B-Instruct"
+#       alias: "kimi_linear_48b_bf16"
+#      dtype: "bfloat16"
+
+#     - id: "/mnt/data/snascimen/models/Qwen3-30B-A3B-Instruct-2507"
+#       alias: "qwen3_30b_instruct_bf16"
+#       dtype: "bfloat16"
+
+    #  - id: "/mnt/data/snascimen/models/Apertus-70B-Instruct-2509"
+    #    alias: "apertus_70b_instruct_bf16"
+    #    dtype: "bfloat16"
+
+    #  - id: "/mnt/data/snascimen/models/phi-4-mini-instruct"
+    #    alias: "phi4mini_bf16"
+    #    dtype: "bfloat16"
+
+    #  - id: "/mnt/data/snascimen/models/Llama-3.2-1B-Instruct"
+    #    alias: "llama3_2_1b_bf16"
+    #    dtype: "bfloat16"
+ 
+    #  - id: "/mnt/data/snascimen/models/Qwen2.5-1.5B-Instruct"
+    #    alias: "qwen2_5_1_5b_bf16"
+    #    dtype: "bfloat16"
+ 
+   - id: "/mnt/data/snascimen/models/granite-4.0-h-tiny"
+     alias: "granite4_htiny_bf16"
+     dtype: "bfloat16"
+
+   - id: "/mnt/data/snascimen/models/Phi-4-14B"
+     alias: "phi4_14b_bf16"
+     dtype: "bfloat16"
+#
+#  # --- Quantized (no gating, kept as-is) ---
+   - id: "/mnt/data/snascimen/models/Ministral-3-3B-AWQ"
+     alias: "ministral3_3b_awq"
+     dtype: "half"
+
+   - id: "/mnt/data/snascimen/models/Ministral-3-8B-AWQ"
+     alias: "ministral3_8b_awq"
+     dtype: "half"
+
+   - id: "/mnt/data/snascimen/models/Qwen3-4B-AWQ"
+     alias: "qwen3_4b_awq"
+     dtype: "half"
+
+   - id: "/mnt/data/snascimen/models/Qwen2.5-7B-AWQ"
+     alias: "qwen2_5_7b_awq"
+     dtype: "half"
+
+   - id: "/mnt/data/snascimen/models/gemma-3-9b-awq"
+     alias: "gemma3_9b_awq"
+     dtype: "half"
+
+   - id: "/mnt/data/snascimen/models/granite-4.0-8b-awq"
+     alias: "granite4_8b_awq"
+     dtype: "half"
+
+   - id: "/mnt/data/snascimen/models/SmolLM3-3B-AWQ"
+     alias: "smollm3_3b_awq"
+     dtype: "half"
+
+  # --- Large model (quantized FP8 to avoid gated base) ---
+   - id: "/mnt/data/snascimen/models/Llama-3.3-70B-Instruct-FP8-dynamic"
+     alias: "llama3_3_70b_fp8"
+     dtype: "auto"
+
+#   - id: "unsloth/Llama-3.2-1B-Instruct"
+#     alias: "llama3_2_1b"
+#
+#  - id: "cyankiwi/Ministral-3-3B-Instruct-2512-AWQ-4bit"
+#    alias: "ministral3_3b_awq"
+#
+#  - id: "Qwen/Qwen2.5-1.5B-Instruct"
+#    alias: "qwen2_5_1_5b"
+#
+#  - id: "cyankiwi/Qwen3-4B-Instruct-2507-AWQ-4bit"
+#    alias: "qwen3_4b_awq"
+#
+#   - id: "Qwen/Qwen2.5-7B-Instruct-AWQ"
+#     alias: "qwen2_7b_q4"
+#
+#   - id: "ibm-granite/granite-4.0-h-tiny"
+#    alias: "granite4_htiny_fp"
+#  - id: "cyankiwi/Ministral-3-8B-Instruct-2512-AWQ-4bit"
+#    alias: "ministral3_8b_awq"
+#
+#  - id: "RedHatAI/gemma-3-9b-it-quantized.w4a16"
+#    alias: "gemma3_9b_awq"
+#  
+#  - id: "cyankiwi/granite-4.0-8b-instruct-AWQ-4bit"
+#    alias: "granite4_8b_awq"
+#
+#  - id: "casperhansen/SmolLM3-3B-Instruct-AWQ"
+#    alias: "smollm3_3b_awq"
+
+server:
+  launch: true
+  binary: "vllm"
+  base_url: "http://127.0.0.1:8000/v1"
+  api_key: "dummy"
+  startup_timeout_s: 360
+  max_model_len: 2048
+  gpu_memory_utilization: 0.9
+  max_num_seqs: 1
+  trust_remote_code: true
+  enforce_eager: true
+  pytorch_expandable_segments: true
+  tensor_parallel_size: 2
+
+benchmark:
+  metrics_interval_s: 0.2
+
+  defaults:
+    samples: 100
+    runs: 10
+    warmup_samples: 20
+    offset: 0
+
+  datasets:
+    - name: "mmlu"
+      enabled: true
+      max_tokens: 5
+
+    - name: "hellaswag"
+      enabled: true
+      max_tokens: 5
+
+    - name: "gsm8k"
+      enabled: true
+      max_tokens: 256
+      warmup_samples: 20
+      offset: 0
+
+    - name: "dolly"
+      enabled: true
+      samples: 100
+      runs: 10
+      max_tokens: 256
+      warmup_samples: 20
+      offset: 0
+
+generation:
+  temperature: 0

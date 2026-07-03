@@ -1,0 +1,15 @@
+metric,unit,level,meaning
+accuracy,fraction,sample/summary,Correctness rate; only MMLU/HellaSwag/GSM8K
+latency_ms,ms,sample/summary,End-to-end latency per request
+ttft_ms,ms,sample/summary,Time to first token
+tokens_per_sec,tokens/s,sample/summary,Decode throughput after first token
+sustained_tokens_per_sec,tokens/s,summary,Sequential sustained throughput over full measured dataset run
+samples_per_sec,samples/s,summary,Sequential sustained sample throughput
+output_tokens,tokens,sample,Whitespace-estimated generated tokens
+cpu_percent_avg,%,sample/summary,Average CPU utilization sampled during generation
+cpu_percent_peak,%,sample/summary,Peak CPU utilization sampled during generation
+ram_used_mb_peak,MB,sample/summary,Peak system RAM used
+process_ram_mb_peak,MB,sample/summary,Peak llama-server process RSS
+temperature_c_avg,°C,sample/summary,Average temperature sampled during generation
+temperature_c_peak,°C,sample/summary,Peak temperature sampled during generation
+accuracy_per_second,accuracy/s,derived,Accuracy divided by latency seconds; only scored datasets
