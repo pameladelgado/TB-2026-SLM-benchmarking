@@ -1,83 +1,48 @@
 """
 benchmark.py
 
-Unified benchmark runner for llama.cpp-backed OpenAI-compatible inference.
+Unified benchmark runner for OpenAI-compatible llama.cpp backends.
 
-What it does:
-- Starts and stops llama.cpp server itself
-- Runs one benchmark pass per enabled dataset
-- Uses streaming for all datasets
-- Computes accuracy where applicable
-- Collects inline system metrics without extra threads
-- Writes one summary CSV per dataset
-- Writes one sample-level CSV per dataset
-- Adds llama-bench results next to Dolly results in dolly.csv
-
-Expected outputs:
-- results/<run_id>/config.yaml
-- results/<run_id>/mmlu.csv
-- results/<run_id>/mmlu_samples.csv
-- results/<run_id>/hellaswag.csv
-- results/<run_id>/hellaswag_samples.csv
-- results/<run_id>/gsm8k.csv
-- results/<run_id>/gsm8k_samples.csv
-- results/<run_id>/dolly.csv
-- results/<run_id>/dolly_samples.csv
+Protocol:
+- Starts a fresh llama-server per run, per dataset, and per model
+- Uses a separate warm-up workload before each measured run
+- Supports warm-up/eval split separation and offsets
+- Writes summary CSVs and per-sample CSVs
 """
 
 import argparse
 import csv
+import json
 import os
 import re
 import shutil
+import signal
+import socket
 import statistics
 import subprocess
 import time
+import urllib.request
 from datetime import datetime
 from pathlib import Path
 from urllib.parse import urlparse
-from urllib.request import urlopen
-from urllib.error import URLError, HTTPError
 
 import yaml
 from openai import OpenAI
 
 from dataset_loader import (
-    load_tiny_mmlu,
-    load_tiny_hellaswag,
-    load_tiny_gsm8k,
+    format_prompt,
     load_dolly_workload,
-    format_mcq,
-    format_gsm8k,
-    format_dolly,
+    load_tiny_gsm8k,
+    load_tiny_gsm8k_few_shot,
+    load_tiny_hellaswag,
+    load_tiny_hellaswag_few_shot,
+    load_tiny_mmlu,
+    load_tiny_mmlu_few_shot,
 )
 from system_metrics import get_system_metrics
 
 
 RESULTS_ROOT = Path("results")
-
-DATASET_REGISTRY = {
-    "mmlu": {
-        "loader_fn": load_tiny_mmlu,
-        "formatter_fn": format_mcq,
-        "scorer_name": "mmlu",
-    },
-    "hellaswag": {
-        "loader_fn": load_tiny_hellaswag,
-        "formatter_fn": format_mcq,
-        "scorer_name": "hellaswag",
-    },
-    "gsm8k": {
-        "loader_fn": load_tiny_gsm8k,
-        "formatter_fn": format_gsm8k,
-        "scorer_name": "gsm8k",
-    },
-    "dolly": {
-        "loader_fn": load_dolly_workload,
-        "formatter_fn": format_dolly,
-        "scorer_name": None,
-    },
-}
 
 
 # -----------------------------
@@ -92,98 +57,51 @@ def parse_args():
         default="configs/llama_cpp.yaml",
         help="Path to benchmark config YAML",
     )
-    parser.add_argument(
-        "--no-server",
-        action="store_true",
-        help="Do not start/stop llama-server. Assume it is already running.",
-    )
     return parser.parse_args()
 
 
 def load_config(config_path: str):
     with open(config_path, "r", encoding="utf-8") as f:
-        config = yaml.safe_load(f)
-    return normalize_config(config)
+        return yaml.safe_load(f)
 
 
-def normalize_config(config: dict):
-    model_cfg = config.setdefault("model", {})
-    server_cfg = config.setdefault("server", {})
-    benchmark_cfg = config.setdefault("benchmark", {})
-    generation_cfg = config.setdefault("generation", {})
-    llama_bench_cfg = config.setdefault("llama_bench", {})
+def get_dataset_cfg(config: dict, dataset_name: str) -> dict:
+    datasets = config.get("benchmark", {}).get("datasets", [])
+    for ds in datasets:
+        if ds.get("name") == dataset_name:
+            return ds
+    raise KeyError(f"Missing benchmark.datasets entry for {dataset_name!r}")
 
-    model_path = model_cfg.get("path")
-    if not model_path:
-        raise ValueError("config.model.path is required")
 
-    model_cfg.setdefault("name", Path(model_path).name)
+def is_dataset_enabled(config: dict, dataset_name: str) -> bool:
+    ds = get_dataset_cfg(config, dataset_name)
+    return ds.get("enabled", True)
 
-    base_url = server_cfg.get("base_url", "http://127.0.0.1:8000/v1")
-    server_cfg["base_url"] = base_url
 
-    parsed = urlparse(base_url)
-    server_cfg.setdefault("host", parsed.hostname or "127.0.0.1")
-    server_cfg.setdefault("port", parsed.port or 8000)
-    server_cfg.setdefault("ctx_size", 8192)
-    server_cfg.setdefault("api_key", "dummy")
-    server_cfg.setdefault("binary", "engines/llama.cpp/build/bin/llama-server")
-    server_cfg.setdefault("startup_timeout_s", 60)
-    server_cfg.setdefault("log_path", "server.log")
-    server_cfg.setdefault("extra_args", [])
+def get_dataset_samples_runs_max_tokens(config: dict, dataset_name: str):
+    defaults = config.get("benchmark", {}).get("defaults", {})
+    ds = get_dataset_cfg(config, dataset_name)
 
-    benchmark_cfg.setdefault("metrics_interval_s", 0.2)
+    samples = ds.get("samples", defaults.get("samples", 20))
+    runs = ds.get("runs", defaults.get("runs", 5))
 
-    defaults_cfg = benchmark_cfg.setdefault("defaults", {})
-    defaults_cfg.setdefault("samples", 20)
-    defaults_cfg.setdefault("runs", 5)
+    if "max_tokens" not in ds:
+        raise KeyError(f"Missing max_tokens for dataset {dataset_name!r}")
 
-    dataset_entries = benchmark_cfg.get("datasets")
-    if not dataset_entries:
-        raise ValueError("config.benchmark.datasets must be a non-empty list")
+    max_tokens = ds["max_tokens"]
+    return samples, runs, max_tokens
 
-    normalized_datasets = []
-    seen_names = set()
 
-    for entry in dataset_entries:
-        if not isinstance(entry, dict):
-            raise ValueError("Each item in config.benchmark.datasets must be a mapping")
+def get_dataset_warmup_samples(config: dict, dataset_name: str, default_value: int = 10):
+    defaults = config.get("benchmark", {}).get("defaults", {})
+    ds = get_dataset_cfg(config, dataset_name)
+    return ds.get("warmup_samples", defaults.get("warmup_samples", default_value))
 
-        name = entry.get("name")
-        if name not in DATASET_REGISTRY:
-            raise ValueError(
-                f"Unknown dataset '{name}'. Valid values: {sorted(DATASET_REGISTRY)}"
-            )
-        if name in seen_names:
-            raise ValueError(f"Duplicate dataset entry: {name}")
-        seen_names.add(name)
 
-        normalized = {
-            "name": name,
-            "enabled": bool(entry.get("enabled", False)),
-            "samples": entry.get("samples", defaults_cfg["samples"]),
-            "runs": entry.get("runs", defaults_cfg["runs"]),
-            "max_tokens": entry.get("max_tokens"),
-        }
-
-        if normalized["max_tokens"] is None:
-            raise ValueError(f"benchmark.datasets entry for '{name}' is missing max_tokens")
-
-        normalized_datasets.append(normalized)
-
-    benchmark_cfg["datasets"] = normalized_datasets
-
-    generation_cfg.setdefault("temperature", 0)
-
-    llama_bench_cfg.setdefault("enabled", False)
-    llama_bench_cfg.setdefault("binary", "engines/llama.cpp/build/bin/llama-bench")
-    llama_bench_cfg.setdefault("model", model_path)
-    llama_bench_cfg.setdefault("n_prompt", 512)
-    llama_bench_cfg.setdefault("n_gen", 128)
-    llama_bench_cfg.setdefault("repetitions", 1)
-    llama_bench_cfg.setdefault("output_format", "csv")
-
-    return config
+def get_dataset_offset(config: dict, dataset_name: str, default_value: int = 0):
+    defaults = config.get("benchmark", {}).get("defaults", {})
+    ds = get_dataset_cfg(config, dataset_name)
+    return ds.get("offset", defaults.get("offset", default_value))
 
 
 # -----------------------------
@@ -227,6 +145,29 @@ def add_mean_sd_columns(row: dict, label: str, values, digits=4):
     mean_value, sd_value = mean_sd(values)
     row[f"{label} mean"] = safe_round(mean_value, digits)
     row[f"{label} sd"] = safe_round(sd_value, digits)
+
+
+def sanitize_model_dirname(name: str) -> str:
+    stem = Path(name).stem
+    cleaned = re.sub(r'[<>:"/\\|?*]+', "_", stem)
+    return cleaned.strip("_")
+
+
+def parse_host_port_from_base_url(base_url: str):
+    parsed = urlparse(base_url)
+    host = parsed.hostname or "127.0.0.1"
+    port = parsed.port or (443 if parsed.scheme == "https" else 80)
+    return host, port
+
+
+def base_origin(base_url: str):
+    parsed = urlparse(base_url)
+    scheme = parsed.scheme or "http"
+    host = parsed.hostname or "127.0.0.1"
+    port = parsed.port
+    if port is None:
+        return f"{scheme}://{host}"
+    return f"{scheme}://{host}:{port}"
 
 
 # -----------------------------
@@ -290,130 +231,302 @@ def score_gsm8k(sample, output):
     return pred == gold
 
 
-SCORER_REGISTRY = {
-    "mmlu": score_mmlu,
-    "hellaswag": score_hellaswag,
-    "gsm8k": score_gsm8k,
-}
-
-
 # -----------------------------
-# Server management
+# Server lifecycle
 # -----------------------------
 
-def build_server_env():
-    env = os.environ.copy()
-    current_ld = env.get("LD_LIBRARY_PATH", "")
-    prefixes = [
-        "engines/llama.cpp/build/bin",
-        "engines/llama.cpp/build/lib",
-    ]
-    env["LD_LIBRARY_PATH"] = ":".join([*prefixes, current_ld]) if current_ld else ":".join(prefixes)
-    return env
-
-
-def check_server_ready(base_url: str, timeout_s: float = 1.0):
-    models_url = f"{base_url.rstrip('/')}/models"
+def tail_file(path: Path, n_lines: int = 200) -> str:
+    if not path.exists():
+        return ""
     try:
-        with urlopen(models_url, timeout=timeout_s) as response:
-            return 200 <= response.status < 300
-    except (URLError, HTTPError, TimeoutError):
-        return False
+        lines = path.read_text(encoding="utf-8", errors="replace").splitlines()
+        return "\n".join(lines[-n_lines:])
+    except Exception:
+        return ""
 
 
-def start_llama_server(config: dict):
-    server_cfg = config["server"]
-    model_path = config["model"]["path"]
+def wait_for_port_closed(host: str, port: int, timeout_s: float = 30.0):
+    deadline = time.time() + timeout_s
+    last_connect_rc = None
 
-    server_bin = Path(server_cfg["binary"])
-    log_path = Path(server_cfg["log_path"])
-    ctx_size = server_cfg["ctx_size"]
-    host = server_cfg["host"]
-    port = server_cfg["port"]
+    while time.time() < deadline:
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.settimeout(1.0)
+        try:
+            rc = s.connect_ex((host, port))
+            last_connect_rc = rc
+            if rc != 0:
+                return
+        finally:
+            s.close()
+
+        time.sleep(0.5)
+
+    raise TimeoutError(
+        f"Port {host}:{port} did not close within {timeout_s}s "
+        f"(last connect_ex rc={last_connect_rc})"
+    )
+
+
+def get_model_ids_from_base_url(base_url: str) -> list[str]:
+    models_url = base_url.rstrip("/") + "/models"
+    with urllib.request.urlopen(models_url, timeout=10) as resp:
+        if resp.status != 200:
+            raise RuntimeError(f"/models returned HTTP {resp.status}")
+        payload = json.loads(resp.read().decode("utf-8"))
+
+    data = payload.get("data", [])
+    return [m.get("id") for m in data if m.get("id")]
+
+
+def get_served_model_id(base_url: str) -> str:
+    model_ids = get_model_ids_from_base_url(base_url)
+    if not model_ids:
+        raise RuntimeError(f"No models returned by {base_url.rstrip('/') + '/models'}")
+    return model_ids[0]
+
+
+def wait_for_server(
+    base_url: str,
+    timeout_s: float,
+    expected_model_id: str | None = None,
+    proc=None,
+    log_path: Path | None = None,
+):
+    deadline = time.time() + timeout_s
+    models_url = base_url.rstrip("/") + "/models"
+    health_url = base_origin(base_url) + "/health"
+
+    last_error = None
+    last_model_ids = None
+
+    while time.time() < deadline:
+        if proc is not None:
+            ret = proc.poll()
+            if ret is not None:
+                log_tail = tail_file(log_path) if log_path else ""
+                raise RuntimeError(
+                    f"llama-server exited early with code {ret}.\n\n"
+                    f"Last log lines:\n{log_tail}"
+                )
+
+        try:
+            with urllib.request.urlopen(health_url, timeout=2) as resp:
+                if resp.status != 200:
+                    last_error = RuntimeError(f"/health returned HTTP {resp.status}")
+                    time.sleep(1.0)
+                    continue
+        except Exception as e:
+            last_error = e
+            time.sleep(1.0)
+            continue
+
+        try:
+            with urllib.request.urlopen(models_url, timeout=2) as resp:
+                if resp.status != 200:
+                    last_error = RuntimeError(f"/models returned HTTP {resp.status}")
+                    time.sleep(1.0)
+                    continue
+
+                payload = json.loads(resp.read().decode("utf-8"))
+                data = payload.get("data", [])
+                model_ids = [m.get("id") for m in data if m.get("id")]
+                last_model_ids = model_ids
+
+                if expected_model_id is None:
+                    if model_ids:
+                        return
+                else:
+                    if expected_model_id in model_ids:
+                        return
+                    last_error = RuntimeError(
+                        f"/models responded but expected model alias {expected_model_id!r} "
+                        f"was not present. Found: {model_ids!r}"
+                    )
+
+        except Exception as e:
+            last_error = e
+
+        time.sleep(1.0)
+
+    log_tail = tail_file(log_path) if log_path else ""
+    raise TimeoutError(
+        f"Server did not become ready within {timeout_s}s.\n"
+        f"Expected model alias: {expected_model_id!r}\n"
+        f"Tried {models_url} and {health_url}.\n"
+        f"Last model ids: {last_model_ids!r}\n"
+        f"Last error: {last_error}\n\n"
+        f"Last log lines:\n{log_tail}"
+    )
+
+
+def cfg_get(model_cfg: dict, server_cfg: dict, key: str, default=None):
+    return model_cfg.get(key, server_cfg.get(key, default))
+
+
+def add_optional_arg(cmd: list[str], model_cfg: dict, server_cfg: dict, cfg_key: str, cli_arg: str):
+    value = cfg_get(model_cfg, server_cfg, cfg_key)
+    if value is not None:
+        cmd += [cli_arg, str(value)]
+
+
+def add_optional_bool_arg(cmd: list[str], model_cfg: dict, server_cfg: dict, cfg_key: str, cli_arg: str):
+    value = cfg_get(model_cfg, server_cfg, cfg_key, False)
+    if value:
+        cmd += [cli_arg]
+
+
+def start_llama_server(server_cfg: dict, model_cfg: dict, model_path: str, model_alias: str, log_path: Path):
+    binary = str(Path(server_cfg["binary"]).resolve())
+    model_path = str(Path(model_path).resolve())
+    ctx_size = cfg_get(model_cfg, server_cfg, "ctx_size", 4096)
+    startup_timeout_s = server_cfg.get("startup_timeout_s", 180)
     base_url = server_cfg["base_url"]
-    startup_timeout_s = server_cfg["startup_timeout_s"]
-    extra_args = server_cfg.get("extra_args", [])
 
-    if not server_bin.is_file():
-        raise FileNotFoundError(f"Server binary not found: {server_bin}")
-    if not os.access(server_bin, os.X_OK):
-        raise PermissionError(f"Server binary is not executable: {server_bin}")
-    if not Path(model_path).is_file():
-        raise FileNotFoundError(f"Model file not found: {model_path}")
+    host, port = parse_host_port_from_base_url(base_url)
+
+    try:
+        wait_for_port_closed(host, port, timeout_s=5.0)
+    except TimeoutError:
+        existing_models = []
+        try:
+            existing_models = get_model_ids_from_base_url(base_url)
+        except Exception:
+            pass
+
+        raise RuntimeError(
+            f"Port {host}:{port} is already in use before starting llama-server. "
+            f"Existing server models: {existing_models!r}. "
+            f"Stop the existing server or change server.base_url/port."
+        )
+
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+    log_file = log_path.open("w", encoding="utf-8")
+
+    env = os.environ.copy()
+
+    llama_bin_dir = str(Path("engines/llama.cpp/build/bin").resolve())
+    existing_ld = env.get("LD_LIBRARY_PATH", "")
+    env["LD_LIBRARY_PATH"] = (
+        f"{llama_bin_dir}:{existing_ld}" if existing_ld else llama_bin_dir
+    )
 
     cmd = [
-        str(server_bin),
+        binary,
         "-m", model_path,
         "-c", str(ctx_size),
-        "--host", str(host),
+        "--host", host,
         "--port", str(port),
-        *map(str, extra_args),
+        "--alias", model_alias,
     ]
 
-    print("Starting llama.cpp server...")
-    print("Server binary:", server_bin)
-    print("Model:", model_path)
-    print("Host:", host)
-    print("Port:", port)
-    print("Context size:", ctx_size)
-    print("Log:", log_path)
+    add_optional_arg(cmd, model_cfg, server_cfg, "n_gpu_layers", "-ngl")
+    add_optional_arg(cmd, model_cfg, server_cfg, "threads", "-t")
+    add_optional_arg(cmd, model_cfg, server_cfg, "batch_size", "-b")
+    add_optional_arg(cmd, model_cfg, server_cfg, "ubatch_size", "-ub")
+    add_optional_arg(cmd, model_cfg, server_cfg, "parallel", "-np")
+    add_optional_arg(cmd, model_cfg, server_cfg, "ctx_size", "-c")
 
-    log_file = log_path.open("w", encoding="utf-8")
+    add_optional_bool_arg(cmd, model_cfg, server_cfg, "flash_attn", "-fa")
+    add_optional_bool_arg(cmd, model_cfg, server_cfg, "cont_batching", "-cb")
+
+    extra_args = []
+    extra_args.extend(server_cfg.get("extra_args", []) or [])
+    extra_args.extend(model_cfg.get("extra_args", []) or [])
+    cmd += [str(x) for x in extra_args]
+
+    # Remove duplicated "-c" if ctx_size was also added by add_optional_arg.
+    # The first "-c" is canonical.
+    cleaned_cmd = []
+    seen_ctx = False
+    skip_next = False
+    for i, item in enumerate(cmd):
+        if skip_next:
+            skip_next = False
+            continue
+        if item == "-c":
+            if seen_ctx:
+                skip_next = True
+                continue
+            seen_ctx = True
+        cleaned_cmd.append(item)
+    cmd = cleaned_cmd
+
     proc = subprocess.Popen(
         cmd,
         stdout=log_file,
         stderr=subprocess.STDOUT,
-        env=build_server_env(),
+        text=True,
+        preexec_fn=os.setsid,
+        cwd=str(Path.cwd()),
+        env=env,
     )
 
-    deadline = time.time() + startup_timeout_s
-    while time.time() < deadline:
-        if proc.poll() is not None:
-            log_file.flush()
-            raise RuntimeError(
-                f"llama-server exited early with code {proc.returncode}. "
-                f"Check {log_path}"
-            )
-
-        if check_server_ready(base_url):
-            print("Server is ready")
-            return proc, log_file
-
-        time.sleep(1)
-
-    proc.terminate()
     try:
-        proc.wait(timeout=5)
-    except subprocess.TimeoutExpired:
-        proc.kill()
-
-    log_file.flush()
-    raise RuntimeError(f"Server failed to become ready within {startup_timeout_s}s. Check {log_path}")
-
-
-def stop_llama_server(proc: subprocess.Popen | None, log_file):
-    if log_file is not None:
+        wait_for_server(
+            base_url=base_url,
+            timeout_s=startup_timeout_s,
+            expected_model_id=model_alias,
+            proc=proc,
+            log_path=log_path,
+        )
+        return proc, log_file
+    except Exception:
         try:
-            log_file.flush()
+            os.killpg(os.getpgid(proc.pid), signal.SIGTERM)
+        except Exception:
+            pass
+        try:
+            proc.wait(timeout=10)
+        except Exception:
+            try:
+                os.killpg(os.getpgid(proc.pid), signal.SIGKILL)
+            except Exception:
+                pass
+        log_file.close()
+        raise
+
+
+def stop_llama_server(proc, log_file, base_url: str | None = None):
+    if proc is None:
+        return
+
+    try:
+        pgid = os.getpgid(proc.pid)
+    except Exception:
+        pgid = None
+
+    try:
+        if pgid is not None:
+            os.killpg(pgid, signal.SIGTERM)
+        else:
+            proc.terminate()
+    except Exception:
+        pass
+
+    try:
+        proc.wait(timeout=20)
+    except Exception:
+        try:
+            if pgid is not None:
+                os.killpg(pgid, signal.SIGKILL)
+            else:
+                proc.kill()
+        except Exception:
+            pass
+        try:
+            proc.wait(timeout=10)
         except Exception:
             pass
 
-    if proc is None:
-        if log_file is not None:
-            log_file.close()
-        return
-
-    if proc.poll() is None:
-        print("Stopping llama.cpp server...")
-        proc.terminate()
-        try:
-            proc.wait(timeout=5)
-        except subprocess.TimeoutExpired:
-            proc.kill()
-            proc.wait(timeout=5)
-
-    if log_file is not None:
+    try:
         log_file.close()
+    except Exception:
+        pass
+
+    if base_url is not None:
+        host, port = parse_host_port_from_base_url(base_url)
+        wait_for_port_closed(host, port, timeout_s=30.0)
 
 
 # -----------------------------
@@ -427,13 +540,16 @@ def stream_model_with_inline_metrics(
     max_tokens: int,
     temperature: float,
     metrics_interval_s: float,
+    server_pid=None,
 ):
     start = time.perf_counter()
     first_token_time = None
     last_metric_time = start
 
     chunks = []
-    metric_samples = [get_system_metrics()]
+    metric_samples = []
+
+    metric_samples.append(get_system_metrics(server_pid=server_pid))
 
     stream = client.chat.completions.create(
         model=model_name,
@@ -450,17 +566,18 @@ def stream_model_with_inline_metrics(
         if delta:
             if first_token_time is None:
                 first_token_time = now
-                metric_samples.append(get_system_metrics())
+                metric_samples.append(get_system_metrics(server_pid=server_pid))
                 last_metric_time = now
 
             chunks.append(delta)
 
             if (now - last_metric_time) >= metrics_interval_s:
-                metric_samples.append(get_system_metrics())
+                metric_samples.append(get_system_metrics(server_pid=server_pid))
                 last_metric_time = now
 
     end = time.perf_counter()
-    metric_samples.append(get_system_metrics())
+
+    metric_samples.append(get_system_metrics(server_pid=server_pid))
 
     output = "".join(chunks).strip()
     output_tokens = estimate_token_count(output)
@@ -495,6 +612,7 @@ def stream_model_with_inline_metrics(
         "process_ram_mb_peak": max(proc_ram_vals) if proc_ram_vals else None,
         "temp_c_avg": temp_avg,
         "temp_c_peak": max(temp_vals) if temp_vals else None,
+        "system_metrics_trace": metric_samples,
     }
 
 
@@ -591,125 +709,258 @@ def parse_prediction(dataset_name: str, raw_output: str):
 # -----------------------------
 
 def run_dataset_benchmark(
-    client: OpenAI,
+    config: dict,
+    model_cfg: dict,
     model_name: str,
+    model_path: str,
     dataset_name: str,
-    loader_fn,
-    formatter_fn,
+    eval_loader_fn,
     max_tokens: int,
     n_samples: int,
     n_runs: int,
     temperature: float,
     metrics_interval_s: float,
+    ctx_size: int,
+    output_dir: Path,
     scorer_fn=None,
+    warmup_loader_fn=None,
+    warmup_samples: int = 10,
+    eval_offset: int = 0,
+    warmup_offset: int = 0,
 ):
     include_accuracy = scorer_fn is not None
-    run_rows = []
+    measured_run_rows = []
     all_sample_log_rows = []
+    served_model_ids_seen = []
+
+    safety_margin = 2048
+    max_prompt_tokens = max(1, ctx_size - max_tokens - safety_margin)
+
+    if warmup_loader_fn is None:
+        warmup_loader_fn = eval_loader_fn
 
     for run_idx in range(1, n_runs + 1):
-        dataset = loader_fn(n=n_samples, seed=run_idx)
-        sample_rows = []
+        server_proc = None
+        server_log_file = None
 
-        print(f"\n===== {dataset_name.upper()} RUN {run_idx}/{n_runs} =====")
-        dataset_start = time.perf_counter()
+        try:
+            if config["server"].get("launch", True):
+                server_log_path = output_dir / f"server_{dataset_name}_run_{run_idx}.log"
+                print(f"\nStarting fresh llama-server for dataset: {dataset_name}, run {run_idx}")
+                server_proc, server_log_file = start_llama_server(
+                    server_cfg=config["server"],
+                    model_cfg=model_cfg,
+                    model_path=model_path,
+                    model_alias=model_name,
+                    log_path=server_log_path,
+                )
+                print(f"llama-server ready for {dataset_name}, run {run_idx}")
+            else:
+                print(f"\nUsing already-running llama-server for dataset: {dataset_name}, run {run_idx}")
+                wait_for_server(
+                    base_url=config["server"]["base_url"],
+                    timeout_s=config["server"].get("startup_timeout_s", 60),
+                    expected_model_id=model_name,
+                    proc=None,
+                    log_path=None,
+                )
 
-        for i, sample in enumerate(dataset, start=1):
-            prompt = formatter_fn(sample)
-
-            result = stream_model_with_inline_metrics(
-                client=client,
-                model_name=model_name,
-                prompt=prompt,
-                max_tokens=max_tokens,
-                temperature=temperature,
-                metrics_interval_s=metrics_interval_s,
+            client = OpenAI(
+                base_url=config["server"]["base_url"],
+                api_key=config["server"].get("api_key", "dummy"),
             )
 
-            row = {
-                "ttft_ms": result["ttft_ms"],
-                "end_to_end_latency_ms": result["end_to_end_latency_ms"],
-                "tokens_per_sec": result["tokens_per_sec"],
-                "output_tokens": result["output_tokens"],
-                "cpu_percent_avg": result["cpu_percent_avg"],
-                "cpu_percent_peak": result["cpu_percent_peak"],
-                "ram_used_mb_peak": result["ram_used_mb_peak"],
-                "process_ram_mb_peak": result["process_ram_mb_peak"],
-                "temp_c_avg": result["temp_c_avg"],
-                "temp_c_peak": result["temp_c_peak"],
-                "raw_output": result["raw_output"],
-            }
+            served_model_id = get_served_model_id(config["server"]["base_url"])
+            if served_model_id != model_name:
+                raise RuntimeError(
+                    f"Expected llama-server to serve model alias {model_name!r}, "
+                    f"but /models returned {served_model_id!r}"
+                )
+            served_model_ids_seen.append(served_model_id)
 
-            if include_accuracy:
-                row["correct"] = scorer_fn(sample, result["raw_output"])
+            server_pid = server_proc.pid if server_proc is not None else None
 
-            sample_rows.append(row)
-
-            sample_fields = get_sample_text_fields(dataset_name, sample)
-            parsed_prediction = parse_prediction(dataset_name, result["raw_output"])
-
-            all_sample_log_rows.append({
-                "model_name": model_name,
-                "dataset_name": dataset_name,
-                "run_idx": run_idx,
-                "sample_idx": i,
-                "prompt": prompt,
-                "question": sample_fields["question"],
-                "choices": sample_fields["choices"],
-                "instruction": sample_fields["instruction"],
-                "context": sample_fields["context"],
-                "gold_answer": sample_fields["gold_answer"],
-                "parsed_prediction": parsed_prediction,
-                "correct": row.get("correct"),
-                "raw_output": result["raw_output"],
-                "output_tokens": result["output_tokens"],
-                "ttft_ms": safe_round(result["ttft_ms"], 4),
-                "end_to_end_latency_ms": safe_round(result["end_to_end_latency_ms"], 4),
-                "tokens_per_sec": safe_round(result["tokens_per_sec"], 4),
-                "cpu_percent_avg": safe_round(result["cpu_percent_avg"], 4),
-                "cpu_percent_peak": safe_round(result["cpu_percent_peak"], 4),
-                "ram_used_mb_peak": safe_round(result["ram_used_mb_peak"], 4),
-                "process_ram_mb_peak": safe_round(result["process_ram_mb_peak"], 4),
-                "temp_c_avg": safe_round(result["temp_c_avg"], 4),
-                "temp_c_peak": safe_round(result["temp_c_peak"], 4),
-            })
-
-            msg = (
-                f"[{dataset_name} {i}/{len(dataset)}] "
-                f"ttft_ms={safe_round(row['ttft_ms'], 2)} "
-                f"lat_ms={safe_round(row['end_to_end_latency_ms'], 2)} "
-                f"tok/s={safe_round(row['tokens_per_sec'], 4)}"
+            warmup_dataset = warmup_loader_fn(
+                n=warmup_samples,
+                seed=0,
+                offset=warmup_offset,
             )
-            if include_accuracy:
-                msg += f" correct={row['correct']}"
-            print(msg)
+            print(f"\n===== {dataset_name.upper()} WARMUP ({len(warmup_dataset)} samples) RUN {run_idx}/{n_runs} =====")
 
-        wall_time_s = time.perf_counter() - dataset_start
-        run_rows.append(
-            summarize_run(
-                sample_rows=sample_rows,
-                wall_time_s=wall_time_s,
-                include_accuracy=include_accuracy,
+            for i, sample in enumerate(warmup_dataset, start=1):
+                prompt = format_prompt(
+                    sample,
+                    dataset_name,
+                    max_prompt_tokens=max_prompt_tokens,
+                )
+
+                result = stream_model_with_inline_metrics(
+                    client=client,
+                    model_name=model_name,
+                    prompt=prompt,
+                    max_tokens=max_tokens,
+                    temperature=temperature,
+                    metrics_interval_s=metrics_interval_s,
+                    server_pid=server_pid,
+                )
+
+                print(
+                    f"[{dataset_name} warmup {i}/{len(warmup_dataset)}] "
+                    f"ttft_ms={safe_round(result['ttft_ms'], 2)} "
+                    f"lat_ms={safe_round(result['end_to_end_latency_ms'], 2)} "
+                    f"tok/s={safe_round(result['tokens_per_sec'], 4)} "
+                    f"temp_avg_c={safe_round(result['temp_c_avg'], 2)} "
+                    f"temp_peak_c={safe_round(result['temp_c_peak'], 2)} "
+                    f"warmup=True"
+                )
+
+            dataset = eval_loader_fn(
+                n=n_samples,
+                seed=run_idx,
+                offset=eval_offset,
             )
-        )
+            sample_rows = []
 
-    summary_row = {"Model name": model_name}
+            print(f"\n===== {dataset_name.upper()} MEASURED RUN {run_idx}/{n_runs} =====")
+            dataset_start = time.perf_counter()
 
-    cpu_peaks = [r["cpu_peak"] for r in run_rows if r["cpu_peak"] is not None]
-    ram_peaks = [r["ram_peak"] for r in run_rows if r["ram_peak"] is not None]
-    proc_ram_peaks = [r["proc_ram_peak"] for r in run_rows if r["proc_ram_peak"] is not None]
-    temp_peaks = [r["temp_peak"] for r in run_rows if r["temp_peak"] is not None]
+            for i, sample in enumerate(dataset, start=1):
+                prompt = format_prompt(
+                    sample,
+                    dataset_name,
+                    max_prompt_tokens=max_prompt_tokens,
+                )
+
+                result = stream_model_with_inline_metrics(
+                    client=client,
+                    model_name=model_name,
+                    prompt=prompt,
+                    max_tokens=max_tokens,
+                    temperature=temperature,
+                    metrics_interval_s=metrics_interval_s,
+                    server_pid=server_pid,
+                )
+
+                row = {
+                    "ttft_ms": result["ttft_ms"],
+                    "end_to_end_latency_ms": result["end_to_end_latency_ms"],
+                    "tokens_per_sec": result["tokens_per_sec"],
+                    "output_tokens": result["output_tokens"],
+                    "cpu_percent_avg": result["cpu_percent_avg"],
+                    "cpu_percent_peak": result["cpu_percent_peak"],
+                    "ram_used_mb_peak": result["ram_used_mb_peak"],
+                    "process_ram_mb_peak": result["process_ram_mb_peak"],
+                    "temp_c_avg": result["temp_c_avg"],
+                    "temp_c_peak": result["temp_c_peak"],
+                    "raw_output": result["raw_output"],
+                }
+
+                if include_accuracy:
+                    row["correct"] = scorer_fn(sample, result["raw_output"])
+
+                sample_rows.append(row)
+
+                sample_fields = get_sample_text_fields(dataset_name, sample)
+                parsed_prediction = parse_prediction(dataset_name, result["raw_output"])
+
+                log_row = {
+                    "model_name": model_name,
+                    "served_model_id": served_model_id,
+                    "model_path": model_path,
+                    "dataset_name": dataset_name,
+                    "run_idx": run_idx,
+                    "sample_idx": i,
+                    "prompt": prompt,
+                    "question": sample_fields["question"],
+                    "choices": sample_fields["choices"],
+                    "instruction": sample_fields["instruction"],
+                    "context": sample_fields["context"],
+                    "gold_answer": sample_fields["gold_answer"],
+                    "parsed_prediction": parsed_prediction,
+                    "correct": row.get("correct"),
+                    "raw_output": result["raw_output"],
+                    "output_tokens": result["output_tokens"],
+                    "ttft_ms": safe_round(result["ttft_ms"], 4),
+                    "end_to_end_latency_ms": safe_round(result["end_to_end_latency_ms"], 4),
+                    "tokens_per_sec": safe_round(result["tokens_per_sec"], 4),
+                    "cpu_percent_avg": safe_round(result["cpu_percent_avg"], 4),
+                    "cpu_percent_peak": safe_round(result["cpu_percent_peak"], 4),
+                    "ram_used_mb_peak": safe_round(result["ram_used_mb_peak"], 4),
+                    "process_ram_mb_peak": safe_round(result["process_ram_mb_peak"], 4),
+                    "temp_c_avg": safe_round(result["temp_c_avg"], 4),
+                    "temp_c_peak": safe_round(result["temp_c_peak"], 4),
+                    "system_metrics_trace_json": json.dumps(
+                        result["system_metrics_trace"],
+                        separators=(",", ":"),
+                    ),
+                }
+                all_sample_log_rows.append(log_row)
+
+                msg = (
+                    f"[{dataset_name} {i}/{len(dataset)}] "
+                    f"ttft_ms={safe_round(row['ttft_ms'], 2)} "
+                    f"lat_ms={safe_round(row['end_to_end_latency_ms'], 2)} "
+                    f"tok/s={safe_round(row['tokens_per_sec'], 4)} "
+                    f"temp_avg_c={safe_round(row['temp_c_avg'], 2)} "
+                    f"temp_peak_c={safe_round(row['temp_c_peak'], 2)}"
+                )
+                if include_accuracy:
+                    msg += f" correct={row['correct']}"
+                print(msg)
+
+            dataset_end = time.perf_counter()
+            wall_time_s = dataset_end - dataset_start
+
+            measured_run_rows.append(
+                summarize_run(
+                    sample_rows=sample_rows,
+                    wall_time_s=wall_time_s,
+                    include_accuracy=include_accuracy,
+                )
+            )
+
+        finally:
+            if server_proc is not None:
+                print(f"Stopping llama-server for dataset: {dataset_name}, run {run_idx}")
+                stop_llama_server(
+                    server_proc,
+                    server_log_file,
+                    base_url=config["server"]["base_url"],
+                )
+                time.sleep(1.0)
+
+    summary_row = {
+        "Model name": model_name,
+        "Model path": model_path,
+        "Served model id": served_model_ids_seen[0] if served_model_ids_seen else None,
+        "All served model ids": " | ".join(served_model_ids_seen),
+    }
+
+    cpu_peaks = [r["cpu_peak"] for r in measured_run_rows if r["cpu_peak"] is not None]
+    ram_peaks = [r["ram_peak"] for r in measured_run_rows if r["ram_peak"] is not None]
+    proc_ram_peaks = [r["proc_ram_peak"] for r in measured_run_rows if r["proc_ram_peak"] is not None]
+    temp_peaks = [r["temp_peak"] for r in measured_run_rows if r["temp_peak"] is not None]
 
     if include_accuracy:
-        add_mean_sd_columns(summary_row, "Accuracy", [r["accuracy"] for r in run_rows], 4)
+        add_mean_sd_columns(summary_row, "Accuracy", [r["accuracy"] for r in measured_run_rows], 4)
 
-    add_mean_sd_columns(summary_row, "TTFT ms", [r["ttft_mean"] for r in run_rows], 4)
-    add_mean_sd_columns(summary_row, "End-to-end latency ms", [r["latency_mean"] for r in run_rows], 4)
-    add_mean_sd_columns(summary_row, "Tokens/sec", [r["tps_mean"] for r in run_rows], 4)
-    add_mean_sd_columns(summary_row, "CPU percent avg", [r["cpu_avg_mean"] for r in run_rows], 4)
-    add_mean_sd_columns(summary_row, "Temp C avg", [r["temp_avg_mean"] for r in run_rows], 4)
-    add_mean_sd_columns(summary_row, "Sequential sustained tokens/sec", [r["sustained_tps"] for r in run_rows], 4)
-    add_mean_sd_columns(summary_row, "Sequential sustained samples/sec", [r["sustained_sps"] for r in run_rows], 4)
+    add_mean_sd_columns(summary_row, "TTFT ms", [r["ttft_mean"] for r in measured_run_rows], 4)
+    add_mean_sd_columns(summary_row, "End-to-end latency ms", [r["latency_mean"] for r in measured_run_rows], 4)
+    add_mean_sd_columns(summary_row, "Tokens/sec", [r["tps_mean"] for r in measured_run_rows], 4)
+    add_mean_sd_columns(summary_row, "CPU percent avg", [r["cpu_avg_mean"] for r in measured_run_rows], 4)
+    add_mean_sd_columns(summary_row, "Temp C avg", [r["temp_avg_mean"] for r in measured_run_rows], 4)
+    add_mean_sd_columns(
+        summary_row,
+        "Sequential sustained tokens/sec",
+        [r["sustained_tps"] for r in measured_run_rows],
+        4,
+    )
+    add_mean_sd_columns(
+        summary_row,
+        "Sequential sustained samples/sec",
+        [r["sustained_sps"] for r in measured_run_rows],
+        4,
+    )
 
     summary_row["CPU percent peak"] = safe_round(max(cpu_peaks), 4) if cpu_peaks else None
     summary_row["RAM used MB peak"] = safe_round(max(ram_peaks), 4) if ram_peaks else None
@@ -727,9 +978,14 @@ def run_llama_bench(llama_bench_cfg: dict):
     if not llama_bench_cfg.get("enabled", False):
         return {}
 
+    required_keys = ["binary", "model", "n_prompt", "n_gen"]
+    for key in required_keys:
+        if key not in llama_bench_cfg:
+            raise KeyError(f"Missing llama_bench config key: {key}")
+
     cmd = [
         llama_bench_cfg["binary"],
-        "-m", llama_bench_cfg["model"],
+        "-m", str(llama_bench_cfg["model"]),
         "-p", str(llama_bench_cfg["n_prompt"]),
         "-n", str(llama_bench_cfg["n_gen"]),
         "-r", str(llama_bench_cfg.get("repetitions", 1)),
@@ -738,7 +994,12 @@ def run_llama_bench(llama_bench_cfg: dict):
     if llama_bench_cfg.get("output_format", "csv") == "csv":
         cmd += ["--output", "csv"]
 
-    result = subprocess.run(cmd, capture_output=True, text=True, check=True)
+    result = subprocess.run(
+        cmd,
+        capture_output=True,
+        text=True,
+        check=True,
+    )
 
     stdout = result.stdout.strip()
     if not stdout:
@@ -771,36 +1032,173 @@ def run_llama_bench(llama_bench_cfg: dict):
 
 
 # -----------------------------
-# Save helpers
+# Per-model benchmark
 # -----------------------------
 
-def save_standard_dataset(output_dir: Path, dataset_name: str, summary_row: dict, sample_rows: list[dict]):
-    write_single_row_csv(output_dir / f"{dataset_name}.csv", summary_row)
-    write_rows_csv(output_dir / f"{dataset_name}_samples.csv", sample_rows)
-    print(f"\nSaved: {output_dir / f'{dataset_name}.csv'}")
-    print(f"Saved: {output_dir / f'{dataset_name}_samples.csv'}")
-
-
-def save_dolly_dataset(
-    output_dir: Path,
-    model_name: str,
-    dolly_row: dict,
-    dolly_samples_rows: list[dict],
-    llama_bench_cfg: dict,
+def benchmark_one_model(
+    config: dict,
+    config_path: str,
+    model_cfg: dict,
+    run_id: str,
 ):
-    llama_bench_row = run_llama_bench(llama_bench_cfg)
+    model_name = model_cfg["name"]
+    model_path = model_cfg["path"]
 
-    combined_dolly_row = {"Model name": model_name}
-    combined_dolly_row.update(
-        prefix_keys({k: v for k, v in dolly_row.items() if k != "Model name"}, "Dolly ")
-    )
-    combined_dolly_row.update(llama_bench_row)
+    metrics_interval_s = config.get("benchmark", {}).get("metrics_interval_s", 0.2)
+    temperature = config.get("generation", {}).get("temperature", 0)
+    ctx_size = model_cfg.get("ctx_size", config["server"]["ctx_size"])
 
-    write_single_row_csv(output_dir / "dolly.csv", combined_dolly_row)
-    write_rows_csv(output_dir / "dolly_samples.csv", dolly_samples_rows)
+    output_dir = RESULTS_ROOT / sanitize_model_dirname(model_name) / run_id
+    output_dir.mkdir(parents=True, exist_ok=True)
+    shutil.copy(config_path, output_dir / "config.yaml")
 
-    print(f"\nSaved: {output_dir / 'dolly.csv'}")
-    print(f"Saved: {output_dir / 'dolly_samples.csv'}")
+    print("\n==============================")
+    print(f"Benchmarking model: {model_name}")
+    print(f"Model path: {model_path}")
+    print(f"Server launch mode: {'local' if config['server'].get('launch', True) else 'external'}")
+    print(f"Results dir: {output_dir}")
+    print("==============================")
+
+    if is_dataset_enabled(config, "mmlu"):
+        mmlu_samples, mmlu_runs, mmlu_max_tokens = get_dataset_samples_runs_max_tokens(config, "mmlu")
+        mmlu_warmup_samples = get_dataset_warmup_samples(config, "mmlu")
+        mmlu_offset = get_dataset_offset(config, "mmlu")
+
+        mmlu_row, mmlu_samples_rows = run_dataset_benchmark(
+            config=config,
+            model_cfg=model_cfg,
+            model_name=model_name,
+            model_path=model_path,
+            dataset_name="mmlu",
+            eval_loader_fn=load_tiny_mmlu,
+            warmup_loader_fn=load_tiny_mmlu_few_shot,
+            max_tokens=mmlu_max_tokens,
+            n_samples=mmlu_samples,
+            n_runs=mmlu_runs,
+            warmup_samples=mmlu_warmup_samples,
+            temperature=temperature,
+            metrics_interval_s=metrics_interval_s,
+            ctx_size=ctx_size,
+            scorer_fn=score_mmlu,
+            eval_offset=mmlu_offset,
+            warmup_offset=0,
+            output_dir=output_dir,
+        )
+
+        write_single_row_csv(output_dir / "mmlu.csv", mmlu_row)
+        write_rows_csv(output_dir / "mmlu_samples.csv", mmlu_samples_rows)
+
+    if is_dataset_enabled(config, "hellaswag"):
+        hellaswag_samples, hellaswag_runs, hellaswag_max_tokens = get_dataset_samples_runs_max_tokens(config, "hellaswag")
+        hellaswag_warmup_samples = get_dataset_warmup_samples(config, "hellaswag")
+        hellaswag_offset = get_dataset_offset(config, "hellaswag")
+
+        hellaswag_row, hellaswag_samples_rows = run_dataset_benchmark(
+            config=config,
+            model_cfg=model_cfg,
+            model_name=model_name,
+            model_path=model_path,
+            dataset_name="hellaswag",
+            eval_loader_fn=load_tiny_hellaswag,
+            warmup_loader_fn=load_tiny_hellaswag_few_shot,
+            max_tokens=hellaswag_max_tokens,
+            n_samples=hellaswag_samples,
+            n_runs=hellaswag_runs,
+            warmup_samples=hellaswag_warmup_samples,
+            temperature=temperature,
+            metrics_interval_s=metrics_interval_s,
+            ctx_size=ctx_size,
+            scorer_fn=score_hellaswag,
+            eval_offset=hellaswag_offset,
+            warmup_offset=0,
+            output_dir=output_dir,
+        )
+
+        write_single_row_csv(output_dir / "hellaswag.csv", hellaswag_row)
+        write_rows_csv(output_dir / "hellaswag_samples.csv", hellaswag_samples_rows)
+
+    if is_dataset_enabled(config, "gsm8k"):
+        gsm8k_samples, gsm8k_runs, gsm8k_max_tokens = get_dataset_samples_runs_max_tokens(config, "gsm8k")
+        gsm8k_warmup_samples = get_dataset_warmup_samples(config, "gsm8k")
+        gsm8k_offset = get_dataset_offset(config, "gsm8k")
+
+        gsm8k_row, gsm8k_samples_rows = run_dataset_benchmark(
+            config=config,
+            model_cfg=model_cfg,
+            model_name=model_name,
+            model_path=model_path,
+            dataset_name="gsm8k",
+            eval_loader_fn=load_tiny_gsm8k,
+            warmup_loader_fn=load_tiny_gsm8k_few_shot,
+            max_tokens=gsm8k_max_tokens,
+            n_samples=gsm8k_samples,
+            n_runs=gsm8k_runs,
+            warmup_samples=gsm8k_warmup_samples,
+            temperature=temperature,
+            metrics_interval_s=metrics_interval_s,
+            ctx_size=ctx_size,
+            scorer_fn=score_gsm8k,
+            eval_offset=gsm8k_offset,
+            warmup_offset=0,
+            output_dir=output_dir,
+        )
+
+        write_single_row_csv(output_dir / "gsm8k.csv", gsm8k_row)
+        write_rows_csv(output_dir / "gsm8k_samples.csv", gsm8k_samples_rows)
+
+    if is_dataset_enabled(config, "dolly"):
+        dolly_samples, dolly_runs, dolly_max_tokens = get_dataset_samples_runs_max_tokens(config, "dolly")
+        dolly_warmup_samples = get_dataset_warmup_samples(config, "dolly")
+        dolly_offset = get_dataset_offset(config, "dolly")
+
+        def _dolly_warmup_loader(n, seed=None, offset=0):
+            warmup_seed = 999_000 if seed is None else 999_000 + int(seed)
+            return load_dolly_workload(
+                n=n,
+                split="train",
+                seed=warmup_seed,
+                offset=offset,
+            )
+
+        dolly_row, dolly_samples_rows = run_dataset_benchmark(
+            config=config,
+            model_cfg=model_cfg,
+            model_name=model_name,
+            model_path=model_path,
+            dataset_name="dolly",
+            eval_loader_fn=load_dolly_workload,
+            warmup_loader_fn=_dolly_warmup_loader,
+            max_tokens=dolly_max_tokens,
+            n_samples=dolly_samples,
+            n_runs=dolly_runs,
+            warmup_samples=dolly_warmup_samples,
+            temperature=temperature,
+            metrics_interval_s=metrics_interval_s,
+            ctx_size=ctx_size,
+            scorer_fn=None,
+            eval_offset=dolly_offset,
+            warmup_offset=0,
+            output_dir=output_dir,
+        )
+
+        llama_bench_cfg = dict(config.get("llama_bench", {}))
+        if llama_bench_cfg.get("enabled", False):
+            llama_bench_cfg.setdefault("model", model_path)
+
+        llama_bench_row = run_llama_bench(llama_bench_cfg)
+
+        combined_dolly_row = {"Model name": model_name, "Model path": model_path}
+        dolly_prefixed = prefix_keys(
+            {k: v for k, v in dolly_row.items() if k not in {"Model name", "Model path"}},
+            "Dolly ",
+        )
+        combined_dolly_row.update(dolly_prefixed)
+        combined_dolly_row.update(llama_bench_row)
+
+        write_single_row_csv(output_dir / "dolly.csv", combined_dolly_row)
+        write_rows_csv(output_dir / "dolly_samples.csv", dolly_samples_rows)
+
+    print(f"\nSaved results to: {output_dir}")
 
 
 # -----------------------------
@@ -811,79 +1209,29 @@ def main():
     args = parse_args()
     config = load_config(args.config)
 
-    model_name = config["model"]["name"]
-    base_url = config["server"]["base_url"]
-    api_key = config["server"]["api_key"]
-
-    metrics_interval_s = config["benchmark"]["metrics_interval_s"]
-    temperature = config["generation"]["temperature"]
-    dataset_configs = config["benchmark"]["datasets"]
-
-    enabled_datasets = [d for d in dataset_configs if d["enabled"]]
-    if not enabled_datasets:
-        raise ValueError("No datasets enabled in config.benchmark.datasets")
+    models = config.get("models", [])
+    if not models:
+        raise KeyError("Missing 'models' list in config")
 
     run_id = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    output_dir = RESULTS_ROOT / run_id
-    output_dir.mkdir(parents=True, exist_ok=True)
 
-    shutil.copy(args.config, output_dir / "config.yaml")
+    for model_cfg in models:
+        try:
+            if "name" not in model_cfg:
+                raise KeyError("Each model entry must include 'name'")
+            if "path" not in model_cfg:
+                raise KeyError("Each model entry must include 'path'")
 
-    server_proc = None
-    server_log_file = None
-
-    try:
-        if not args.no_server:
-            server_proc, server_log_file = start_llama_server(config)
-        else:
-            print("Skipping server startup because --no-server was provided")
-            if not check_server_ready(base_url):
-                raise RuntimeError(f"No server detected at {base_url}")
-
-        client = OpenAI(base_url=base_url, api_key=api_key)
-
-        print("Enabled datasets:", ", ".join(d["name"] for d in enabled_datasets))
-
-        for dataset_cfg in enabled_datasets:
-            dataset_name = dataset_cfg["name"]
-            spec = DATASET_REGISTRY[dataset_name]
-            scorer_name = spec["scorer_name"]
-            scorer_fn = SCORER_REGISTRY.get(scorer_name)
-
-            summary_row, sample_rows = run_dataset_benchmark(
-                client=client,
-                model_name=model_name,
-                dataset_name=dataset_name,
-                loader_fn=spec["loader_fn"],
-                formatter_fn=spec["formatter_fn"],
-                max_tokens=dataset_cfg["max_tokens"],
-                n_samples=dataset_cfg["samples"],
-                n_runs=dataset_cfg["runs"],
-                temperature=temperature,
-                metrics_interval_s=metrics_interval_s,
-                scorer_fn=scorer_fn,
+            benchmark_one_model(
+                config=config,
+                config_path=args.config,
+                model_cfg=model_cfg,
+                run_id=run_id,
             )
-
-            if dataset_name == "dolly":
-                save_dolly_dataset(
-                    output_dir=output_dir,
-                    model_name=model_name,
-                    dolly_row=summary_row,
-                    dolly_samples_rows=sample_rows,
-                    llama_bench_cfg=config["llama_bench"],
-                )
-            else:
-                save_standard_dataset(
-                    output_dir=output_dir,
-                    dataset_name=dataset_name,
-                    summary_row=summary_row,
-                    sample_rows=sample_rows,
-                )
-
-        print(f"\nSaved results to: {output_dir}")
-
-    finally:
-        stop_llama_server(server_proc, server_log_file)
+        except Exception as e:
+            print(f"\n[SKIP] Model failed: {model_cfg.get('name') or model_cfg.get('path')}")
+            print(e)
+            continue
 
 
 if __name__ == "__main__":

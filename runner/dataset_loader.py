@@ -7,11 +7,25 @@ from datasets import load_dataset
 # Helpers
 # -----------------------------
 
-def _load_rows(dataset_name: str, split: str, n: int, seed: int | None = None):
+def _load_rows(
+    dataset_name: str,
+    split: str,
+    n: int,
+    seed: int | None = None,
+    offset: int = 0,
+):
     dataset = load_dataset(dataset_name, split=split)
+
     if seed is not None:
         dataset = dataset.shuffle(seed=seed)
-    return dataset.select(range(min(n, len(dataset))))
+
+    start = max(0, offset)
+    end = min(start + n, len(dataset))
+
+    if start >= len(dataset):
+        return dataset.select([])
+
+    return dataset.select(range(start, end))
 
 
 def _select_fields(rows, fields: tuple[str, ...]):
@@ -25,22 +39,62 @@ def _extract_last_number(text):
     text = str(text).replace(",", "").replace("$", "").strip()
     matches = re.findall(r"-?\d+(?:\.\d+)?", text)
     if not matches:
-        return text
+        return None
 
     return matches[-1]
+
+
+def estimate_token_count(text: str):
+    if not text:
+        return 0
+    return len(re.findall(r"\S+", text))
+
+
+def truncate_text_to_tokens(text: str, max_tokens: int):
+    if not text:
+        return text
+
+    words = re.findall(r"\S+", text)
+    if len(words) <= max_tokens:
+        return text
+
+    return " ".join(words[:max_tokens])
+
+
+def truncate_prompt(prompt: str, max_prompt_tokens: int | None):
+    if max_prompt_tokens is None:
+        return prompt
+
+    tokens = estimate_token_count(prompt)
+    if tokens <= max_prompt_tokens:
+        return prompt
+
+    return truncate_text_to_tokens(prompt, max_prompt_tokens)
 
 
 # -----------------------------
 # Benchmark loaders
 # -----------------------------
 
-def load_tiny_mmlu(n=20, split="test", seed=None):
-    rows = _load_rows("tinyBenchmarks/tinyMMLU", split, n, seed=seed)
+def load_tiny_mmlu(n=20, split="test", seed=None, offset=0):
+    rows = _load_rows(
+        "tinyBenchmarks/tinyMMLU",
+        split,
+        n,
+        seed=seed,
+        offset=offset,
+    )
     return _select_fields(rows, ("question", "choices", "answer"))
 
 
-def load_tiny_hellaswag(n=20, split="validation", seed=None):
-    rows = _load_rows("tinyBenchmarks/tinyHellaswag", split, n, seed=seed)
+def load_tiny_hellaswag(n=20, split="validation", seed=None, offset=0):
+    rows = _load_rows(
+        "tinyBenchmarks/tinyHellaswag",
+        split,
+        n,
+        seed=seed,
+        offset=offset,
+    )
 
     samples = []
     for row in rows:
@@ -55,8 +109,14 @@ def load_tiny_hellaswag(n=20, split="validation", seed=None):
     return samples
 
 
-def load_tiny_gsm8k(n=20, split="test", seed=None):
-    rows = _load_rows("tinyBenchmarks/tinyGSM8k", split, n, seed=seed)
+def load_tiny_gsm8k(n=20, split="test", seed=None, offset=0):
+    rows = _load_rows(
+        "tinyBenchmarks/tinyGSM8k",
+        split,
+        n,
+        seed=seed,
+        offset=offset,
+    )
 
     samples = []
     for row in rows:
@@ -71,35 +131,42 @@ def load_tiny_gsm8k(n=20, split="test", seed=None):
 
 
 # -----------------------------
-# Few-shot loaders
+# Few-shot / warm-up loaders
 # -----------------------------
 
-def load_tiny_mmlu_few_shot(k=2, seed=None):
-    return load_tiny_mmlu(n=k, split="dev", seed=seed)
+def load_tiny_mmlu_few_shot(n=2, seed=None, offset=0):
+    return load_tiny_mmlu(n=n, split="dev", seed=seed, offset=offset)
 
 
-def load_tiny_hellaswag_few_shot(k=2, seed=None):
-    return load_tiny_hellaswag(n=k, split="train", seed=seed)
+def load_tiny_hellaswag_few_shot(n=2, seed=None, offset=0):
+    return load_tiny_hellaswag(n=n, split="train", seed=seed, offset=offset)
 
 
-def load_tiny_gsm8k_few_shot(k=2, seed=None):
-    return load_tiny_gsm8k(n=k, split="train", seed=seed)
+def load_tiny_gsm8k_few_shot(n=2, seed=None, offset=0):
+    return load_tiny_gsm8k(n=n, split="train", seed=seed, offset=offset)
 
 
 # -----------------------------
 # Dolly workload
 # -----------------------------
 
-def load_dolly_workload(n=50, split="train", seed=None):
+def load_dolly_workload(n=50, split="train", seed=None, offset=0):
     dataset = load_dataset("databricks/databricks-dolly-15k", split=split)
 
     if seed is not None:
         dataset = dataset.shuffle(seed=seed)
 
     samples = []
+    skipped = 0
+
     for row in dataset:
         if row["category"] in {"closed_qa", "open_qa"}:
             continue
+
+        if skipped < offset:
+            skipped += 1
+            continue
+
         samples.append(row)
         if len(samples) >= n:
             break
@@ -126,31 +193,48 @@ def format_mcq(sample):
 
 
 def format_gsm8k(sample):
-    return (
-        sample["question"]
-        + "\n\nSolve the problem."
-        + "\nGive the final numeric answer."
-        + "\nDo not explain."
-        + "\nAnswer: "
-    )
+    return sample["question"] + "\nAnswer: "
 
 
-def format_dolly(sample):
-    prompt = sample["instruction"]
+def format_dolly(sample, max_prompt_tokens=None):
+    instruction = sample["instruction"]
+    context = sample.get("context") or ""
 
-    if sample.get("context"):
-        prompt += "\n\nContext:\n" + sample["context"]
+    base_prompt = instruction
 
-    prompt += "\n\nResponse: "
+    if context:
+        base_prompt += "\n\nContext:\n" + context
 
-    return prompt
+    base_prompt += "\n\nResponse: "
+
+    if max_prompt_tokens is None:
+        return base_prompt
+
+    if estimate_token_count(base_prompt) <= max_prompt_tokens:
+        return base_prompt
+
+    if context:
+        instruction_part = instruction + "\n\nContext:\n"
+        suffix = "\n\nResponse: "
+
+        used_tokens = estimate_token_count(instruction_part + suffix)
+        remaining_tokens = max_prompt_tokens - used_tokens
+
+        if remaining_tokens > 0:
+            truncated_context = truncate_text_to_tokens(context, remaining_tokens)
+            return instruction_part + truncated_context + suffix
+
+    return truncate_prompt(base_prompt, max_prompt_tokens)
 
 
-def format_prompt(sample, task: str):
+def format_prompt(sample, task: str, max_prompt_tokens=None):
     if task in {"mmlu", "hellaswag"}:
-        return format_mcq(sample)
-    if task == "gsm8k":
-        return format_gsm8k(sample)
-    if task == "dolly":
-        return format_dolly(sample)
-    raise ValueError(f"Unknown task: {task}")
+        prompt = format_mcq(sample)
+    elif task == "gsm8k":
+        prompt = format_gsm8k(sample)
+    elif task == "dolly":
+        return format_dolly(sample, max_prompt_tokens=max_prompt_tokens)
+    else:
+        raise ValueError(f"Unknown task: {task}")
+
+    return truncate_prompt(prompt, max_prompt_tokens)

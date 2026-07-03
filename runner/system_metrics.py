@@ -2,20 +2,28 @@ import subprocess
 import psutil
 
 
-# Prime CPU measurement (important for non-blocking usage)
+# Prime CPU measurement for non-blocking usage
 psutil.cpu_percent(interval=None)
 
 
-def get_cpu_ram_metrics():
+def get_cpu_ram_metrics(server_pid=None):
     vm = psutil.virtual_memory()
+
+    process_ram_mb = None
+    if server_pid is not None:
+        try:
+            process_ram_mb = round(
+                psutil.Process(server_pid).memory_info().rss / 1024 / 1024,
+                2,
+            )
+        except Exception:
+            process_ram_mb = None
 
     return {
         "cpu_percent": psutil.cpu_percent(interval=None),
         "ram_used_mb": round(vm.used / 1024 / 1024, 2),
         "ram_percent": vm.percent,
-        "process_ram_mb": round(
-            psutil.Process().memory_info().rss / 1024 / 1024, 2
-        ),
+        "process_ram_mb": process_ram_mb,
     }
 
 
@@ -29,7 +37,7 @@ def get_temperature():
     3. None (fallback)
     """
 
-    # --- Raspberry Pi ---
+    # Raspberry Pi
     try:
         result = subprocess.run(
             ["vcgencmd", "measure_temp"],
@@ -43,18 +51,16 @@ def get_temperature():
     except Exception:
         pass
 
-    # --- Linux (psutil sensors) ---
+    # Linux sensors
     try:
         temps = psutil.sensors_temperatures()
         if not temps:
             return None
 
-        # Common sensor groups
         for key in ("coretemp", "cpu-thermal", "k10temp"):
             if key in temps and temps[key]:
                 return float(temps[key][0].current)
 
-        # fallback: take first available
         for entries in temps.values():
             if entries:
                 return float(entries[0].current)
@@ -62,11 +68,10 @@ def get_temperature():
     except Exception:
         pass
 
-    # --- Fallback ---
     return None
 
 
-def get_system_metrics():
-    metrics = get_cpu_ram_metrics()
+def get_system_metrics(server_pid=None):
+    metrics = get_cpu_ram_metrics(server_pid=server_pid)
     metrics["temperature_c"] = get_temperature()
     return metrics
