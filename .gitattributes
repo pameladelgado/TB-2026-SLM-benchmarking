@@ -1,3 +1,5 @@
 results/pi5/processed/pi5/raw_samples.csv filter=lfs diff=lfs merge=lfs -text
 results/pi5/processed/pi5/samples.csv filter=lfs diff=lfs merge=lfs -text
 results/pi5/processed/pi5/system_traces.csv filter=lfs diff=lfs merge=lfs -text
+/results/cpu/processed/cpu/raw_samples.csv filter=lfs diff=lfs merge=lfs -text
+/results/cpu/processed/cpu/samples.csv filter=lfs diff=lfs merge=lfs -text
