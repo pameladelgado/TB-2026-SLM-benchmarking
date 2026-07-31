@@ -1,0 +1,13 @@
+benchmark,benchmark_display,context,context_display,fastest_model,fastest_throughput_tokens_per_sec,slowest_model,slowest_throughput_tokens_per_sec,within_context_spread_x,throughput_measurement_basis,benchmark_order_position,context_order_position
+dolly,Dolly,edge,Edge,Llama 3.2 1B (Q4),9.2468075,Phi-4 Mini 3.8B (Q4),3.259096000000001,2.8372307842420095,Active generation,1,1
+dolly,Dolly,local_cpu,Local CPU,Gemma 3 1B (Q8),15.617332999999999,Ministral 3 3B (Q4),6.4069845,2.437548116434494,Active generation,1,2
+dolly,Dolly,gpu_server,GPU server,Llama 3.2 1B (bf16),98.1716,Ministral 3 14B,11.543,8.504860088365243,Run-level sustained,1,3
+gsm8k,GSM8K,edge,Edge,Llama 3.2 1B (Q4),9.49335,Phi-4 Mini 3.8B (Q4),3.10615,3.056307647731114,Active generation,2,1
+gsm8k,GSM8K,local_cpu,Local CPU,Gemma 3 1B (Q8),14.41315,Ministral 3 3B (Q4),5.75675,2.503695661614626,Active generation,2,2
+gsm8k,GSM8K,gpu_server,GPU server,Llama 3.2 1B (bf16),93.2357,Ministral 3 14B,10.4927,8.885768200749093,Run-level sustained,2,3
+hellaswag,HellaSwag,edge,Edge,Llama 3.2 1B (Q4),12.3593,Phi-4 Mini 3.8B (Q4),3.6275,3.4071123363197793,Active generation,3,1
+hellaswag,HellaSwag,local_cpu,Local CPU,Llama 3.2 1B (Q8),18.0173,Ministral 3 3B (Q4),8.2102,2.194501960975372,Active generation,3,2
+hellaswag,HellaSwag,gpu_server,GPU server,Phi-4 Mini 3.8B (bf16),9.9302,Apertus 70B (bf16),2.179,4.557228086278109,Run-level sustained,3,3
+mmlu,MMLU,edge,Edge,Llama 3.2 1B (Q4),12.6971,Phi-4 Mini 3.8B (Q4),3.5501,3.576547139517197,Active generation,4,1
+mmlu,MMLU,local_cpu,Local CPU,Llama 3.2 1B (Q8),18.1393,Ministral 3 3B (Q4),8.3479,2.1729177397908455,Active generation,4,2
+mmlu,MMLU,gpu_server,GPU server,Phi-4 Mini 3.8B (bf16),7.4781,Apertus 70B (bf16),2.2695,3.295042961004627,Run-level sustained,4,3

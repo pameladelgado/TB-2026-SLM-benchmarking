@@ -1,0 +1,3 @@
+platform,source_file,matched_models,ram_models_available,status
+cpu,/home/stephane/resource-efficiency-benchmark/results/cpu/processed/cpu/model_dataset_summary.csv,7,4,loaded
+pi5,/home/stephane/resource-efficiency-benchmark/results/pi5/processed/pi5/model_dataset_summary.csv,8,4,loaded

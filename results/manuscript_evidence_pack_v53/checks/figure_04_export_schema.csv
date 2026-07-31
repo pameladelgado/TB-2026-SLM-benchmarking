@@ -1,0 +1,3 @@
+export_file,format,one_row_per,ordering,visual_mapping
+figure_04_accuracy_by_benchmark_long.csv,long,benchmark panel × context × model,"alphabetical scored-benchmark panel order, context order, shared GSM8K-based model order",x=model configuration in context blocks with labels repeated on every panel; y=accuracy; bar fill/hatch=context
+figure_04_accuracy_by_benchmark_wide.csv,wide,context × model,"context order and shared GSM8K-based model order; columns GSM8K, HellaSwag, MMLU",one accuracy column per benchmark panel

@@ -1,0 +1,93 @@
+panel_order_position,panel_label,benchmark_order_position,dataset,shares_model_axis_with_figure_4,x_tick_labels_repeated_on_each_panel,model_axis_order_basis,context_order_position,context,context_display,model_order_position,model_display_canonical,reported_throughput_tokens_per_sec,throughput_measurement_basis,throughput_source_column,x_position
+1,(a) Dolly,1,dolly,True,True,descending GSM8K accuracy within context,1,edge,Edge,1,Phi-4 Mini 3.8B (Q4),3.259096000000001,Active generation,tokens_per_sec (sample-level pooled split acquisitions),0.0
+1,(a) Dolly,1,dolly,True,True,descending GSM8K accuracy within context,1,edge,Edge,2,SmolLM3 3B (Q4),4.060609500000001,Active generation,tokens_per_sec (sample-level pooled split acquisitions),1.0
+1,(a) Dolly,1,dolly,True,True,descending GSM8K accuracy within context,1,edge,Edge,3,Llama 3.2 1B (Q4),9.2468075,Active generation,tokens_per_sec (sample-level pooled split acquisitions),2.0
+1,(a) Dolly,1,dolly,True,True,descending GSM8K accuracy within context,1,edge,Edge,4,Gemma 3 1B (Q8),6.4955585,Active generation,tokens_per_sec (sample-level pooled split acquisitions),3.0
+1,(a) Dolly,1,dolly,True,True,descending GSM8K accuracy within context,2,local_cpu,Local CPU,1,Phi-4 Mini 3.8B (Q4),7.695255499999999,Active generation,tokens_per_sec (sample-level pooled split acquisitions),5.15
+1,(a) Dolly,1,dolly,True,True,descending GSM8K accuracy within context,2,local_cpu,Local CPU,2,Ministral 3 3B (Q4),6.4069845,Active generation,tokens_per_sec (sample-level pooled split acquisitions),6.15
+1,(a) Dolly,1,dolly,True,True,descending GSM8K accuracy within context,2,local_cpu,Local CPU,3,Gemma 3 1B (Q8),15.617332999999999,Active generation,tokens_per_sec (sample-level pooled split acquisitions),7.15
+1,(a) Dolly,1,dolly,True,True,descending GSM8K accuracy within context,2,local_cpu,Local CPU,4,Llama 3.2 1B (Q8),13.078454000000004,Active generation,tokens_per_sec (sample-level pooled split acquisitions),8.15
+1,(a) Dolly,1,dolly,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,1,Llama 3.3 70B (FP8),18.0611,Run-level sustained,sustained_tokens_per_sec,10.3
+1,(a) Dolly,1,dolly,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,2,Kimi Linear 48B-A3B (bf16),16.7262,Run-level sustained,sustained_tokens_per_sec,11.3
+1,(a) Dolly,1,dolly,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,3,Granite 4 H-Tiny (bf16),15.7345,Run-level sustained,sustained_tokens_per_sec,12.3
+1,(a) Dolly,1,dolly,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,4,Phi-4 Mini 3.8B (bf16),41.5771,Run-level sustained,sustained_tokens_per_sec,13.3
+1,(a) Dolly,1,dolly,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,5,Phi-4 Mini 3.8B (GPTQ-4),39.8179,Run-level sustained,sustained_tokens_per_sec,14.3
+1,(a) Dolly,1,dolly,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,6,Apertus 70B (bf16),12.8561,Run-level sustained,sustained_tokens_per_sec,15.3
+1,(a) Dolly,1,dolly,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,7,Ministral 3 14B,11.543,Run-level sustained,sustained_tokens_per_sec,16.3
+1,(a) Dolly,1,dolly,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,8,Qwen 3 30B-A3B (bf16),19.3169,Run-level sustained,sustained_tokens_per_sec,17.3
+1,(a) Dolly,1,dolly,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,9,Phi-4 14B (bf16),51.2466,Run-level sustained,sustained_tokens_per_sec,18.3
+1,(a) Dolly,1,dolly,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,10,Qwen 2.5 7B (AWQ),61.4421,Run-level sustained,sustained_tokens_per_sec,19.3
+1,(a) Dolly,1,dolly,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,11,Qwen 3 4B (AWQ),45.4169,Run-level sustained,sustained_tokens_per_sec,20.3
+1,(a) Dolly,1,dolly,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,12,Ministral 3 3B (AWQ),45.6278,Run-level sustained,sustained_tokens_per_sec,21.3
+1,(a) Dolly,1,dolly,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,13,Ministral 3 8B (AWQ),36.3264,Run-level sustained,sustained_tokens_per_sec,22.3
+1,(a) Dolly,1,dolly,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,14,Llama 3.2 1B (bf16),98.1716,Run-level sustained,sustained_tokens_per_sec,23.3
+1,(a) Dolly,1,dolly,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,15,Qwen 2.5 1.5B (bf16),62.8832,Run-level sustained,sustained_tokens_per_sec,24.3
+2,(b) GSM8K,2,gsm8k,True,True,descending GSM8K accuracy within context,1,edge,Edge,1,Phi-4 Mini 3.8B (Q4),3.10615,Active generation,tokens_per_sec (normalized summary),0.0
+2,(b) GSM8K,2,gsm8k,True,True,descending GSM8K accuracy within context,1,edge,Edge,2,SmolLM3 3B (Q4),4.033250000000001,Active generation,tokens_per_sec (normalized summary),1.0
+2,(b) GSM8K,2,gsm8k,True,True,descending GSM8K accuracy within context,1,edge,Edge,3,Llama 3.2 1B (Q4),9.49335,Active generation,tokens_per_sec (normalized summary),2.0
+2,(b) GSM8K,2,gsm8k,True,True,descending GSM8K accuracy within context,1,edge,Edge,4,Gemma 3 1B (Q8),6.11355,Active generation,tokens_per_sec (normalized summary),3.0
+2,(b) GSM8K,2,gsm8k,True,True,descending GSM8K accuracy within context,2,local_cpu,Local CPU,1,Phi-4 Mini 3.8B (Q4),7.44045,Active generation,tokens_per_sec (normalized summary),5.15
+2,(b) GSM8K,2,gsm8k,True,True,descending GSM8K accuracy within context,2,local_cpu,Local CPU,2,Ministral 3 3B (Q4),5.75675,Active generation,tokens_per_sec (normalized summary),6.15
+2,(b) GSM8K,2,gsm8k,True,True,descending GSM8K accuracy within context,2,local_cpu,Local CPU,3,Gemma 3 1B (Q8),14.41315,Active generation,tokens_per_sec (normalized summary),7.15
+2,(b) GSM8K,2,gsm8k,True,True,descending GSM8K accuracy within context,2,local_cpu,Local CPU,4,Llama 3.2 1B (Q8),12.466,Active generation,tokens_per_sec (normalized summary),8.15
+2,(b) GSM8K,2,gsm8k,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,1,Llama 3.3 70B (FP8),20.13545,Run-level sustained,sustained_tokens_per_sec,10.3
+2,(b) GSM8K,2,gsm8k,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,2,Kimi Linear 48B-A3B (bf16),14.9712,Run-level sustained,sustained_tokens_per_sec,11.3
+2,(b) GSM8K,2,gsm8k,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,3,Granite 4 H-Tiny (bf16),14.2918,Run-level sustained,sustained_tokens_per_sec,12.3
+2,(b) GSM8K,2,gsm8k,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,4,Phi-4 Mini 3.8B (bf16),38.8903,Run-level sustained,sustained_tokens_per_sec,13.3
+2,(b) GSM8K,2,gsm8k,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,5,Phi-4 Mini 3.8B (GPTQ-4),37.5041,Run-level sustained,sustained_tokens_per_sec,14.3
+2,(b) GSM8K,2,gsm8k,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,6,Apertus 70B (bf16),11.6737,Run-level sustained,sustained_tokens_per_sec,15.3
+2,(b) GSM8K,2,gsm8k,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,7,Ministral 3 14B,10.4927,Run-level sustained,sustained_tokens_per_sec,16.3
+2,(b) GSM8K,2,gsm8k,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,8,Qwen 3 30B-A3B (bf16),16.027,Run-level sustained,sustained_tokens_per_sec,17.3
+2,(b) GSM8K,2,gsm8k,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,9,Phi-4 14B (bf16),45.462,Run-level sustained,sustained_tokens_per_sec,18.3
+2,(b) GSM8K,2,gsm8k,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,10,Qwen 2.5 7B (AWQ),53.3724,Run-level sustained,sustained_tokens_per_sec,19.3
+2,(b) GSM8K,2,gsm8k,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,11,Qwen 3 4B (AWQ),40.2069,Run-level sustained,sustained_tokens_per_sec,20.3
+2,(b) GSM8K,2,gsm8k,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,12,Ministral 3 3B (AWQ),41.3984,Run-level sustained,sustained_tokens_per_sec,21.3
+2,(b) GSM8K,2,gsm8k,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,13,Ministral 3 8B (AWQ),34.7293,Run-level sustained,sustained_tokens_per_sec,22.3
+2,(b) GSM8K,2,gsm8k,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,14,Llama 3.2 1B (bf16),93.2357,Run-level sustained,sustained_tokens_per_sec,23.3
+2,(b) GSM8K,2,gsm8k,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,15,Qwen 2.5 1.5B (bf16),56.1786,Run-level sustained,sustained_tokens_per_sec,24.3
+3,(c) HellaSwag,3,hellaswag,True,True,descending GSM8K accuracy within context,1,edge,Edge,1,Phi-4 Mini 3.8B (Q4),3.6275,Active generation,tokens_per_sec (normalized summary),0.0
+3,(c) HellaSwag,3,hellaswag,True,True,descending GSM8K accuracy within context,1,edge,Edge,2,SmolLM3 3B (Q4),4.8776,Active generation,tokens_per_sec (normalized summary),1.0
+3,(c) HellaSwag,3,hellaswag,True,True,descending GSM8K accuracy within context,1,edge,Edge,3,Llama 3.2 1B (Q4),12.3593,Active generation,tokens_per_sec (normalized summary),2.0
+3,(c) HellaSwag,3,hellaswag,True,True,descending GSM8K accuracy within context,1,edge,Edge,4,Gemma 3 1B (Q8),5.275,Active generation,tokens_per_sec (normalized summary),3.0
+3,(c) HellaSwag,3,hellaswag,True,True,descending GSM8K accuracy within context,2,local_cpu,Local CPU,1,Phi-4 Mini 3.8B (Q4),8.27515,Active generation,tokens_per_sec (normalized summary),5.15
+3,(c) HellaSwag,3,hellaswag,True,True,descending GSM8K accuracy within context,2,local_cpu,Local CPU,2,Ministral 3 3B (Q4),8.2102,Active generation,tokens_per_sec (normalized summary),6.15
+3,(c) HellaSwag,3,hellaswag,True,True,descending GSM8K accuracy within context,2,local_cpu,Local CPU,3,Gemma 3 1B (Q8),12.81325,Active generation,tokens_per_sec (normalized summary),7.15
+3,(c) HellaSwag,3,hellaswag,True,True,descending GSM8K accuracy within context,2,local_cpu,Local CPU,4,Llama 3.2 1B (Q8),18.0173,Active generation,tokens_per_sec (normalized summary),8.15
+3,(c) HellaSwag,3,hellaswag,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,1,Llama 3.3 70B (FP8),2.4064,Run-level sustained,sustained_tokens_per_sec,10.3
+3,(c) HellaSwag,3,hellaswag,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,2,Kimi Linear 48B-A3B (bf16),4.3223,Run-level sustained,sustained_tokens_per_sec,11.3
+3,(c) HellaSwag,3,hellaswag,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,3,Granite 4 H-Tiny (bf16),2.7259,Run-level sustained,sustained_tokens_per_sec,12.3
+3,(c) HellaSwag,3,hellaswag,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,4,Phi-4 Mini 3.8B (bf16),9.9302,Run-level sustained,sustained_tokens_per_sec,13.3
+3,(c) HellaSwag,3,hellaswag,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,5,Phi-4 Mini 3.8B (GPTQ-4),9.5336,Run-level sustained,sustained_tokens_per_sec,14.3
+3,(c) HellaSwag,3,hellaswag,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,6,Apertus 70B (bf16),2.179,Run-level sustained,sustained_tokens_per_sec,15.3
+3,(c) HellaSwag,3,hellaswag,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,7,Ministral 3 14B,2.5894,Run-level sustained,sustained_tokens_per_sec,16.3
+3,(c) HellaSwag,3,hellaswag,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,8,Qwen 3 30B-A3B (bf16),2.6697,Run-level sustained,sustained_tokens_per_sec,17.3
+3,(c) HellaSwag,3,hellaswag,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,9,Phi-4 14B (bf16),2.9914,Run-level sustained,sustained_tokens_per_sec,18.3
+3,(c) HellaSwag,3,hellaswag,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,10,Qwen 2.5 7B (AWQ),2.7925,Run-level sustained,sustained_tokens_per_sec,19.3
+3,(c) HellaSwag,3,hellaswag,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,11,Qwen 3 4B (AWQ),2.766,Run-level sustained,sustained_tokens_per_sec,20.3
+3,(c) HellaSwag,3,hellaswag,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,12,Ministral 3 3B (AWQ),2.8248,Run-level sustained,sustained_tokens_per_sec,21.3
+3,(c) HellaSwag,3,hellaswag,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,13,Ministral 3 8B (AWQ),2.7755,Run-level sustained,sustained_tokens_per_sec,22.3
+3,(c) HellaSwag,3,hellaswag,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,14,Llama 3.2 1B (bf16),2.8444,Run-level sustained,sustained_tokens_per_sec,23.3
+3,(c) HellaSwag,3,hellaswag,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,15,Qwen 2.5 1.5B (bf16),2.7954,Run-level sustained,sustained_tokens_per_sec,24.3
+4,(d) MMLU,4,mmlu,True,True,descending GSM8K accuracy within context,1,edge,Edge,1,Phi-4 Mini 3.8B (Q4),3.5501,Active generation,tokens_per_sec (normalized summary),0.0
+4,(d) MMLU,4,mmlu,True,True,descending GSM8K accuracy within context,1,edge,Edge,2,SmolLM3 3B (Q4),4.6416,Active generation,tokens_per_sec (normalized summary),1.0
+4,(d) MMLU,4,mmlu,True,True,descending GSM8K accuracy within context,1,edge,Edge,3,Llama 3.2 1B (Q4),12.6971,Active generation,tokens_per_sec (normalized summary),2.0
+4,(d) MMLU,4,mmlu,True,True,descending GSM8K accuracy within context,1,edge,Edge,4,Gemma 3 1B (Q8),5.4054,Active generation,tokens_per_sec (normalized summary),3.0
+4,(d) MMLU,4,mmlu,True,True,descending GSM8K accuracy within context,2,local_cpu,Local CPU,1,Phi-4 Mini 3.8B (Q4),8.680200000000001,Active generation,tokens_per_sec (normalized summary),5.15
+4,(d) MMLU,4,mmlu,True,True,descending GSM8K accuracy within context,2,local_cpu,Local CPU,2,Ministral 3 3B (Q4),8.3479,Active generation,tokens_per_sec (normalized summary),6.15
+4,(d) MMLU,4,mmlu,True,True,descending GSM8K accuracy within context,2,local_cpu,Local CPU,3,Gemma 3 1B (Q8),13.25345,Active generation,tokens_per_sec (normalized summary),7.15
+4,(d) MMLU,4,mmlu,True,True,descending GSM8K accuracy within context,2,local_cpu,Local CPU,4,Llama 3.2 1B (Q8),18.1393,Active generation,tokens_per_sec (normalized summary),8.15
+4,(d) MMLU,4,mmlu,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,1,Llama 3.3 70B (FP8),2.46945,Run-level sustained,sustained_tokens_per_sec,10.3
+4,(d) MMLU,4,mmlu,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,2,Kimi Linear 48B-A3B (bf16),4.8177,Run-level sustained,sustained_tokens_per_sec,11.3
+4,(d) MMLU,4,mmlu,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,3,Granite 4 H-Tiny (bf16),2.68485,Run-level sustained,sustained_tokens_per_sec,12.3
+4,(d) MMLU,4,mmlu,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,4,Phi-4 Mini 3.8B (bf16),7.4781,Run-level sustained,sustained_tokens_per_sec,13.3
+4,(d) MMLU,4,mmlu,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,5,Phi-4 Mini 3.8B (GPTQ-4),6.4041,Run-level sustained,sustained_tokens_per_sec,14.3
+4,(d) MMLU,4,mmlu,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,6,Apertus 70B (bf16),2.2695,Run-level sustained,sustained_tokens_per_sec,15.3
+4,(d) MMLU,4,mmlu,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,7,Ministral 3 14B,2.5973,Run-level sustained,sustained_tokens_per_sec,16.3
+4,(d) MMLU,4,mmlu,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,8,Qwen 3 30B-A3B (bf16),2.6605,Run-level sustained,sustained_tokens_per_sec,17.3
+4,(d) MMLU,4,mmlu,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,9,Phi-4 14B (bf16),3.4968,Run-level sustained,sustained_tokens_per_sec,18.3
+4,(d) MMLU,4,mmlu,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,10,Qwen 2.5 7B (AWQ),2.8034,Run-level sustained,sustained_tokens_per_sec,19.3
+4,(d) MMLU,4,mmlu,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,11,Qwen 3 4B (AWQ),3.1882,Run-level sustained,sustained_tokens_per_sec,20.3
+4,(d) MMLU,4,mmlu,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,12,Ministral 3 3B (AWQ),2.8386,Run-level sustained,sustained_tokens_per_sec,21.3
+4,(d) MMLU,4,mmlu,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,13,Ministral 3 8B (AWQ),2.8268,Run-level sustained,sustained_tokens_per_sec,22.3
+4,(d) MMLU,4,mmlu,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,14,Llama 3.2 1B (bf16),2.8623,Run-level sustained,sustained_tokens_per_sec,23.3
+4,(d) MMLU,4,mmlu,True,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,15,Qwen 2.5 1.5B (bf16),2.8945,Run-level sustained,sustained_tokens_per_sec,24.3

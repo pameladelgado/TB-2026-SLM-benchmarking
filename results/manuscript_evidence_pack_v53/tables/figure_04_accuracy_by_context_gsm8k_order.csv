@@ -1,0 +1,70 @@
+panel_order_position,panel_label,benchmark_order_position,dataset,x_tick_labels_repeated_on_each_panel,model_axis_order_basis,context_order_position,context,context_display,model_order_position,model_display_canonical,accuracy,x_position
+1,(a) GSM8K,1,gsm8k,True,descending GSM8K accuracy within context,1,edge,Edge,1,Phi-4 Mini 3.8B (Q4),0.6389,0.0
+1,(a) GSM8K,1,gsm8k,True,descending GSM8K accuracy within context,1,edge,Edge,2,SmolLM3 3B (Q4),0.5772,1.0
+1,(a) GSM8K,1,gsm8k,True,descending GSM8K accuracy within context,1,edge,Edge,3,Llama 3.2 1B (Q4),0.5195000000000001,2.0
+1,(a) GSM8K,1,gsm8k,True,descending GSM8K accuracy within context,1,edge,Edge,4,Gemma 3 1B (Q8),0.4773,3.0
+1,(a) GSM8K,1,gsm8k,True,descending GSM8K accuracy within context,2,local_cpu,Local CPU,1,Phi-4 Mini 3.8B (Q4),0.64,5.15
+1,(a) GSM8K,1,gsm8k,True,descending GSM8K accuracy within context,2,local_cpu,Local CPU,2,Ministral 3 3B (Q4),0.5495,6.15
+1,(a) GSM8K,1,gsm8k,True,descending GSM8K accuracy within context,2,local_cpu,Local CPU,3,Gemma 3 1B (Q8),0.4715,7.15
+1,(a) GSM8K,1,gsm8k,True,descending GSM8K accuracy within context,2,local_cpu,Local CPU,4,Llama 3.2 1B (Q8),0.14,8.15
+1,(a) GSM8K,1,gsm8k,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,1,Llama 3.3 70B (FP8),0.745,10.3
+1,(a) GSM8K,1,gsm8k,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,2,Kimi Linear 48B-A3B (bf16),0.71,11.3
+1,(a) GSM8K,1,gsm8k,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,3,Granite 4 H-Tiny (bf16),0.69,12.3
+1,(a) GSM8K,1,gsm8k,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,4,Phi-4 Mini 3.8B (bf16),0.67,13.3
+1,(a) GSM8K,1,gsm8k,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,5,Phi-4 Mini 3.8B (GPTQ-4),0.61,14.3
+1,(a) GSM8K,1,gsm8k,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,6,Apertus 70B (bf16),0.601,15.3
+1,(a) GSM8K,1,gsm8k,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,7,Ministral 3 14B,0.59,16.3
+1,(a) GSM8K,1,gsm8k,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,8,Qwen 3 30B-A3B (bf16),0.59,17.3
+1,(a) GSM8K,1,gsm8k,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,9,Phi-4 14B (bf16),0.55,18.3
+1,(a) GSM8K,1,gsm8k,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,10,Qwen 2.5 7B (AWQ),0.55,19.3
+1,(a) GSM8K,1,gsm8k,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,11,Qwen 3 4B (AWQ),0.54,20.3
+1,(a) GSM8K,1,gsm8k,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,12,Ministral 3 3B (AWQ),0.51,21.3
+1,(a) GSM8K,1,gsm8k,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,13,Ministral 3 8B (AWQ),0.51,22.3
+1,(a) GSM8K,1,gsm8k,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,14,Llama 3.2 1B (bf16),0.435,23.3
+1,(a) GSM8K,1,gsm8k,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,15,Qwen 2.5 1.5B (bf16),0.39,24.3
+2,(b) HellaSwag,2,hellaswag,True,descending GSM8K accuracy within context,1,edge,Edge,1,Phi-4 Mini 3.8B (Q4),0.489,0.0
+2,(b) HellaSwag,2,hellaswag,True,descending GSM8K accuracy within context,1,edge,Edge,2,SmolLM3 3B (Q4),0.29,1.0
+2,(b) HellaSwag,2,hellaswag,True,descending GSM8K accuracy within context,1,edge,Edge,3,Llama 3.2 1B (Q4),0.251,2.0
+2,(b) HellaSwag,2,hellaswag,True,descending GSM8K accuracy within context,1,edge,Edge,4,Gemma 3 1B (Q8),0.291,3.0
+2,(b) HellaSwag,2,hellaswag,True,descending GSM8K accuracy within context,2,local_cpu,Local CPU,1,Phi-4 Mini 3.8B (Q4),0.51,5.15
+2,(b) HellaSwag,2,hellaswag,True,descending GSM8K accuracy within context,2,local_cpu,Local CPU,2,Ministral 3 3B (Q4),0.405,6.15
+2,(b) HellaSwag,2,hellaswag,True,descending GSM8K accuracy within context,2,local_cpu,Local CPU,3,Gemma 3 1B (Q8),0.29,7.15
+2,(b) HellaSwag,2,hellaswag,True,descending GSM8K accuracy within context,2,local_cpu,Local CPU,4,Llama 3.2 1B (Q8),0.29,8.15
+2,(b) HellaSwag,2,hellaswag,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,1,Llama 3.3 70B (FP8),0.835,10.3
+2,(b) HellaSwag,2,hellaswag,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,2,Kimi Linear 48B-A3B (bf16),0.24,11.3
+2,(b) HellaSwag,2,hellaswag,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,3,Granite 4 H-Tiny (bf16),0.64,12.3
+2,(b) HellaSwag,2,hellaswag,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,4,Phi-4 Mini 3.8B (bf16),0.53,13.3
+2,(b) HellaSwag,2,hellaswag,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,5,Phi-4 Mini 3.8B (GPTQ-4),0.55,14.3
+2,(b) HellaSwag,2,hellaswag,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,6,Apertus 70B (bf16),0.41,15.3
+2,(b) HellaSwag,2,hellaswag,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,7,Ministral 3 14B,0.57,16.3
+2,(b) HellaSwag,2,hellaswag,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,8,Qwen 3 30B-A3B (bf16),0.79,17.3
+2,(b) HellaSwag,2,hellaswag,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,9,Phi-4 14B (bf16),0.85,18.3
+2,(b) HellaSwag,2,hellaswag,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,10,Qwen 2.5 7B (AWQ),0.59,19.3
+2,(b) HellaSwag,2,hellaswag,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,11,Qwen 3 4B (AWQ),0.69,20.3
+2,(b) HellaSwag,2,hellaswag,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,12,Ministral 3 3B (AWQ),0.46,21.3
+2,(b) HellaSwag,2,hellaswag,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,13,Ministral 3 8B (AWQ),0.64,22.3
+2,(b) HellaSwag,2,hellaswag,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,14,Llama 3.2 1B (bf16),0.23,23.3
+2,(b) HellaSwag,2,hellaswag,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,15,Qwen 2.5 1.5B (bf16),0.25,24.3
+3,(c) MMLU,3,mmlu,True,descending GSM8K accuracy within context,1,edge,Edge,1,Phi-4 Mini 3.8B (Q4),0.564,0.0
+3,(c) MMLU,3,mmlu,True,descending GSM8K accuracy within context,1,edge,Edge,2,SmolLM3 3B (Q4),0.52,1.0
+3,(c) MMLU,3,mmlu,True,descending GSM8K accuracy within context,1,edge,Edge,3,Llama 3.2 1B (Q4),0.395,2.0
+3,(c) MMLU,3,mmlu,True,descending GSM8K accuracy within context,1,edge,Edge,4,Gemma 3 1B (Q8),0.315,3.0
+3,(c) MMLU,3,mmlu,True,descending GSM8K accuracy within context,2,local_cpu,Local CPU,1,Phi-4 Mini 3.8B (Q4),0.54,5.15
+3,(c) MMLU,3,mmlu,True,descending GSM8K accuracy within context,2,local_cpu,Local CPU,2,Ministral 3 3B (Q4),0.63,6.15
+3,(c) MMLU,3,mmlu,True,descending GSM8K accuracy within context,2,local_cpu,Local CPU,3,Gemma 3 1B (Q8),0.31,7.15
+3,(c) MMLU,3,mmlu,True,descending GSM8K accuracy within context,2,local_cpu,Local CPU,4,Llama 3.2 1B (Q8),0.38,8.15
+3,(c) MMLU,3,mmlu,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,1,Llama 3.3 70B (FP8),0.802,10.3
+3,(c) MMLU,3,mmlu,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,2,Kimi Linear 48B-A3B (bf16),0.45,11.3
+3,(c) MMLU,3,mmlu,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,3,Granite 4 H-Tiny (bf16),0.58,12.3
+3,(c) MMLU,3,mmlu,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,4,Phi-4 Mini 3.8B (bf16),0.63,13.3
+3,(c) MMLU,3,mmlu,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,5,Phi-4 Mini 3.8B (GPTQ-4),0.6,14.3
+3,(c) MMLU,3,mmlu,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,6,Apertus 70B (bf16),0.61,15.3
+3,(c) MMLU,3,mmlu,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,7,Ministral 3 14B,0.7,16.3
+3,(c) MMLU,3,mmlu,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,8,Qwen 3 30B-A3B (bf16),0.816,17.3
+3,(c) MMLU,3,mmlu,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,9,Phi-4 14B (bf16),0.82,18.3
+3,(c) MMLU,3,mmlu,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,10,Qwen 2.5 7B (AWQ),0.67,19.3
+3,(c) MMLU,3,mmlu,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,11,Qwen 3 4B (AWQ),0.71,20.3
+3,(c) MMLU,3,mmlu,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,12,Ministral 3 3B (AWQ),0.64,21.3
+3,(c) MMLU,3,mmlu,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,13,Ministral 3 8B (AWQ),0.66,22.3
+3,(c) MMLU,3,mmlu,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,14,Llama 3.2 1B (bf16),0.43,23.3
+3,(c) MMLU,3,mmlu,True,descending GSM8K accuracy within context,3,gpu_server,GPU server,15,Qwen 2.5 1.5B (bf16),0.52,24.3

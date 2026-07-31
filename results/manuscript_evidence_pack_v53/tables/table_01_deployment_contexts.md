@@ -1,0 +1,7 @@
+### Deployment contexts used to organize the evaluation.
+
+| Context    | Hardware envelope                                  | Backend            | Model scale                       | Operational objective              | Workload profile                 | Binding constraint                    |
+|------------|----------------------------------------------------|--------------------|-----------------------------------|------------------------------------|----------------------------------|---------------------------------------|
+| Edge       | Raspberry Pi 5; 4 cores; 8 GB RAM; no GPU          | llama.cpp          | up to ≈4B, quantized              | feasibility first, then accuracy   | short interactive requests       | RAM, then thermal/latency             |
+| Local CPU  | Laptop CPU; 12 threads; 30 GB RAM; no discrete GPU | llama.cpp (Podman) | ≈1B–4B, quantized in current pool | responsiveness under memory budget | short-to-mid generation          | latency                               |
+| GPU server | 2× RTX PRO 6000 Blackwell; ≈96 GiB VRAM each       | vLLM               | up to ≈70B; bf16/fp8/AWQ/GPTQ     | accuracy and throughput            | mixed, including long generation | accuracy–latency/throughput trade-off |

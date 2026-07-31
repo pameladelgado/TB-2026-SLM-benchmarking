@@ -1,0 +1,5 @@
+benchmark_order_position,benchmark,benchmark_display
+1,dolly,Dolly
+2,gsm8k,GSM8K
+3,hellaswag,HellaSwag
+4,mmlu,MMLU

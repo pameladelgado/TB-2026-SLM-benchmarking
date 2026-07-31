@@ -1,0 +1,2 @@
+source_kind,path,status,usable_vram_measurements,selected_for_figure
+system_traces.csv,/home/stephane/resource-efficiency-benchmark/results/processed/vllm/system_traces.csv,selected,862589,True

@@ -1,0 +1,16 @@
+model_order_position,model_order_basis,model_configuration,hellaswag,mmlu
+1,increasing Dolly mean GPU energy per request,Llama 3.2 1B (bf16),23.501883273977878,23.484335158205855
+2,increasing Dolly mean GPU energy per request,Qwen 2.5 1.5B (bf16),24.10173484454375,24.18312163122014
+3,increasing Dolly mean GPU energy per request,Ministral 3 3B (AWQ),24.533611141662483,24.44140296529129
+4,increasing Dolly mean GPU energy per request,Qwen 2.5 7B (AWQ),26.414565483808275,26.49390010187847
+5,increasing Dolly mean GPU energy per request,Qwen 3 4B (AWQ),25.566799458636446,25.497716119317143
+6,increasing Dolly mean GPU energy per request,Phi-4 Mini 3.8B (GPTQ-4),26.649710153379484,26.154059995617953
+7,increasing Dolly mean GPU energy per request,Ministral 3 8B (AWQ),26.952173866104346,26.548779594320038
+8,increasing Dolly mean GPU energy per request,Phi-4 Mini 3.8B (bf16),28.33149360997871,28.59520120967109
+9,increasing Dolly mean GPU energy per request,Qwen 3 30B-A3B (bf16),30.729507544698077,30.642567163729026
+10,increasing Dolly mean GPU energy per request,Kimi Linear 48B-A3B (bf16),41.087010436224666,40.462379676135576
+11,increasing Dolly mean GPU energy per request,Phi-4 14B (bf16),36.807503537389586,37.107629008626425
+12,increasing Dolly mean GPU energy per request,Granite 4 H-Tiny (bf16),34.45842687562721,33.189677691450626
+13,increasing Dolly mean GPU energy per request,Ministral 3 14B,35.33604486863685,35.310147622246966
+14,increasing Dolly mean GPU energy per request,Llama 3.3 70B (FP8),57.86868064235152,59.23286794094912
+15,increasing Dolly mean GPU energy per request,Apertus 70B (bf16),91.88432989396883,102.56137069176695

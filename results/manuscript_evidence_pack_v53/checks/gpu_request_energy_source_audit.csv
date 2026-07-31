@@ -1,0 +1,7 @@
+source_kind,path,status,usable_request_energy_rows
+system_traces.csv integration,/home/stephane/resource-efficiency-benchmark/results/processed/vllm/system_traces.csv,usable,6600
+system_traces.csv integration,/home/stephane/resource-efficiency-benchmark/results/cpu/processed/cpu/system_traces.csv,no usable request energy,0
+system_traces.csv integration,/home/stephane/resource-efficiency-benchmark/results/pi5/processed/pi5/system_traces.csv,no usable request energy,0
+samples.csv fallback,/home/stephane/resource-efficiency-benchmark/results/processed/vllm/samples.csv,usable,66000
+samples.csv fallback,/home/stephane/resource-efficiency-benchmark/results/cpu/processed/cpu/samples.csv,no usable request energy,0
+samples.csv fallback,/home/stephane/resource-efficiency-benchmark/results/pi5/processed/pi5/samples.csv,no usable request energy,0

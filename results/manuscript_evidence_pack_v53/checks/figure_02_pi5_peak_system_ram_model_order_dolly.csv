@@ -1,0 +1,5 @@
+model_configuration,dolly_peak_memory_gib,dolly_measurement_missing,model_order_position,sort_direction,memory_metric_column,memory_resource
+Llama 3.2 1B (Q4),2.491640625,False,1,increasing Dolly peak memory,ram_used_mb_peak,Peak system RAM (GiB)
+Gemma 3 1B (Q8),2.717744140625,False,2,increasing Dolly peak memory,ram_used_mb_peak,Peak system RAM (GiB)
+SmolLM3 3B (Q4),5.7957421875,False,3,increasing Dolly peak memory,ram_used_mb_peak,Peak system RAM (GiB)
+Phi-4 Mini 3.8B (Q4),7.49509765625,False,4,increasing Dolly peak memory,ram_used_mb_peak,Peak system RAM (GiB)

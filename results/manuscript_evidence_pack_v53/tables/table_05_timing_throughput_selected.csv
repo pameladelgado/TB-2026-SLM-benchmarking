@@ -1,0 +1,20 @@
+Context,Model,Dataset,TTFT (ms),Latency (ms),Reported throughput (tokens/s),Throughput basis
+GPU server,Apertus 70B (bf16),Dolly,213.3136,10525.2959,12.8561,Run-level sustained
+GPU server,Llama 3.2 1B (bf16),Dolly,128.8726,1119.7989,98.1716,Run-level sustained
+GPU server,Llama 3.3 70B (FP8),Dolly,182.2217,6287.6661,18.0611,Run-level sustained
+GPU server,Ministral 3 14B,Dolly,164.5004,9962.0444,11.543,Run-level sustained
+GPU server,Ministral 3 3B (AWQ),Dolly,132.1595,2529.8107,45.6278,Run-level sustained
+GPU server,Ministral 3 8B (AWQ),Dolly,135.2189,3201.7247,36.3264,Run-level sustained
+GPU server,Phi-4 14B (bf16),Dolly,144.2745,2478.3745,51.2466,Run-level sustained
+GPU server,Phi-4 Mini 3.8B (bf16),Dolly,140.1295,2544.9775,41.5771,Run-level sustained
+GPU server,Qwen 2.5 1.5B (bf16),Dolly,132.0906,1604.3265,62.8832,Run-level sustained
+GPU server,Qwen 3 30B-A3B (bf16),Dolly,155.0563,6103.1354,19.3169,Run-level sustained
+Local CPU,Phi-4 Mini 3.8B (Q4),GSM8K,2412.3215499999997,18628.5681,7.44045,Active generation
+Edge,Phi-4 Mini 3.8B (Q4),GSM8K,2873.3363499999996,42039.66825,3.10615,Active generation
+Edge,Llama 3.2 1B (Q4),GSM8K,849.7081000000001,16013.136750000001,9.49335,Active generation
+GPU server,Llama 3.2 1B (bf16),GSM8K,128.7147,1097.9795,93.2357,Run-level sustained
+Local CPU,Ministral 3 3B (Q4),MMLU,5580.9905,5702.32495,8.3479,Active generation
+Local CPU,Phi-4 Mini 3.8B (Q4),MMLU,4079.3762,4396.0228,8.680200000000001,Active generation
+Local CPU,Gemma 3 1B (Q8),MMLU,1048.1646,1128.2178,13.25345,Active generation
+Edge,Phi-4 Mini 3.8B (Q4),MMLU,5798.4835,6552.3542,3.5501,Active generation
+Edge,Llama 3.2 1B (Q4),MMLU,1692.7026,1775.7908,12.6971,Active generation

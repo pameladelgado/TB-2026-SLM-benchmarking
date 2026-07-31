@@ -1,0 +1,28 @@
+context,dataset,fact_type,model,value,unit,measurement_basis
+edge,mmlu,highest_accuracy,Phi-4 Mini 3.8B (Q4),0.564,accuracy,
+edge,mmlu,lowest_latency,Gemma 3 1B (Q8),1566.4855,ms,
+edge,mmlu,highest_context_specific_throughput,Llama 3.2 1B (Q4),12.6971,tokens/s,Active generation
+edge,gsm8k,highest_accuracy,Phi-4 Mini 3.8B (Q4),0.6389,accuracy,
+edge,gsm8k,lowest_latency,Llama 3.2 1B (Q4),16013.136750000001,ms,
+edge,gsm8k,highest_context_specific_throughput,Llama 3.2 1B (Q4),9.49335,tokens/s,Active generation
+edge,hellaswag,highest_accuracy,Phi-4 Mini 3.8B (Q4),0.489,accuracy,
+edge,hellaswag,lowest_latency,Gemma 3 1B (Q8),2055.9441,ms,
+edge,hellaswag,highest_context_specific_throughput,Llama 3.2 1B (Q4),12.3593,tokens/s,Active generation
+local_cpu,mmlu,highest_accuracy,Ministral 3 3B (Q4),0.63,accuracy,
+local_cpu,mmlu,lowest_latency,Gemma 3 1B (Q8),1128.2178,ms,
+local_cpu,mmlu,highest_context_specific_throughput,Llama 3.2 1B (Q8),18.1393,tokens/s,Active generation
+local_cpu,gsm8k,highest_accuracy,Phi-4 Mini 3.8B (Q4),0.64,accuracy,
+local_cpu,gsm8k,lowest_latency,Llama 3.2 1B (Q8),3220.7195,ms,
+local_cpu,gsm8k,highest_context_specific_throughput,Gemma 3 1B (Q8),14.41315,tokens/s,Active generation
+local_cpu,hellaswag,highest_accuracy,Phi-4 Mini 3.8B (Q4),0.51,accuracy,
+local_cpu,hellaswag,lowest_latency,Gemma 3 1B (Q8),1552.08495,ms,
+local_cpu,hellaswag,highest_context_specific_throughput,Llama 3.2 1B (Q8),18.0173,tokens/s,Active generation
+gpu_server,mmlu,highest_accuracy,Phi-4 14B (bf16),0.82,accuracy,
+gpu_server,mmlu,lowest_latency,Llama 3.2 1B (bf16),239.4302,ms,
+gpu_server,mmlu,highest_context_specific_throughput,Phi-4 Mini 3.8B (bf16),7.4781,tokens/s,Run-level sustained
+gpu_server,gsm8k,highest_accuracy,Llama 3.3 70B (FP8),0.745,accuracy,
+gpu_server,gsm8k,lowest_latency,Llama 3.2 1B (bf16),1097.9795,ms,
+gpu_server,gsm8k,highest_context_specific_throughput,Llama 3.2 1B (bf16),93.2357,tokens/s,Run-level sustained
+gpu_server,hellaswag,highest_accuracy,Phi-4 14B (bf16),0.85,accuracy,
+gpu_server,hellaswag,lowest_latency,Llama 3.2 1B (bf16),240.5751,ms,
+gpu_server,hellaswag,highest_context_specific_throughput,Phi-4 Mini 3.8B (bf16),9.9302,tokens/s,Run-level sustained

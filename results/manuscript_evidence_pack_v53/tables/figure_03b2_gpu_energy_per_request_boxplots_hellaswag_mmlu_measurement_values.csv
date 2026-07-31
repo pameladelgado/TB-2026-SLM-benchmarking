@@ -1,0 +1,3401 @@
+model_configuration,dataset,energy_j
+Llama 3.2 1B (bf16),hellaswag,22.506751856666668
+Llama 3.2 1B (bf16),hellaswag,23.260114455000004
+Llama 3.2 1B (bf16),hellaswag,22.165152606250004
+Llama 3.2 1B (bf16),hellaswag,22.74348342
+Llama 3.2 1B (bf16),hellaswag,23.669887474523808
+Llama 3.2 1B (bf16),hellaswag,24.071237264
+Llama 3.2 1B (bf16),hellaswag,23.13723397666666
+Llama 3.2 1B (bf16),hellaswag,22.819499928333336
+Llama 3.2 1B (bf16),hellaswag,24.46035980666667
+Llama 3.2 1B (bf16),hellaswag,23.678035588
+Llama 3.2 1B (bf16),hellaswag,24.76505791
+Llama 3.2 1B (bf16),hellaswag,24.278532075000008
+Llama 3.2 1B (bf16),hellaswag,23.5831386845
+Llama 3.2 1B (bf16),hellaswag,23.37846299666667
+Llama 3.2 1B (bf16),hellaswag,22.974711964999997
+Llama 3.2 1B (bf16),hellaswag,23.82572750375
+Llama 3.2 1B (bf16),hellaswag,23.46398853166667
+Llama 3.2 1B (bf16),hellaswag,23.681402441
+Llama 3.2 1B (bf16),hellaswag,23.71422240199999
+Llama 3.2 1B (bf16),hellaswag,23.13290195875
+Llama 3.2 1B (bf16),hellaswag,23.470163303750002
+Llama 3.2 1B (bf16),hellaswag,23.324862245000006
+Llama 3.2 1B (bf16),hellaswag,23.770202958333336
+Llama 3.2 1B (bf16),hellaswag,23.92177775624999
+Llama 3.2 1B (bf16),hellaswag,23.986278183750002
+Llama 3.2 1B (bf16),hellaswag,24.157200926250002
+Llama 3.2 1B (bf16),hellaswag,23.810832903125004
+Llama 3.2 1B (bf16),hellaswag,23.619006119444443
+Llama 3.2 1B (bf16),hellaswag,23.927685491666665
+Llama 3.2 1B (bf16),hellaswag,23.894405632777772
+Llama 3.2 1B (bf16),hellaswag,24.258213872777777
+Llama 3.2 1B (bf16),hellaswag,23.618873146000002
+Llama 3.2 1B (bf16),hellaswag,24.085336882000004
+Llama 3.2 1B (bf16),hellaswag,24.607291868500003
+Llama 3.2 1B (bf16),hellaswag,23.004712798000003
+Llama 3.2 1B (bf16),hellaswag,23.15512995277778
+Llama 3.2 1B (bf16),hellaswag,22.731810558999996
+Llama 3.2 1B (bf16),hellaswag,22.98053589
+Llama 3.2 1B (bf16),hellaswag,23.690826615
+Llama 3.2 1B (bf16),hellaswag,23.444781355000003
+Llama 3.2 1B (bf16),hellaswag,23.86211164277778
+Llama 3.2 1B (bf16),hellaswag,23.275593550555556
+Llama 3.2 1B (bf16),hellaswag,22.506015132
+Llama 3.2 1B (bf16),hellaswag,23.218866227
+Llama 3.2 1B (bf16),hellaswag,24.053832969999995
+Llama 3.2 1B (bf16),hellaswag,23.687420593333336
+Llama 3.2 1B (bf16),hellaswag,22.22158189611111
+Llama 3.2 1B (bf16),hellaswag,22.707008021500002
+Llama 3.2 1B (bf16),hellaswag,23.881815480500006
+Llama 3.2 1B (bf16),hellaswag,23.916743993
+Llama 3.2 1B (bf16),hellaswag,22.604092257222224
+Llama 3.2 1B (bf16),hellaswag,23.359954191250008
+Llama 3.2 1B (bf16),hellaswag,22.80051071625
+Llama 3.2 1B (bf16),hellaswag,23.64681492888889
+Llama 3.2 1B (bf16),hellaswag,23.9572909855
+Llama 3.2 1B (bf16),hellaswag,23.183327879999997
+Llama 3.2 1B (bf16),hellaswag,23.17941580350001
+Llama 3.2 1B (bf16),hellaswag,24.246504482
+Llama 3.2 1B (bf16),hellaswag,23.184728326
+Llama 3.2 1B (bf16),hellaswag,23.55278479
+Llama 3.2 1B (bf16),hellaswag,22.9366877125
+Llama 3.2 1B (bf16),hellaswag,24.375092197000004
+Llama 3.2 1B (bf16),hellaswag,23.673168288000003
+Llama 3.2 1B (bf16),hellaswag,23.745636745000002
+Llama 3.2 1B (bf16),hellaswag,22.496259806666664
+Llama 3.2 1B (bf16),hellaswag,23.086172990555553
+Llama 3.2 1B (bf16),hellaswag,23.470923842499996
+Llama 3.2 1B (bf16),hellaswag,23.382119507777773
+Llama 3.2 1B (bf16),hellaswag,23.44156956
+Llama 3.2 1B (bf16),hellaswag,23.313540878888894
+Llama 3.2 1B (bf16),hellaswag,23.749690833333325
+Llama 3.2 1B (bf16),hellaswag,24.493386586111114
+Llama 3.2 1B (bf16),hellaswag,23.20047749611111
+Llama 3.2 1B (bf16),hellaswag,23.32371846
+Llama 3.2 1B (bf16),hellaswag,24.109980397499996
+Llama 3.2 1B (bf16),hellaswag,24.454027989999997
+Llama 3.2 1B (bf16),hellaswag,24.33478726
+Llama 3.2 1B (bf16),hellaswag,24.244186696
+Llama 3.2 1B (bf16),hellaswag,23.353000777222217
+Llama 3.2 1B (bf16),hellaswag,23.597489853888884
+Llama 3.2 1B (bf16),hellaswag,23.168988354444448
+Llama 3.2 1B (bf16),hellaswag,22.990826462
+Llama 3.2 1B (bf16),hellaswag,24.83995363
+Llama 3.2 1B (bf16),hellaswag,24.643712981666667
+Llama 3.2 1B (bf16),hellaswag,23.672423239500002
+Llama 3.2 1B (bf16),hellaswag,23.973525933888883
+Llama 3.2 1B (bf16),hellaswag,22.693267972222223
+Llama 3.2 1B (bf16),hellaswag,23.18304018055555
+Llama 3.2 1B (bf16),hellaswag,23.297971995
+Llama 3.2 1B (bf16),hellaswag,22.8221861655
+Llama 3.2 1B (bf16),hellaswag,22.475649002777775
+Llama 3.2 1B (bf16),hellaswag,22.713472985
+Llama 3.2 1B (bf16),hellaswag,23.359766411999995
+Llama 3.2 1B (bf16),hellaswag,22.5211518335
+Llama 3.2 1B (bf16),hellaswag,23.630430479999998
+Llama 3.2 1B (bf16),hellaswag,25.088327036
+Llama 3.2 1B (bf16),hellaswag,23.46839589444444
+Llama 3.2 1B (bf16),hellaswag,23.082175808999995
+Llama 3.2 1B (bf16),hellaswag,22.985665949999998
+Llama 3.2 1B (bf16),hellaswag,22.979232030000002
+Qwen 2.5 1.5B (bf16),hellaswag,23.27251653875
+Qwen 2.5 1.5B (bf16),hellaswag,23.245254136250004
+Qwen 2.5 1.5B (bf16),hellaswag,24.16299805333334
+Qwen 2.5 1.5B (bf16),hellaswag,24.426994917499997
+Qwen 2.5 1.5B (bf16),hellaswag,24.76809700333333
+Qwen 2.5 1.5B (bf16),hellaswag,24.76926734
+Qwen 2.5 1.5B (bf16),hellaswag,24.277220489444442
+Qwen 2.5 1.5B (bf16),hellaswag,24.29042542625
+Qwen 2.5 1.5B (bf16),hellaswag,23.73455180166667
+Qwen 2.5 1.5B (bf16),hellaswag,25.827780939000007
+Qwen 2.5 1.5B (bf16),hellaswag,24.575327745
+Qwen 2.5 1.5B (bf16),hellaswag,24.997174320000003
+Qwen 2.5 1.5B (bf16),hellaswag,24.299264929
+Qwen 2.5 1.5B (bf16),hellaswag,24.062061033888888
+Qwen 2.5 1.5B (bf16),hellaswag,23.440992885000004
+Qwen 2.5 1.5B (bf16),hellaswag,23.419469673333335
+Qwen 2.5 1.5B (bf16),hellaswag,23.833088611666664
+Qwen 2.5 1.5B (bf16),hellaswag,24.093478445
+Qwen 2.5 1.5B (bf16),hellaswag,24.153370911999996
+Qwen 2.5 1.5B (bf16),hellaswag,24.062922790000002
+Qwen 2.5 1.5B (bf16),hellaswag,23.596934926666663
+Qwen 2.5 1.5B (bf16),hellaswag,23.634815340000007
+Qwen 2.5 1.5B (bf16),hellaswag,24.36522658
+Qwen 2.5 1.5B (bf16),hellaswag,24.240340278
+Qwen 2.5 1.5B (bf16),hellaswag,24.383817575
+Qwen 2.5 1.5B (bf16),hellaswag,24.648016644999995
+Qwen 2.5 1.5B (bf16),hellaswag,24.881439456666666
+Qwen 2.5 1.5B (bf16),hellaswag,25.34780243833334
+Qwen 2.5 1.5B (bf16),hellaswag,23.205729836666666
+Qwen 2.5 1.5B (bf16),hellaswag,23.429011909
+Qwen 2.5 1.5B (bf16),hellaswag,23.600607102999994
+Qwen 2.5 1.5B (bf16),hellaswag,23.557224003999995
+Qwen 2.5 1.5B (bf16),hellaswag,23.865217336000004
+Qwen 2.5 1.5B (bf16),hellaswag,24.018426001000005
+Qwen 2.5 1.5B (bf16),hellaswag,24.21551526944444
+Qwen 2.5 1.5B (bf16),hellaswag,23.806665225999996
+Qwen 2.5 1.5B (bf16),hellaswag,23.465239556666667
+Qwen 2.5 1.5B (bf16),hellaswag,25.362544287499997
+Qwen 2.5 1.5B (bf16),hellaswag,23.92703310944444
+Qwen 2.5 1.5B (bf16),hellaswag,24.323807806666665
+Qwen 2.5 1.5B (bf16),hellaswag,23.379010418000004
+Qwen 2.5 1.5B (bf16),hellaswag,25.17927423222222
+Qwen 2.5 1.5B (bf16),hellaswag,23.818792597222224
+Qwen 2.5 1.5B (bf16),hellaswag,23.333384249999995
+Qwen 2.5 1.5B (bf16),hellaswag,24.147349401666663
+Qwen 2.5 1.5B (bf16),hellaswag,24.10331429888889
+Qwen 2.5 1.5B (bf16),hellaswag,23.363142400625
+Qwen 2.5 1.5B (bf16),hellaswag,23.86985749
+Qwen 2.5 1.5B (bf16),hellaswag,23.507596923
+Qwen 2.5 1.5B (bf16),hellaswag,23.461932519000005
+Qwen 2.5 1.5B (bf16),hellaswag,23.455658380000003
+Qwen 2.5 1.5B (bf16),hellaswag,23.305686404444447
+Qwen 2.5 1.5B (bf16),hellaswag,23.2564324075
+Qwen 2.5 1.5B (bf16),hellaswag,23.361791869000008
+Qwen 2.5 1.5B (bf16),hellaswag,24.700783106499998
+Qwen 2.5 1.5B (bf16),hellaswag,23.758127543
+Qwen 2.5 1.5B (bf16),hellaswag,24.0569630075
+Qwen 2.5 1.5B (bf16),hellaswag,23.445990994499997
+Qwen 2.5 1.5B (bf16),hellaswag,23.756592426000005
+Qwen 2.5 1.5B (bf16),hellaswag,24.288420041000002
+Qwen 2.5 1.5B (bf16),hellaswag,24.887977336666662
+Qwen 2.5 1.5B (bf16),hellaswag,24.4197261675
+Qwen 2.5 1.5B (bf16),hellaswag,24.981729954000002
+Qwen 2.5 1.5B (bf16),hellaswag,23.969331567999998
+Qwen 2.5 1.5B (bf16),hellaswag,23.882205944375002
+Qwen 2.5 1.5B (bf16),hellaswag,24.483819041249994
+Qwen 2.5 1.5B (bf16),hellaswag,23.922644258333335
+Qwen 2.5 1.5B (bf16),hellaswag,24.16977246666666
+Qwen 2.5 1.5B (bf16),hellaswag,25.133374299
+Qwen 2.5 1.5B (bf16),hellaswag,24.187217522999994
+Qwen 2.5 1.5B (bf16),hellaswag,23.592614185000002
+Qwen 2.5 1.5B (bf16),hellaswag,24.452910523750003
+Qwen 2.5 1.5B (bf16),hellaswag,23.736459464444447
+Qwen 2.5 1.5B (bf16),hellaswag,24.0966716515
+Qwen 2.5 1.5B (bf16),hellaswag,24.34543897111111
+Qwen 2.5 1.5B (bf16),hellaswag,24.0642831335
+Qwen 2.5 1.5B (bf16),hellaswag,23.353657416999997
+Qwen 2.5 1.5B (bf16),hellaswag,24.16212219388889
+Qwen 2.5 1.5B (bf16),hellaswag,24.135427792999995
+Qwen 2.5 1.5B (bf16),hellaswag,24.629697651
+Qwen 2.5 1.5B (bf16),hellaswag,24.922894410999994
+Qwen 2.5 1.5B (bf16),hellaswag,23.989127545000002
+Qwen 2.5 1.5B (bf16),hellaswag,24.308117690000003
+Qwen 2.5 1.5B (bf16),hellaswag,24.540583581874998
+Qwen 2.5 1.5B (bf16),hellaswag,24.221970836
+Qwen 2.5 1.5B (bf16),hellaswag,24.638839867222217
+Qwen 2.5 1.5B (bf16),hellaswag,24.665084523
+Qwen 2.5 1.5B (bf16),hellaswag,24.9389945475
+Qwen 2.5 1.5B (bf16),hellaswag,24.177545554999995
+Qwen 2.5 1.5B (bf16),hellaswag,24.27412064875
+Qwen 2.5 1.5B (bf16),hellaswag,24.393021199999996
+Qwen 2.5 1.5B (bf16),hellaswag,24.123279409
+Qwen 2.5 1.5B (bf16),hellaswag,23.444494902222218
+Qwen 2.5 1.5B (bf16),hellaswag,24.134978141999998
+Qwen 2.5 1.5B (bf16),hellaswag,24.334604449999997
+Qwen 2.5 1.5B (bf16),hellaswag,23.75145956
+Qwen 2.5 1.5B (bf16),hellaswag,23.420935969500004
+Qwen 2.5 1.5B (bf16),hellaswag,24.726843715555553
+Qwen 2.5 1.5B (bf16),hellaswag,23.8299976
+Qwen 2.5 1.5B (bf16),hellaswag,23.591735372222224
+Ministral 3 3B (AWQ),hellaswag,23.439663646428567
+Ministral 3 3B (AWQ),hellaswag,23.93544611777778
+Ministral 3 3B (AWQ),hellaswag,24.321213209
+Ministral 3 3B (AWQ),hellaswag,24.210318700500004
+Ministral 3 3B (AWQ),hellaswag,23.721063150000003
+Ministral 3 3B (AWQ),hellaswag,24.242376004999997
+Ministral 3 3B (AWQ),hellaswag,23.961917211666666
+Ministral 3 3B (AWQ),hellaswag,24.600440206666665
+Ministral 3 3B (AWQ),hellaswag,24.7171676575
+Ministral 3 3B (AWQ),hellaswag,24.430062356666667
+Ministral 3 3B (AWQ),hellaswag,24.893897253499993
+Ministral 3 3B (AWQ),hellaswag,24.556814055
+Ministral 3 3B (AWQ),hellaswag,23.528703037499998
+Ministral 3 3B (AWQ),hellaswag,24.188927248
+Ministral 3 3B (AWQ),hellaswag,25.721905229
+Ministral 3 3B (AWQ),hellaswag,24.911637519
+Ministral 3 3B (AWQ),hellaswag,24.805296397499998
+Ministral 3 3B (AWQ),hellaswag,25.004314350000005
+Ministral 3 3B (AWQ),hellaswag,24.455870479999998
+Ministral 3 3B (AWQ),hellaswag,25.341079174499995
+Ministral 3 3B (AWQ),hellaswag,24.73682977
+Ministral 3 3B (AWQ),hellaswag,25.962082325000004
+Ministral 3 3B (AWQ),hellaswag,25.155852354999997
+Ministral 3 3B (AWQ),hellaswag,25.101152031
+Ministral 3 3B (AWQ),hellaswag,25.058946631250006
+Ministral 3 3B (AWQ),hellaswag,25.167589100555553
+Ministral 3 3B (AWQ),hellaswag,24.203576782000003
+Ministral 3 3B (AWQ),hellaswag,24.1205106045
+Ministral 3 3B (AWQ),hellaswag,24.012451204999994
+Ministral 3 3B (AWQ),hellaswag,24.719789203333338
+Ministral 3 3B (AWQ),hellaswag,24.754823610000003
+Ministral 3 3B (AWQ),hellaswag,24.589768467777777
+Ministral 3 3B (AWQ),hellaswag,24.358804764999995
+Ministral 3 3B (AWQ),hellaswag,24.407984985000002
+Ministral 3 3B (AWQ),hellaswag,24.273834295
+Ministral 3 3B (AWQ),hellaswag,23.971781896999996
+Ministral 3 3B (AWQ),hellaswag,24.903380994499997
+Ministral 3 3B (AWQ),hellaswag,25.036921787999997
+Ministral 3 3B (AWQ),hellaswag,24.827961814444446
+Ministral 3 3B (AWQ),hellaswag,24.808272940000005
+Ministral 3 3B (AWQ),hellaswag,25.095180773888888
+Ministral 3 3B (AWQ),hellaswag,24.067174397999995
+Ministral 3 3B (AWQ),hellaswag,24.462741263999998
+Ministral 3 3B (AWQ),hellaswag,24.593297960000005
+Ministral 3 3B (AWQ),hellaswag,24.454952100625004
+Ministral 3 3B (AWQ),hellaswag,24.565276146499997
+Ministral 3 3B (AWQ),hellaswag,25.570589221250003
+Ministral 3 3B (AWQ),hellaswag,24.19872879
+Ministral 3 3B (AWQ),hellaswag,24.712424275
+Ministral 3 3B (AWQ),hellaswag,24.779399999999992
+Ministral 3 3B (AWQ),hellaswag,24.403056297777773
+Ministral 3 3B (AWQ),hellaswag,24.594830626111115
+Ministral 3 3B (AWQ),hellaswag,23.691054962777784
+Ministral 3 3B (AWQ),hellaswag,24.281443104999997
+Ministral 3 3B (AWQ),hellaswag,24.954323175500004
+Ministral 3 3B (AWQ),hellaswag,23.290490441111114
+Ministral 3 3B (AWQ),hellaswag,23.64242768222222
+Ministral 3 3B (AWQ),hellaswag,23.842304725000005
+Ministral 3 3B (AWQ),hellaswag,24.912021655000004
+Ministral 3 3B (AWQ),hellaswag,27.044588005
+Ministral 3 3B (AWQ),hellaswag,24.087842104
+Ministral 3 3B (AWQ),hellaswag,23.90412191944445
+Ministral 3 3B (AWQ),hellaswag,24.378273642777778
+Ministral 3 3B (AWQ),hellaswag,23.898542691
+Ministral 3 3B (AWQ),hellaswag,25.080588907499997
+Ministral 3 3B (AWQ),hellaswag,25.690381354
+Ministral 3 3B (AWQ),hellaswag,23.794293741999997
+Ministral 3 3B (AWQ),hellaswag,24.319945055499996
+Ministral 3 3B (AWQ),hellaswag,23.937437236500006
+Ministral 3 3B (AWQ),hellaswag,24.735608513124994
+Ministral 3 3B (AWQ),hellaswag,26.505980207999997
+Ministral 3 3B (AWQ),hellaswag,23.538426915000006
+Ministral 3 3B (AWQ),hellaswag,24.218297560000003
+Ministral 3 3B (AWQ),hellaswag,24.63878782
+Ministral 3 3B (AWQ),hellaswag,25.717059652
+Ministral 3 3B (AWQ),hellaswag,25.293582438333335
+Ministral 3 3B (AWQ),hellaswag,24.497334391666662
+Ministral 3 3B (AWQ),hellaswag,24.033558442
+Ministral 3 3B (AWQ),hellaswag,23.365874533
+Ministral 3 3B (AWQ),hellaswag,24.242604495
+Ministral 3 3B (AWQ),hellaswag,25.737818670000003
+Ministral 3 3B (AWQ),hellaswag,25.108323739499998
+Ministral 3 3B (AWQ),hellaswag,24.38204156
+Ministral 3 3B (AWQ),hellaswag,24.6509153285
+Ministral 3 3B (AWQ),hellaswag,23.52689297611111
+Ministral 3 3B (AWQ),hellaswag,24.07129081
+Ministral 3 3B (AWQ),hellaswag,23.90898339833333
+Ministral 3 3B (AWQ),hellaswag,25.154648617499994
+Ministral 3 3B (AWQ),hellaswag,24.252249274999997
+Ministral 3 3B (AWQ),hellaswag,24.547700222
+Ministral 3 3B (AWQ),hellaswag,25.081304922999998
+Ministral 3 3B (AWQ),hellaswag,24.900097139
+Ministral 3 3B (AWQ),hellaswag,23.900139857000003
+Ministral 3 3B (AWQ),hellaswag,24.088250047999995
+Ministral 3 3B (AWQ),hellaswag,23.728665948125002
+Ministral 3 3B (AWQ),hellaswag,23.824841648999996
+Ministral 3 3B (AWQ),hellaswag,24.154018309999994
+Ministral 3 3B (AWQ),hellaswag,24.40487794
+Ministral 3 3B (AWQ),hellaswag,25.223308871000004
+Ministral 3 3B (AWQ),hellaswag,24.519469089
+Qwen 2.5 7B (AWQ),hellaswag,23.8749747
+Qwen 2.5 7B (AWQ),hellaswag,23.75640455166667
+Qwen 2.5 7B (AWQ),hellaswag,25.50962153555556
+Qwen 2.5 7B (AWQ),hellaswag,25.949915224500003
+Qwen 2.5 7B (AWQ),hellaswag,25.755759525000002
+Qwen 2.5 7B (AWQ),hellaswag,27.184800555
+Qwen 2.5 7B (AWQ),hellaswag,26.325375850999997
+Qwen 2.5 7B (AWQ),hellaswag,27.05126914722222
+Qwen 2.5 7B (AWQ),hellaswag,26.345542594000005
+Qwen 2.5 7B (AWQ),hellaswag,26.865298059999997
+Qwen 2.5 7B (AWQ),hellaswag,26.7112040685
+Qwen 2.5 7B (AWQ),hellaswag,26.613697904999995
+Qwen 2.5 7B (AWQ),hellaswag,26.346096112777783
+Qwen 2.5 7B (AWQ),hellaswag,27.32657024833334
+Qwen 2.5 7B (AWQ),hellaswag,27.228819199444445
+Qwen 2.5 7B (AWQ),hellaswag,27.786241008
+Qwen 2.5 7B (AWQ),hellaswag,27.638758827222222
+Qwen 2.5 7B (AWQ),hellaswag,26.745884342500005
+Qwen 2.5 7B (AWQ),hellaswag,28.36162405333333
+Qwen 2.5 7B (AWQ),hellaswag,26.807198474
+Qwen 2.5 7B (AWQ),hellaswag,26.149917461
+Qwen 2.5 7B (AWQ),hellaswag,25.9640839195
+Qwen 2.5 7B (AWQ),hellaswag,26.729877150555556
+Qwen 2.5 7B (AWQ),hellaswag,25.865536794999997
+Qwen 2.5 7B (AWQ),hellaswag,25.642858002
+Qwen 2.5 7B (AWQ),hellaswag,26.926336191666664
+Qwen 2.5 7B (AWQ),hellaswag,26.728239702499998
+Qwen 2.5 7B (AWQ),hellaswag,26.584158172500004
+Qwen 2.5 7B (AWQ),hellaswag,28.137212931785715
+Qwen 2.5 7B (AWQ),hellaswag,27.222019852000003
+Qwen 2.5 7B (AWQ),hellaswag,27.03158135444444
+Qwen 2.5 7B (AWQ),hellaswag,26.84819880777778
+Qwen 2.5 7B (AWQ),hellaswag,25.01900623055555
+Qwen 2.5 7B (AWQ),hellaswag,26.616146587500005
+Qwen 2.5 7B (AWQ),hellaswag,27.163207728333333
+Qwen 2.5 7B (AWQ),hellaswag,27.158880318888883
+Qwen 2.5 7B (AWQ),hellaswag,28.43455131444444
+Qwen 2.5 7B (AWQ),hellaswag,26.282169294
+Qwen 2.5 7B (AWQ),hellaswag,25.96550000166667
+Qwen 2.5 7B (AWQ),hellaswag,24.679859734999997
+Qwen 2.5 7B (AWQ),hellaswag,26.51361908833333
+Qwen 2.5 7B (AWQ),hellaswag,26.8521986035
+Qwen 2.5 7B (AWQ),hellaswag,27.357711245
+Qwen 2.5 7B (AWQ),hellaswag,27.758566273333333
+Qwen 2.5 7B (AWQ),hellaswag,27.360758277499997
+Qwen 2.5 7B (AWQ),hellaswag,28.528306513333334
+Qwen 2.5 7B (AWQ),hellaswag,25.955669532499993
+Qwen 2.5 7B (AWQ),hellaswag,25.50210295
+Qwen 2.5 7B (AWQ),hellaswag,25.9918921875
+Qwen 2.5 7B (AWQ),hellaswag,25.599769841
+Qwen 2.5 7B (AWQ),hellaswag,26.195220242
+Qwen 2.5 7B (AWQ),hellaswag,26.431926607500007
+Qwen 2.5 7B (AWQ),hellaswag,27.255531328333323
+Qwen 2.5 7B (AWQ),hellaswag,26.27658194888889
+Qwen 2.5 7B (AWQ),hellaswag,27.4952009425
+Qwen 2.5 7B (AWQ),hellaswag,27.81697279
+Qwen 2.5 7B (AWQ),hellaswag,26.635413205000003
+Qwen 2.5 7B (AWQ),hellaswag,25.519663568999995
+Qwen 2.5 7B (AWQ),hellaswag,24.796506949
+Qwen 2.5 7B (AWQ),hellaswag,26.452413271666668
+Qwen 2.5 7B (AWQ),hellaswag,25.37545843
+Qwen 2.5 7B (AWQ),hellaswag,25.68773704125
+Qwen 2.5 7B (AWQ),hellaswag,28.212241223333336
+Qwen 2.5 7B (AWQ),hellaswag,25.981169915555547
+Qwen 2.5 7B (AWQ),hellaswag,26.798775701666663
+Qwen 2.5 7B (AWQ),hellaswag,26.46197031777778
+Qwen 2.5 7B (AWQ),hellaswag,26.272887897777778
+Qwen 2.5 7B (AWQ),hellaswag,26.59453869166667
+Qwen 2.5 7B (AWQ),hellaswag,26.197965613999994
+Qwen 2.5 7B (AWQ),hellaswag,26.803134396
+Qwen 2.5 7B (AWQ),hellaswag,25.168263861111114
+Qwen 2.5 7B (AWQ),hellaswag,24.454675043749997
+Qwen 2.5 7B (AWQ),hellaswag,26.233402853749997
+Qwen 2.5 7B (AWQ),hellaswag,26.187597874999998
+Qwen 2.5 7B (AWQ),hellaswag,26.745590289285715
+Qwen 2.5 7B (AWQ),hellaswag,26.232378732083333
+Qwen 2.5 7B (AWQ),hellaswag,26.573413981875003
+Qwen 2.5 7B (AWQ),hellaswag,25.193681745
+Qwen 2.5 7B (AWQ),hellaswag,27.774018145624996
+Qwen 2.5 7B (AWQ),hellaswag,27.939456573125007
+Qwen 2.5 7B (AWQ),hellaswag,25.409191190625
+Qwen 2.5 7B (AWQ),hellaswag,27.348476308125008
+Qwen 2.5 7B (AWQ),hellaswag,26.1410808875
+Qwen 2.5 7B (AWQ),hellaswag,26.311740751875003
+Qwen 2.5 7B (AWQ),hellaswag,25.73055501404761
+Qwen 2.5 7B (AWQ),hellaswag,25.69743949888889
+Qwen 2.5 7B (AWQ),hellaswag,26.745417626666672
+Qwen 2.5 7B (AWQ),hellaswag,25.91542370166666
+Qwen 2.5 7B (AWQ),hellaswag,27.472555588888888
+Qwen 2.5 7B (AWQ),hellaswag,25.08240221375
+Qwen 2.5 7B (AWQ),hellaswag,24.759494683888892
+Qwen 2.5 7B (AWQ),hellaswag,25.6022032735
+Qwen 2.5 7B (AWQ),hellaswag,26.117036861666673
+Qwen 2.5 7B (AWQ),hellaswag,26.802343278499997
+Qwen 2.5 7B (AWQ),hellaswag,25.492843175999997
+Qwen 2.5 7B (AWQ),hellaswag,26.153446144375003
+Qwen 2.5 7B (AWQ),hellaswag,26.918933949375
+Qwen 2.5 7B (AWQ),hellaswag,25.808430851666667
+Qwen 2.5 7B (AWQ),hellaswag,26.180194322
+Qwen 2.5 7B (AWQ),hellaswag,25.248557828124998
+Qwen 3 4B (AWQ),hellaswag,24.10965772333333
+Qwen 3 4B (AWQ),hellaswag,23.859148451874997
+Qwen 3 4B (AWQ),hellaswag,24.3168791975
+Qwen 3 4B (AWQ),hellaswag,24.172596105625004
+Qwen 3 4B (AWQ),hellaswag,26.518533104374995
+Qwen 3 4B (AWQ),hellaswag,26.963981856000004
+Qwen 3 4B (AWQ),hellaswag,25.812807179000004
+Qwen 3 4B (AWQ),hellaswag,25.218409345
+Qwen 3 4B (AWQ),hellaswag,25.325925434444446
+Qwen 3 4B (AWQ),hellaswag,25.793988116000005
+Qwen 3 4B (AWQ),hellaswag,24.925090473500003
+Qwen 3 4B (AWQ),hellaswag,24.688817961
+Qwen 3 4B (AWQ),hellaswag,26.228112077000002
+Qwen 3 4B (AWQ),hellaswag,26.155722704
+Qwen 3 4B (AWQ),hellaswag,25.649201764999994
+Qwen 3 4B (AWQ),hellaswag,26.136983251666667
+Qwen 3 4B (AWQ),hellaswag,26.147951453749997
+Qwen 3 4B (AWQ),hellaswag,25.824653398125
+Qwen 3 4B (AWQ),hellaswag,25.355677205
+Qwen 3 4B (AWQ),hellaswag,26.236263791111114
+Qwen 3 4B (AWQ),hellaswag,25.997404618999997
+Qwen 3 4B (AWQ),hellaswag,26.750248786111108
+Qwen 3 4B (AWQ),hellaswag,26.119546664999994
+Qwen 3 4B (AWQ),hellaswag,26.916894677777773
+Qwen 3 4B (AWQ),hellaswag,26.5684581685
+Qwen 3 4B (AWQ),hellaswag,24.91723520111111
+Qwen 3 4B (AWQ),hellaswag,25.264420219000005
+Qwen 3 4B (AWQ),hellaswag,26.726174921666665
+Qwen 3 4B (AWQ),hellaswag,25.68174159388889
+Qwen 3 4B (AWQ),hellaswag,26.00735876
+Qwen 3 4B (AWQ),hellaswag,25.12022241
+Qwen 3 4B (AWQ),hellaswag,25.73403530166667
+Qwen 3 4B (AWQ),hellaswag,24.890119725
+Qwen 3 4B (AWQ),hellaswag,24.529652102000007
+Qwen 3 4B (AWQ),hellaswag,25.805046798000003
+Qwen 3 4B (AWQ),hellaswag,25.76684363222222
+Qwen 3 4B (AWQ),hellaswag,25.787371367000002
+Qwen 3 4B (AWQ),hellaswag,25.3478185
+Qwen 3 4B (AWQ),hellaswag,26.539336356
+Qwen 3 4B (AWQ),hellaswag,26.207788298000008
+Qwen 3 4B (AWQ),hellaswag,25.459985779999997
+Qwen 3 4B (AWQ),hellaswag,25.242618837499997
+Qwen 3 4B (AWQ),hellaswag,25.642269445
+Qwen 3 4B (AWQ),hellaswag,25.409698013333333
+Qwen 3 4B (AWQ),hellaswag,25.9269681425
+Qwen 3 4B (AWQ),hellaswag,26.767424293
+Qwen 3 4B (AWQ),hellaswag,25.353517760999996
+Qwen 3 4B (AWQ),hellaswag,25.266013187777784
+Qwen 3 4B (AWQ),hellaswag,26.0227880175
+Qwen 3 4B (AWQ),hellaswag,25.573656256999996
+Qwen 3 4B (AWQ),hellaswag,26.099945943333335
+Qwen 3 4B (AWQ),hellaswag,25.243748915
+Qwen 3 4B (AWQ),hellaswag,25.064424891
+Qwen 3 4B (AWQ),hellaswag,26.425403918500002
+Qwen 3 4B (AWQ),hellaswag,25.96975432888889
+Qwen 3 4B (AWQ),hellaswag,26.68684526499999
+Qwen 3 4B (AWQ),hellaswag,26.111290073333333
+Qwen 3 4B (AWQ),hellaswag,25.02618885
+Qwen 3 4B (AWQ),hellaswag,25.68524353
+Qwen 3 4B (AWQ),hellaswag,25.672171741666663
+Qwen 3 4B (AWQ),hellaswag,26.1766117535
+Qwen 3 4B (AWQ),hellaswag,25.267202506999997
+Qwen 3 4B (AWQ),hellaswag,26.084587543999998
+Qwen 3 4B (AWQ),hellaswag,25.879917283
+Qwen 3 4B (AWQ),hellaswag,24.655486591
+Qwen 3 4B (AWQ),hellaswag,25.807377498888886
+Qwen 3 4B (AWQ),hellaswag,25.451871544999996
+Qwen 3 4B (AWQ),hellaswag,24.599164820000006
+Qwen 3 4B (AWQ),hellaswag,24.907657326
+Qwen 3 4B (AWQ),hellaswag,24.52237223
+Qwen 3 4B (AWQ),hellaswag,24.966344644444447
+Qwen 3 4B (AWQ),hellaswag,25.991108059999995
+Qwen 3 4B (AWQ),hellaswag,25.332804539374997
+Qwen 3 4B (AWQ),hellaswag,25.424662587500006
+Qwen 3 4B (AWQ),hellaswag,24.682341673888885
+Qwen 3 4B (AWQ),hellaswag,26.184157889999998
+Qwen 3 4B (AWQ),hellaswag,26.5664130355
+Qwen 3 4B (AWQ),hellaswag,25.019703453999995
+Qwen 3 4B (AWQ),hellaswag,24.940901543888888
+Qwen 3 4B (AWQ),hellaswag,25.929936568333332
+Qwen 3 4B (AWQ),hellaswag,26.016148328125002
+Qwen 3 4B (AWQ),hellaswag,25.272107902000002
+Qwen 3 4B (AWQ),hellaswag,27.406209363000006
+Qwen 3 4B (AWQ),hellaswag,25.80942918571429
+Qwen 3 4B (AWQ),hellaswag,24.445201235
+Qwen 3 4B (AWQ),hellaswag,24.877126246666666
+Qwen 3 4B (AWQ),hellaswag,25.388048831
+Qwen 3 4B (AWQ),hellaswag,24.697479546666663
+Qwen 3 4B (AWQ),hellaswag,25.067052512000004
+Qwen 3 4B (AWQ),hellaswag,25.26590869
+Qwen 3 4B (AWQ),hellaswag,26.235124645
+Qwen 3 4B (AWQ),hellaswag,25.132461465000006
+Qwen 3 4B (AWQ),hellaswag,24.6288731225
+Qwen 3 4B (AWQ),hellaswag,25.768669613999997
+Qwen 3 4B (AWQ),hellaswag,26.445566273
+Qwen 3 4B (AWQ),hellaswag,24.83946644
+Qwen 3 4B (AWQ),hellaswag,25.394855072
+Qwen 3 4B (AWQ),hellaswag,25.060308187777782
+Qwen 3 4B (AWQ),hellaswag,24.096837260625
+Qwen 3 4B (AWQ),hellaswag,25.674372961666663
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,24.912288568499996
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,24.073466126666666
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,25.589706310000004
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.099534280000004
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.146964596
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.183232752499997
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.369974218750006
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.544224551
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.385713459999998
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.97149058333334
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.465886705
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,25.93338733500001
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.90691864666666
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.893632889999992
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.480287676250004
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.925528946249997
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.410864951250005
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.555064201111115
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.05758857666666
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.352780926249995
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.055022460000004
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.381746930476194
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.28132046
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.7760448825
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.405573309999998
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,28.788618615625005
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.05045550333334
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.34019480611111
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.266351580000006
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.00154956666667
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.078504306000003
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.748504490000002
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.550179845555554
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.1461502995
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,25.900734139499995
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.293350779999997
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,28.044138245
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.95626005333333
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.343158241666664
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.427519684999996
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,25.555273268333334
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.129649694999998
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.723210049444447
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.832993986250003
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.51668706
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.10244625444444
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.488010055000007
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.806268366875003
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.104434582499998
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.140537515
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.270096406666667
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.859267437499994
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,25.736241507222225
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,25.75476036944444
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,25.35938863777778
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.328264580000006
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,25.0739559775
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.79982857555556
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.9070174975
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.666038682500005
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.516884319375002
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.453118524999994
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.97537077166667
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.124542872777777
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.562154327777776
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,28.076608982
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.344420439499995
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.16478034388889
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.337958312222224
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.10220648625
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.08189049374999
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.711990750555554
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.7911851225
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.12841313
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.299726198333335
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.21478346722222
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.21978959388889
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.995614759999995
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.144764361
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.44927858
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,25.879236566666663
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.087677940000003
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.611743103499997
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.348874813888884
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.49140135
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.074762899
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.447595068500004
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.01413148555556
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,25.760652839375002
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.291343675
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,25.818376105
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,25.958302200000002
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.47183251722222
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.533517571111116
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,25.728680625
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.07184184
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,25.87609970833334
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.102604276111116
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,26.698378209999998
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,27.7601957
+Ministral 3 8B (AWQ),hellaswag,24.202195287000002
+Ministral 3 8B (AWQ),hellaswag,25.557756774999998
+Ministral 3 8B (AWQ),hellaswag,25.100654394000006
+Ministral 3 8B (AWQ),hellaswag,26.573195002222224
+Ministral 3 8B (AWQ),hellaswag,28.3761715455
+Ministral 3 8B (AWQ),hellaswag,28.132508650555554
+Ministral 3 8B (AWQ),hellaswag,27.172758267499994
+Ministral 3 8B (AWQ),hellaswag,26.259104965555554
+Ministral 3 8B (AWQ),hellaswag,27.024292561999996
+Ministral 3 8B (AWQ),hellaswag,27.563507326
+Ministral 3 8B (AWQ),hellaswag,28.024206060555546
+Ministral 3 8B (AWQ),hellaswag,26.098006265
+Ministral 3 8B (AWQ),hellaswag,26.301206029499994
+Ministral 3 8B (AWQ),hellaswag,27.186489699
+Ministral 3 8B (AWQ),hellaswag,27.1810377525
+Ministral 3 8B (AWQ),hellaswag,26.974582931111115
+Ministral 3 8B (AWQ),hellaswag,26.426725695000005
+Ministral 3 8B (AWQ),hellaswag,27.357722365
+Ministral 3 8B (AWQ),hellaswag,26.668348811666675
+Ministral 3 8B (AWQ),hellaswag,26.50080735388889
+Ministral 3 8B (AWQ),hellaswag,26.938544924374995
+Ministral 3 8B (AWQ),hellaswag,27.386608141250004
+Ministral 3 8B (AWQ),hellaswag,26.531404289999998
+Ministral 3 8B (AWQ),hellaswag,28.190259882499998
+Ministral 3 8B (AWQ),hellaswag,26.965621655000003
+Ministral 3 8B (AWQ),hellaswag,25.961960715
+Ministral 3 8B (AWQ),hellaswag,25.893538855
+Ministral 3 8B (AWQ),hellaswag,27.534444696111116
+Ministral 3 8B (AWQ),hellaswag,26.92567254499999
+Ministral 3 8B (AWQ),hellaswag,29.084077568125004
+Ministral 3 8B (AWQ),hellaswag,26.110216618333332
+Ministral 3 8B (AWQ),hellaswag,26.170425433000002
+Ministral 3 8B (AWQ),hellaswag,26.35900374777778
+Ministral 3 8B (AWQ),hellaswag,26.951408145000006
+Ministral 3 8B (AWQ),hellaswag,26.89236338
+Ministral 3 8B (AWQ),hellaswag,27.455199371874997
+Ministral 3 8B (AWQ),hellaswag,26.90360785
+Ministral 3 8B (AWQ),hellaswag,26.29384952785714
+Ministral 3 8B (AWQ),hellaswag,27.367422622222225
+Ministral 3 8B (AWQ),hellaswag,26.605298995
+Ministral 3 8B (AWQ),hellaswag,26.765870139999997
+Ministral 3 8B (AWQ),hellaswag,25.833866909000005
+Ministral 3 8B (AWQ),hellaswag,26.936172388000003
+Ministral 3 8B (AWQ),hellaswag,26.76370719714285
+Ministral 3 8B (AWQ),hellaswag,27.094887988333337
+Ministral 3 8B (AWQ),hellaswag,27.298608682777772
+Ministral 3 8B (AWQ),hellaswag,28.76978228000001
+Ministral 3 8B (AWQ),hellaswag,27.161362802000003
+Ministral 3 8B (AWQ),hellaswag,26.007683385
+Ministral 3 8B (AWQ),hellaswag,26.052907323333333
+Ministral 3 8B (AWQ),hellaswag,26.640052527777772
+Ministral 3 8B (AWQ),hellaswag,27.240127504999997
+Ministral 3 8B (AWQ),hellaswag,27.230808534
+Ministral 3 8B (AWQ),hellaswag,26.757716195000004
+Ministral 3 8B (AWQ),hellaswag,27.015586088333336
+Ministral 3 8B (AWQ),hellaswag,28.63105497238095
+Ministral 3 8B (AWQ),hellaswag,26.06675397375
+Ministral 3 8B (AWQ),hellaswag,25.431418524375008
+Ministral 3 8B (AWQ),hellaswag,25.625412555
+Ministral 3 8B (AWQ),hellaswag,27.692747258125003
+Ministral 3 8B (AWQ),hellaswag,26.093338095
+Ministral 3 8B (AWQ),hellaswag,27.779498109
+Ministral 3 8B (AWQ),hellaswag,26.94555989333333
+Ministral 3 8B (AWQ),hellaswag,27.259018921111114
+Ministral 3 8B (AWQ),hellaswag,26.89416809277778
+Ministral 3 8B (AWQ),hellaswag,25.861435075
+Ministral 3 8B (AWQ),hellaswag,25.156763530555555
+Ministral 3 8B (AWQ),hellaswag,26.161276867499996
+Ministral 3 8B (AWQ),hellaswag,26.676688474500004
+Ministral 3 8B (AWQ),hellaswag,27.664849845
+Ministral 3 8B (AWQ),hellaswag,26.26767199
+Ministral 3 8B (AWQ),hellaswag,26.552014822500006
+Ministral 3 8B (AWQ),hellaswag,26.591718262777775
+Ministral 3 8B (AWQ),hellaswag,26.524827067222226
+Ministral 3 8B (AWQ),hellaswag,27.095507774999998
+Ministral 3 8B (AWQ),hellaswag,27.927334278333333
+Ministral 3 8B (AWQ),hellaswag,27.94673526125
+Ministral 3 8B (AWQ),hellaswag,27.326057915
+Ministral 3 8B (AWQ),hellaswag,27.629274830555556
+Ministral 3 8B (AWQ),hellaswag,26.73811576722222
+Ministral 3 8B (AWQ),hellaswag,27.9234668
+Ministral 3 8B (AWQ),hellaswag,28.13941689
+Ministral 3 8B (AWQ),hellaswag,28.420147325
+Ministral 3 8B (AWQ),hellaswag,26.517390310555555
+Ministral 3 8B (AWQ),hellaswag,27.405265285
+Ministral 3 8B (AWQ),hellaswag,28.34120300777778
+Ministral 3 8B (AWQ),hellaswag,29.817569286250006
+Ministral 3 8B (AWQ),hellaswag,28.279651738095232
+Ministral 3 8B (AWQ),hellaswag,26.23951267749999
+Ministral 3 8B (AWQ),hellaswag,27.878060118750003
+Ministral 3 8B (AWQ),hellaswag,26.532029979999997
+Ministral 3 8B (AWQ),hellaswag,27.691585770000003
+Ministral 3 8B (AWQ),hellaswag,27.103369771
+Ministral 3 8B (AWQ),hellaswag,25.824253126500004
+Ministral 3 8B (AWQ),hellaswag,26.257078552500005
+Ministral 3 8B (AWQ),hellaswag,28.119486697000003
+Ministral 3 8B (AWQ),hellaswag,27.243237400555557
+Ministral 3 8B (AWQ),hellaswag,26.25144891
+Ministral 3 8B (AWQ),hellaswag,26.899448809
+Ministral 3 8B (AWQ),hellaswag,27.023175350000002
+Phi-4 Mini 3.8B (bf16),hellaswag,25.039276108000003
+Phi-4 Mini 3.8B (bf16),hellaswag,25.155289422500005
+Phi-4 Mini 3.8B (bf16),hellaswag,27.668467945
+Phi-4 Mini 3.8B (bf16),hellaswag,28.805911040714285
+Phi-4 Mini 3.8B (bf16),hellaswag,29.036285681249993
+Phi-4 Mini 3.8B (bf16),hellaswag,29.537224201666668
+Phi-4 Mini 3.8B (bf16),hellaswag,29.636598571666664
+Phi-4 Mini 3.8B (bf16),hellaswag,29.445892600000004
+Phi-4 Mini 3.8B (bf16),hellaswag,28.7924304825
+Phi-4 Mini 3.8B (bf16),hellaswag,28.91123362888889
+Phi-4 Mini 3.8B (bf16),hellaswag,30.49250123857143
+Phi-4 Mini 3.8B (bf16),hellaswag,28.949026485
+Phi-4 Mini 3.8B (bf16),hellaswag,28.86026777055556
+Phi-4 Mini 3.8B (bf16),hellaswag,28.924292004375
+Phi-4 Mini 3.8B (bf16),hellaswag,27.744410873125005
+Phi-4 Mini 3.8B (bf16),hellaswag,27.97646188857143
+Phi-4 Mini 3.8B (bf16),hellaswag,28.10783673555556
+Phi-4 Mini 3.8B (bf16),hellaswag,28.922512361666666
+Phi-4 Mini 3.8B (bf16),hellaswag,28.70680950166667
+Phi-4 Mini 3.8B (bf16),hellaswag,27.628750501874997
+Phi-4 Mini 3.8B (bf16),hellaswag,27.484263717500006
+Phi-4 Mini 3.8B (bf16),hellaswag,28.065173967777774
+Phi-4 Mini 3.8B (bf16),hellaswag,28.441700516666668
+Phi-4 Mini 3.8B (bf16),hellaswag,28.131264085
+Phi-4 Mini 3.8B (bf16),hellaswag,29.244930062500003
+Phi-4 Mini 3.8B (bf16),hellaswag,28.312938812380953
+Phi-4 Mini 3.8B (bf16),hellaswag,28.068050397500002
+Phi-4 Mini 3.8B (bf16),hellaswag,28.188760790000007
+Phi-4 Mini 3.8B (bf16),hellaswag,28.83860463666667
+Phi-4 Mini 3.8B (bf16),hellaswag,28.714412436111115
+Phi-4 Mini 3.8B (bf16),hellaswag,27.83017483333333
+Phi-4 Mini 3.8B (bf16),hellaswag,28.990962100555556
+Phi-4 Mini 3.8B (bf16),hellaswag,28.406755995500003
+Phi-4 Mini 3.8B (bf16),hellaswag,28.07590076944444
+Phi-4 Mini 3.8B (bf16),hellaswag,28.199363245
+Phi-4 Mini 3.8B (bf16),hellaswag,28.753650828125004
+Phi-4 Mini 3.8B (bf16),hellaswag,27.888089959285715
+Phi-4 Mini 3.8B (bf16),hellaswag,27.429519399375
+Phi-4 Mini 3.8B (bf16),hellaswag,28.207189362500003
+Phi-4 Mini 3.8B (bf16),hellaswag,28.668096763333338
+Phi-4 Mini 3.8B (bf16),hellaswag,27.474548969500006
+Phi-4 Mini 3.8B (bf16),hellaswag,27.662957243333327
+Phi-4 Mini 3.8B (bf16),hellaswag,26.93970903
+Phi-4 Mini 3.8B (bf16),hellaswag,28.803356458500005
+Phi-4 Mini 3.8B (bf16),hellaswag,27.598390138000003
+Phi-4 Mini 3.8B (bf16),hellaswag,27.8645066195
+Phi-4 Mini 3.8B (bf16),hellaswag,28.282800138888884
+Phi-4 Mini 3.8B (bf16),hellaswag,28.32540457611111
+Phi-4 Mini 3.8B (bf16),hellaswag,28.27094174611111
+Phi-4 Mini 3.8B (bf16),hellaswag,28.817980806499992
+Phi-4 Mini 3.8B (bf16),hellaswag,28.865808164444445
+Phi-4 Mini 3.8B (bf16),hellaswag,28.782110935
+Phi-4 Mini 3.8B (bf16),hellaswag,27.693104773749997
+Phi-4 Mini 3.8B (bf16),hellaswag,28.63547120875001
+Phi-4 Mini 3.8B (bf16),hellaswag,28.210147004166664
+Phi-4 Mini 3.8B (bf16),hellaswag,28.754006622499997
+Phi-4 Mini 3.8B (bf16),hellaswag,29.558637209375
+Phi-4 Mini 3.8B (bf16),hellaswag,27.264420348888887
+Phi-4 Mini 3.8B (bf16),hellaswag,27.9719854755
+Phi-4 Mini 3.8B (bf16),hellaswag,26.991566348333333
+Phi-4 Mini 3.8B (bf16),hellaswag,27.909889161666666
+Phi-4 Mini 3.8B (bf16),hellaswag,28.198954275000002
+Phi-4 Mini 3.8B (bf16),hellaswag,28.154871658999998
+Phi-4 Mini 3.8B (bf16),hellaswag,26.553237319999997
+Phi-4 Mini 3.8B (bf16),hellaswag,28.738978250000002
+Phi-4 Mini 3.8B (bf16),hellaswag,28.689409415
+Phi-4 Mini 3.8B (bf16),hellaswag,29.115690705
+Phi-4 Mini 3.8B (bf16),hellaswag,27.651579461111112
+Phi-4 Mini 3.8B (bf16),hellaswag,29.581335129999996
+Phi-4 Mini 3.8B (bf16),hellaswag,28.302153383333337
+Phi-4 Mini 3.8B (bf16),hellaswag,28.221287857083336
+Phi-4 Mini 3.8B (bf16),hellaswag,27.528881088124997
+Phi-4 Mini 3.8B (bf16),hellaswag,26.812028115
+Phi-4 Mini 3.8B (bf16),hellaswag,27.523538062222222
+Phi-4 Mini 3.8B (bf16),hellaswag,27.958814352777782
+Phi-4 Mini 3.8B (bf16),hellaswag,28.81726039312499
+Phi-4 Mini 3.8B (bf16),hellaswag,29.134273216249998
+Phi-4 Mini 3.8B (bf16),hellaswag,27.985042113095236
+Phi-4 Mini 3.8B (bf16),hellaswag,28.83395807125
+Phi-4 Mini 3.8B (bf16),hellaswag,27.262239843095234
+Phi-4 Mini 3.8B (bf16),hellaswag,27.918932638749997
+Phi-4 Mini 3.8B (bf16),hellaswag,27.66474708476191
+Phi-4 Mini 3.8B (bf16),hellaswag,28.765894748888883
+Phi-4 Mini 3.8B (bf16),hellaswag,28.252439407499992
+Phi-4 Mini 3.8B (bf16),hellaswag,28.142203805000005
+Phi-4 Mini 3.8B (bf16),hellaswag,27.83153418625
+Phi-4 Mini 3.8B (bf16),hellaswag,28.117670427500002
+Phi-4 Mini 3.8B (bf16),hellaswag,28.676779323749997
+Phi-4 Mini 3.8B (bf16),hellaswag,27.742144558
+Phi-4 Mini 3.8B (bf16),hellaswag,28.889581198888894
+Phi-4 Mini 3.8B (bf16),hellaswag,28.1493924675
+Phi-4 Mini 3.8B (bf16),hellaswag,28.45996185190476
+Phi-4 Mini 3.8B (bf16),hellaswag,29.360215697499996
+Phi-4 Mini 3.8B (bf16),hellaswag,28.510819930624997
+Phi-4 Mini 3.8B (bf16),hellaswag,30.066442582500002
+Phi-4 Mini 3.8B (bf16),hellaswag,27.999900632499997
+Phi-4 Mini 3.8B (bf16),hellaswag,29.939921853750008
+Phi-4 Mini 3.8B (bf16),hellaswag,30.19970555944444
+Phi-4 Mini 3.8B (bf16),hellaswag,30.128451874642856
+Phi-4 Mini 3.8B (bf16),hellaswag,28.310063757222217
+Qwen 3 30B-A3B (bf16),hellaswag,27.011900882000003
+Qwen 3 30B-A3B (bf16),hellaswag,28.04069039833334
+Qwen 3 30B-A3B (bf16),hellaswag,29.694896237499997
+Qwen 3 30B-A3B (bf16),hellaswag,32.00960199111111
+Qwen 3 30B-A3B (bf16),hellaswag,30.52106049249999
+Qwen 3 30B-A3B (bf16),hellaswag,30.587740127222226
+Qwen 3 30B-A3B (bf16),hellaswag,32.08190044
+Qwen 3 30B-A3B (bf16),hellaswag,31.155479451999998
+Qwen 3 30B-A3B (bf16),hellaswag,31.25475721
+Qwen 3 30B-A3B (bf16),hellaswag,30.64070442111111
+Qwen 3 30B-A3B (bf16),hellaswag,30.2712432875
+Qwen 3 30B-A3B (bf16),hellaswag,30.207690915625
+Qwen 3 30B-A3B (bf16),hellaswag,28.469905275000002
+Qwen 3 30B-A3B (bf16),hellaswag,31.059575050000007
+Qwen 3 30B-A3B (bf16),hellaswag,31.743385437499995
+Qwen 3 30B-A3B (bf16),hellaswag,30.521831507222217
+Qwen 3 30B-A3B (bf16),hellaswag,30.33534951777778
+Qwen 3 30B-A3B (bf16),hellaswag,29.51683955388889
+Qwen 3 30B-A3B (bf16),hellaswag,31.000648577222215
+Qwen 3 30B-A3B (bf16),hellaswag,31.096772781666672
+Qwen 3 30B-A3B (bf16),hellaswag,32.34423064375
+Qwen 3 30B-A3B (bf16),hellaswag,31.523018697619047
+Qwen 3 30B-A3B (bf16),hellaswag,30.774827124375005
+Qwen 3 30B-A3B (bf16),hellaswag,31.65932348312499
+Qwen 3 30B-A3B (bf16),hellaswag,30.748775348749998
+Qwen 3 30B-A3B (bf16),hellaswag,31.775266311875
+Qwen 3 30B-A3B (bf16),hellaswag,32.25803267166667
+Qwen 3 30B-A3B (bf16),hellaswag,31.891400071666666
+Qwen 3 30B-A3B (bf16),hellaswag,28.687961138500004
+Qwen 3 30B-A3B (bf16),hellaswag,29.993998888499995
+Qwen 3 30B-A3B (bf16),hellaswag,28.947936436000003
+Qwen 3 30B-A3B (bf16),hellaswag,31.197016315
+Qwen 3 30B-A3B (bf16),hellaswag,31.390473898500005
+Qwen 3 30B-A3B (bf16),hellaswag,32.082557470000005
+Qwen 3 30B-A3B (bf16),hellaswag,32.92999662
+Qwen 3 30B-A3B (bf16),hellaswag,30.603711495000002
+Qwen 3 30B-A3B (bf16),hellaswag,30.833854543
+Qwen 3 30B-A3B (bf16),hellaswag,31.34960934166667
+Qwen 3 30B-A3B (bf16),hellaswag,29.642527031
+Qwen 3 30B-A3B (bf16),hellaswag,29.307355893333334
+Qwen 3 30B-A3B (bf16),hellaswag,30.2831579475
+Qwen 3 30B-A3B (bf16),hellaswag,31.864443550499995
+Qwen 3 30B-A3B (bf16),hellaswag,30.470870922499998
+Qwen 3 30B-A3B (bf16),hellaswag,30.182863351500004
+Qwen 3 30B-A3B (bf16),hellaswag,30.35651919
+Qwen 3 30B-A3B (bf16),hellaswag,30.866197024444446
+Qwen 3 30B-A3B (bf16),hellaswag,30.721784780000004
+Qwen 3 30B-A3B (bf16),hellaswag,31.162185264999998
+Qwen 3 30B-A3B (bf16),hellaswag,32.24063722555555
+Qwen 3 30B-A3B (bf16),hellaswag,31.042486896666666
+Qwen 3 30B-A3B (bf16),hellaswag,30.37341058600001
+Qwen 3 30B-A3B (bf16),hellaswag,31.259340370000007
+Qwen 3 30B-A3B (bf16),hellaswag,30.64359371666667
+Qwen 3 30B-A3B (bf16),hellaswag,30.68659224333334
+Qwen 3 30B-A3B (bf16),hellaswag,31.306654851250002
+Qwen 3 30B-A3B (bf16),hellaswag,30.258048314499998
+Qwen 3 30B-A3B (bf16),hellaswag,31.67761913499999
+Qwen 3 30B-A3B (bf16),hellaswag,31.297243686875
+Qwen 3 30B-A3B (bf16),hellaswag,31.798091545000002
+Qwen 3 30B-A3B (bf16),hellaswag,31.335292673888887
+Qwen 3 30B-A3B (bf16),hellaswag,31.078972460476187
+Qwen 3 30B-A3B (bf16),hellaswag,30.373428769
+Qwen 3 30B-A3B (bf16),hellaswag,32.555220140625
+Qwen 3 30B-A3B (bf16),hellaswag,31.771524767500008
+Qwen 3 30B-A3B (bf16),hellaswag,29.190063439999996
+Qwen 3 30B-A3B (bf16),hellaswag,30.066918925714276
+Qwen 3 30B-A3B (bf16),hellaswag,32.18923301222222
+Qwen 3 30B-A3B (bf16),hellaswag,28.767215082777774
+Qwen 3 30B-A3B (bf16),hellaswag,31.67687341
+Qwen 3 30B-A3B (bf16),hellaswag,30.08252619333333
+Qwen 3 30B-A3B (bf16),hellaswag,28.844663825
+Qwen 3 30B-A3B (bf16),hellaswag,29.832609423999997
+Qwen 3 30B-A3B (bf16),hellaswag,28.56260348444444
+Qwen 3 30B-A3B (bf16),hellaswag,30.951475710000004
+Qwen 3 30B-A3B (bf16),hellaswag,30.023050743333343
+Qwen 3 30B-A3B (bf16),hellaswag,29.851624537
+Qwen 3 30B-A3B (bf16),hellaswag,30.215822328888894
+Qwen 3 30B-A3B (bf16),hellaswag,30.426714452999995
+Qwen 3 30B-A3B (bf16),hellaswag,31.220858624999998
+Qwen 3 30B-A3B (bf16),hellaswag,30.191901411999996
+Qwen 3 30B-A3B (bf16),hellaswag,31.220604744999996
+Qwen 3 30B-A3B (bf16),hellaswag,30.357826312999997
+Qwen 3 30B-A3B (bf16),hellaswag,31.066122203999992
+Qwen 3 30B-A3B (bf16),hellaswag,30.72414092055556
+Qwen 3 30B-A3B (bf16),hellaswag,31.610360176000004
+Qwen 3 30B-A3B (bf16),hellaswag,30.932622125
+Qwen 3 30B-A3B (bf16),hellaswag,31.401843725000003
+Qwen 3 30B-A3B (bf16),hellaswag,29.1459451055
+Qwen 3 30B-A3B (bf16),hellaswag,30.516994828888883
+Qwen 3 30B-A3B (bf16),hellaswag,30.662124462499996
+Qwen 3 30B-A3B (bf16),hellaswag,31.799530480555564
+Qwen 3 30B-A3B (bf16),hellaswag,32.63900963666667
+Qwen 3 30B-A3B (bf16),hellaswag,31.143900897380952
+Qwen 3 30B-A3B (bf16),hellaswag,30.143633777380945
+Qwen 3 30B-A3B (bf16),hellaswag,31.338233207
+Qwen 3 30B-A3B (bf16),hellaswag,32.1748761575
+Qwen 3 30B-A3B (bf16),hellaswag,29.993761034375005
+Qwen 3 30B-A3B (bf16),hellaswag,29.799819565000004
+Qwen 3 30B-A3B (bf16),hellaswag,30.092662707000002
+Qwen 3 30B-A3B (bf16),hellaswag,31.322561402499996
+Kimi Linear 48B-A3B (bf16),hellaswag,35.684414483
+Kimi Linear 48B-A3B (bf16),hellaswag,32.39673811166667
+Kimi Linear 48B-A3B (bf16),hellaswag,39.14284893050001
+Kimi Linear 48B-A3B (bf16),hellaswag,41.423977939999986
+Kimi Linear 48B-A3B (bf16),hellaswag,39.79840209777777
+Kimi Linear 48B-A3B (bf16),hellaswag,43.17981080222223
+Kimi Linear 48B-A3B (bf16),hellaswag,42.2828852505
+Kimi Linear 48B-A3B (bf16),hellaswag,38.97440299800001
+Kimi Linear 48B-A3B (bf16),hellaswag,38.16760739666667
+Kimi Linear 48B-A3B (bf16),hellaswag,37.22397515428571
+Kimi Linear 48B-A3B (bf16),hellaswag,41.58374815125
+Kimi Linear 48B-A3B (bf16),hellaswag,42.12049609499999
+Kimi Linear 48B-A3B (bf16),hellaswag,40.23130274750001
+Kimi Linear 48B-A3B (bf16),hellaswag,42.122770835000004
+Kimi Linear 48B-A3B (bf16),hellaswag,40.967022705
+Kimi Linear 48B-A3B (bf16),hellaswag,42.981556723749996
+Kimi Linear 48B-A3B (bf16),hellaswag,40.766911744999994
+Kimi Linear 48B-A3B (bf16),hellaswag,42.08243838222222
+Kimi Linear 48B-A3B (bf16),hellaswag,42.762416443888895
+Kimi Linear 48B-A3B (bf16),hellaswag,39.469720632777786
+Kimi Linear 48B-A3B (bf16),hellaswag,40.24244565500001
+Kimi Linear 48B-A3B (bf16),hellaswag,43.523416111
+Kimi Linear 48B-A3B (bf16),hellaswag,38.896884230000005
+Kimi Linear 48B-A3B (bf16),hellaswag,40.210108473000005
+Kimi Linear 48B-A3B (bf16),hellaswag,42.561334810999995
+Kimi Linear 48B-A3B (bf16),hellaswag,43.45993108666667
+Kimi Linear 48B-A3B (bf16),hellaswag,41.326711653
+Kimi Linear 48B-A3B (bf16),hellaswag,41.51359810333334
+Kimi Linear 48B-A3B (bf16),hellaswag,40.134143207499996
+Kimi Linear 48B-A3B (bf16),hellaswag,39.850240215
+Kimi Linear 48B-A3B (bf16),hellaswag,37.113269343999995
+Kimi Linear 48B-A3B (bf16),hellaswag,38.40346297600001
+Kimi Linear 48B-A3B (bf16),hellaswag,40.436518316999994
+Kimi Linear 48B-A3B (bf16),hellaswag,38.826592829999996
+Kimi Linear 48B-A3B (bf16),hellaswag,39.663103075
+Kimi Linear 48B-A3B (bf16),hellaswag,44.62476958055555
+Kimi Linear 48B-A3B (bf16),hellaswag,40.326960809374995
+Kimi Linear 48B-A3B (bf16),hellaswag,40.98613182
+Kimi Linear 48B-A3B (bf16),hellaswag,40.206367365000006
+Kimi Linear 48B-A3B (bf16),hellaswag,43.55529392400001
+Kimi Linear 48B-A3B (bf16),hellaswag,44.75346402999999
+Kimi Linear 48B-A3B (bf16),hellaswag,40.139525806666676
+Kimi Linear 48B-A3B (bf16),hellaswag,40.461698093333325
+Kimi Linear 48B-A3B (bf16),hellaswag,42.93459505250001
+Kimi Linear 48B-A3B (bf16),hellaswag,44.08522640166665
+Kimi Linear 48B-A3B (bf16),hellaswag,41.451169912999994
+Kimi Linear 48B-A3B (bf16),hellaswag,41.00796866299999
+Kimi Linear 48B-A3B (bf16),hellaswag,41.70351695222222
+Kimi Linear 48B-A3B (bf16),hellaswag,45.63845867499999
+Kimi Linear 48B-A3B (bf16),hellaswag,39.30522451944444
+Kimi Linear 48B-A3B (bf16),hellaswag,45.069352759999994
+Kimi Linear 48B-A3B (bf16),hellaswag,45.66996633222222
+Kimi Linear 48B-A3B (bf16),hellaswag,42.892172777
+Kimi Linear 48B-A3B (bf16),hellaswag,43.846541263000006
+Kimi Linear 48B-A3B (bf16),hellaswag,41.722622474
+Kimi Linear 48B-A3B (bf16),hellaswag,39.002160464499994
+Kimi Linear 48B-A3B (bf16),hellaswag,43.124904517
+Kimi Linear 48B-A3B (bf16),hellaswag,43.220254885
+Kimi Linear 48B-A3B (bf16),hellaswag,43.578035879999995
+Kimi Linear 48B-A3B (bf16),hellaswag,43.65220375700001
+Kimi Linear 48B-A3B (bf16),hellaswag,40.192281806666664
+Kimi Linear 48B-A3B (bf16),hellaswag,42.007351542500004
+Kimi Linear 48B-A3B (bf16),hellaswag,38.15458924
+Kimi Linear 48B-A3B (bf16),hellaswag,41.652741017
+Kimi Linear 48B-A3B (bf16),hellaswag,41.643152543125005
+Kimi Linear 48B-A3B (bf16),hellaswag,42.821425909999995
+Kimi Linear 48B-A3B (bf16),hellaswag,39.400036112500004
+Kimi Linear 48B-A3B (bf16),hellaswag,40.53094963
+Kimi Linear 48B-A3B (bf16),hellaswag,39.2060187935
+Kimi Linear 48B-A3B (bf16),hellaswag,38.269756222
+Kimi Linear 48B-A3B (bf16),hellaswag,39.020078297000005
+Kimi Linear 48B-A3B (bf16),hellaswag,39.713163565555554
+Kimi Linear 48B-A3B (bf16),hellaswag,39.55152541099999
+Kimi Linear 48B-A3B (bf16),hellaswag,43.435281294000006
+Kimi Linear 48B-A3B (bf16),hellaswag,39.58717269399999
+Kimi Linear 48B-A3B (bf16),hellaswag,38.90781206875
+Kimi Linear 48B-A3B (bf16),hellaswag,42.434952717499996
+Kimi Linear 48B-A3B (bf16),hellaswag,39.198552342999996
+Kimi Linear 48B-A3B (bf16),hellaswag,40.72194920150001
+Kimi Linear 48B-A3B (bf16),hellaswag,39.18447942937501
+Kimi Linear 48B-A3B (bf16),hellaswag,41.32879784949999
+Kimi Linear 48B-A3B (bf16),hellaswag,41.721645294000005
+Kimi Linear 48B-A3B (bf16),hellaswag,42.76495360222223
+Kimi Linear 48B-A3B (bf16),hellaswag,43.1233877175
+Kimi Linear 48B-A3B (bf16),hellaswag,40.1192513075
+Kimi Linear 48B-A3B (bf16),hellaswag,41.882163622499995
+Kimi Linear 48B-A3B (bf16),hellaswag,39.3431027155
+Kimi Linear 48B-A3B (bf16),hellaswag,40.1480670875
+Kimi Linear 48B-A3B (bf16),hellaswag,41.49098858833334
+Kimi Linear 48B-A3B (bf16),hellaswag,43.136310659500005
+Kimi Linear 48B-A3B (bf16),hellaswag,42.576133881000004
+Kimi Linear 48B-A3B (bf16),hellaswag,41.52380219166667
+Kimi Linear 48B-A3B (bf16),hellaswag,41.10830138700001
+Kimi Linear 48B-A3B (bf16),hellaswag,42.22177295777777
+Kimi Linear 48B-A3B (bf16),hellaswag,42.478113571666654
+Kimi Linear 48B-A3B (bf16),hellaswag,41.98220358333333
+Kimi Linear 48B-A3B (bf16),hellaswag,41.329912181
+Kimi Linear 48B-A3B (bf16),hellaswag,43.004078119
+Kimi Linear 48B-A3B (bf16),hellaswag,38.948510752999994
+Kimi Linear 48B-A3B (bf16),hellaswag,40.35248228500001
+Phi-4 14B (bf16),hellaswag,27.20397566
+Phi-4 14B (bf16),hellaswag,31.930427575000003
+Phi-4 14B (bf16),hellaswag,31.242497748333335
+Phi-4 14B (bf16),hellaswag,37.64600103888889
+Phi-4 14B (bf16),hellaswag,34.84165284777777
+Phi-4 14B (bf16),hellaswag,35.72643732
+Phi-4 14B (bf16),hellaswag,37.73641021357143
+Phi-4 14B (bf16),hellaswag,37.952442534374995
+Phi-4 14B (bf16),hellaswag,37.23459105812499
+Phi-4 14B (bf16),hellaswag,35.013382445
+Phi-4 14B (bf16),hellaswag,36.609866620999995
+Phi-4 14B (bf16),hellaswag,36.244912410000005
+Phi-4 14B (bf16),hellaswag,35.578314154999994
+Phi-4 14B (bf16),hellaswag,38.721415922499986
+Phi-4 14B (bf16),hellaswag,38.821700885000006
+Phi-4 14B (bf16),hellaswag,41.883668760999996
+Phi-4 14B (bf16),hellaswag,41.00021472
+Phi-4 14B (bf16),hellaswag,36.221382682
+Phi-4 14B (bf16),hellaswag,35.827912127
+Phi-4 14B (bf16),hellaswag,37.813691251666654
+Phi-4 14B (bf16),hellaswag,35.26500111666666
+Phi-4 14B (bf16),hellaswag,34.248083900000005
+Phi-4 14B (bf16),hellaswag,36.834400791
+Phi-4 14B (bf16),hellaswag,38.951659916000004
+Phi-4 14B (bf16),hellaswag,38.68955161499999
+Phi-4 14B (bf16),hellaswag,34.508318063999994
+Phi-4 14B (bf16),hellaswag,37.32297469499999
+Phi-4 14B (bf16),hellaswag,36.655736897222226
+Phi-4 14B (bf16),hellaswag,40.4257173
+Phi-4 14B (bf16),hellaswag,38.12128611
+Phi-4 14B (bf16),hellaswag,33.471798563
+Phi-4 14B (bf16),hellaswag,35.996377806000005
+Phi-4 14B (bf16),hellaswag,37.495867575
+Phi-4 14B (bf16),hellaswag,34.661092618999994
+Phi-4 14B (bf16),hellaswag,37.39222957388889
+Phi-4 14B (bf16),hellaswag,38.680336569
+Phi-4 14B (bf16),hellaswag,39.778294403000004
+Phi-4 14B (bf16),hellaswag,36.729301329
+Phi-4 14B (bf16),hellaswag,35.485205391111116
+Phi-4 14B (bf16),hellaswag,36.780244417000006
+Phi-4 14B (bf16),hellaswag,34.95125978750001
+Phi-4 14B (bf16),hellaswag,37.33044277849999
+Phi-4 14B (bf16),hellaswag,39.559996238
+Phi-4 14B (bf16),hellaswag,42.892806708500004
+Phi-4 14B (bf16),hellaswag,36.504234791666654
+Phi-4 14B (bf16),hellaswag,35.071112153333324
+Phi-4 14B (bf16),hellaswag,40.05849799999999
+Phi-4 14B (bf16),hellaswag,37.52479438
+Phi-4 14B (bf16),hellaswag,37.3016202605
+Phi-4 14B (bf16),hellaswag,36.17308337
+Phi-4 14B (bf16),hellaswag,34.212970245
+Phi-4 14B (bf16),hellaswag,37.2648898585
+Phi-4 14B (bf16),hellaswag,37.52150671700001
+Phi-4 14B (bf16),hellaswag,35.5607332288889
+Phi-4 14B (bf16),hellaswag,37.30266627699999
+Phi-4 14B (bf16),hellaswag,37.33416967388889
+Phi-4 14B (bf16),hellaswag,39.55697904166667
+Phi-4 14B (bf16),hellaswag,37.400668417222214
+Phi-4 14B (bf16),hellaswag,38.035730293
+Phi-4 14B (bf16),hellaswag,40.60112109833333
+Phi-4 14B (bf16),hellaswag,39.02337416666667
+Phi-4 14B (bf16),hellaswag,35.90629234166666
+Phi-4 14B (bf16),hellaswag,37.3189235465
+Phi-4 14B (bf16),hellaswag,36.66154532875
+Phi-4 14B (bf16),hellaswag,40.11499040499999
+Phi-4 14B (bf16),hellaswag,37.422705906666664
+Phi-4 14B (bf16),hellaswag,38.24159147500001
+Phi-4 14B (bf16),hellaswag,38.0619178975
+Phi-4 14B (bf16),hellaswag,37.927656049999996
+Phi-4 14B (bf16),hellaswag,38.3731148355
+Phi-4 14B (bf16),hellaswag,36.1167373885
+Phi-4 14B (bf16),hellaswag,40.008431763095224
+Phi-4 14B (bf16),hellaswag,39.83886601
+Phi-4 14B (bf16),hellaswag,36.96274911500001
+Phi-4 14B (bf16),hellaswag,36.465722312500006
+Phi-4 14B (bf16),hellaswag,36.704986451666656
+Phi-4 14B (bf16),hellaswag,37.79948648999999
+Phi-4 14B (bf16),hellaswag,35.901769076
+Phi-4 14B (bf16),hellaswag,38.945850083
+Phi-4 14B (bf16),hellaswag,36.61452288499999
+Phi-4 14B (bf16),hellaswag,36.617316777
+Phi-4 14B (bf16),hellaswag,37.68369932777778
+Phi-4 14B (bf16),hellaswag,37.739380940000004
+Phi-4 14B (bf16),hellaswag,35.3103227061111
+Phi-4 14B (bf16),hellaswag,34.486500974
+Phi-4 14B (bf16),hellaswag,35.587058125000006
+Phi-4 14B (bf16),hellaswag,36.99586710999999
+Phi-4 14B (bf16),hellaswag,35.30855216
+Phi-4 14B (bf16),hellaswag,32.889093455
+Phi-4 14B (bf16),hellaswag,37.518232364000006
+Phi-4 14B (bf16),hellaswag,37.601180203500014
+Phi-4 14B (bf16),hellaswag,33.338805175
+Phi-4 14B (bf16),hellaswag,34.223226469
+Phi-4 14B (bf16),hellaswag,37.137402847500006
+Phi-4 14B (bf16),hellaswag,32.979432247000005
+Phi-4 14B (bf16),hellaswag,34.849315662500004
+Phi-4 14B (bf16),hellaswag,32.720677557222224
+Phi-4 14B (bf16),hellaswag,35.827012044374996
+Phi-4 14B (bf16),hellaswag,34.62107187199999
+Phi-4 14B (bf16),hellaswag,38.001312248333335
+Granite 4 H-Tiny (bf16),hellaswag,33.755121706
+Granite 4 H-Tiny (bf16),hellaswag,35.5314184885
+Granite 4 H-Tiny (bf16),hellaswag,30.4703294075
+Granite 4 H-Tiny (bf16),hellaswag,29.40394082277778
+Granite 4 H-Tiny (bf16),hellaswag,38.61450930000001
+Granite 4 H-Tiny (bf16),hellaswag,37.4016767595
+Granite 4 H-Tiny (bf16),hellaswag,30.603493956
+Granite 4 H-Tiny (bf16),hellaswag,37.888159181249996
+Granite 4 H-Tiny (bf16),hellaswag,36.54452918249999
+Granite 4 H-Tiny (bf16),hellaswag,37.938355383499996
+Granite 4 H-Tiny (bf16),hellaswag,36.942387464999996
+Granite 4 H-Tiny (bf16),hellaswag,51.002876306666664
+Granite 4 H-Tiny (bf16),hellaswag,39.586823914
+Granite 4 H-Tiny (bf16),hellaswag,31.522262648333328
+Granite 4 H-Tiny (bf16),hellaswag,33.075896054999994
+Granite 4 H-Tiny (bf16),hellaswag,36.1173065475
+Granite 4 H-Tiny (bf16),hellaswag,30.474918318
+Granite 4 H-Tiny (bf16),hellaswag,31.385248648888883
+Granite 4 H-Tiny (bf16),hellaswag,35.75457087166667
+Granite 4 H-Tiny (bf16),hellaswag,35.041743816875
+Granite 4 H-Tiny (bf16),hellaswag,35.510740365000004
+Granite 4 H-Tiny (bf16),hellaswag,38.13637181583333
+Granite 4 H-Tiny (bf16),hellaswag,37.949115917499995
+Granite 4 H-Tiny (bf16),hellaswag,31.8323623975
+Granite 4 H-Tiny (bf16),hellaswag,29.612416155000005
+Granite 4 H-Tiny (bf16),hellaswag,31.124359871874997
+Granite 4 H-Tiny (bf16),hellaswag,32.30602416
+Granite 4 H-Tiny (bf16),hellaswag,36.976709039374995
+Granite 4 H-Tiny (bf16),hellaswag,35.4139902625
+Granite 4 H-Tiny (bf16),hellaswag,37.62452516750001
+Granite 4 H-Tiny (bf16),hellaswag,36.592868329999995
+Granite 4 H-Tiny (bf16),hellaswag,32.123203265
+Granite 4 H-Tiny (bf16),hellaswag,30.87306997
+Granite 4 H-Tiny (bf16),hellaswag,38.169859132
+Granite 4 H-Tiny (bf16),hellaswag,35.52049784
+Granite 4 H-Tiny (bf16),hellaswag,36.67288336874999
+Granite 4 H-Tiny (bf16),hellaswag,31.149475251666665
+Granite 4 H-Tiny (bf16),hellaswag,38.15263776055555
+Granite 4 H-Tiny (bf16),hellaswag,30.892459341
+Granite 4 H-Tiny (bf16),hellaswag,37.64688407
+Granite 4 H-Tiny (bf16),hellaswag,30.580308300000006
+Granite 4 H-Tiny (bf16),hellaswag,30.509152984999993
+Granite 4 H-Tiny (bf16),hellaswag,35.408785384000005
+Granite 4 H-Tiny (bf16),hellaswag,31.637051169000003
+Granite 4 H-Tiny (bf16),hellaswag,33.0755766635
+Granite 4 H-Tiny (bf16),hellaswag,31.412573377222216
+Granite 4 H-Tiny (bf16),hellaswag,30.195228303333337
+Granite 4 H-Tiny (bf16),hellaswag,30.429468094444445
+Granite 4 H-Tiny (bf16),hellaswag,35.995103697
+Granite 4 H-Tiny (bf16),hellaswag,35.525159823888885
+Granite 4 H-Tiny (bf16),hellaswag,31.651415846000003
+Granite 4 H-Tiny (bf16),hellaswag,31.049332506999995
+Granite 4 H-Tiny (bf16),hellaswag,30.812867045999997
+Granite 4 H-Tiny (bf16),hellaswag,37.60334384
+Granite 4 H-Tiny (bf16),hellaswag,30.734564588333335
+Granite 4 H-Tiny (bf16),hellaswag,35.405750333
+Granite 4 H-Tiny (bf16),hellaswag,34.51383911666667
+Granite 4 H-Tiny (bf16),hellaswag,35.5347461395
+Granite 4 H-Tiny (bf16),hellaswag,37.210236877777774
+Granite 4 H-Tiny (bf16),hellaswag,36.54609767
+Granite 4 H-Tiny (bf16),hellaswag,35.987617199999995
+Granite 4 H-Tiny (bf16),hellaswag,38.213983889999994
+Granite 4 H-Tiny (bf16),hellaswag,35.693165408
+Granite 4 H-Tiny (bf16),hellaswag,31.800001614999996
+Granite 4 H-Tiny (bf16),hellaswag,36.1195923685
+Granite 4 H-Tiny (bf16),hellaswag,30.540736371999998
+Granite 4 H-Tiny (bf16),hellaswag,34.87012051399999
+Granite 4 H-Tiny (bf16),hellaswag,30.238413181999995
+Granite 4 H-Tiny (bf16),hellaswag,29.612772895999996
+Granite 4 H-Tiny (bf16),hellaswag,30.78667583642857
+Granite 4 H-Tiny (bf16),hellaswag,31.26567814
+Granite 4 H-Tiny (bf16),hellaswag,31.59428711
+Granite 4 H-Tiny (bf16),hellaswag,31.735194106
+Granite 4 H-Tiny (bf16),hellaswag,31.5853037555
+Granite 4 H-Tiny (bf16),hellaswag,35.85092121555556
+Granite 4 H-Tiny (bf16),hellaswag,36.560526887500004
+Granite 4 H-Tiny (bf16),hellaswag,30.367624488999997
+Granite 4 H-Tiny (bf16),hellaswag,35.698593855999995
+Granite 4 H-Tiny (bf16),hellaswag,28.67178052375
+Granite 4 H-Tiny (bf16),hellaswag,36.46362249999999
+Granite 4 H-Tiny (bf16),hellaswag,36.94325872555556
+Granite 4 H-Tiny (bf16),hellaswag,37.42048408666667
+Granite 4 H-Tiny (bf16),hellaswag,38.54206365649999
+Granite 4 H-Tiny (bf16),hellaswag,30.073003996000004
+Granite 4 H-Tiny (bf16),hellaswag,36.7276348355
+Granite 4 H-Tiny (bf16),hellaswag,30.57542032
+Granite 4 H-Tiny (bf16),hellaswag,29.723203700000003
+Granite 4 H-Tiny (bf16),hellaswag,35.198396922777775
+Granite 4 H-Tiny (bf16),hellaswag,35.66092700749999
+Granite 4 H-Tiny (bf16),hellaswag,35.802248694000006
+Granite 4 H-Tiny (bf16),hellaswag,30.602553227
+Granite 4 H-Tiny (bf16),hellaswag,29.698761335
+Granite 4 H-Tiny (bf16),hellaswag,29.734128094999996
+Granite 4 H-Tiny (bf16),hellaswag,35.93282331899999
+Granite 4 H-Tiny (bf16),hellaswag,36.12341488055556
+Granite 4 H-Tiny (bf16),hellaswag,30.698748373999997
+Granite 4 H-Tiny (bf16),hellaswag,30.171031808888888
+Granite 4 H-Tiny (bf16),hellaswag,30.26923678
+Granite 4 H-Tiny (bf16),hellaswag,34.7529976275
+Granite 4 H-Tiny (bf16),hellaswag,34.78659379944444
+Granite 4 H-Tiny (bf16),hellaswag,33.4035903625
+Granite 4 H-Tiny (bf16),hellaswag,48.18504977388889
+Granite 4 H-Tiny (bf16),hellaswag,30.049151117000005
+Granite 4 H-Tiny (bf16),hellaswag,30.790608398333326
+Granite 4 H-Tiny (bf16),hellaswag,48.54156568375
+Granite 4 H-Tiny (bf16),hellaswag,49.27546614166667
+Granite 4 H-Tiny (bf16),hellaswag,32.24365780666667
+Granite 4 H-Tiny (bf16),hellaswag,48.66905138166667
+Granite 4 H-Tiny (bf16),hellaswag,50.7229601545
+Granite 4 H-Tiny (bf16),hellaswag,48.95194617625
+Granite 4 H-Tiny (bf16),hellaswag,36.34983041277778
+Granite 4 H-Tiny (bf16),hellaswag,36.52295456777778
+Granite 4 H-Tiny (bf16),hellaswag,36.579407207777784
+Granite 4 H-Tiny (bf16),hellaswag,29.914597428333334
+Granite 4 H-Tiny (bf16),hellaswag,31.186910110000003
+Granite 4 H-Tiny (bf16),hellaswag,36.59794508833333
+Granite 4 H-Tiny (bf16),hellaswag,30.82631050333334
+Granite 4 H-Tiny (bf16),hellaswag,30.27628032
+Granite 4 H-Tiny (bf16),hellaswag,36.61133729550001
+Granite 4 H-Tiny (bf16),hellaswag,36.456420519999995
+Granite 4 H-Tiny (bf16),hellaswag,35.441525485555566
+Granite 4 H-Tiny (bf16),hellaswag,36.031799695
+Granite 4 H-Tiny (bf16),hellaswag,36.441406612
+Granite 4 H-Tiny (bf16),hellaswag,30.491946878888893
+Granite 4 H-Tiny (bf16),hellaswag,30.321472556000003
+Granite 4 H-Tiny (bf16),hellaswag,29.251255771000004
+Granite 4 H-Tiny (bf16),hellaswag,29.284970179444443
+Granite 4 H-Tiny (bf16),hellaswag,35.624681915
+Granite 4 H-Tiny (bf16),hellaswag,47.63955118449999
+Granite 4 H-Tiny (bf16),hellaswag,34.6084834975
+Granite 4 H-Tiny (bf16),hellaswag,34.6980253615
+Granite 4 H-Tiny (bf16),hellaswag,29.69516038
+Granite 4 H-Tiny (bf16),hellaswag,30.241822338
+Granite 4 H-Tiny (bf16),hellaswag,48.61421036111112
+Granite 4 H-Tiny (bf16),hellaswag,35.06435706
+Granite 4 H-Tiny (bf16),hellaswag,35.63449838562501
+Granite 4 H-Tiny (bf16),hellaswag,30.649991559444448
+Granite 4 H-Tiny (bf16),hellaswag,36.54554852555555
+Granite 4 H-Tiny (bf16),hellaswag,31.13460095
+Granite 4 H-Tiny (bf16),hellaswag,37.636363259999996
+Granite 4 H-Tiny (bf16),hellaswag,31.390433731
+Granite 4 H-Tiny (bf16),hellaswag,29.958480766666664
+Granite 4 H-Tiny (bf16),hellaswag,35.28465235611112
+Granite 4 H-Tiny (bf16),hellaswag,30.277282736000004
+Granite 4 H-Tiny (bf16),hellaswag,30.166784297
+Granite 4 H-Tiny (bf16),hellaswag,30.9848602245
+Granite 4 H-Tiny (bf16),hellaswag,31.7352622325
+Granite 4 H-Tiny (bf16),hellaswag,31.233731029999994
+Granite 4 H-Tiny (bf16),hellaswag,35.589103155555556
+Granite 4 H-Tiny (bf16),hellaswag,36.35262171666666
+Granite 4 H-Tiny (bf16),hellaswag,31.1290957885
+Granite 4 H-Tiny (bf16),hellaswag,29.995657913333332
+Granite 4 H-Tiny (bf16),hellaswag,29.956399469999994
+Granite 4 H-Tiny (bf16),hellaswag,36.46581923666667
+Granite 4 H-Tiny (bf16),hellaswag,29.441964265
+Granite 4 H-Tiny (bf16),hellaswag,37.221289510000005
+Granite 4 H-Tiny (bf16),hellaswag,35.523277775
+Granite 4 H-Tiny (bf16),hellaswag,35.775552779444446
+Granite 4 H-Tiny (bf16),hellaswag,36.70466066555555
+Granite 4 H-Tiny (bf16),hellaswag,36.861551004999995
+Granite 4 H-Tiny (bf16),hellaswag,49.57701039
+Granite 4 H-Tiny (bf16),hellaswag,35.734654895000006
+Granite 4 H-Tiny (bf16),hellaswag,38.459826921250006
+Granite 4 H-Tiny (bf16),hellaswag,31.511205209499995
+Granite 4 H-Tiny (bf16),hellaswag,37.56661031949999
+Granite 4 H-Tiny (bf16),hellaswag,31.489916394999998
+Granite 4 H-Tiny (bf16),hellaswag,37.969527183
+Granite 4 H-Tiny (bf16),hellaswag,31.869972007
+Granite 4 H-Tiny (bf16),hellaswag,30.608972135
+Granite 4 H-Tiny (bf16),hellaswag,30.068642363499993
+Granite 4 H-Tiny (bf16),hellaswag,31.219673173
+Granite 4 H-Tiny (bf16),hellaswag,30.753498122222226
+Granite 4 H-Tiny (bf16),hellaswag,32.554412664500006
+Granite 4 H-Tiny (bf16),hellaswag,32.8147350975
+Granite 4 H-Tiny (bf16),hellaswag,37.923661368
+Granite 4 H-Tiny (bf16),hellaswag,38.18732486625
+Granite 4 H-Tiny (bf16),hellaswag,31.219535133000004
+Granite 4 H-Tiny (bf16),hellaswag,35.911607307000004
+Granite 4 H-Tiny (bf16),hellaswag,30.750592872000002
+Granite 4 H-Tiny (bf16),hellaswag,36.578940630000005
+Granite 4 H-Tiny (bf16),hellaswag,36.149062224999994
+Granite 4 H-Tiny (bf16),hellaswag,37.38504583562501
+Granite 4 H-Tiny (bf16),hellaswag,35.11219054611111
+Granite 4 H-Tiny (bf16),hellaswag,30.65161204166667
+Granite 4 H-Tiny (bf16),hellaswag,36.01103776333333
+Granite 4 H-Tiny (bf16),hellaswag,31.49952617625
+Granite 4 H-Tiny (bf16),hellaswag,29.970821776666668
+Granite 4 H-Tiny (bf16),hellaswag,35.107619795000005
+Granite 4 H-Tiny (bf16),hellaswag,36.26660584
+Granite 4 H-Tiny (bf16),hellaswag,36.59258128111111
+Granite 4 H-Tiny (bf16),hellaswag,30.281982711249995
+Granite 4 H-Tiny (bf16),hellaswag,31.364919696666668
+Granite 4 H-Tiny (bf16),hellaswag,29.782232034999996
+Granite 4 H-Tiny (bf16),hellaswag,37.293822112
+Granite 4 H-Tiny (bf16),hellaswag,37.64556646722222
+Granite 4 H-Tiny (bf16),hellaswag,31.829271188000003
+Granite 4 H-Tiny (bf16),hellaswag,30.505227553999998
+Granite 4 H-Tiny (bf16),hellaswag,30.75240499333333
+Granite 4 H-Tiny (bf16),hellaswag,37.222284269000006
+Granite 4 H-Tiny (bf16),hellaswag,35.975881627
+Ministral 3 14B,hellaswag,28.136291438999997
+Ministral 3 14B,hellaswag,30.439722809999996
+Ministral 3 14B,hellaswag,31.89616486
+Ministral 3 14B,hellaswag,35.134071725
+Ministral 3 14B,hellaswag,34.61923716
+Ministral 3 14B,hellaswag,35.8711108145
+Ministral 3 14B,hellaswag,34.87406092
+Ministral 3 14B,hellaswag,35.06961789299999
+Ministral 3 14B,hellaswag,35.27628306
+Ministral 3 14B,hellaswag,33.64724818
+Ministral 3 14B,hellaswag,36.24891112666668
+Ministral 3 14B,hellaswag,35.004852047499995
+Ministral 3 14B,hellaswag,39.2678511925
+Ministral 3 14B,hellaswag,37.430380615000004
+Ministral 3 14B,hellaswag,35.93678186599998
+Ministral 3 14B,hellaswag,39.187364536
+Ministral 3 14B,hellaswag,38.149742270000004
+Ministral 3 14B,hellaswag,35.79781470611112
+Ministral 3 14B,hellaswag,34.58448824333333
+Ministral 3 14B,hellaswag,36.40022751833334
+Ministral 3 14B,hellaswag,38.746250323888894
+Ministral 3 14B,hellaswag,36.01036045499999
+Ministral 3 14B,hellaswag,35.406905576
+Ministral 3 14B,hellaswag,33.63907965
+Ministral 3 14B,hellaswag,34.800614825
+Ministral 3 14B,hellaswag,36.034163920000005
+Ministral 3 14B,hellaswag,34.432779116666666
+Ministral 3 14B,hellaswag,34.121265783333335
+Ministral 3 14B,hellaswag,35.11136765666666
+Ministral 3 14B,hellaswag,33.125179068125
+Ministral 3 14B,hellaswag,33.691206902142866
+Ministral 3 14B,hellaswag,34.428276656666675
+Ministral 3 14B,hellaswag,35.000492209375
+Ministral 3 14B,hellaswag,34.74738842
+Ministral 3 14B,hellaswag,37.153943687777776
+Ministral 3 14B,hellaswag,33.40267055249999
+Ministral 3 14B,hellaswag,32.531290528
+Ministral 3 14B,hellaswag,36.46626019333333
+Ministral 3 14B,hellaswag,36.516677976111104
+Ministral 3 14B,hellaswag,36.609400601000004
+Ministral 3 14B,hellaswag,36.15698806111111
+Ministral 3 14B,hellaswag,38.17143915166667
+Ministral 3 14B,hellaswag,37.42197414999999
+Ministral 3 14B,hellaswag,36.371571511875004
+Ministral 3 14B,hellaswag,35.82422865375
+Ministral 3 14B,hellaswag,36.050509563333335
+Ministral 3 14B,hellaswag,37.20309435833333
+Ministral 3 14B,hellaswag,36.41861887500001
+Ministral 3 14B,hellaswag,36.580511119499995
+Ministral 3 14B,hellaswag,37.39984982937499
+Ministral 3 14B,hellaswag,33.72653229111109
+Ministral 3 14B,hellaswag,37.20297556799999
+Ministral 3 14B,hellaswag,35.827133613
+Ministral 3 14B,hellaswag,32.96884340111112
+Ministral 3 14B,hellaswag,35.528625536
+Ministral 3 14B,hellaswag,35.64592099750001
+Ministral 3 14B,hellaswag,36.16716389249999
+Ministral 3 14B,hellaswag,36.42978439888888
+Ministral 3 14B,hellaswag,33.8748256325
+Ministral 3 14B,hellaswag,35.294903806
+Ministral 3 14B,hellaswag,34.596611015
+Ministral 3 14B,hellaswag,32.868587435625
+Ministral 3 14B,hellaswag,34.87043020055555
+Ministral 3 14B,hellaswag,34.27103135055556
+Ministral 3 14B,hellaswag,35.56282854850001
+Ministral 3 14B,hellaswag,37.5622989788889
+Ministral 3 14B,hellaswag,36.79654356999999
+Ministral 3 14B,hellaswag,35.73445480055557
+Ministral 3 14B,hellaswag,36.167771409444434
+Ministral 3 14B,hellaswag,35.24953098049999
+Ministral 3 14B,hellaswag,34.902173178
+Ministral 3 14B,hellaswag,35.033236509999995
+Ministral 3 14B,hellaswag,35.074585865
+Ministral 3 14B,hellaswag,33.43773363249999
+Ministral 3 14B,hellaswag,33.88020122
+Ministral 3 14B,hellaswag,35.683365867499994
+Ministral 3 14B,hellaswag,36.119724586
+Ministral 3 14B,hellaswag,34.015016923000005
+Ministral 3 14B,hellaswag,36.245817515
+Ministral 3 14B,hellaswag,33.45089333400001
+Ministral 3 14B,hellaswag,35.4448727795
+Ministral 3 14B,hellaswag,36.29830975650001
+Ministral 3 14B,hellaswag,37.92648098055557
+Ministral 3 14B,hellaswag,35.13462137
+Ministral 3 14B,hellaswag,35.24254197999999
+Ministral 3 14B,hellaswag,35.62066840437502
+Ministral 3 14B,hellaswag,35.73158792666667
+Ministral 3 14B,hellaswag,35.31412833111111
+Ministral 3 14B,hellaswag,34.89185723999999
+Ministral 3 14B,hellaswag,36.036693967
+Ministral 3 14B,hellaswag,35.676342176874996
+Ministral 3 14B,hellaswag,34.4622080915
+Ministral 3 14B,hellaswag,34.167301354
+Ministral 3 14B,hellaswag,33.744836818888885
+Ministral 3 14B,hellaswag,36.144193539999996
+Ministral 3 14B,hellaswag,36.39894056300001
+Ministral 3 14B,hellaswag,32.68773246099999
+Ministral 3 14B,hellaswag,34.10202411000001
+Ministral 3 14B,hellaswag,36.710081815
+Ministral 3 14B,hellaswag,35.132934782
+Llama 3.3 70B (FP8),hellaswag,35.210128537
+Llama 3.3 70B (FP8),hellaswag,47.24930795464285
+Llama 3.3 70B (FP8),hellaswag,51.787357258750006
+Llama 3.3 70B (FP8),hellaswag,58.44243632333333
+Llama 3.3 70B (FP8),hellaswag,51.97558612499999
+Llama 3.3 70B (FP8),hellaswag,57.59472430944445
+Llama 3.3 70B (FP8),hellaswag,58.434614713888884
+Llama 3.3 70B (FP8),hellaswag,55.076053291
+Llama 3.3 70B (FP8),hellaswag,57.71348454444444
+Llama 3.3 70B (FP8),hellaswag,56.345337609999994
+Llama 3.3 70B (FP8),hellaswag,62.034077120000006
+Llama 3.3 70B (FP8),hellaswag,59.97594998625
+Llama 3.3 70B (FP8),hellaswag,53.01807065450001
+Llama 3.3 70B (FP8),hellaswag,54.876778134999995
+Llama 3.3 70B (FP8),hellaswag,55.38590943
+Llama 3.3 70B (FP8),hellaswag,55.46726145261904
+Llama 3.3 70B (FP8),hellaswag,56.6309533
+Llama 3.3 70B (FP8),hellaswag,56.78054623541667
+Llama 3.3 70B (FP8),hellaswag,57.2714425925
+Llama 3.3 70B (FP8),hellaswag,56.002364885
+Llama 3.3 70B (FP8),hellaswag,57.321877977777774
+Llama 3.3 70B (FP8),hellaswag,57.342647165
+Llama 3.3 70B (FP8),hellaswag,54.5612876945238
+Llama 3.3 70B (FP8),hellaswag,53.513378788333334
+Llama 3.3 70B (FP8),hellaswag,52.84703066611112
+Llama 3.3 70B (FP8),hellaswag,53.60747126611111
+Llama 3.3 70B (FP8),hellaswag,53.663425399444435
+Llama 3.3 70B (FP8),hellaswag,51.87944120999999
+Llama 3.3 70B (FP8),hellaswag,53.442568729285696
+Llama 3.3 70B (FP8),hellaswag,51.31252472333334
+Llama 3.3 70B (FP8),hellaswag,51.34230828761905
+Llama 3.3 70B (FP8),hellaswag,55.6668351404762
+Llama 3.3 70B (FP8),hellaswag,50.41968138309524
+Llama 3.3 70B (FP8),hellaswag,54.5339552025
+Llama 3.3 70B (FP8),hellaswag,54.08734769666667
+Llama 3.3 70B (FP8),hellaswag,52.666390585625
+Llama 3.3 70B (FP8),hellaswag,53.288205185
+Llama 3.3 70B (FP8),hellaswag,53.95107294055555
+Llama 3.3 70B (FP8),hellaswag,56.063919568333326
+Llama 3.3 70B (FP8),hellaswag,57.52190844600001
+Llama 3.3 70B (FP8),hellaswag,57.21474468350001
+Llama 3.3 70B (FP8),hellaswag,58.150073807
+Llama 3.3 70B (FP8),hellaswag,57.84459661111112
+Llama 3.3 70B (FP8),hellaswag,57.79942753400001
+Llama 3.3 70B (FP8),hellaswag,60.316359685
+Llama 3.3 70B (FP8),hellaswag,58.002574532777764
+Llama 3.3 70B (FP8),hellaswag,56.64248562625
+Llama 3.3 70B (FP8),hellaswag,55.421604941249996
+Llama 3.3 70B (FP8),hellaswag,54.243913709375
+Llama 3.3 70B (FP8),hellaswag,55.13182380250001
+Llama 3.3 70B (FP8),hellaswag,54.55865521722222
+Llama 3.3 70B (FP8),hellaswag,57.691598750000004
+Llama 3.3 70B (FP8),hellaswag,55.019111124999995
+Llama 3.3 70B (FP8),hellaswag,52.91542675666666
+Llama 3.3 70B (FP8),hellaswag,54.81215733750001
+Llama 3.3 70B (FP8),hellaswag,54.360409305555564
+Llama 3.3 70B (FP8),hellaswag,55.48920655111112
+Llama 3.3 70B (FP8),hellaswag,57.216863528
+Llama 3.3 70B (FP8),hellaswag,60.44723532888888
+Llama 3.3 70B (FP8),hellaswag,56.22524937722222
+Llama 3.3 70B (FP8),hellaswag,56.7178606455
+Llama 3.3 70B (FP8),hellaswag,53.12089588437499
+Llama 3.3 70B (FP8),hellaswag,58.98107993464286
+Llama 3.3 70B (FP8),hellaswag,58.276818348750005
+Llama 3.3 70B (FP8),hellaswag,57.56497722055555
+Llama 3.3 70B (FP8),hellaswag,56.43526374
+Llama 3.3 70B (FP8),hellaswag,56.965963251999995
+Llama 3.3 70B (FP8),hellaswag,55.486716220000005
+Llama 3.3 70B (FP8),hellaswag,56.62217348549999
+Llama 3.3 70B (FP8),hellaswag,57.7331711025
+Llama 3.3 70B (FP8),hellaswag,55.65063141833334
+Llama 3.3 70B (FP8),hellaswag,55.149106586
+Llama 3.3 70B (FP8),hellaswag,55.53000013750001
+Llama 3.3 70B (FP8),hellaswag,51.99615164166666
+Llama 3.3 70B (FP8),hellaswag,50.51620453449999
+Llama 3.3 70B (FP8),hellaswag,57.93157481749999
+Llama 3.3 70B (FP8),hellaswag,56.75688119125001
+Llama 3.3 70B (FP8),hellaswag,52.632323529
+Llama 3.3 70B (FP8),hellaswag,57.15214922722222
+Llama 3.3 70B (FP8),hellaswag,56.882496042
+Llama 3.3 70B (FP8),hellaswag,57.83858077000001
+Llama 3.3 70B (FP8),hellaswag,58.592907958000005
+Llama 3.3 70B (FP8),hellaswag,55.995337809999995
+Llama 3.3 70B (FP8),hellaswag,56.06494868850001
+Llama 3.3 70B (FP8),hellaswag,57.73512716944444
+Llama 3.3 70B (FP8),hellaswag,59.23399455499999
+Llama 3.3 70B (FP8),hellaswag,53.26062324555555
+Llama 3.3 70B (FP8),hellaswag,54.25610207833333
+Llama 3.3 70B (FP8),hellaswag,57.95892839749999
+Llama 3.3 70B (FP8),hellaswag,55.616067002777775
+Llama 3.3 70B (FP8),hellaswag,57.60612111249999
+Llama 3.3 70B (FP8),hellaswag,55.64663299875
+Llama 3.3 70B (FP8),hellaswag,57.46284501333333
+Llama 3.3 70B (FP8),hellaswag,56.12413177799999
+Llama 3.3 70B (FP8),hellaswag,55.2035950445
+Llama 3.3 70B (FP8),hellaswag,55.07169392199999
+Llama 3.3 70B (FP8),hellaswag,56.3318077875
+Llama 3.3 70B (FP8),hellaswag,55.09946876388889
+Llama 3.3 70B (FP8),hellaswag,59.36238590062499
+Llama 3.3 70B (FP8),hellaswag,56.76676450666667
+Llama 3.3 70B (FP8),hellaswag,35.93362598500001
+Llama 3.3 70B (FP8),hellaswag,43.3046429835
+Llama 3.3 70B (FP8),hellaswag,53.491472317
+Llama 3.3 70B (FP8),hellaswag,55.79652769222222
+Llama 3.3 70B (FP8),hellaswag,63.086711406499994
+Llama 3.3 70B (FP8),hellaswag,62.630720843999995
+Llama 3.3 70B (FP8),hellaswag,59.977569612
+Llama 3.3 70B (FP8),hellaswag,58.69524043350001
+Llama 3.3 70B (FP8),hellaswag,59.44651840299999
+Llama 3.3 70B (FP8),hellaswag,58.99072392
+Llama 3.3 70B (FP8),hellaswag,59.770067393000005
+Llama 3.3 70B (FP8),hellaswag,62.753678155
+Llama 3.3 70B (FP8),hellaswag,60.890627115
+Llama 3.3 70B (FP8),hellaswag,57.52715176599999
+Llama 3.3 70B (FP8),hellaswag,60.76364580999999
+Llama 3.3 70B (FP8),hellaswag,59.316462527999995
+Llama 3.3 70B (FP8),hellaswag,58.50067556250001
+Llama 3.3 70B (FP8),hellaswag,59.78144394100001
+Llama 3.3 70B (FP8),hellaswag,58.917278185
+Llama 3.3 70B (FP8),hellaswag,58.10181111599999
+Llama 3.3 70B (FP8),hellaswag,60.41977527500001
+Llama 3.3 70B (FP8),hellaswag,64.93728997449999
+Llama 3.3 70B (FP8),hellaswag,62.74573900199999
+Llama 3.3 70B (FP8),hellaswag,64.037192061
+Llama 3.3 70B (FP8),hellaswag,59.100798417777774
+Llama 3.3 70B (FP8),hellaswag,61.705824363333335
+Llama 3.3 70B (FP8),hellaswag,60.75811325833334
+Llama 3.3 70B (FP8),hellaswag,59.73044545000001
+Llama 3.3 70B (FP8),hellaswag,59.85112921000001
+Llama 3.3 70B (FP8),hellaswag,57.37533927399999
+Llama 3.3 70B (FP8),hellaswag,55.30820432099999
+Llama 3.3 70B (FP8),hellaswag,53.00466420333333
+Llama 3.3 70B (FP8),hellaswag,60.88922999222222
+Llama 3.3 70B (FP8),hellaswag,58.51250297166667
+Llama 3.3 70B (FP8),hellaswag,65.552865974
+Llama 3.3 70B (FP8),hellaswag,66.5702367035
+Llama 3.3 70B (FP8),hellaswag,59.63155781611111
+Llama 3.3 70B (FP8),hellaswag,56.4787587865
+Llama 3.3 70B (FP8),hellaswag,56.883088467499995
+Llama 3.3 70B (FP8),hellaswag,58.688816035
+Llama 3.3 70B (FP8),hellaswag,59.30832699833333
+Llama 3.3 70B (FP8),hellaswag,60.15290498999999
+Llama 3.3 70B (FP8),hellaswag,59.13616289166667
+Llama 3.3 70B (FP8),hellaswag,63.955265602000004
+Llama 3.3 70B (FP8),hellaswag,65.02571778499998
+Llama 3.3 70B (FP8),hellaswag,61.985283021
+Llama 3.3 70B (FP8),hellaswag,61.339715838
+Llama 3.3 70B (FP8),hellaswag,60.925632506000014
+Llama 3.3 70B (FP8),hellaswag,62.296500431999995
+Llama 3.3 70B (FP8),hellaswag,57.684196231499996
+Llama 3.3 70B (FP8),hellaswag,61.37980009699999
+Llama 3.3 70B (FP8),hellaswag,57.50097696444445
+Llama 3.3 70B (FP8),hellaswag,56.36191335499999
+Llama 3.3 70B (FP8),hellaswag,59.341452811875
+Llama 3.3 70B (FP8),hellaswag,58.36693834000001
+Llama 3.3 70B (FP8),hellaswag,62.94386738055555
+Llama 3.3 70B (FP8),hellaswag,59.401537139375
+Llama 3.3 70B (FP8),hellaswag,65.20937794000001
+Llama 3.3 70B (FP8),hellaswag,62.128547797500005
+Llama 3.3 70B (FP8),hellaswag,64.50894491833334
+Llama 3.3 70B (FP8),hellaswag,60.8767679088889
+Llama 3.3 70B (FP8),hellaswag,57.109697475
+Llama 3.3 70B (FP8),hellaswag,62.761799665999995
+Llama 3.3 70B (FP8),hellaswag,62.714599143
+Llama 3.3 70B (FP8),hellaswag,56.185731417999996
+Llama 3.3 70B (FP8),hellaswag,58.081854081
+Llama 3.3 70B (FP8),hellaswag,64.00785115892857
+Llama 3.3 70B (FP8),hellaswag,61.478352580000006
+Llama 3.3 70B (FP8),hellaswag,60.40758792666668
+Llama 3.3 70B (FP8),hellaswag,56.82291891699999
+Llama 3.3 70B (FP8),hellaswag,59.84304466666667
+Llama 3.3 70B (FP8),hellaswag,59.141307252
+Llama 3.3 70B (FP8),hellaswag,55.81144731178571
+Llama 3.3 70B (FP8),hellaswag,61.66152547
+Llama 3.3 70B (FP8),hellaswag,58.893203057142856
+Llama 3.3 70B (FP8),hellaswag,62.33480392099999
+Llama 3.3 70B (FP8),hellaswag,68.06457598700003
+Llama 3.3 70B (FP8),hellaswag,61.008722266875
+Llama 3.3 70B (FP8),hellaswag,62.289940405
+Llama 3.3 70B (FP8),hellaswag,61.84961045166666
+Llama 3.3 70B (FP8),hellaswag,66.40086847299999
+Llama 3.3 70B (FP8),hellaswag,66.12052652874999
+Llama 3.3 70B (FP8),hellaswag,63.600050906111115
+Llama 3.3 70B (FP8),hellaswag,64.34567696833332
+Llama 3.3 70B (FP8),hellaswag,63.78843673500001
+Llama 3.3 70B (FP8),hellaswag,58.832322036666675
+Llama 3.3 70B (FP8),hellaswag,56.11745891950001
+Llama 3.3 70B (FP8),hellaswag,58.29772385166667
+Llama 3.3 70B (FP8),hellaswag,54.9130931685
+Llama 3.3 70B (FP8),hellaswag,62.466474507
+Llama 3.3 70B (FP8),hellaswag,64.299344662
+Llama 3.3 70B (FP8),hellaswag,60.782127994999996
+Llama 3.3 70B (FP8),hellaswag,64.9320792875
+Llama 3.3 70B (FP8),hellaswag,63.83082151750001
+Llama 3.3 70B (FP8),hellaswag,62.705655924444436
+Llama 3.3 70B (FP8),hellaswag,60.548819178333346
+Llama 3.3 70B (FP8),hellaswag,60.184854599999994
+Llama 3.3 70B (FP8),hellaswag,64.496867053
+Llama 3.3 70B (FP8),hellaswag,61.11093529749999
+Llama 3.3 70B (FP8),hellaswag,60.66573584611112
+Apertus 70B (bf16),hellaswag,45.69750634
+Apertus 70B (bf16),hellaswag,72.18902013444443
+Apertus 70B (bf16),hellaswag,82.853499163
+Apertus 70B (bf16),hellaswag,82.95767772875001
+Apertus 70B (bf16),hellaswag,94.53160317625002
+Apertus 70B (bf16),hellaswag,89.45409373666666
+Apertus 70B (bf16),hellaswag,90.4448364525
+Apertus 70B (bf16),hellaswag,94.41415503333333
+Apertus 70B (bf16),hellaswag,95.06020917999999
+Apertus 70B (bf16),hellaswag,96.33252749833333
+Apertus 70B (bf16),hellaswag,89.92076710999999
+Apertus 70B (bf16),hellaswag,95.82654920150001
+Apertus 70B (bf16),hellaswag,92.66336915
+Apertus 70B (bf16),hellaswag,97.28765236499999
+Apertus 70B (bf16),hellaswag,95.64620458666666
+Apertus 70B (bf16),hellaswag,92.60185089624999
+Apertus 70B (bf16),hellaswag,93.78094038799999
+Apertus 70B (bf16),hellaswag,93.954471215
+Apertus 70B (bf16),hellaswag,93.6453387
+Apertus 70B (bf16),hellaswag,95.85139998687501
+Apertus 70B (bf16),hellaswag,91.1912234511111
+Apertus 70B (bf16),hellaswag,93.306226224375
+Apertus 70B (bf16),hellaswag,96.28478991777779
+Apertus 70B (bf16),hellaswag,94.63293390888889
+Apertus 70B (bf16),hellaswag,96.79379789999999
+Apertus 70B (bf16),hellaswag,93.23319052833332
+Apertus 70B (bf16),hellaswag,94.41414939555555
+Apertus 70B (bf16),hellaswag,95.09957652499999
+Apertus 70B (bf16),hellaswag,94.75700144
+Apertus 70B (bf16),hellaswag,79.45725467600002
+Apertus 70B (bf16),hellaswag,77.591883499
+Apertus 70B (bf16),hellaswag,93.10123945888887
+Apertus 70B (bf16),hellaswag,95.8323402
+Apertus 70B (bf16),hellaswag,93.43582205300001
+Apertus 70B (bf16),hellaswag,94.84527146449999
+Apertus 70B (bf16),hellaswag,101.05656181944445
+Apertus 70B (bf16),hellaswag,97.86953891166665
+Apertus 70B (bf16),hellaswag,93.19182062333334
+Apertus 70B (bf16),hellaswag,92.28086327500002
+Apertus 70B (bf16),hellaswag,91.22412619500001
+Apertus 70B (bf16),hellaswag,90.57916451999999
+Apertus 70B (bf16),hellaswag,95.6811578285
+Apertus 70B (bf16),hellaswag,95.37405980888887
+Apertus 70B (bf16),hellaswag,95.33514595
+Apertus 70B (bf16),hellaswag,97.96652905650001
+Apertus 70B (bf16),hellaswag,95.36224835499999
+Apertus 70B (bf16),hellaswag,94.95264278
+Apertus 70B (bf16),hellaswag,94.93561502888888
+Apertus 70B (bf16),hellaswag,83.45142495777779
+Apertus 70B (bf16),hellaswag,82.08100606749997
+Apertus 70B (bf16),hellaswag,93.79269115450002
+Apertus 70B (bf16),hellaswag,90.733876927
+Apertus 70B (bf16),hellaswag,92.16614543250002
+Apertus 70B (bf16),hellaswag,91.46057694500001
+Apertus 70B (bf16),hellaswag,100.66001056874997
+Apertus 70B (bf16),hellaswag,94.52346425888891
+Apertus 70B (bf16),hellaswag,96.99187642888887
+Apertus 70B (bf16),hellaswag,91.57213907
+Apertus 70B (bf16),hellaswag,94.28729138124999
+Apertus 70B (bf16),hellaswag,99.88633359749998
+Apertus 70B (bf16),hellaswag,93.38500730464287
+Apertus 70B (bf16),hellaswag,84.3004304152381
+Apertus 70B (bf16),hellaswag,79.87760987571428
+Apertus 70B (bf16),hellaswag,96.07725829000002
+Apertus 70B (bf16),hellaswag,93.991849154375
+Apertus 70B (bf16),hellaswag,95.84084076666664
+Apertus 70B (bf16),hellaswag,94.90515472833332
+Apertus 70B (bf16),hellaswag,98.36665392333333
+Apertus 70B (bf16),hellaswag,95.93409676125
+Apertus 70B (bf16),hellaswag,90.25372683166665
+Apertus 70B (bf16),hellaswag,91.69339938277778
+Apertus 70B (bf16),hellaswag,96.182586975
+Apertus 70B (bf16),hellaswag,99.16738645399998
+Apertus 70B (bf16),hellaswag,93.710061734
+Apertus 70B (bf16),hellaswag,81.82200444499999
+Apertus 70B (bf16),hellaswag,83.19593552500001
+Apertus 70B (bf16),hellaswag,94.93866856
+Apertus 70B (bf16),hellaswag,79.71159931555556
+Apertus 70B (bf16),hellaswag,96.10770529055551
+Apertus 70B (bf16),hellaswag,95.8870144675
+Apertus 70B (bf16),hellaswag,92.96527785849999
+Apertus 70B (bf16),hellaswag,94.74593621499999
+Apertus 70B (bf16),hellaswag,102.29619092650002
+Apertus 70B (bf16),hellaswag,98.0773012045
+Apertus 70B (bf16),hellaswag,94.27663692333333
+Apertus 70B (bf16),hellaswag,88.911834645
+Apertus 70B (bf16),hellaswag,83.46613815949999
+Apertus 70B (bf16),hellaswag,92.4460464375
+Apertus 70B (bf16),hellaswag,82.96595816166668
+Apertus 70B (bf16),hellaswag,92.64842913249998
+Apertus 70B (bf16),hellaswag,90.86726684624999
+Apertus 70B (bf16),hellaswag,94.25911230375
+Apertus 70B (bf16),hellaswag,95.969610335
+Apertus 70B (bf16),hellaswag,91.841142655
+Apertus 70B (bf16),hellaswag,85.39722979333335
+Apertus 70B (bf16),hellaswag,94.63074489785717
+Apertus 70B (bf16),hellaswag,96.19126132055554
+Apertus 70B (bf16),hellaswag,91.51360207999998
+Apertus 70B (bf16),hellaswag,91.98930655000001
+Apertus 70B (bf16),hellaswag,81.11828912375002
+Llama 3.2 1B (bf16),mmlu,22.437207078333333
+Llama 3.2 1B (bf16),mmlu,22.489813275000003
+Llama 3.2 1B (bf16),mmlu,22.896417640000003
+Llama 3.2 1B (bf16),mmlu,24.226777338333335
+Llama 3.2 1B (bf16),mmlu,23.748148007499996
+Llama 3.2 1B (bf16),mmlu,24.796942258571427
+Llama 3.2 1B (bf16),mmlu,23.945633238000003
+Llama 3.2 1B (bf16),mmlu,23.88650854249999
+Llama 3.2 1B (bf16),mmlu,23.28200652277778
+Llama 3.2 1B (bf16),mmlu,24.313379803888886
+Llama 3.2 1B (bf16),mmlu,23.255785178333333
+Llama 3.2 1B (bf16),mmlu,23.60619347222223
+Llama 3.2 1B (bf16),mmlu,23.35385655
+Llama 3.2 1B (bf16),mmlu,24.059844055
+Llama 3.2 1B (bf16),mmlu,22.85671715261905
+Llama 3.2 1B (bf16),mmlu,24.068717836666664
+Llama 3.2 1B (bf16),mmlu,24.936869401249997
+Llama 3.2 1B (bf16),mmlu,22.582788029444444
+Llama 3.2 1B (bf16),mmlu,23.60752796833333
+Llama 3.2 1B (bf16),mmlu,24.18682074
+Llama 3.2 1B (bf16),mmlu,22.932165920000003
+Llama 3.2 1B (bf16),mmlu,22.937940013333332
+Llama 3.2 1B (bf16),mmlu,22.866754163000003
+Llama 3.2 1B (bf16),mmlu,22.188518054999996
+Llama 3.2 1B (bf16),mmlu,22.978595677222227
+Llama 3.2 1B (bf16),mmlu,22.763310566666668
+Llama 3.2 1B (bf16),mmlu,24.039502493888886
+Llama 3.2 1B (bf16),mmlu,23.466557095555554
+Llama 3.2 1B (bf16),mmlu,23.432088004500002
+Llama 3.2 1B (bf16),mmlu,22.932604136
+Llama 3.2 1B (bf16),mmlu,23.852378471499996
+Llama 3.2 1B (bf16),mmlu,22.786396582000002
+Llama 3.2 1B (bf16),mmlu,24.534604915500005
+Llama 3.2 1B (bf16),mmlu,22.92174279
+Llama 3.2 1B (bf16),mmlu,24.21269162777778
+Llama 3.2 1B (bf16),mmlu,23.613742369
+Llama 3.2 1B (bf16),mmlu,23.4958463025
+Llama 3.2 1B (bf16),mmlu,23.602329684444445
+Llama 3.2 1B (bf16),mmlu,22.988829191111112
+Llama 3.2 1B (bf16),mmlu,23.125989773333334
+Llama 3.2 1B (bf16),mmlu,23.334733686666667
+Llama 3.2 1B (bf16),mmlu,22.742113383124998
+Llama 3.2 1B (bf16),mmlu,23.679534595
+Llama 3.2 1B (bf16),mmlu,23.66534649222222
+Llama 3.2 1B (bf16),mmlu,24.157848144761907
+Llama 3.2 1B (bf16),mmlu,22.96011282875
+Llama 3.2 1B (bf16),mmlu,23.024203247777773
+Llama 3.2 1B (bf16),mmlu,23.517636194999994
+Llama 3.2 1B (bf16),mmlu,23.939807095
+Llama 3.2 1B (bf16),mmlu,23.2875373565
+Llama 3.2 1B (bf16),mmlu,23.660503060624997
+Llama 3.2 1B (bf16),mmlu,22.876219266111107
+Llama 3.2 1B (bf16),mmlu,22.826915486250005
+Llama 3.2 1B (bf16),mmlu,24.008357459047613
+Llama 3.2 1B (bf16),mmlu,23.324267182857138
+Llama 3.2 1B (bf16),mmlu,24.76513040333333
+Llama 3.2 1B (bf16),mmlu,24.73989642875
+Llama 3.2 1B (bf16),mmlu,23.870151755000002
+Llama 3.2 1B (bf16),mmlu,23.299283863333336
+Llama 3.2 1B (bf16),mmlu,23.128597705000004
+Llama 3.2 1B (bf16),mmlu,22.835634715
+Llama 3.2 1B (bf16),mmlu,23.302826270000004
+Llama 3.2 1B (bf16),mmlu,23.52681365
+Llama 3.2 1B (bf16),mmlu,23.447666254499993
+Llama 3.2 1B (bf16),mmlu,22.968049817999997
+Llama 3.2 1B (bf16),mmlu,23.258389014999995
+Llama 3.2 1B (bf16),mmlu,23.522378000000003
+Llama 3.2 1B (bf16),mmlu,23.096778470000004
+Llama 3.2 1B (bf16),mmlu,22.641187325
+Llama 3.2 1B (bf16),mmlu,23.105444993333332
+Llama 3.2 1B (bf16),mmlu,22.656872504444447
+Llama 3.2 1B (bf16),mmlu,23.478868778999995
+Llama 3.2 1B (bf16),mmlu,24.065301180000002
+Llama 3.2 1B (bf16),mmlu,23.76654823
+Llama 3.2 1B (bf16),mmlu,24.022296161111115
+Llama 3.2 1B (bf16),mmlu,23.270872116666666
+Llama 3.2 1B (bf16),mmlu,23.25722853166667
+Llama 3.2 1B (bf16),mmlu,22.90171950388889
+Llama 3.2 1B (bf16),mmlu,22.344664143333336
+Llama 3.2 1B (bf16),mmlu,22.836654664375
+Llama 3.2 1B (bf16),mmlu,23.538168428125
+Llama 3.2 1B (bf16),mmlu,24.074468181666667
+Llama 3.2 1B (bf16),mmlu,23.53744816722222
+Llama 3.2 1B (bf16),mmlu,23.809084519
+Llama 3.2 1B (bf16),mmlu,23.31387564222223
+Llama 3.2 1B (bf16),mmlu,24.908506790624998
+Llama 3.2 1B (bf16),mmlu,23.168571462
+Llama 3.2 1B (bf16),mmlu,23.589888448750003
+Llama 3.2 1B (bf16),mmlu,23.69792131904762
+Llama 3.2 1B (bf16),mmlu,23.83386059111111
+Llama 3.2 1B (bf16),mmlu,23.64178706333334
+Llama 3.2 1B (bf16),mmlu,24.374633645000007
+Llama 3.2 1B (bf16),mmlu,23.905795908333335
+Llama 3.2 1B (bf16),mmlu,23.657345122222218
+Llama 3.2 1B (bf16),mmlu,24.122736716666665
+Llama 3.2 1B (bf16),mmlu,23.11533537666667
+Llama 3.2 1B (bf16),mmlu,23.410125642500002
+Llama 3.2 1B (bf16),mmlu,23.971050854
+Llama 3.2 1B (bf16),mmlu,23.570865528333336
+Llama 3.2 1B (bf16),mmlu,23.867114532222217
+Qwen 2.5 1.5B (bf16),mmlu,23.037002675624997
+Qwen 2.5 1.5B (bf16),mmlu,24.752642794999993
+Qwen 2.5 1.5B (bf16),mmlu,25.07383681
+Qwen 2.5 1.5B (bf16),mmlu,23.56025514541667
+Qwen 2.5 1.5B (bf16),mmlu,24.04778770738095
+Qwen 2.5 1.5B (bf16),mmlu,24.861432396666665
+Qwen 2.5 1.5B (bf16),mmlu,24.466084247380955
+Qwen 2.5 1.5B (bf16),mmlu,23.546053065000002
+Qwen 2.5 1.5B (bf16),mmlu,24.927205552083336
+Qwen 2.5 1.5B (bf16),mmlu,24.1159584697619
+Qwen 2.5 1.5B (bf16),mmlu,23.977429584444444
+Qwen 2.5 1.5B (bf16),mmlu,24.474760635000003
+Qwen 2.5 1.5B (bf16),mmlu,23.891661268333333
+Qwen 2.5 1.5B (bf16),mmlu,25.17720380047619
+Qwen 2.5 1.5B (bf16),mmlu,24.00786386714286
+Qwen 2.5 1.5B (bf16),mmlu,25.491538418
+Qwen 2.5 1.5B (bf16),mmlu,24.594113420476187
+Qwen 2.5 1.5B (bf16),mmlu,23.767968755833333
+Qwen 2.5 1.5B (bf16),mmlu,23.524807303333333
+Qwen 2.5 1.5B (bf16),mmlu,24.864215951250006
+Qwen 2.5 1.5B (bf16),mmlu,23.278900425714287
+Qwen 2.5 1.5B (bf16),mmlu,23.883406054047615
+Qwen 2.5 1.5B (bf16),mmlu,24.58453262444445
+Qwen 2.5 1.5B (bf16),mmlu,24.119216515000005
+Qwen 2.5 1.5B (bf16),mmlu,24.576071805
+Qwen 2.5 1.5B (bf16),mmlu,24.554293344999998
+Qwen 2.5 1.5B (bf16),mmlu,23.65385118944445
+Qwen 2.5 1.5B (bf16),mmlu,24.401345705000004
+Qwen 2.5 1.5B (bf16),mmlu,24.422689140000003
+Qwen 2.5 1.5B (bf16),mmlu,23.43818377222222
+Qwen 2.5 1.5B (bf16),mmlu,23.9616964675
+Qwen 2.5 1.5B (bf16),mmlu,23.594844220000002
+Qwen 2.5 1.5B (bf16),mmlu,23.73723155452381
+Qwen 2.5 1.5B (bf16),mmlu,25.876982135000002
+Qwen 2.5 1.5B (bf16),mmlu,24.16792194785714
+Qwen 2.5 1.5B (bf16),mmlu,23.73051887523809
+Qwen 2.5 1.5B (bf16),mmlu,23.973721498
+Qwen 2.5 1.5B (bf16),mmlu,23.296227137499997
+Qwen 2.5 1.5B (bf16),mmlu,24.243331939999994
+Qwen 2.5 1.5B (bf16),mmlu,23.883297822500005
+Qwen 2.5 1.5B (bf16),mmlu,25.234350936666672
+Qwen 2.5 1.5B (bf16),mmlu,23.897016117499998
+Qwen 2.5 1.5B (bf16),mmlu,24.823896029374996
+Qwen 2.5 1.5B (bf16),mmlu,25.44833930428571
+Qwen 2.5 1.5B (bf16),mmlu,23.693428517499996
+Qwen 2.5 1.5B (bf16),mmlu,23.80962999607143
+Qwen 2.5 1.5B (bf16),mmlu,24.411775764499996
+Qwen 2.5 1.5B (bf16),mmlu,24.31419748333333
+Qwen 2.5 1.5B (bf16),mmlu,24.644895567777777
+Qwen 2.5 1.5B (bf16),mmlu,24.184538211666666
+Qwen 2.5 1.5B (bf16),mmlu,23.96499547333334
+Qwen 2.5 1.5B (bf16),mmlu,24.465906261666664
+Qwen 2.5 1.5B (bf16),mmlu,23.811414284999998
+Qwen 2.5 1.5B (bf16),mmlu,23.57285489321428
+Qwen 2.5 1.5B (bf16),mmlu,23.464822649444443
+Qwen 2.5 1.5B (bf16),mmlu,23.909414326666667
+Qwen 2.5 1.5B (bf16),mmlu,24.381215403333332
+Qwen 2.5 1.5B (bf16),mmlu,25.327382303333334
+Qwen 2.5 1.5B (bf16),mmlu,23.40223463
+Qwen 2.5 1.5B (bf16),mmlu,23.963099530000004
+Qwen 2.5 1.5B (bf16),mmlu,24.39181424833333
+Qwen 2.5 1.5B (bf16),mmlu,23.50130069071429
+Qwen 2.5 1.5B (bf16),mmlu,23.878048302499998
+Qwen 2.5 1.5B (bf16),mmlu,24.217850775
+Qwen 2.5 1.5B (bf16),mmlu,23.77252130722222
+Qwen 2.5 1.5B (bf16),mmlu,23.710850502499998
+Qwen 2.5 1.5B (bf16),mmlu,23.553513368333327
+Qwen 2.5 1.5B (bf16),mmlu,24.19503259875
+Qwen 2.5 1.5B (bf16),mmlu,25.451199417499996
+Qwen 2.5 1.5B (bf16),mmlu,24.314817129999998
+Qwen 2.5 1.5B (bf16),mmlu,24.009874805000003
+Qwen 2.5 1.5B (bf16),mmlu,24.530660709444444
+Qwen 2.5 1.5B (bf16),mmlu,24.225023806499994
+Qwen 2.5 1.5B (bf16),mmlu,23.143823119999993
+Qwen 2.5 1.5B (bf16),mmlu,24.099868571111116
+Qwen 2.5 1.5B (bf16),mmlu,23.73756214666667
+Qwen 2.5 1.5B (bf16),mmlu,24.974958037222226
+Qwen 2.5 1.5B (bf16),mmlu,23.706463660000004
+Qwen 2.5 1.5B (bf16),mmlu,23.682121705
+Qwen 2.5 1.5B (bf16),mmlu,23.229250914999998
+Qwen 2.5 1.5B (bf16),mmlu,24.172811709999998
+Qwen 2.5 1.5B (bf16),mmlu,23.8550170625
+Qwen 2.5 1.5B (bf16),mmlu,24.019600695
+Qwen 2.5 1.5B (bf16),mmlu,24.326142538333336
+Qwen 2.5 1.5B (bf16),mmlu,23.824599126500004
+Qwen 2.5 1.5B (bf16),mmlu,25.331078074999997
+Qwen 2.5 1.5B (bf16),mmlu,24.317008452222225
+Qwen 2.5 1.5B (bf16),mmlu,24.239248253
+Qwen 2.5 1.5B (bf16),mmlu,25.79210474875
+Qwen 2.5 1.5B (bf16),mmlu,25.217384883888887
+Qwen 2.5 1.5B (bf16),mmlu,24.806867033333337
+Qwen 2.5 1.5B (bf16),mmlu,24.745767035
+Qwen 2.5 1.5B (bf16),mmlu,23.786170859999995
+Qwen 2.5 1.5B (bf16),mmlu,23.732190105
+Qwen 2.5 1.5B (bf16),mmlu,24.399187480476186
+Qwen 2.5 1.5B (bf16),mmlu,23.610880889375
+Qwen 2.5 1.5B (bf16),mmlu,24.523133555
+Qwen 2.5 1.5B (bf16),mmlu,23.385223764
+Qwen 2.5 1.5B (bf16),mmlu,23.910980161999998
+Qwen 2.5 1.5B (bf16),mmlu,23.72671714857143
+Ministral 3 3B (AWQ),mmlu,23.108994149
+Ministral 3 3B (AWQ),mmlu,24.351220780625003
+Ministral 3 3B (AWQ),mmlu,25.94860584
+Ministral 3 3B (AWQ),mmlu,25.788158494999994
+Ministral 3 3B (AWQ),mmlu,24.43701747875
+Ministral 3 3B (AWQ),mmlu,26.442069000624997
+Ministral 3 3B (AWQ),mmlu,23.901489390000002
+Ministral 3 3B (AWQ),mmlu,23.551222323333334
+Ministral 3 3B (AWQ),mmlu,24.748975746875
+Ministral 3 3B (AWQ),mmlu,24.838532669444447
+Ministral 3 3B (AWQ),mmlu,25.057784134000002
+Ministral 3 3B (AWQ),mmlu,25.253642183333334
+Ministral 3 3B (AWQ),mmlu,24.90376936222222
+Ministral 3 3B (AWQ),mmlu,24.315567414500002
+Ministral 3 3B (AWQ),mmlu,23.992220121071433
+Ministral 3 3B (AWQ),mmlu,26.1896000025
+Ministral 3 3B (AWQ),mmlu,25.470842667499998
+Ministral 3 3B (AWQ),mmlu,23.931928719285715
+Ministral 3 3B (AWQ),mmlu,25.895568848499998
+Ministral 3 3B (AWQ),mmlu,23.210229910000002
+Ministral 3 3B (AWQ),mmlu,23.633766575000006
+Ministral 3 3B (AWQ),mmlu,24.405943044375
+Ministral 3 3B (AWQ),mmlu,23.60195507749999
+Ministral 3 3B (AWQ),mmlu,26.123422884375
+Ministral 3 3B (AWQ),mmlu,24.700797629375
+Ministral 3 3B (AWQ),mmlu,25.310383099444444
+Ministral 3 3B (AWQ),mmlu,24.82556992
+Ministral 3 3B (AWQ),mmlu,25.018238458333332
+Ministral 3 3B (AWQ),mmlu,25.275881089999995
+Ministral 3 3B (AWQ),mmlu,24.566920911
+Ministral 3 3B (AWQ),mmlu,24.95954773111111
+Ministral 3 3B (AWQ),mmlu,24.601024117999998
+Ministral 3 3B (AWQ),mmlu,24.047406927000004
+Ministral 3 3B (AWQ),mmlu,24.224839444999997
+Ministral 3 3B (AWQ),mmlu,23.487125230000004
+Ministral 3 3B (AWQ),mmlu,24.312516402999997
+Ministral 3 3B (AWQ),mmlu,24.38429327722222
+Ministral 3 3B (AWQ),mmlu,24.821671209999995
+Ministral 3 3B (AWQ),mmlu,23.790040884000003
+Ministral 3 3B (AWQ),mmlu,24.85184298
+Ministral 3 3B (AWQ),mmlu,24.434231066666666
+Ministral 3 3B (AWQ),mmlu,24.435036801875004
+Ministral 3 3B (AWQ),mmlu,23.625229612999995
+Ministral 3 3B (AWQ),mmlu,24.262042838333336
+Ministral 3 3B (AWQ),mmlu,25.184627313333326
+Ministral 3 3B (AWQ),mmlu,24.307582996874995
+Ministral 3 3B (AWQ),mmlu,24.570268449999997
+Ministral 3 3B (AWQ),mmlu,25.21628759875
+Ministral 3 3B (AWQ),mmlu,23.598798812500007
+Ministral 3 3B (AWQ),mmlu,24.384379891875
+Ministral 3 3B (AWQ),mmlu,24.360315220555556
+Ministral 3 3B (AWQ),mmlu,23.641893315000004
+Ministral 3 3B (AWQ),mmlu,23.60684372428572
+Ministral 3 3B (AWQ),mmlu,23.782626422222226
+Ministral 3 3B (AWQ),mmlu,24.20811908
+Ministral 3 3B (AWQ),mmlu,26.41709176388889
+Ministral 3 3B (AWQ),mmlu,23.67874522047619
+Ministral 3 3B (AWQ),mmlu,24.3471245675
+Ministral 3 3B (AWQ),mmlu,24.45138429
+Ministral 3 3B (AWQ),mmlu,25.438186135000002
+Ministral 3 3B (AWQ),mmlu,24.50694072666667
+Ministral 3 3B (AWQ),mmlu,24.224904121875
+Ministral 3 3B (AWQ),mmlu,23.670774048000002
+Ministral 3 3B (AWQ),mmlu,23.15698004
+Ministral 3 3B (AWQ),mmlu,24.9731846725
+Ministral 3 3B (AWQ),mmlu,24.42142493785714
+Ministral 3 3B (AWQ),mmlu,24.103152191666666
+Ministral 3 3B (AWQ),mmlu,23.58130308400001
+Ministral 3 3B (AWQ),mmlu,25.00105443175
+Ministral 3 3B (AWQ),mmlu,24.629456438333335
+Ministral 3 3B (AWQ),mmlu,23.982696179999998
+Ministral 3 3B (AWQ),mmlu,24.384296632499996
+Ministral 3 3B (AWQ),mmlu,23.4761231375
+Ministral 3 3B (AWQ),mmlu,23.7715608375
+Ministral 3 3B (AWQ),mmlu,24.161249665
+Ministral 3 3B (AWQ),mmlu,23.062142820500004
+Ministral 3 3B (AWQ),mmlu,23.9835296525
+Ministral 3 3B (AWQ),mmlu,23.684178574999994
+Ministral 3 3B (AWQ),mmlu,23.69146520388889
+Ministral 3 3B (AWQ),mmlu,24.2609013
+Ministral 3 3B (AWQ),mmlu,23.922153770555553
+Ministral 3 3B (AWQ),mmlu,23.877273416
+Ministral 3 3B (AWQ),mmlu,23.906095080555552
+Ministral 3 3B (AWQ),mmlu,24.270068501
+Ministral 3 3B (AWQ),mmlu,23.887199645000003
+Ministral 3 3B (AWQ),mmlu,24.32577798
+Ministral 3 3B (AWQ),mmlu,24.265508384375
+Ministral 3 3B (AWQ),mmlu,23.288125465000004
+Ministral 3 3B (AWQ),mmlu,24.508163993333337
+Ministral 3 3B (AWQ),mmlu,24.3044880975
+Ministral 3 3B (AWQ),mmlu,24.529623758333337
+Ministral 3 3B (AWQ),mmlu,25.65474394
+Ministral 3 3B (AWQ),mmlu,24.033556951999994
+Ministral 3 3B (AWQ),mmlu,23.992069525999998
+Ministral 3 3B (AWQ),mmlu,23.46787646
+Ministral 3 3B (AWQ),mmlu,24.57183964111111
+Ministral 3 3B (AWQ),mmlu,25.035677643888892
+Ministral 3 3B (AWQ),mmlu,26.118675995
+Ministral 3 3B (AWQ),mmlu,24.398207159
+Ministral 3 3B (AWQ),mmlu,26.824411170000005
+Qwen 2.5 7B (AWQ),mmlu,24.3232303605
+Qwen 2.5 7B (AWQ),mmlu,27.908620978333335
+Qwen 2.5 7B (AWQ),mmlu,24.763766511
+Qwen 2.5 7B (AWQ),mmlu,25.806027547222225
+Qwen 2.5 7B (AWQ),mmlu,26.454420957500005
+Qwen 2.5 7B (AWQ),mmlu,30.158083903333335
+Qwen 2.5 7B (AWQ),mmlu,29.361206692000003
+Qwen 2.5 7B (AWQ),mmlu,26.170393364999995
+Qwen 2.5 7B (AWQ),mmlu,27.104178727
+Qwen 2.5 7B (AWQ),mmlu,25.719009979999996
+Qwen 2.5 7B (AWQ),mmlu,26.98438138944444
+Qwen 2.5 7B (AWQ),mmlu,25.252678309444445
+Qwen 2.5 7B (AWQ),mmlu,26.859963601999993
+Qwen 2.5 7B (AWQ),mmlu,25.987629935
+Qwen 2.5 7B (AWQ),mmlu,28.816695110999998
+Qwen 2.5 7B (AWQ),mmlu,30.64763506166666
+Qwen 2.5 7B (AWQ),mmlu,31.476763674999997
+Qwen 2.5 7B (AWQ),mmlu,27.806351471666666
+Qwen 2.5 7B (AWQ),mmlu,26.27354852722222
+Qwen 2.5 7B (AWQ),mmlu,26.447211193999998
+Qwen 2.5 7B (AWQ),mmlu,25.214552868500007
+Qwen 2.5 7B (AWQ),mmlu,25.046773698999996
+Qwen 2.5 7B (AWQ),mmlu,25.952353946499997
+Qwen 2.5 7B (AWQ),mmlu,25.245990962222216
+Qwen 2.5 7B (AWQ),mmlu,26.834000671000002
+Qwen 2.5 7B (AWQ),mmlu,26.211925949999998
+Qwen 2.5 7B (AWQ),mmlu,25.601276976666668
+Qwen 2.5 7B (AWQ),mmlu,27.742465249444443
+Qwen 2.5 7B (AWQ),mmlu,25.667010258000005
+Qwen 2.5 7B (AWQ),mmlu,25.461296057777773
+Qwen 2.5 7B (AWQ),mmlu,27.261824347500003
+Qwen 2.5 7B (AWQ),mmlu,24.350171450999998
+Qwen 2.5 7B (AWQ),mmlu,25.862278413000002
+Qwen 2.5 7B (AWQ),mmlu,28.898764922777783
+Qwen 2.5 7B (AWQ),mmlu,25.172081925999997
+Qwen 2.5 7B (AWQ),mmlu,26.795569265
+Qwen 2.5 7B (AWQ),mmlu,24.882145117500002
+Qwen 2.5 7B (AWQ),mmlu,25.878691611111112
+Qwen 2.5 7B (AWQ),mmlu,25.6500547825
+Qwen 2.5 7B (AWQ),mmlu,27.636726616666667
+Qwen 2.5 7B (AWQ),mmlu,26.398931038888882
+Qwen 2.5 7B (AWQ),mmlu,27.978585227999996
+Qwen 2.5 7B (AWQ),mmlu,24.890757646999997
+Qwen 2.5 7B (AWQ),mmlu,25.290208590000002
+Qwen 2.5 7B (AWQ),mmlu,25.408310787222224
+Qwen 2.5 7B (AWQ),mmlu,24.623816973500002
+Qwen 2.5 7B (AWQ),mmlu,24.588722187500007
+Qwen 2.5 7B (AWQ),mmlu,25.770510173333328
+Qwen 2.5 7B (AWQ),mmlu,25.076423798500002
+Qwen 2.5 7B (AWQ),mmlu,24.91581435
+Qwen 2.5 7B (AWQ),mmlu,26.843009426666672
+Qwen 2.5 7B (AWQ),mmlu,25.53117152
+Qwen 2.5 7B (AWQ),mmlu,25.944407119999997
+Qwen 2.5 7B (AWQ),mmlu,24.827403664444443
+Qwen 2.5 7B (AWQ),mmlu,25.8118507275
+Qwen 2.5 7B (AWQ),mmlu,28.571811461666666
+Qwen 2.5 7B (AWQ),mmlu,27.643520130000002
+Qwen 2.5 7B (AWQ),mmlu,25.814046137
+Qwen 2.5 7B (AWQ),mmlu,27.376286814999997
+Qwen 2.5 7B (AWQ),mmlu,26.679347066000002
+Qwen 2.5 7B (AWQ),mmlu,26.72944839777778
+Qwen 2.5 7B (AWQ),mmlu,26.473648100555554
+Qwen 2.5 7B (AWQ),mmlu,25.79055644
+Qwen 2.5 7B (AWQ),mmlu,26.099757720000003
+Qwen 2.5 7B (AWQ),mmlu,25.569816797999998
+Qwen 2.5 7B (AWQ),mmlu,26.505159124500004
+Qwen 2.5 7B (AWQ),mmlu,26.542303466000003
+Qwen 2.5 7B (AWQ),mmlu,25.583789069000005
+Qwen 2.5 7B (AWQ),mmlu,28.836662993888886
+Qwen 2.5 7B (AWQ),mmlu,26.854500955
+Qwen 2.5 7B (AWQ),mmlu,26.788775495
+Qwen 2.5 7B (AWQ),mmlu,27.112537647222215
+Qwen 2.5 7B (AWQ),mmlu,26.141723032500003
+Qwen 2.5 7B (AWQ),mmlu,27.44765764650001
+Qwen 2.5 7B (AWQ),mmlu,24.397592688333333
+Qwen 2.5 7B (AWQ),mmlu,25.10589763125
+Qwen 2.5 7B (AWQ),mmlu,25.554898626874998
+Qwen 2.5 7B (AWQ),mmlu,26.203294823125
+Qwen 2.5 7B (AWQ),mmlu,25.715267023749995
+Qwen 2.5 7B (AWQ),mmlu,26.197896950555553
+Qwen 2.5 7B (AWQ),mmlu,27.132991308999994
+Qwen 2.5 7B (AWQ),mmlu,25.348483606000002
+Qwen 2.5 7B (AWQ),mmlu,26.08146329
+Qwen 2.5 7B (AWQ),mmlu,24.44256790444444
+Qwen 2.5 7B (AWQ),mmlu,25.917793695000004
+Qwen 2.5 7B (AWQ),mmlu,29.10901604777778
+Qwen 2.5 7B (AWQ),mmlu,25.651327955
+Qwen 2.5 7B (AWQ),mmlu,25.71200137666667
+Qwen 2.5 7B (AWQ),mmlu,29.946199598125
+Qwen 2.5 7B (AWQ),mmlu,25.863042434999997
+Qwen 2.5 7B (AWQ),mmlu,25.428367390555554
+Qwen 2.5 7B (AWQ),mmlu,29.982466904444436
+Qwen 2.5 7B (AWQ),mmlu,25.893374389999995
+Qwen 2.5 7B (AWQ),mmlu,25.970256478
+Qwen 2.5 7B (AWQ),mmlu,26.451013657499995
+Qwen 2.5 7B (AWQ),mmlu,27.222546207222223
+Qwen 2.5 7B (AWQ),mmlu,28.680379155555553
+Qwen 2.5 7B (AWQ),mmlu,25.801479980000003
+Qwen 2.5 7B (AWQ),mmlu,27.78694179000001
+Qwen 2.5 7B (AWQ),mmlu,29.644425155
+Qwen 3 4B (AWQ),mmlu,24.2991352
+Qwen 3 4B (AWQ),mmlu,25.40258061380952
+Qwen 3 4B (AWQ),mmlu,23.678739619999998
+Qwen 3 4B (AWQ),mmlu,25.312601062380956
+Qwen 3 4B (AWQ),mmlu,25.053856237777772
+Qwen 3 4B (AWQ),mmlu,27.255875041249993
+Qwen 3 4B (AWQ),mmlu,25.157515240000006
+Qwen 3 4B (AWQ),mmlu,25.447668600999993
+Qwen 3 4B (AWQ),mmlu,24.999251819999998
+Qwen 3 4B (AWQ),mmlu,25.57077310055555
+Qwen 3 4B (AWQ),mmlu,25.023253256000004
+Qwen 3 4B (AWQ),mmlu,24.838707550000002
+Qwen 3 4B (AWQ),mmlu,24.23214706722222
+Qwen 3 4B (AWQ),mmlu,24.477421334999992
+Qwen 3 4B (AWQ),mmlu,25.647385475000004
+Qwen 3 4B (AWQ),mmlu,27.306666188333335
+Qwen 3 4B (AWQ),mmlu,27.814723615555554
+Qwen 3 4B (AWQ),mmlu,24.571306608000004
+Qwen 3 4B (AWQ),mmlu,25.00347515
+Qwen 3 4B (AWQ),mmlu,25.62108136333333
+Qwen 3 4B (AWQ),mmlu,25.999193451250004
+Qwen 3 4B (AWQ),mmlu,26.468268724375005
+Qwen 3 4B (AWQ),mmlu,25.622355647777777
+Qwen 3 4B (AWQ),mmlu,26.56461037555555
+Qwen 3 4B (AWQ),mmlu,25.121237063571428
+Qwen 3 4B (AWQ),mmlu,25.711884991666665
+Qwen 3 4B (AWQ),mmlu,25.277929642000004
+Qwen 3 4B (AWQ),mmlu,26.75367177166667
+Qwen 3 4B (AWQ),mmlu,24.93433776
+Qwen 3 4B (AWQ),mmlu,24.078858633333333
+Qwen 3 4B (AWQ),mmlu,25.246276475833337
+Qwen 3 4B (AWQ),mmlu,26.811268713
+Qwen 3 4B (AWQ),mmlu,25.12246104375
+Qwen 3 4B (AWQ),mmlu,26.270258794999997
+Qwen 3 4B (AWQ),mmlu,25.108106774
+Qwen 3 4B (AWQ),mmlu,25.020117938749998
+Qwen 3 4B (AWQ),mmlu,24.501343869999996
+Qwen 3 4B (AWQ),mmlu,24.888217435000005
+Qwen 3 4B (AWQ),mmlu,25.748176867500007
+Qwen 3 4B (AWQ),mmlu,25.735325072777776
+Qwen 3 4B (AWQ),mmlu,25.731247059500003
+Qwen 3 4B (AWQ),mmlu,25.293869615000002
+Qwen 3 4B (AWQ),mmlu,24.564520382500003
+Qwen 3 4B (AWQ),mmlu,24.614413810555558
+Qwen 3 4B (AWQ),mmlu,25.097049134999995
+Qwen 3 4B (AWQ),mmlu,24.462883241
+Qwen 3 4B (AWQ),mmlu,24.933460677222225
+Qwen 3 4B (AWQ),mmlu,25.677813561111112
+Qwen 3 4B (AWQ),mmlu,25.260143871999997
+Qwen 3 4B (AWQ),mmlu,25.97302486833333
+Qwen 3 4B (AWQ),mmlu,28.52485705321428
+Qwen 3 4B (AWQ),mmlu,25.38680956285714
+Qwen 3 4B (AWQ),mmlu,25.619861313999998
+Qwen 3 4B (AWQ),mmlu,26.15161385333333
+Qwen 3 4B (AWQ),mmlu,24.545441525
+Qwen 3 4B (AWQ),mmlu,27.43932518833334
+Qwen 3 4B (AWQ),mmlu,25.819165291111112
+Qwen 3 4B (AWQ),mmlu,25.296976567777783
+Qwen 3 4B (AWQ),mmlu,24.836828172499995
+Qwen 3 4B (AWQ),mmlu,24.944500738000002
+Qwen 3 4B (AWQ),mmlu,25.448939480999996
+Qwen 3 4B (AWQ),mmlu,23.527455047999993
+Qwen 3 4B (AWQ),mmlu,25.512022204999997
+Qwen 3 4B (AWQ),mmlu,24.940644573333337
+Qwen 3 4B (AWQ),mmlu,24.936800675
+Qwen 3 4B (AWQ),mmlu,24.832728026666665
+Qwen 3 4B (AWQ),mmlu,25.296644711666666
+Qwen 3 4B (AWQ),mmlu,24.116642898333335
+Qwen 3 4B (AWQ),mmlu,25.54674833625
+Qwen 3 4B (AWQ),mmlu,28.23886911666667
+Qwen 3 4B (AWQ),mmlu,24.556362766111114
+Qwen 3 4B (AWQ),mmlu,25.931422727499996
+Qwen 3 4B (AWQ),mmlu,25.280710180625004
+Qwen 3 4B (AWQ),mmlu,26.315479913750004
+Qwen 3 4B (AWQ),mmlu,26.130925732499996
+Qwen 3 4B (AWQ),mmlu,24.616668549444448
+Qwen 3 4B (AWQ),mmlu,25.642181853333337
+Qwen 3 4B (AWQ),mmlu,24.392022595
+Qwen 3 4B (AWQ),mmlu,24.92746889111111
+Qwen 3 4B (AWQ),mmlu,24.668329712222217
+Qwen 3 4B (AWQ),mmlu,25.523435015
+Qwen 3 4B (AWQ),mmlu,24.89104813833334
+Qwen 3 4B (AWQ),mmlu,25.023340564444446
+Qwen 3 4B (AWQ),mmlu,24.617520973749997
+Qwen 3 4B (AWQ),mmlu,25.0658164
+Qwen 3 4B (AWQ),mmlu,27.727468120476193
+Qwen 3 4B (AWQ),mmlu,25.883746206875
+Qwen 3 4B (AWQ),mmlu,27.878414909999993
+Qwen 3 4B (AWQ),mmlu,27.499257628333332
+Qwen 3 4B (AWQ),mmlu,25.484237664999995
+Qwen 3 4B (AWQ),mmlu,24.363215515238096
+Qwen 3 4B (AWQ),mmlu,26.567599865
+Qwen 3 4B (AWQ),mmlu,24.692613175000005
+Qwen 3 4B (AWQ),mmlu,24.557776243888892
+Qwen 3 4B (AWQ),mmlu,26.332188601
+Qwen 3 4B (AWQ),mmlu,25.411329219999995
+Qwen 3 4B (AWQ),mmlu,26.688607615
+Qwen 3 4B (AWQ),mmlu,25.524346164374997
+Qwen 3 4B (AWQ),mmlu,27.310283474444446
+Qwen 3 4B (AWQ),mmlu,25.998427761666672
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,24.674413126
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.6533739475
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.05430580666667
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.07227532375
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.70313682625
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,27.3593065875
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.746602281111105
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.790845422000004
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.512107945000004
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,24.477815640625
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.227164022999997
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.355303491666668
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.002800921499997
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.7177494625
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.11677870722222
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,27.64172406785714
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,28.390014241111107
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.467402286428573
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.191916781666666
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.409414714999993
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.889303841666663
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.172783201250002
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,24.833748050000004
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.956659534999996
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.85876685714286
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.42756237214286
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.273338269999996
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.152544411666668
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.26953391333334
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.43128668388889
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.602202775555554
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.00189396
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.702021912500005
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,28.56725591375001
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.989924214999995
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.511173514444444
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.362286751666673
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.814307917222223
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.149789194444445
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.538266514444448
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.437988565499996
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.116453205999996
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.57382628777777
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.266557163499993
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.486863802500004
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.155330075500004
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.16246489888889
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,27.903458403333335
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.545019916000005
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,27.46293076
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.49667252
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.116678253333333
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.089848974375005
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.985978925476193
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.26530795277777
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,27.3569733425
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,27.35752776277778
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.910451989444443
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.484953644999997
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.550722351500003
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.7762921975
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.053853770555552
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,27.652904507777773
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.316578753750004
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.144624873125
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.14987523055555
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.46836033125
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.081966886666667
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.0101591775
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.872648990000002
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.869515644000003
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.90890070777778
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.812801238125
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.812109714
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.045522530714283
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.655872917499995
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.452811447500007
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.466943974999996
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.07411109375
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.092553464999995
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.924600895714285
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,24.652365895
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.630957478333332
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.726198715
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.993342991111106
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,27.881532495624995
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.153515064
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.707557634
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,28.483788069374995
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.995825229444446
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.208456844375
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.718085775000006
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,27.215951817500002
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.781656275000003
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.109037166499995
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.895887542222226
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.37518774388889
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,25.278675139999997
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.289847707
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,26.87001142499999
+Ministral 3 8B (AWQ),mmlu,24.863881303999996
+Ministral 3 8B (AWQ),mmlu,25.71783882277778
+Ministral 3 8B (AWQ),mmlu,25.015726253
+Ministral 3 8B (AWQ),mmlu,25.802458528000006
+Ministral 3 8B (AWQ),mmlu,26.748278925000005
+Ministral 3 8B (AWQ),mmlu,30.329931565000006
+Ministral 3 8B (AWQ),mmlu,27.427732905
+Ministral 3 8B (AWQ),mmlu,25.70079104
+Ministral 3 8B (AWQ),mmlu,25.210624739500002
+Ministral 3 8B (AWQ),mmlu,25.917264270000004
+Ministral 3 8B (AWQ),mmlu,25.658578673333338
+Ministral 3 8B (AWQ),mmlu,24.885403369000006
+Ministral 3 8B (AWQ),mmlu,25.409528124999998
+Ministral 3 8B (AWQ),mmlu,24.343610006000002
+Ministral 3 8B (AWQ),mmlu,24.85584606666667
+Ministral 3 8B (AWQ),mmlu,30.4368475575
+Ministral 3 8B (AWQ),mmlu,31.209120127777776
+Ministral 3 8B (AWQ),mmlu,26.897244724
+Ministral 3 8B (AWQ),mmlu,25.9286793
+Ministral 3 8B (AWQ),mmlu,27.724465799444452
+Ministral 3 8B (AWQ),mmlu,25.907344653000003
+Ministral 3 8B (AWQ),mmlu,27.735400561875007
+Ministral 3 8B (AWQ),mmlu,26.77501335
+Ministral 3 8B (AWQ),mmlu,26.31198228166667
+Ministral 3 8B (AWQ),mmlu,25.941181857500005
+Ministral 3 8B (AWQ),mmlu,28.645485532619045
+Ministral 3 8B (AWQ),mmlu,26.753060023888892
+Ministral 3 8B (AWQ),mmlu,26.021087868750005
+Ministral 3 8B (AWQ),mmlu,26.278092600624998
+Ministral 3 8B (AWQ),mmlu,25.514020715
+Ministral 3 8B (AWQ),mmlu,26.096108522
+Ministral 3 8B (AWQ),mmlu,26.031297380000005
+Ministral 3 8B (AWQ),mmlu,25.2807501235
+Ministral 3 8B (AWQ),mmlu,30.838940585000003
+Ministral 3 8B (AWQ),mmlu,24.95115809888889
+Ministral 3 8B (AWQ),mmlu,26.735312081000004
+Ministral 3 8B (AWQ),mmlu,27.938266401071424
+Ministral 3 8B (AWQ),mmlu,25.66561535812499
+Ministral 3 8B (AWQ),mmlu,26.638946156666666
+Ministral 3 8B (AWQ),mmlu,25.103050765
+Ministral 3 8B (AWQ),mmlu,25.49174603
+Ministral 3 8B (AWQ),mmlu,25.29217242
+Ministral 3 8B (AWQ),mmlu,25.080593337
+Ministral 3 8B (AWQ),mmlu,25.168774527500002
+Ministral 3 8B (AWQ),mmlu,26.067203708
+Ministral 3 8B (AWQ),mmlu,26.126281354999996
+Ministral 3 8B (AWQ),mmlu,24.996459895
+Ministral 3 8B (AWQ),mmlu,26.774375428888888
+Ministral 3 8B (AWQ),mmlu,27.119560381499998
+Ministral 3 8B (AWQ),mmlu,25.11187290666667
+Ministral 3 8B (AWQ),mmlu,26.819641362222225
+Ministral 3 8B (AWQ),mmlu,25.432438719999997
+Ministral 3 8B (AWQ),mmlu,25.42665354944445
+Ministral 3 8B (AWQ),mmlu,26.567285795
+Ministral 3 8B (AWQ),mmlu,26.690610412999998
+Ministral 3 8B (AWQ),mmlu,30.486493743888893
+Ministral 3 8B (AWQ),mmlu,29.303526659999996
+Ministral 3 8B (AWQ),mmlu,26.685655344999997
+Ministral 3 8B (AWQ),mmlu,25.444274069375002
+Ministral 3 8B (AWQ),mmlu,25.40789023722222
+Ministral 3 8B (AWQ),mmlu,25.573190316111113
+Ministral 3 8B (AWQ),mmlu,25.860045995999997
+Ministral 3 8B (AWQ),mmlu,27.637468762
+Ministral 3 8B (AWQ),mmlu,24.875059991999997
+Ministral 3 8B (AWQ),mmlu,27.156488491666668
+Ministral 3 8B (AWQ),mmlu,27.228875719999998
+Ministral 3 8B (AWQ),mmlu,25.31660975
+Ministral 3 8B (AWQ),mmlu,26.036744372999998
+Ministral 3 8B (AWQ),mmlu,26.372582178750005
+Ministral 3 8B (AWQ),mmlu,27.09642716761905
+Ministral 3 8B (AWQ),mmlu,26.195865667500005
+Ministral 3 8B (AWQ),mmlu,27.862785579
+Ministral 3 8B (AWQ),mmlu,26.88958813
+Ministral 3 8B (AWQ),mmlu,27.458007695000006
+Ministral 3 8B (AWQ),mmlu,27.609898323750002
+Ministral 3 8B (AWQ),mmlu,26.13103366888889
+Ministral 3 8B (AWQ),mmlu,26.655554646500004
+Ministral 3 8B (AWQ),mmlu,25.26947383
+Ministral 3 8B (AWQ),mmlu,24.984739025
+Ministral 3 8B (AWQ),mmlu,25.177011135
+Ministral 3 8B (AWQ),mmlu,26.195443700000002
+Ministral 3 8B (AWQ),mmlu,26.34984461111111
+Ministral 3 8B (AWQ),mmlu,25.777390220555553
+Ministral 3 8B (AWQ),mmlu,25.484231990000005
+Ministral 3 8B (AWQ),mmlu,25.510958390999996
+Ministral 3 8B (AWQ),mmlu,30.391398753750007
+Ministral 3 8B (AWQ),mmlu,24.958012654
+Ministral 3 8B (AWQ),mmlu,26.166062698333334
+Ministral 3 8B (AWQ),mmlu,30.616699345
+Ministral 3 8B (AWQ),mmlu,26.343910179999995
+Ministral 3 8B (AWQ),mmlu,25.692348283
+Ministral 3 8B (AWQ),mmlu,29.97566516625
+Ministral 3 8B (AWQ),mmlu,26.538976993888888
+Ministral 3 8B (AWQ),mmlu,26.23681479
+Ministral 3 8B (AWQ),mmlu,27.071932739444442
+Ministral 3 8B (AWQ),mmlu,25.504390828499997
+Ministral 3 8B (AWQ),mmlu,27.344935134999997
+Ministral 3 8B (AWQ),mmlu,26.450028454999998
+Ministral 3 8B (AWQ),mmlu,27.8934613
+Ministral 3 8B (AWQ),mmlu,30.248525847499998
+Phi-4 Mini 3.8B (bf16),mmlu,24.738371568000005
+Phi-4 Mini 3.8B (bf16),mmlu,27.22627764214285
+Phi-4 Mini 3.8B (bf16),mmlu,26.380324768500003
+Phi-4 Mini 3.8B (bf16),mmlu,27.920703749444446
+Phi-4 Mini 3.8B (bf16),mmlu,29.824753087222227
+Phi-4 Mini 3.8B (bf16),mmlu,32.54679330125
+Phi-4 Mini 3.8B (bf16),mmlu,29.516986805
+Phi-4 Mini 3.8B (bf16),mmlu,28.663970645000003
+Phi-4 Mini 3.8B (bf16),mmlu,28.422265797999998
+Phi-4 Mini 3.8B (bf16),mmlu,28.1352680445
+Phi-4 Mini 3.8B (bf16),mmlu,27.734860769999994
+Phi-4 Mini 3.8B (bf16),mmlu,27.4857574255
+Phi-4 Mini 3.8B (bf16),mmlu,27.341468974999998
+Phi-4 Mini 3.8B (bf16),mmlu,28.341844739
+Phi-4 Mini 3.8B (bf16),mmlu,30.234034723125003
+Phi-4 Mini 3.8B (bf16),mmlu,32.058365422777776
+Phi-4 Mini 3.8B (bf16),mmlu,31.50507398444445
+Phi-4 Mini 3.8B (bf16),mmlu,29.703815795
+Phi-4 Mini 3.8B (bf16),mmlu,29.042039649000003
+Phi-4 Mini 3.8B (bf16),mmlu,28.570638522499998
+Phi-4 Mini 3.8B (bf16),mmlu,27.486640886999997
+Phi-4 Mini 3.8B (bf16),mmlu,28.45869413833333
+Phi-4 Mini 3.8B (bf16),mmlu,29.03128723
+Phi-4 Mini 3.8B (bf16),mmlu,27.896962539999993
+Phi-4 Mini 3.8B (bf16),mmlu,28.34086765666666
+Phi-4 Mini 3.8B (bf16),mmlu,27.377787344999998
+Phi-4 Mini 3.8B (bf16),mmlu,28.84563697
+Phi-4 Mini 3.8B (bf16),mmlu,28.504429353333336
+Phi-4 Mini 3.8B (bf16),mmlu,26.996079197500002
+Phi-4 Mini 3.8B (bf16),mmlu,28.583794175
+Phi-4 Mini 3.8B (bf16),mmlu,28.374416733749992
+Phi-4 Mini 3.8B (bf16),mmlu,28.069322006
+Phi-4 Mini 3.8B (bf16),mmlu,27.553677347222223
+Phi-4 Mini 3.8B (bf16),mmlu,30.030583570000005
+Phi-4 Mini 3.8B (bf16),mmlu,27.816171915
+Phi-4 Mini 3.8B (bf16),mmlu,29.416623806666664
+Phi-4 Mini 3.8B (bf16),mmlu,28.730083659444446
+Phi-4 Mini 3.8B (bf16),mmlu,29.732361286666666
+Phi-4 Mini 3.8B (bf16),mmlu,27.67343593666667
+Phi-4 Mini 3.8B (bf16),mmlu,27.86179339380952
+Phi-4 Mini 3.8B (bf16),mmlu,27.518023682500004
+Phi-4 Mini 3.8B (bf16),mmlu,27.500766330625
+Phi-4 Mini 3.8B (bf16),mmlu,28.71690967
+Phi-4 Mini 3.8B (bf16),mmlu,28.082623843888882
+Phi-4 Mini 3.8B (bf16),mmlu,29.678622400000002
+Phi-4 Mini 3.8B (bf16),mmlu,29.375338801
+Phi-4 Mini 3.8B (bf16),mmlu,27.482710656
+Phi-4 Mini 3.8B (bf16),mmlu,29.66059778166667
+Phi-4 Mini 3.8B (bf16),mmlu,28.5535901035
+Phi-4 Mini 3.8B (bf16),mmlu,27.039308885000004
+Phi-4 Mini 3.8B (bf16),mmlu,28.544879499444445
+Phi-4 Mini 3.8B (bf16),mmlu,28.215763045625
+Phi-4 Mini 3.8B (bf16),mmlu,27.73898973166667
+Phi-4 Mini 3.8B (bf16),mmlu,27.428886031111112
+Phi-4 Mini 3.8B (bf16),mmlu,28.379474199444445
+Phi-4 Mini 3.8B (bf16),mmlu,31.702073625000004
+Phi-4 Mini 3.8B (bf16),mmlu,29.001605363333336
+Phi-4 Mini 3.8B (bf16),mmlu,28.398608323750004
+Phi-4 Mini 3.8B (bf16),mmlu,27.471398083571426
+Phi-4 Mini 3.8B (bf16),mmlu,27.947075334999997
+Phi-4 Mini 3.8B (bf16),mmlu,27.009821766666665
+Phi-4 Mini 3.8B (bf16),mmlu,27.38230555611111
+Phi-4 Mini 3.8B (bf16),mmlu,27.81618140785714
+Phi-4 Mini 3.8B (bf16),mmlu,29.048593626
+Phi-4 Mini 3.8B (bf16),mmlu,27.721817765555556
+Phi-4 Mini 3.8B (bf16),mmlu,27.693493157222218
+Phi-4 Mini 3.8B (bf16),mmlu,27.79077502277778
+Phi-4 Mini 3.8B (bf16),mmlu,28.781285643999997
+Phi-4 Mini 3.8B (bf16),mmlu,30.119726734999997
+Phi-4 Mini 3.8B (bf16),mmlu,29.12524472333333
+Phi-4 Mini 3.8B (bf16),mmlu,27.776416091
+Phi-4 Mini 3.8B (bf16),mmlu,29.872748075
+Phi-4 Mini 3.8B (bf16),mmlu,27.840615091666663
+Phi-4 Mini 3.8B (bf16),mmlu,26.79444174
+Phi-4 Mini 3.8B (bf16),mmlu,28.024601511
+Phi-4 Mini 3.8B (bf16),mmlu,27.667409972999998
+Phi-4 Mini 3.8B (bf16),mmlu,28.538786829
+Phi-4 Mini 3.8B (bf16),mmlu,28.293859114500002
+Phi-4 Mini 3.8B (bf16),mmlu,27.427475979000008
+Phi-4 Mini 3.8B (bf16),mmlu,28.654909619999998
+Phi-4 Mini 3.8B (bf16),mmlu,29.853984051666664
+Phi-4 Mini 3.8B (bf16),mmlu,29.458335726000005
+Phi-4 Mini 3.8B (bf16),mmlu,28.1624109115
+Phi-4 Mini 3.8B (bf16),mmlu,28.44579093833334
+Phi-4 Mini 3.8B (bf16),mmlu,29.785841588999993
+Phi-4 Mini 3.8B (bf16),mmlu,31.477828803749997
+Phi-4 Mini 3.8B (bf16),mmlu,27.432978966
+Phi-4 Mini 3.8B (bf16),mmlu,29.859181927500003
+Phi-4 Mini 3.8B (bf16),mmlu,30.992456679999997
+Phi-4 Mini 3.8B (bf16),mmlu,28.923685554444447
+Phi-4 Mini 3.8B (bf16),mmlu,29.006982785
+Phi-4 Mini 3.8B (bf16),mmlu,32.83701128166666
+Phi-4 Mini 3.8B (bf16),mmlu,28.695893352500004
+Phi-4 Mini 3.8B (bf16),mmlu,28.042214588999997
+Phi-4 Mini 3.8B (bf16),mmlu,28.122236757222225
+Phi-4 Mini 3.8B (bf16),mmlu,27.425290531999995
+Phi-4 Mini 3.8B (bf16),mmlu,28.873796401249994
+Phi-4 Mini 3.8B (bf16),mmlu,27.843711427777773
+Phi-4 Mini 3.8B (bf16),mmlu,28.243004355000004
+Phi-4 Mini 3.8B (bf16),mmlu,32.045464953214285
+Qwen 3 30B-A3B (bf16),mmlu,27.306307543571428
+Qwen 3 30B-A3B (bf16),mmlu,27.330375993333334
+Qwen 3 30B-A3B (bf16),mmlu,28.354340320555554
+Qwen 3 30B-A3B (bf16),mmlu,30.201513729999995
+Qwen 3 30B-A3B (bf16),mmlu,31.743787554444445
+Qwen 3 30B-A3B (bf16),mmlu,32.34822396062501
+Qwen 3 30B-A3B (bf16),mmlu,30.960386359000005
+Qwen 3 30B-A3B (bf16),mmlu,33.997668238
+Qwen 3 30B-A3B (bf16),mmlu,31.4969010105
+Qwen 3 30B-A3B (bf16),mmlu,30.7834310225
+Qwen 3 30B-A3B (bf16),mmlu,33.42513480625
+Qwen 3 30B-A3B (bf16),mmlu,29.985131725555558
+Qwen 3 30B-A3B (bf16),mmlu,30.440952458333328
+Qwen 3 30B-A3B (bf16),mmlu,31.044870822857145
+Qwen 3 30B-A3B (bf16),mmlu,30.663838121
+Qwen 3 30B-A3B (bf16),mmlu,32.38369109250001
+Qwen 3 30B-A3B (bf16),mmlu,32.21304316666667
+Qwen 3 30B-A3B (bf16),mmlu,30.812235998
+Qwen 3 30B-A3B (bf16),mmlu,31.623794052999994
+Qwen 3 30B-A3B (bf16),mmlu,30.889868097222223
+Qwen 3 30B-A3B (bf16),mmlu,30.418410883499998
+Qwen 3 30B-A3B (bf16),mmlu,29.30249491444445
+Qwen 3 30B-A3B (bf16),mmlu,30.644801558000005
+Qwen 3 30B-A3B (bf16),mmlu,30.710065426666667
+Qwen 3 30B-A3B (bf16),mmlu,31.749045706999997
+Qwen 3 30B-A3B (bf16),mmlu,32.00065428187499
+Qwen 3 30B-A3B (bf16),mmlu,30.157274208333334
+Qwen 3 30B-A3B (bf16),mmlu,30.367661117999994
+Qwen 3 30B-A3B (bf16),mmlu,29.269010493000003
+Qwen 3 30B-A3B (bf16),mmlu,32.51643324300001
+Qwen 3 30B-A3B (bf16),mmlu,30.76246747444444
+Qwen 3 30B-A3B (bf16),mmlu,29.212052516249994
+Qwen 3 30B-A3B (bf16),mmlu,30.966306477500005
+Qwen 3 30B-A3B (bf16),mmlu,31.639227816666665
+Qwen 3 30B-A3B (bf16),mmlu,27.929918527999995
+Qwen 3 30B-A3B (bf16),mmlu,29.3412647025
+Qwen 3 30B-A3B (bf16),mmlu,29.709531005000002
+Qwen 3 30B-A3B (bf16),mmlu,29.424497463500003
+Qwen 3 30B-A3B (bf16),mmlu,29.749720094999994
+Qwen 3 30B-A3B (bf16),mmlu,30.505225775
+Qwen 3 30B-A3B (bf16),mmlu,29.5333067625
+Qwen 3 30B-A3B (bf16),mmlu,30.915852636999997
+Qwen 3 30B-A3B (bf16),mmlu,30.263022932499997
+Qwen 3 30B-A3B (bf16),mmlu,30.054456211999998
+Qwen 3 30B-A3B (bf16),mmlu,32.180905825
+Qwen 3 30B-A3B (bf16),mmlu,29.38818605055556
+Qwen 3 30B-A3B (bf16),mmlu,29.71127149388889
+Qwen 3 30B-A3B (bf16),mmlu,31.212809082499998
+Qwen 3 30B-A3B (bf16),mmlu,31.149500453
+Qwen 3 30B-A3B (bf16),mmlu,30.1678337595
+Qwen 3 30B-A3B (bf16),mmlu,32.70402578
+Qwen 3 30B-A3B (bf16),mmlu,31.015724367999994
+Qwen 3 30B-A3B (bf16),mmlu,29.766098124999996
+Qwen 3 30B-A3B (bf16),mmlu,28.933728725
+Qwen 3 30B-A3B (bf16),mmlu,29.498181010555562
+Qwen 3 30B-A3B (bf16),mmlu,31.715122884444447
+Qwen 3 30B-A3B (bf16),mmlu,31.106633607777777
+Qwen 3 30B-A3B (bf16),mmlu,32.426770515
+Qwen 3 30B-A3B (bf16),mmlu,29.81899389
+Qwen 3 30B-A3B (bf16),mmlu,31.603006358333335
+Qwen 3 30B-A3B (bf16),mmlu,30.380262425000005
+Qwen 3 30B-A3B (bf16),mmlu,30.150945826000005
+Qwen 3 30B-A3B (bf16),mmlu,30.841267735
+Qwen 3 30B-A3B (bf16),mmlu,30.37179226
+Qwen 3 30B-A3B (bf16),mmlu,32.196940682500006
+Qwen 3 30B-A3B (bf16),mmlu,32.70294626833333
+Qwen 3 30B-A3B (bf16),mmlu,31.624603942999993
+Qwen 3 30B-A3B (bf16),mmlu,31.540258099523815
+Qwen 3 30B-A3B (bf16),mmlu,34.072847704999994
+Qwen 3 30B-A3B (bf16),mmlu,31.534382414761907
+Qwen 3 30B-A3B (bf16),mmlu,30.387140390625
+Qwen 3 30B-A3B (bf16),mmlu,30.979241321249997
+Qwen 3 30B-A3B (bf16),mmlu,28.862125531666663
+Qwen 3 30B-A3B (bf16),mmlu,29.023268705000007
+Qwen 3 30B-A3B (bf16),mmlu,29.006392834
+Qwen 3 30B-A3B (bf16),mmlu,30.379959706249995
+Qwen 3 30B-A3B (bf16),mmlu,28.3583277175
+Qwen 3 30B-A3B (bf16),mmlu,29.78610731
+Qwen 3 30B-A3B (bf16),mmlu,29.433050129999994
+Qwen 3 30B-A3B (bf16),mmlu,29.667230421500005
+Qwen 3 30B-A3B (bf16),mmlu,30.338998957999994
+Qwen 3 30B-A3B (bf16),mmlu,31.745922849999992
+Qwen 3 30B-A3B (bf16),mmlu,32.168527115
+Qwen 3 30B-A3B (bf16),mmlu,29.905642622500004
+Qwen 3 30B-A3B (bf16),mmlu,29.892740005357144
+Qwen 3 30B-A3B (bf16),mmlu,32.23992857523809
+Qwen 3 30B-A3B (bf16),mmlu,29.20866574611111
+Qwen 3 30B-A3B (bf16),mmlu,29.879375265
+Qwen 3 30B-A3B (bf16),mmlu,35.316741345
+Qwen 3 30B-A3B (bf16),mmlu,30.833096065
+Qwen 3 30B-A3B (bf16),mmlu,32.64743066944445
+Qwen 3 30B-A3B (bf16),mmlu,30.576190749523807
+Qwen 3 30B-A3B (bf16),mmlu,28.977572658888896
+Qwen 3 30B-A3B (bf16),mmlu,28.703748177
+Qwen 3 30B-A3B (bf16),mmlu,28.276192419444445
+Qwen 3 30B-A3B (bf16),mmlu,29.619386316111108
+Qwen 3 30B-A3B (bf16),mmlu,29.98611071333334
+Qwen 3 30B-A3B (bf16),mmlu,31.295223090000004
+Qwen 3 30B-A3B (bf16),mmlu,31.507416517
+Qwen 3 30B-A3B (bf16),mmlu,32.291724853888894
+Kimi Linear 48B-A3B (bf16),mmlu,33.136513881666666
+Kimi Linear 48B-A3B (bf16),mmlu,38.82761761166666
+Kimi Linear 48B-A3B (bf16),mmlu,38.47558122750001
+Kimi Linear 48B-A3B (bf16),mmlu,41.99845247
+Kimi Linear 48B-A3B (bf16),mmlu,41.27071338499999
+Kimi Linear 48B-A3B (bf16),mmlu,42.366173841249996
+Kimi Linear 48B-A3B (bf16),mmlu,41.83213897666666
+Kimi Linear 48B-A3B (bf16),mmlu,38.37448545555557
+Kimi Linear 48B-A3B (bf16),mmlu,45.411500600000004
+Kimi Linear 48B-A3B (bf16),mmlu,41.582611005000004
+Kimi Linear 48B-A3B (bf16),mmlu,43.173303675
+Kimi Linear 48B-A3B (bf16),mmlu,41.48696670700001
+Kimi Linear 48B-A3B (bf16),mmlu,38.33380225499999
+Kimi Linear 48B-A3B (bf16),mmlu,40.81631241849999
+Kimi Linear 48B-A3B (bf16),mmlu,39.820527731111106
+Kimi Linear 48B-A3B (bf16),mmlu,42.3847942175
+Kimi Linear 48B-A3B (bf16),mmlu,41.2965033525
+Kimi Linear 48B-A3B (bf16),mmlu,42.843000755000006
+Kimi Linear 48B-A3B (bf16),mmlu,41.73729132
+Kimi Linear 48B-A3B (bf16),mmlu,42.60221031666668
+Kimi Linear 48B-A3B (bf16),mmlu,42.059115381875
+Kimi Linear 48B-A3B (bf16),mmlu,38.585644279375
+Kimi Linear 48B-A3B (bf16),mmlu,40.073676782499994
+Kimi Linear 48B-A3B (bf16),mmlu,41.60813256000001
+Kimi Linear 48B-A3B (bf16),mmlu,39.235173805
+Kimi Linear 48B-A3B (bf16),mmlu,40.50058894214286
+Kimi Linear 48B-A3B (bf16),mmlu,39.8685168975
+Kimi Linear 48B-A3B (bf16),mmlu,39.52937983666667
+Kimi Linear 48B-A3B (bf16),mmlu,41.4360305495
+Kimi Linear 48B-A3B (bf16),mmlu,40.20849257999999
+Kimi Linear 48B-A3B (bf16),mmlu,39.72112413190477
+Kimi Linear 48B-A3B (bf16),mmlu,43.666948255
+Kimi Linear 48B-A3B (bf16),mmlu,44.303798008
+Kimi Linear 48B-A3B (bf16),mmlu,40.08289104388889
+Kimi Linear 48B-A3B (bf16),mmlu,36.3058495915
+Kimi Linear 48B-A3B (bf16),mmlu,36.84307919222222
+Kimi Linear 48B-A3B (bf16),mmlu,42.716737867499994
+Kimi Linear 48B-A3B (bf16),mmlu,42.000682555
+Kimi Linear 48B-A3B (bf16),mmlu,39.711097874000004
+Kimi Linear 48B-A3B (bf16),mmlu,41.9222273685
+Kimi Linear 48B-A3B (bf16),mmlu,40.03076340500001
+Kimi Linear 48B-A3B (bf16),mmlu,39.8896908335
+Kimi Linear 48B-A3B (bf16),mmlu,39.737570440000006
+Kimi Linear 48B-A3B (bf16),mmlu,41.514303121000005
+Kimi Linear 48B-A3B (bf16),mmlu,41.566563947
+Kimi Linear 48B-A3B (bf16),mmlu,42.891063368333334
+Kimi Linear 48B-A3B (bf16),mmlu,43.4955848
+Kimi Linear 48B-A3B (bf16),mmlu,39.770387537777786
+Kimi Linear 48B-A3B (bf16),mmlu,39.7649012925
+Kimi Linear 48B-A3B (bf16),mmlu,37.962865885
+Kimi Linear 48B-A3B (bf16),mmlu,36.0968020075
+Kimi Linear 48B-A3B (bf16),mmlu,39.576368698333326
+Kimi Linear 48B-A3B (bf16),mmlu,39.694728411499995
+Kimi Linear 48B-A3B (bf16),mmlu,41.18290050875001
+Kimi Linear 48B-A3B (bf16),mmlu,44.041704304999996
+Kimi Linear 48B-A3B (bf16),mmlu,41.5867020688889
+Kimi Linear 48B-A3B (bf16),mmlu,42.626320134999986
+Kimi Linear 48B-A3B (bf16),mmlu,39.518588186875
+Kimi Linear 48B-A3B (bf16),mmlu,39.187440945
+Kimi Linear 48B-A3B (bf16),mmlu,40.27181721
+Kimi Linear 48B-A3B (bf16),mmlu,38.56127020375
+Kimi Linear 48B-A3B (bf16),mmlu,39.905025049375
+Kimi Linear 48B-A3B (bf16),mmlu,39.01366565812501
+Kimi Linear 48B-A3B (bf16),mmlu,40.522424959999995
+Kimi Linear 48B-A3B (bf16),mmlu,42.73108948833333
+Kimi Linear 48B-A3B (bf16),mmlu,40.11503107687499
+Kimi Linear 48B-A3B (bf16),mmlu,39.50069753499999
+Kimi Linear 48B-A3B (bf16),mmlu,38.667941274
+Kimi Linear 48B-A3B (bf16),mmlu,37.50138265166668
+Kimi Linear 48B-A3B (bf16),mmlu,38.4475292197619
+Kimi Linear 48B-A3B (bf16),mmlu,40.576304564000004
+Kimi Linear 48B-A3B (bf16),mmlu,40.0429016
+Kimi Linear 48B-A3B (bf16),mmlu,41.686229731875
+Kimi Linear 48B-A3B (bf16),mmlu,40.861964375
+Kimi Linear 48B-A3B (bf16),mmlu,39.669961694375004
+Kimi Linear 48B-A3B (bf16),mmlu,38.05315839055556
+Kimi Linear 48B-A3B (bf16),mmlu,36.785322167
+Kimi Linear 48B-A3B (bf16),mmlu,41.272242451
+Kimi Linear 48B-A3B (bf16),mmlu,39.88432747000001
+Kimi Linear 48B-A3B (bf16),mmlu,40.9135524525
+Kimi Linear 48B-A3B (bf16),mmlu,41.426665827222216
+Kimi Linear 48B-A3B (bf16),mmlu,42.51222267499999
+Kimi Linear 48B-A3B (bf16),mmlu,40.347881328
+Kimi Linear 48B-A3B (bf16),mmlu,39.015277407499994
+Kimi Linear 48B-A3B (bf16),mmlu,41.14131328799999
+Kimi Linear 48B-A3B (bf16),mmlu,44.682347323125
+Kimi Linear 48B-A3B (bf16),mmlu,41.23514889
+Kimi Linear 48B-A3B (bf16),mmlu,42.61266818900001
+Kimi Linear 48B-A3B (bf16),mmlu,41.59710553476191
+Kimi Linear 48B-A3B (bf16),mmlu,37.800408238749995
+Kimi Linear 48B-A3B (bf16),mmlu,38.648476685
+Kimi Linear 48B-A3B (bf16),mmlu,40.69163766944444
+Kimi Linear 48B-A3B (bf16),mmlu,39.274202685
+Kimi Linear 48B-A3B (bf16),mmlu,39.2253259875
+Kimi Linear 48B-A3B (bf16),mmlu,40.74947244799999
+Kimi Linear 48B-A3B (bf16),mmlu,40.172156514
+Kimi Linear 48B-A3B (bf16),mmlu,39.148955082499995
+Kimi Linear 48B-A3B (bf16),mmlu,38.696187313500005
+Kimi Linear 48B-A3B (bf16),mmlu,39.301250533
+Kimi Linear 48B-A3B (bf16),mmlu,44.69048616944444
+Phi-4 14B (bf16),mmlu,31.31395146111111
+Phi-4 14B (bf16),mmlu,37.68513564166666
+Phi-4 14B (bf16),mmlu,32.144866207222215
+Phi-4 14B (bf16),mmlu,39.37416686
+Phi-4 14B (bf16),mmlu,37.028218999444434
+Phi-4 14B (bf16),mmlu,44.284658989444445
+Phi-4 14B (bf16),mmlu,41.543813508333336
+Phi-4 14B (bf16),mmlu,37.344825605
+Phi-4 14B (bf16),mmlu,40.96165368444445
+Phi-4 14B (bf16),mmlu,37.472471668999994
+Phi-4 14B (bf16),mmlu,36.944913750999994
+Phi-4 14B (bf16),mmlu,33.683300482777774
+Phi-4 14B (bf16),mmlu,33.7241382
+Phi-4 14B (bf16),mmlu,34.47031528777777
+Phi-4 14B (bf16),mmlu,36.072631869999995
+Phi-4 14B (bf16),mmlu,44.624025712142846
+Phi-4 14B (bf16),mmlu,47.217762361666665
+Phi-4 14B (bf16),mmlu,35.04793750261904
+Phi-4 14B (bf16),mmlu,37.71568480500001
+Phi-4 14B (bf16),mmlu,39.284664160625
+Phi-4 14B (bf16),mmlu,35.912986886999995
+Phi-4 14B (bf16),mmlu,40.908120683
+Phi-4 14B (bf16),mmlu,33.907054814000006
+Phi-4 14B (bf16),mmlu,39.955885715000015
+Phi-4 14B (bf16),mmlu,37.34678555999999
+Phi-4 14B (bf16),mmlu,40.070351366666664
+Phi-4 14B (bf16),mmlu,36.82878822111111
+Phi-4 14B (bf16),mmlu,42.201761096666665
+Phi-4 14B (bf16),mmlu,34.87558460666667
+Phi-4 14B (bf16),mmlu,32.11701963738094
+Phi-4 14B (bf16),mmlu,38.46634565238096
+Phi-4 14B (bf16),mmlu,37.969640866666666
+Phi-4 14B (bf16),mmlu,38.144604778
+Phi-4 14B (bf16),mmlu,39.799284111249996
+Phi-4 14B (bf16),mmlu,34.76396202666667
+Phi-4 14B (bf16),mmlu,36.122864706250006
+Phi-4 14B (bf16),mmlu,36.481437101249995
+Phi-4 14B (bf16),mmlu,34.99411477
+Phi-4 14B (bf16),mmlu,35.69470158333333
+Phi-4 14B (bf16),mmlu,36.73530247555556
+Phi-4 14B (bf16),mmlu,34.78140647611111
+Phi-4 14B (bf16),mmlu,36.383775664999995
+Phi-4 14B (bf16),mmlu,35.083671958749996
+Phi-4 14B (bf16),mmlu,36.43238082178571
+Phi-4 14B (bf16),mmlu,37.352764307222216
+Phi-4 14B (bf16),mmlu,33.36765849888889
+Phi-4 14B (bf16),mmlu,34.0159580785
+Phi-4 14B (bf16),mmlu,39.035680541666665
+Phi-4 14B (bf16),mmlu,39.650321712
+Phi-4 14B (bf16),mmlu,37.61019559388889
+Phi-4 14B (bf16),mmlu,39.252701965
+Phi-4 14B (bf16),mmlu,36.47655390055556
+Phi-4 14B (bf16),mmlu,36.721037251666665
+Phi-4 14B (bf16),mmlu,34.62503157277778
+Phi-4 14B (bf16),mmlu,35.23465879333334
+Phi-4 14B (bf16),mmlu,42.157121082222226
+Phi-4 14B (bf16),mmlu,36.00350169055556
+Phi-4 14B (bf16),mmlu,34.523869569999995
+Phi-4 14B (bf16),mmlu,34.69779173199999
+Phi-4 14B (bf16),mmlu,36.260491625
+Phi-4 14B (bf16),mmlu,34.51013521055557
+Phi-4 14B (bf16),mmlu,34.12107634500001
+Phi-4 14B (bf16),mmlu,35.74469888499999
+Phi-4 14B (bf16),mmlu,36.75411345650001
+Phi-4 14B (bf16),mmlu,36.315488384999995
+Phi-4 14B (bf16),mmlu,35.70225261000001
+Phi-4 14B (bf16),mmlu,35.41031950500001
+Phi-4 14B (bf16),mmlu,34.04807325722223
+Phi-4 14B (bf16),mmlu,38.7680382475
+Phi-4 14B (bf16),mmlu,38.577521075
+Phi-4 14B (bf16),mmlu,36.32037347899999
+Phi-4 14B (bf16),mmlu,39.357519422222225
+Phi-4 14B (bf16),mmlu,41.6465625345
+Phi-4 14B (bf16),mmlu,34.239938064
+Phi-4 14B (bf16),mmlu,37.675406630500014
+Phi-4 14B (bf16),mmlu,33.23712517166667
+Phi-4 14B (bf16),mmlu,35.40413526611111
+Phi-4 14B (bf16),mmlu,35.849339564999994
+Phi-4 14B (bf16),mmlu,34.74058539800001
+Phi-4 14B (bf16),mmlu,38.40992048249999
+Phi-4 14B (bf16),mmlu,36.986902685625004
+Phi-4 14B (bf16),mmlu,37.288353025
+Phi-4 14B (bf16),mmlu,34.39954510388889
+Phi-4 14B (bf16),mmlu,32.19684488333333
+Phi-4 14B (bf16),mmlu,38.058646384999996
+Phi-4 14B (bf16),mmlu,42.05671757
+Phi-4 14B (bf16),mmlu,38.183285146111125
+Phi-4 14B (bf16),mmlu,35.96333310833334
+Phi-4 14B (bf16),mmlu,42.552108
+Phi-4 14B (bf16),mmlu,34.64575958555556
+Phi-4 14B (bf16),mmlu,38.92676835277778
+Phi-4 14B (bf16),mmlu,42.957516228749995
+Phi-4 14B (bf16),mmlu,38.19082421833333
+Phi-4 14B (bf16),mmlu,37.78718086649999
+Phi-4 14B (bf16),mmlu,38.844443864
+Phi-4 14B (bf16),mmlu,35.686632067000005
+Phi-4 14B (bf16),mmlu,34.628657714999996
+Phi-4 14B (bf16),mmlu,33.008101501
+Phi-4 14B (bf16),mmlu,36.30250574611111
+Phi-4 14B (bf16),mmlu,44.36384556500001
+Granite 4 H-Tiny (bf16),mmlu,29.504124925
+Granite 4 H-Tiny (bf16),mmlu,46.497299808
+Granite 4 H-Tiny (bf16),mmlu,31.749616335
+Granite 4 H-Tiny (bf16),mmlu,30.629167715
+Granite 4 H-Tiny (bf16),mmlu,30.587483283000005
+Granite 4 H-Tiny (bf16),mmlu,38.56775068750001
+Granite 4 H-Tiny (bf16),mmlu,32.73256084388888
+Granite 4 H-Tiny (bf16),mmlu,34.22302144000001
+Granite 4 H-Tiny (bf16),mmlu,32.824513205
+Granite 4 H-Tiny (bf16),mmlu,30.805992088333337
+Granite 4 H-Tiny (bf16),mmlu,37.186139172500006
+Granite 4 H-Tiny (bf16),mmlu,37.36539057699999
+Granite 4 H-Tiny (bf16),mmlu,37.622677505
+Granite 4 H-Tiny (bf16),mmlu,32.179320866666664
+Granite 4 H-Tiny (bf16),mmlu,33.26182163333333
+Granite 4 H-Tiny (bf16),mmlu,38.039688935
+Granite 4 H-Tiny (bf16),mmlu,37.88645601
+Granite 4 H-Tiny (bf16),mmlu,30.616925870624996
+Granite 4 H-Tiny (bf16),mmlu,52.26043684388888
+Granite 4 H-Tiny (bf16),mmlu,30.579657164285717
+Granite 4 H-Tiny (bf16),mmlu,35.493082385
+Granite 4 H-Tiny (bf16),mmlu,31.9893420275
+Granite 4 H-Tiny (bf16),mmlu,31.759850064999995
+Granite 4 H-Tiny (bf16),mmlu,37.824786993749996
+Granite 4 H-Tiny (bf16),mmlu,29.871997869999994
+Granite 4 H-Tiny (bf16),mmlu,31.196325524999992
+Granite 4 H-Tiny (bf16),mmlu,32.04640269000001
+Granite 4 H-Tiny (bf16),mmlu,31.353992123333335
+Granite 4 H-Tiny (bf16),mmlu,31.14982741944445
+Granite 4 H-Tiny (bf16),mmlu,30.215307953333337
+Granite 4 H-Tiny (bf16),mmlu,30.09494605
+Granite 4 H-Tiny (bf16),mmlu,30.704363635
+Granite 4 H-Tiny (bf16),mmlu,36.642424526666666
+Granite 4 H-Tiny (bf16),mmlu,30.373339938750007
+Granite 4 H-Tiny (bf16),mmlu,35.523891765
+Granite 4 H-Tiny (bf16),mmlu,35.356825486
+Granite 4 H-Tiny (bf16),mmlu,31.106221123000005
+Granite 4 H-Tiny (bf16),mmlu,31.812780052999994
+Granite 4 H-Tiny (bf16),mmlu,34.8186688145
+Granite 4 H-Tiny (bf16),mmlu,34.75926714388889
+Granite 4 H-Tiny (bf16),mmlu,31.05007277
+Granite 4 H-Tiny (bf16),mmlu,30.440210655000005
+Granite 4 H-Tiny (bf16),mmlu,30.856736260000005
+Granite 4 H-Tiny (bf16),mmlu,30.1958005875
+Granite 4 H-Tiny (bf16),mmlu,34.769507257499995
+Granite 4 H-Tiny (bf16),mmlu,36.80820171666667
+Granite 4 H-Tiny (bf16),mmlu,30.576041084
+Granite 4 H-Tiny (bf16),mmlu,36.11839785625
+Granite 4 H-Tiny (bf16),mmlu,30.430363751250002
+Granite 4 H-Tiny (bf16),mmlu,30.599247956190474
+Granite 4 H-Tiny (bf16),mmlu,31.214939577142857
+Granite 4 H-Tiny (bf16),mmlu,36.1866229975
+Granite 4 H-Tiny (bf16),mmlu,30.506806227499997
+Granite 4 H-Tiny (bf16),mmlu,30.610958907619054
+Granite 4 H-Tiny (bf16),mmlu,29.8762408325
+Granite 4 H-Tiny (bf16),mmlu,29.741647888750002
+Granite 4 H-Tiny (bf16),mmlu,30.187175540000002
+Granite 4 H-Tiny (bf16),mmlu,29.674799128809525
+Granite 4 H-Tiny (bf16),mmlu,31.073195946875
+Granite 4 H-Tiny (bf16),mmlu,36.73003690499999
+Granite 4 H-Tiny (bf16),mmlu,30.675193984444448
+Granite 4 H-Tiny (bf16),mmlu,30.645285623333336
+Granite 4 H-Tiny (bf16),mmlu,30.814091069999996
+Granite 4 H-Tiny (bf16),mmlu,30.703823239000002
+Granite 4 H-Tiny (bf16),mmlu,31.561207220000007
+Granite 4 H-Tiny (bf16),mmlu,32.042249492500005
+Granite 4 H-Tiny (bf16),mmlu,30.904361215000005
+Granite 4 H-Tiny (bf16),mmlu,31.169275554
+Granite 4 H-Tiny (bf16),mmlu,29.367205194999997
+Granite 4 H-Tiny (bf16),mmlu,31.126007229500004
+Granite 4 H-Tiny (bf16),mmlu,35.218747675
+Granite 4 H-Tiny (bf16),mmlu,29.407166108333332
+Granite 4 H-Tiny (bf16),mmlu,31.804451522999997
+Granite 4 H-Tiny (bf16),mmlu,36.541770254999996
+Granite 4 H-Tiny (bf16),mmlu,36.141644600999996
+Granite 4 H-Tiny (bf16),mmlu,35.41393380099999
+Granite 4 H-Tiny (bf16),mmlu,37.7793507315
+Granite 4 H-Tiny (bf16),mmlu,36.416239190000006
+Granite 4 H-Tiny (bf16),mmlu,30.833569952500003
+Granite 4 H-Tiny (bf16),mmlu,35.89853768055555
+Granite 4 H-Tiny (bf16),mmlu,31.22442237666667
+Granite 4 H-Tiny (bf16),mmlu,30.462210504999998
+Granite 4 H-Tiny (bf16),mmlu,39.90181154800001
+Granite 4 H-Tiny (bf16),mmlu,36.83566107666667
+Granite 4 H-Tiny (bf16),mmlu,31.570057214499993
+Granite 4 H-Tiny (bf16),mmlu,30.285659914999993
+Granite 4 H-Tiny (bf16),mmlu,32.146269004500006
+Granite 4 H-Tiny (bf16),mmlu,38.25440715800001
+Granite 4 H-Tiny (bf16),mmlu,30.629406147500003
+Granite 4 H-Tiny (bf16),mmlu,38.973076769
+Granite 4 H-Tiny (bf16),mmlu,36.331731346666665
+Granite 4 H-Tiny (bf16),mmlu,37.17517043374999
+Granite 4 H-Tiny (bf16),mmlu,37.233270945
+Granite 4 H-Tiny (bf16),mmlu,36.654118869499996
+Granite 4 H-Tiny (bf16),mmlu,31.387620418333338
+Granite 4 H-Tiny (bf16),mmlu,34.137063362
+Granite 4 H-Tiny (bf16),mmlu,37.9544227975
+Granite 4 H-Tiny (bf16),mmlu,31.435230628749995
+Granite 4 H-Tiny (bf16),mmlu,37.255336829375
+Granite 4 H-Tiny (bf16),mmlu,37.175594225
+Granite 4 H-Tiny (bf16),mmlu,28.34282864125
+Granite 4 H-Tiny (bf16),mmlu,33.73726511547619
+Granite 4 H-Tiny (bf16),mmlu,32.47647429
+Granite 4 H-Tiny (bf16),mmlu,32.973193343750005
+Granite 4 H-Tiny (bf16),mmlu,31.002274311666678
+Granite 4 H-Tiny (bf16),mmlu,37.1212943297619
+Granite 4 H-Tiny (bf16),mmlu,30.992189347500002
+Granite 4 H-Tiny (bf16),mmlu,32.27209950666667
+Granite 4 H-Tiny (bf16),mmlu,30.02812357738096
+Granite 4 H-Tiny (bf16),mmlu,32.98692770500001
+Granite 4 H-Tiny (bf16),mmlu,37.60622835299999
+Granite 4 H-Tiny (bf16),mmlu,37.20188304249999
+Granite 4 H-Tiny (bf16),mmlu,38.96640959333333
+Granite 4 H-Tiny (bf16),mmlu,31.62829736777778
+Granite 4 H-Tiny (bf16),mmlu,31.233199332380956
+Granite 4 H-Tiny (bf16),mmlu,38.903774629999994
+Granite 4 H-Tiny (bf16),mmlu,37.508738789
+Granite 4 H-Tiny (bf16),mmlu,30.39814996666667
+Granite 4 H-Tiny (bf16),mmlu,40.06144032
+Granite 4 H-Tiny (bf16),mmlu,30.96336518
+Granite 4 H-Tiny (bf16),mmlu,35.905647996666666
+Granite 4 H-Tiny (bf16),mmlu,31.162166291
+Granite 4 H-Tiny (bf16),mmlu,30.613473651999996
+Granite 4 H-Tiny (bf16),mmlu,38.15023354833333
+Granite 4 H-Tiny (bf16),mmlu,30.81183893
+Granite 4 H-Tiny (bf16),mmlu,30.214564484
+Granite 4 H-Tiny (bf16),mmlu,30.68548109333333
+Granite 4 H-Tiny (bf16),mmlu,30.850691523888894
+Granite 4 H-Tiny (bf16),mmlu,30.606445717499998
+Granite 4 H-Tiny (bf16),mmlu,30.9779592685
+Granite 4 H-Tiny (bf16),mmlu,29.64076353
+Granite 4 H-Tiny (bf16),mmlu,29.082207877
+Granite 4 H-Tiny (bf16),mmlu,35.41817121388889
+Granite 4 H-Tiny (bf16),mmlu,29.214562217222223
+Granite 4 H-Tiny (bf16),mmlu,36.1044194825
+Granite 4 H-Tiny (bf16),mmlu,35.17046645799999
+Granite 4 H-Tiny (bf16),mmlu,29.420059922
+Granite 4 H-Tiny (bf16),mmlu,31.525484302777784
+Granite 4 H-Tiny (bf16),mmlu,35.10279446399999
+Granite 4 H-Tiny (bf16),mmlu,34.514073407999994
+Granite 4 H-Tiny (bf16),mmlu,30.647275391000004
+Granite 4 H-Tiny (bf16),mmlu,30.391050014999998
+Granite 4 H-Tiny (bf16),mmlu,30.078236505
+Granite 4 H-Tiny (bf16),mmlu,30.310410014523807
+Granite 4 H-Tiny (bf16),mmlu,38.27812122812501
+Granite 4 H-Tiny (bf16),mmlu,34.914170595
+Granite 4 H-Tiny (bf16),mmlu,29.507921173499998
+Granite 4 H-Tiny (bf16),mmlu,36.348081379999996
+Granite 4 H-Tiny (bf16),mmlu,30.763865262500005
+Granite 4 H-Tiny (bf16),mmlu,31.436460283999995
+Granite 4 H-Tiny (bf16),mmlu,31.326764520499996
+Granite 4 H-Tiny (bf16),mmlu,35.508346149999994
+Granite 4 H-Tiny (bf16),mmlu,31.03663022625
+Granite 4 H-Tiny (bf16),mmlu,29.347558572000004
+Granite 4 H-Tiny (bf16),mmlu,31.191786934999996
+Granite 4 H-Tiny (bf16),mmlu,31.329475417500007
+Granite 4 H-Tiny (bf16),mmlu,28.935247246000003
+Granite 4 H-Tiny (bf16),mmlu,29.563793930000003
+Granite 4 H-Tiny (bf16),mmlu,29.799747046500006
+Granite 4 H-Tiny (bf16),mmlu,47.296337315
+Granite 4 H-Tiny (bf16),mmlu,30.388834216666666
+Granite 4 H-Tiny (bf16),mmlu,31.062234415
+Granite 4 H-Tiny (bf16),mmlu,29.973963788
+Granite 4 H-Tiny (bf16),mmlu,29.522159245
+Granite 4 H-Tiny (bf16),mmlu,30.938742856
+Granite 4 H-Tiny (bf16),mmlu,29.887560831666665
+Granite 4 H-Tiny (bf16),mmlu,30.212462841250005
+Granite 4 H-Tiny (bf16),mmlu,30.678239764999997
+Granite 4 H-Tiny (bf16),mmlu,30.61230900166667
+Granite 4 H-Tiny (bf16),mmlu,31.854504258000002
+Granite 4 H-Tiny (bf16),mmlu,36.78208654350001
+Granite 4 H-Tiny (bf16),mmlu,30.36224452944444
+Granite 4 H-Tiny (bf16),mmlu,30.820909209
+Granite 4 H-Tiny (bf16),mmlu,38.014354982499995
+Granite 4 H-Tiny (bf16),mmlu,34.530256036
+Granite 4 H-Tiny (bf16),mmlu,35.72981874
+Granite 4 H-Tiny (bf16),mmlu,34.422485455
+Granite 4 H-Tiny (bf16),mmlu,36.23523441142857
+Granite 4 H-Tiny (bf16),mmlu,31.410484202222218
+Granite 4 H-Tiny (bf16),mmlu,36.50160909722222
+Granite 4 H-Tiny (bf16),mmlu,30.079321752499993
+Granite 4 H-Tiny (bf16),mmlu,30.258569546666667
+Granite 4 H-Tiny (bf16),mmlu,36.996975305
+Granite 4 H-Tiny (bf16),mmlu,35.569009121
+Granite 4 H-Tiny (bf16),mmlu,29.6361802605
+Granite 4 H-Tiny (bf16),mmlu,29.189195337999998
+Granite 4 H-Tiny (bf16),mmlu,28.989105834
+Granite 4 H-Tiny (bf16),mmlu,37.175628395555556
+Granite 4 H-Tiny (bf16),mmlu,29.37028091125
+Granite 4 H-Tiny (bf16),mmlu,36.150757383
+Granite 4 H-Tiny (bf16),mmlu,34.587872222499996
+Granite 4 H-Tiny (bf16),mmlu,38.07016187999999
+Granite 4 H-Tiny (bf16),mmlu,35.3164914555
+Granite 4 H-Tiny (bf16),mmlu,35.042646137
+Granite 4 H-Tiny (bf16),mmlu,29.634078299444447
+Granite 4 H-Tiny (bf16),mmlu,34.148764803125005
+Granite 4 H-Tiny (bf16),mmlu,38.155264997
+Granite 4 H-Tiny (bf16),mmlu,29.40065369333334
+Granite 4 H-Tiny (bf16),mmlu,35.943377023888885
+Granite 4 H-Tiny (bf16),mmlu,36.346422920555554
+Ministral 3 14B,mmlu,28.133141494999997
+Ministral 3 14B,mmlu,32.02260476190476
+Ministral 3 14B,mmlu,40.11858000208333
+Ministral 3 14B,mmlu,34.272873219999994
+Ministral 3 14B,mmlu,34.11351314625
+Ministral 3 14B,mmlu,40.16874904
+Ministral 3 14B,mmlu,38.044200297500005
+Ministral 3 14B,mmlu,33.90226018833332
+Ministral 3 14B,mmlu,35.62932376055556
+Ministral 3 14B,mmlu,32.550496083888895
+Ministral 3 14B,mmlu,34.12742412812499
+Ministral 3 14B,mmlu,37.01758671142858
+Ministral 3 14B,mmlu,35.746666382499996
+Ministral 3 14B,mmlu,34.621528863888884
+Ministral 3 14B,mmlu,35.28680864678571
+Ministral 3 14B,mmlu,38.95204446
+Ministral 3 14B,mmlu,38.83471637222222
+Ministral 3 14B,mmlu,34.04724609749999
+Ministral 3 14B,mmlu,33.22296446761904
+Ministral 3 14B,mmlu,35.044848349375
+Ministral 3 14B,mmlu,35.15682390999999
+Ministral 3 14B,mmlu,34.53903601444445
+Ministral 3 14B,mmlu,34.16738446000001
+Ministral 3 14B,mmlu,33.38861217666666
+Ministral 3 14B,mmlu,35.46646769750001
+Ministral 3 14B,mmlu,34.14400928333334
+Ministral 3 14B,mmlu,37.535722195
+Ministral 3 14B,mmlu,38.02785814
+Ministral 3 14B,mmlu,36.905284395
+Ministral 3 14B,mmlu,36.707999404999995
+Ministral 3 14B,mmlu,39.272793082
+Ministral 3 14B,mmlu,37.88621337055556
+Ministral 3 14B,mmlu,34.54890051499999
+Ministral 3 14B,mmlu,41.06675779
+Ministral 3 14B,mmlu,34.787948674000006
+Ministral 3 14B,mmlu,36.48640109277777
+Ministral 3 14B,mmlu,34.32819999625
+Ministral 3 14B,mmlu,35.23726178
+Ministral 3 14B,mmlu,33.87700149944445
+Ministral 3 14B,mmlu,35.03549862555555
+Ministral 3 14B,mmlu,33.561864103999994
+Ministral 3 14B,mmlu,33.44246469555555
+Ministral 3 14B,mmlu,33.55487471499999
+Ministral 3 14B,mmlu,35.157059791111124
+Ministral 3 14B,mmlu,34.793384706666664
+Ministral 3 14B,mmlu,34.89231532200001
+Ministral 3 14B,mmlu,35.99548565
+Ministral 3 14B,mmlu,37.635600699444446
+Ministral 3 14B,mmlu,34.851097858500005
+Ministral 3 14B,mmlu,36.283317413333336
+Ministral 3 14B,mmlu,36.38022854500001
+Ministral 3 14B,mmlu,35.049790040000005
+Ministral 3 14B,mmlu,33.30225315611111
+Ministral 3 14B,mmlu,34.496485079999985
+Ministral 3 14B,mmlu,34.313893954444445
+Ministral 3 14B,mmlu,38.00458039666667
+Ministral 3 14B,mmlu,35.163405782999995
+Ministral 3 14B,mmlu,33.766491945
+Ministral 3 14B,mmlu,33.44025515555556
+Ministral 3 14B,mmlu,35.632692838000004
+Ministral 3 14B,mmlu,34.35703237700001
+Ministral 3 14B,mmlu,33.743225262
+Ministral 3 14B,mmlu,34.380271285999996
+Ministral 3 14B,mmlu,33.866010451000015
+Ministral 3 14B,mmlu,33.62213886400001
+Ministral 3 14B,mmlu,33.88907691277778
+Ministral 3 14B,mmlu,34.859185001666674
+Ministral 3 14B,mmlu,35.76642533611111
+Ministral 3 14B,mmlu,35.65441677055554
+Ministral 3 14B,mmlu,37.286970011666675
+Ministral 3 14B,mmlu,35.00941911642856
+Ministral 3 14B,mmlu,36.461722570000006
+Ministral 3 14B,mmlu,37.38649371857143
+Ministral 3 14B,mmlu,35.8924335085
+Ministral 3 14B,mmlu,34.851054254000005
+Ministral 3 14B,mmlu,35.08251614333333
+Ministral 3 14B,mmlu,34.61596981875
+Ministral 3 14B,mmlu,33.88240900562499
+Ministral 3 14B,mmlu,36.01233734550001
+Ministral 3 14B,mmlu,35.624338761500006
+Ministral 3 14B,mmlu,34.81946827666666
+Ministral 3 14B,mmlu,36.22949246055555
+Ministral 3 14B,mmlu,35.56520723250001
+Ministral 3 14B,mmlu,34.098314994999996
+Ministral 3 14B,mmlu,33.92930390499999
+Ministral 3 14B,mmlu,38.9100447
+Ministral 3 14B,mmlu,35.186277778
+Ministral 3 14B,mmlu,33.62280823375001
+Ministral 3 14B,mmlu,38.27696142000001
+Ministral 3 14B,mmlu,35.094655743333334
+Ministral 3 14B,mmlu,36.649552598
+Ministral 3 14B,mmlu,37.93203751833333
+Ministral 3 14B,mmlu,34.442689635
+Ministral 3 14B,mmlu,33.31296051555555
+Ministral 3 14B,mmlu,33.633422634
+Ministral 3 14B,mmlu,33.748788649999995
+Ministral 3 14B,mmlu,33.604255234444445
+Ministral 3 14B,mmlu,32.799402209444445
+Ministral 3 14B,mmlu,35.82879984200001
+Ministral 3 14B,mmlu,36.94557970125
+Llama 3.3 70B (FP8),mmlu,45.03755627
+Llama 3.3 70B (FP8),mmlu,66.69400733095237
+Llama 3.3 70B (FP8),mmlu,45.97343518708334
+Llama 3.3 70B (FP8),mmlu,58.49474818523809
+Llama 3.3 70B (FP8),mmlu,52.362411275555566
+Llama 3.3 70B (FP8),mmlu,82.60239035250002
+Llama 3.3 70B (FP8),mmlu,62.552794350238095
+Llama 3.3 70B (FP8),mmlu,50.172524470714286
+Llama 3.3 70B (FP8),mmlu,68.79710649119048
+Llama 3.3 70B (FP8),mmlu,47.35456322000001
+Llama 3.3 70B (FP8),mmlu,48.82192815444446
+Llama 3.3 70B (FP8),mmlu,48.37563896277778
+Llama 3.3 70B (FP8),mmlu,53.1921095
+Llama 3.3 70B (FP8),mmlu,49.5115273475
+Llama 3.3 70B (FP8),mmlu,64.89375589875002
+Llama 3.3 70B (FP8),mmlu,82.62610924250001
+Llama 3.3 70B (FP8),mmlu,86.29210534785713
+Llama 3.3 70B (FP8),mmlu,52.032077380625
+Llama 3.3 70B (FP8),mmlu,50.026357010714285
+Llama 3.3 70B (FP8),mmlu,63.410473895238106
+Llama 3.3 70B (FP8),mmlu,50.980304426666656
+Llama 3.3 70B (FP8),mmlu,63.28715985125001
+Llama 3.3 70B (FP8),mmlu,54.5101478975
+Llama 3.3 70B (FP8),mmlu,63.001808258749996
+Llama 3.3 70B (FP8),mmlu,62.46370562809525
+Llama 3.3 70B (FP8),mmlu,70.228248115
+Llama 3.3 70B (FP8),mmlu,47.95639875125001
+Llama 3.3 70B (FP8),mmlu,62.14850180125
+Llama 3.3 70B (FP8),mmlu,50.41212791775
+Llama 3.3 70B (FP8),mmlu,48.002269546666675
+Llama 3.3 70B (FP8),mmlu,61.11986345357142
+Llama 3.3 70B (FP8),mmlu,50.950089635000005
+Llama 3.3 70B (FP8),mmlu,47.36626411958334
+Llama 3.3 70B (FP8),mmlu,79.50097126583333
+Llama 3.3 70B (FP8),mmlu,51.616961593095226
+Llama 3.3 70B (FP8),mmlu,65.4360449025
+Llama 3.3 70B (FP8),mmlu,46.19392921357142
+Llama 3.3 70B (FP8),mmlu,48.945743087222226
+Llama 3.3 70B (FP8),mmlu,56.33486831833335
+Llama 3.3 70B (FP8),mmlu,58.526453591500015
+Llama 3.3 70B (FP8),mmlu,53.50725978187501
+Llama 3.3 70B (FP8),mmlu,61.265803798333344
+Llama 3.3 70B (FP8),mmlu,48.647836972499995
+Llama 3.3 70B (FP8),mmlu,49.44472995499998
+Llama 3.3 70B (FP8),mmlu,44.98880711761906
+Llama 3.3 70B (FP8),mmlu,48.32289025666667
+Llama 3.3 70B (FP8),mmlu,53.997037705000004
+Llama 3.3 70B (FP8),mmlu,64.71303273071427
+Llama 3.3 70B (FP8),mmlu,49.0851793675
+Llama 3.3 70B (FP8),mmlu,47.62456995499999
+Llama 3.3 70B (FP8),mmlu,62.27678400222224
+Llama 3.3 70B (FP8),mmlu,50.066197603333336
+Llama 3.3 70B (FP8),mmlu,50.8616769775
+Llama 3.3 70B (FP8),mmlu,47.93814680833333
+Llama 3.3 70B (FP8),mmlu,49.760896165
+Llama 3.3 70B (FP8),mmlu,80.6880896302381
+Llama 3.3 70B (FP8),mmlu,62.495634653125
+Llama 3.3 70B (FP8),mmlu,49.06556904125
+Llama 3.3 70B (FP8),mmlu,48.85344476722222
+Llama 3.3 70B (FP8),mmlu,50.34595944555555
+Llama 3.3 70B (FP8),mmlu,49.30908021166667
+Llama 3.3 70B (FP8),mmlu,50.33557461687499
+Llama 3.3 70B (FP8),mmlu,50.702279265000016
+Llama 3.3 70B (FP8),mmlu,45.58110649541665
+Llama 3.3 70B (FP8),mmlu,53.021897868333326
+Llama 3.3 70B (FP8),mmlu,53.01791798277779
+Llama 3.3 70B (FP8),mmlu,53.106047094000004
+Llama 3.3 70B (FP8),mmlu,52.335212895
+Llama 3.3 70B (FP8),mmlu,66.4777915925
+Llama 3.3 70B (FP8),mmlu,66.85320577249999
+Llama 3.3 70B (FP8),mmlu,54.400965138749996
+Llama 3.3 70B (FP8),mmlu,64.66946854
+Llama 3.3 70B (FP8),mmlu,63.3136317875
+Llama 3.3 70B (FP8),mmlu,53.98134282178571
+Llama 3.3 70B (FP8),mmlu,53.253498074999996
+Llama 3.3 70B (FP8),mmlu,50.75892606062501
+Llama 3.3 70B (FP8),mmlu,46.701403927499996
+Llama 3.3 70B (FP8),mmlu,52.89982560375
+Llama 3.3 70B (FP8),mmlu,50.81470738777777
+Llama 3.3 70B (FP8),mmlu,50.857223151666666
+Llama 3.3 70B (FP8),mmlu,63.16479501214285
+Llama 3.3 70B (FP8),mmlu,47.679293985625
+Llama 3.3 70B (FP8),mmlu,51.08921803312501
+Llama 3.3 70B (FP8),mmlu,51.516691871249996
+Llama 3.3 70B (FP8),mmlu,49.95055079625
+Llama 3.3 70B (FP8),mmlu,81.87728451055557
+Llama 3.3 70B (FP8),mmlu,45.578757534999994
+Llama 3.3 70B (FP8),mmlu,57.67032310374999
+Llama 3.3 70B (FP8),mmlu,82.55208160250001
+Llama 3.3 70B (FP8),mmlu,54.56540006
+Llama 3.3 70B (FP8),mmlu,56.8470459677778
+Llama 3.3 70B (FP8),mmlu,85.16625574833333
+Llama 3.3 70B (FP8),mmlu,53.319063721
+Llama 3.3 70B (FP8),mmlu,48.91268214000001
+Llama 3.3 70B (FP8),mmlu,53.94439461777778
+Llama 3.3 70B (FP8),mmlu,51.366318341666684
+Llama 3.3 70B (FP8),mmlu,58.160156400000005
+Llama 3.3 70B (FP8),mmlu,49.82398710624999
+Llama 3.3 70B (FP8),mmlu,65.87594526500001
+Llama 3.3 70B (FP8),mmlu,80.1321791725
+Llama 3.3 70B (FP8),mmlu,47.505021961999994
+Llama 3.3 70B (FP8),mmlu,72.879073335
+Llama 3.3 70B (FP8),mmlu,46.765868445
+Llama 3.3 70B (FP8),mmlu,57.64445417611111
+Llama 3.3 70B (FP8),mmlu,52.71422023749999
+Llama 3.3 70B (FP8),mmlu,87.44799106687499
+Llama 3.3 70B (FP8),mmlu,69.94986872999999
+Llama 3.3 70B (FP8),mmlu,55.625142362
+Llama 3.3 70B (FP8),mmlu,68.61773038150001
+Llama 3.3 70B (FP8),mmlu,46.24786552666668
+Llama 3.3 70B (FP8),mmlu,53.975782665000004
+Llama 3.3 70B (FP8),mmlu,52.34641751499999
+Llama 3.3 70B (FP8),mmlu,51.69438758499999
+Llama 3.3 70B (FP8),mmlu,56.52344971249999
+Llama 3.3 70B (FP8),mmlu,66.923718289
+Llama 3.3 70B (FP8),mmlu,86.31156149944444
+Llama 3.3 70B (FP8),mmlu,94.15529948285716
+Llama 3.3 70B (FP8),mmlu,59.61416392599998
+Llama 3.3 70B (FP8),mmlu,53.889004525000004
+Llama 3.3 70B (FP8),mmlu,75.783345985
+Llama 3.3 70B (FP8),mmlu,54.029180494
+Llama 3.3 70B (FP8),mmlu,64.126901996
+Llama 3.3 70B (FP8),mmlu,54.82195786
+Llama 3.3 70B (FP8),mmlu,69.33522119749999
+Llama 3.3 70B (FP8),mmlu,67.5167881025
+Llama 3.3 70B (FP8),mmlu,70.834319502
+Llama 3.3 70B (FP8),mmlu,57.35330684222224
+Llama 3.3 70B (FP8),mmlu,73.40939061187501
+Llama 3.3 70B (FP8),mmlu,57.46582274500001
+Llama 3.3 70B (FP8),mmlu,51.04548994875001
+Llama 3.3 70B (FP8),mmlu,71.19804517624999
+Llama 3.3 70B (FP8),mmlu,60.54460522000001
+Llama 3.3 70B (FP8),mmlu,53.068135257499996
+Llama 3.3 70B (FP8),mmlu,89.352122863125
+Llama 3.3 70B (FP8),mmlu,53.610428355555555
+Llama 3.3 70B (FP8),mmlu,65.207989391875
+Llama 3.3 70B (FP8),mmlu,53.90020645388888
+Llama 3.3 70B (FP8),mmlu,52.031281
+Llama 3.3 70B (FP8),mmlu,53.419211729
+Llama 3.3 70B (FP8),mmlu,61.371219913333334
+Llama 3.3 70B (FP8),mmlu,66.14778904555554
+Llama 3.3 70B (FP8),mmlu,71.134283928
+Llama 3.3 70B (FP8),mmlu,61.47889288500001
+Llama 3.3 70B (FP8),mmlu,55.00156239599999
+Llama 3.3 70B (FP8),mmlu,50.87051580500001
+Llama 3.3 70B (FP8),mmlu,55.09065498699999
+Llama 3.3 70B (FP8),mmlu,53.54837034888888
+Llama 3.3 70B (FP8),mmlu,71.99782734277777
+Llama 3.3 70B (FP8),mmlu,53.399945633
+Llama 3.3 70B (FP8),mmlu,47.89432316
+Llama 3.3 70B (FP8),mmlu,65.58776468555554
+Llama 3.3 70B (FP8),mmlu,57.185337994444446
+Llama 3.3 70B (FP8),mmlu,54.18926455250001
+Llama 3.3 70B (FP8),mmlu,49.37971189249999
+Llama 3.3 70B (FP8),mmlu,53.90810840499999
+Llama 3.3 70B (FP8),mmlu,83.6128835075
+Llama 3.3 70B (FP8),mmlu,70.32770153055554
+Llama 3.3 70B (FP8),mmlu,50.86986554444444
+Llama 3.3 70B (FP8),mmlu,49.33024228
+Llama 3.3 70B (FP8),mmlu,50.021775900555554
+Llama 3.3 70B (FP8),mmlu,50.946510293999985
+Llama 3.3 70B (FP8),mmlu,54.462220335
+Llama 3.3 70B (FP8),mmlu,58.25932536111111
+Llama 3.3 70B (FP8),mmlu,55.982592145000005
+Llama 3.3 70B (FP8),mmlu,60.24624567500001
+Llama 3.3 70B (FP8),mmlu,58.303665846
+Llama 3.3 70B (FP8),mmlu,61.226744982499994
+Llama 3.3 70B (FP8),mmlu,53.62681650722222
+Llama 3.3 70B (FP8),mmlu,76.57246529055556
+Llama 3.3 70B (FP8),mmlu,70.72356839642856
+Llama 3.3 70B (FP8),mmlu,53.03135058166666
+Llama 3.3 70B (FP8),mmlu,69.7502744525
+Llama 3.3 70B (FP8),mmlu,74.24073598999999
+Llama 3.3 70B (FP8),mmlu,56.989057042499994
+Llama 3.3 70B (FP8),mmlu,58.57654783666666
+Llama 3.3 70B (FP8),mmlu,59.525000336
+Llama 3.3 70B (FP8),mmlu,58.150628004999994
+Llama 3.3 70B (FP8),mmlu,57.809417858124995
+Llama 3.3 70B (FP8),mmlu,59.65406892500001
+Llama 3.3 70B (FP8),mmlu,55.64880925499999
+Llama 3.3 70B (FP8),mmlu,66.65732754300001
+Llama 3.3 70B (FP8),mmlu,48.97937999249999
+Llama 3.3 70B (FP8),mmlu,57.311846759999995
+Llama 3.3 70B (FP8),mmlu,53.50018562099999
+Llama 3.3 70B (FP8),mmlu,59.252002423
+Llama 3.3 70B (FP8),mmlu,91.55795350611113
+Llama 3.3 70B (FP8),mmlu,53.073207841249996
+Llama 3.3 70B (FP8),mmlu,66.306150488125
+Llama 3.3 70B (FP8),mmlu,95.4387723975
+Llama 3.3 70B (FP8),mmlu,64.107624208
+Llama 3.3 70B (FP8),mmlu,65.92116402722222
+Llama 3.3 70B (FP8),mmlu,95.02506239142856
+Llama 3.3 70B (FP8),mmlu,58.688619284999994
+Llama 3.3 70B (FP8),mmlu,51.375948365
+Llama 3.3 70B (FP8),mmlu,53.476320773000005
+Llama 3.3 70B (FP8),mmlu,60.813102599
+Llama 3.3 70B (FP8),mmlu,64.32094245
+Llama 3.3 70B (FP8),mmlu,53.4801068275
+Llama 3.3 70B (FP8),mmlu,68.01052549333333
+Llama 3.3 70B (FP8),mmlu,90.5799269292857
+Apertus 70B (bf16),mmlu,70.89453683944444
+Apertus 70B (bf16),mmlu,137.36359185055554
+Apertus 70B (bf16),mmlu,71.97470183222222
+Apertus 70B (bf16),mmlu,94.46751675600001
+Apertus 70B (bf16),mmlu,76.80871641000002
+Apertus 70B (bf16),mmlu,169.74924883687498
+Apertus 70B (bf16),mmlu,122.59078606999998
+Apertus 70B (bf16),mmlu,80.84971962375
+Apertus 70B (bf16),mmlu,116.83509316722224
+Apertus 70B (bf16),mmlu,73.11668076833334
+Apertus 70B (bf16),mmlu,79.14863925777779
+Apertus 70B (bf16),mmlu,74.36129810999999
+Apertus 70B (bf16),mmlu,78.91235498777776
+Apertus 70B (bf16),mmlu,79.30828541
+Apertus 70B (bf16),mmlu,119.09065071666669
+Apertus 70B (bf16),mmlu,162.99560230666665
+Apertus 70B (bf16),mmlu,174.5939364430952
+Apertus 70B (bf16),mmlu,79.56228329722222
+Apertus 70B (bf16),mmlu,78.93452908222223
+Apertus 70B (bf16),mmlu,118.70432561625002
+Apertus 70B (bf16),mmlu,123.77684512437499
+Apertus 70B (bf16),mmlu,118.595049240625
+Apertus 70B (bf16),mmlu,92.70977142500001
+Apertus 70B (bf16),mmlu,117.347229594375
+Apertus 70B (bf16),mmlu,117.13070359166666
+Apertus 70B (bf16),mmlu,120.97650246500001
+Apertus 70B (bf16),mmlu,80.134381728
+Apertus 70B (bf16),mmlu,114.19562066333333
+Apertus 70B (bf16),mmlu,92.00038107285715
+Apertus 70B (bf16),mmlu,80.93176234599997
+Apertus 70B (bf16),mmlu,123.973184579375
+Apertus 70B (bf16),mmlu,130.98620144166668
+Apertus 70B (bf16),mmlu,75.36286293166667
+Apertus 70B (bf16),mmlu,163.99283037624997
+Apertus 70B (bf16),mmlu,80.887927181875
+Apertus 70B (bf16),mmlu,119.81326507499999
+Apertus 70B (bf16),mmlu,76.33181162399998
+Apertus 70B (bf16),mmlu,126.54728360875
+Apertus 70B (bf16),mmlu,78.28057076125
+Apertus 70B (bf16),mmlu,93.66033199750001
+Apertus 70B (bf16),mmlu,92.71385570000001
+Apertus 70B (bf16),mmlu,126.24318667833333
+Apertus 70B (bf16),mmlu,91.961345614
+Apertus 70B (bf16),mmlu,116.23519383833333
+Apertus 70B (bf16),mmlu,75.94002683000001
+Apertus 70B (bf16),mmlu,75.6200583065
+Apertus 70B (bf16),mmlu,88.79923995000003
+Apertus 70B (bf16),mmlu,119.88552359214287
+Apertus 70B (bf16),mmlu,78.08902655666667
+Apertus 70B (bf16),mmlu,76.47323510949998
+Apertus 70B (bf16),mmlu,113.62994602
+Apertus 70B (bf16),mmlu,76.85162827055555
+Apertus 70B (bf16),mmlu,79.93889555999999
+Apertus 70B (bf16),mmlu,79.47733881687499
+Apertus 70B (bf16),mmlu,127.05208167499998
+Apertus 70B (bf16),mmlu,168.87912562785715
+Apertus 70B (bf16),mmlu,128.15308891444445
+Apertus 70B (bf16),mmlu,86.0444979788889
+Apertus 70B (bf16),mmlu,81.93062483777776
+Apertus 70B (bf16),mmlu,96.4631788611111
+Apertus 70B (bf16),mmlu,77.08579516
+Apertus 70B (bf16),mmlu,75.53981705250001
+Apertus 70B (bf16),mmlu,90.70504419000002
+Apertus 70B (bf16),mmlu,77.350178395
+Apertus 70B (bf16),mmlu,92.89346016800002
+Apertus 70B (bf16),mmlu,92.09244801722222
+Apertus 70B (bf16),mmlu,94.59393982099999
+Apertus 70B (bf16),mmlu,80.88928046999999
+Apertus 70B (bf16),mmlu,119.29473981444445
+Apertus 70B (bf16),mmlu,118.38116971874999
+Apertus 70B (bf16),mmlu,80.15061986388889
+Apertus 70B (bf16),mmlu,121.65169871555558
+Apertus 70B (bf16),mmlu,118.46750905100001
+Apertus 70B (bf16),mmlu,79.73082922249999
+Apertus 70B (bf16),mmlu,126.863736195
+Apertus 70B (bf16),mmlu,77.16666574666667
+Apertus 70B (bf16),mmlu,77.43810429833333
+Apertus 70B (bf16),mmlu,95.666860459
+Apertus 70B (bf16),mmlu,92.9208459995
+Apertus 70B (bf16),mmlu,128.233474865
+Apertus 70B (bf16),mmlu,119.09739012750003
+Apertus 70B (bf16),mmlu,76.28201930499999
+Apertus 70B (bf16),mmlu,78.71341306250001
+Apertus 70B (bf16),mmlu,82.02460814062499
+Apertus 70B (bf16),mmlu,81.68924488444445
+Apertus 70B (bf16),mmlu,170.23599206222224
+Apertus 70B (bf16),mmlu,79.98043018349999
+Apertus 70B (bf16),mmlu,120.655439449375
+Apertus 70B (bf16),mmlu,159.8915672825
+Apertus 70B (bf16),mmlu,97.63207642833332
+Apertus 70B (bf16),mmlu,98.72082921738095
+Apertus 70B (bf16),mmlu,173.02720241437498
+Apertus 70B (bf16),mmlu,87.60622267750001
+Apertus 70B (bf16),mmlu,77.78115629499999
+Apertus 70B (bf16),mmlu,90.28412868166667
+Apertus 70B (bf16),mmlu,96.05284837499998
+Apertus 70B (bf16),mmlu,116.38412308999997
+Apertus 70B (bf16),mmlu,79.86127923944444
+Apertus 70B (bf16),mmlu,116.12463392333332
+Apertus 70B (bf16),mmlu,168.698134165

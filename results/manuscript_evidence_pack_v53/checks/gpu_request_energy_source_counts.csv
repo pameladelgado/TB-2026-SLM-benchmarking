@@ -1,0 +1,61 @@
+model_display_canonical,dataset,energy_source,request_count
+Apertus 70B (bf16),dolly,trapezoidal integral of power_w over t_s,100
+Apertus 70B (bf16),gsm8k,trapezoidal integral of power_w over t_s,100
+Apertus 70B (bf16),hellaswag,trapezoidal integral of power_w over t_s,100
+Apertus 70B (bf16),mmlu,trapezoidal integral of power_w over t_s,100
+Granite 4 H-Tiny (bf16),dolly,trapezoidal integral of power_w over t_s,100
+Granite 4 H-Tiny (bf16),gsm8k,trapezoidal integral of power_w over t_s,200
+Granite 4 H-Tiny (bf16),hellaswag,trapezoidal integral of power_w over t_s,200
+Granite 4 H-Tiny (bf16),mmlu,trapezoidal integral of power_w over t_s,200
+Kimi Linear 48B-A3B (bf16),dolly,trapezoidal integral of power_w over t_s,100
+Kimi Linear 48B-A3B (bf16),gsm8k,trapezoidal integral of power_w over t_s,100
+Kimi Linear 48B-A3B (bf16),hellaswag,trapezoidal integral of power_w over t_s,100
+Kimi Linear 48B-A3B (bf16),mmlu,trapezoidal integral of power_w over t_s,100
+Llama 3.2 1B (bf16),dolly,trapezoidal integral of power_w over t_s,100
+Llama 3.2 1B (bf16),gsm8k,trapezoidal integral of power_w over t_s,100
+Llama 3.2 1B (bf16),hellaswag,trapezoidal integral of power_w over t_s,100
+Llama 3.2 1B (bf16),mmlu,trapezoidal integral of power_w over t_s,100
+Llama 3.3 70B (FP8),dolly,trapezoidal integral of power_w over t_s,100
+Llama 3.3 70B (FP8),gsm8k,trapezoidal integral of power_w over t_s,200
+Llama 3.3 70B (FP8),hellaswag,trapezoidal integral of power_w over t_s,200
+Llama 3.3 70B (FP8),mmlu,trapezoidal integral of power_w over t_s,200
+Ministral 3 14B,dolly,trapezoidal integral of power_w over t_s,100
+Ministral 3 14B,gsm8k,trapezoidal integral of power_w over t_s,100
+Ministral 3 14B,hellaswag,trapezoidal integral of power_w over t_s,100
+Ministral 3 14B,mmlu,trapezoidal integral of power_w over t_s,100
+Ministral 3 3B (AWQ),dolly,trapezoidal integral of power_w over t_s,100
+Ministral 3 3B (AWQ),gsm8k,trapezoidal integral of power_w over t_s,100
+Ministral 3 3B (AWQ),hellaswag,trapezoidal integral of power_w over t_s,100
+Ministral 3 3B (AWQ),mmlu,trapezoidal integral of power_w over t_s,100
+Ministral 3 8B (AWQ),dolly,trapezoidal integral of power_w over t_s,100
+Ministral 3 8B (AWQ),gsm8k,trapezoidal integral of power_w over t_s,100
+Ministral 3 8B (AWQ),hellaswag,trapezoidal integral of power_w over t_s,100
+Ministral 3 8B (AWQ),mmlu,trapezoidal integral of power_w over t_s,100
+Phi-4 14B (bf16),dolly,trapezoidal integral of power_w over t_s,100
+Phi-4 14B (bf16),gsm8k,trapezoidal integral of power_w over t_s,100
+Phi-4 14B (bf16),hellaswag,trapezoidal integral of power_w over t_s,100
+Phi-4 14B (bf16),mmlu,trapezoidal integral of power_w over t_s,100
+Phi-4 Mini 3.8B (GPTQ-4),dolly,trapezoidal integral of power_w over t_s,100
+Phi-4 Mini 3.8B (GPTQ-4),gsm8k,trapezoidal integral of power_w over t_s,100
+Phi-4 Mini 3.8B (GPTQ-4),hellaswag,trapezoidal integral of power_w over t_s,100
+Phi-4 Mini 3.8B (GPTQ-4),mmlu,trapezoidal integral of power_w over t_s,100
+Phi-4 Mini 3.8B (bf16),dolly,trapezoidal integral of power_w over t_s,100
+Phi-4 Mini 3.8B (bf16),gsm8k,trapezoidal integral of power_w over t_s,100
+Phi-4 Mini 3.8B (bf16),hellaswag,trapezoidal integral of power_w over t_s,100
+Phi-4 Mini 3.8B (bf16),mmlu,trapezoidal integral of power_w over t_s,100
+Qwen 2.5 1.5B (bf16),dolly,trapezoidal integral of power_w over t_s,100
+Qwen 2.5 1.5B (bf16),gsm8k,trapezoidal integral of power_w over t_s,100
+Qwen 2.5 1.5B (bf16),hellaswag,trapezoidal integral of power_w over t_s,100
+Qwen 2.5 1.5B (bf16),mmlu,trapezoidal integral of power_w over t_s,100
+Qwen 2.5 7B (AWQ),dolly,trapezoidal integral of power_w over t_s,100
+Qwen 2.5 7B (AWQ),gsm8k,trapezoidal integral of power_w over t_s,100
+Qwen 2.5 7B (AWQ),hellaswag,trapezoidal integral of power_w over t_s,100
+Qwen 2.5 7B (AWQ),mmlu,trapezoidal integral of power_w over t_s,100
+Qwen 3 30B-A3B (bf16),dolly,trapezoidal integral of power_w over t_s,100
+Qwen 3 30B-A3B (bf16),gsm8k,trapezoidal integral of power_w over t_s,100
+Qwen 3 30B-A3B (bf16),hellaswag,trapezoidal integral of power_w over t_s,100
+Qwen 3 30B-A3B (bf16),mmlu,trapezoidal integral of power_w over t_s,100
+Qwen 3 4B (AWQ),dolly,trapezoidal integral of power_w over t_s,100
+Qwen 3 4B (AWQ),gsm8k,trapezoidal integral of power_w over t_s,100
+Qwen 3 4B (AWQ),hellaswag,trapezoidal integral of power_w over t_s,100
+Qwen 3 4B (AWQ),mmlu,trapezoidal integral of power_w over t_s,100

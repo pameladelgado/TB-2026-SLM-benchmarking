@@ -1,0 +1,4 @@
+export_file,format,one_row_per,ordering
+figure_05_throughput_panels_long.csv,long,benchmark panel × context × model,"alphabetical benchmark panel order, context order, the exact canonical model positions shared with Figure 4; full model labels repeated on every panel"
+figure_05_throughput_panels_wide.csv,wide,context × model,"context order and the exact canonical model positions shared with Figure 4; columns Dolly, GSM8K, HellaSwag, MMLU"
+figure_05_throughput_spread_by_panel.csv,summary,benchmark panel × context,alphabetical benchmark order and context order

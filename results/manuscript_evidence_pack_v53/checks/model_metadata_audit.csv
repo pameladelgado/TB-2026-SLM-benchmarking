@@ -1,0 +1,22 @@
+model,model_display_canonical,model_family_canonical,total_parameters_b,active_parameters_b,architecture,precision,metadata_source,metadata_match
+Llama-3.2-1B-Instruct-Q8_0.gguf,Llama 3.2 1B (Q8),Llama 3.2,1.0,1.0,dense,Q8_0,explicit registry,Llama-3.2-1B-Instruct-Q8_0.gguf
+gemma-3-1b-it-Q8_0.gguf,Gemma 3 1B (Q8),Gemma 3,1.0,1.0,dense,Q8_0,explicit registry,gemma-3-1b-it-Q8_0.gguf
+llama-3.2-1b-instruct-q4_k_m.gguf,Llama 3.2 1B (Q4),Llama 3.2,1.0,1.0,dense,Q4_K_M,explicit registry,llama-3.2-1b-instruct-q4_k_m.gguf
+llama3_2_1b_bf16,Llama 3.2 1B (bf16),Llama 3.2,1.0,1.0,dense,bf16,explicit registry,llama3_2_1b_bf16
+qwen2_5_1_5b_bf16,Qwen 2.5 1.5B (bf16),Qwen 2.5,1.54,1.54,dense,bf16,explicit registry,qwen2_5_1_5b_bf16
+Ministral-3-3B-Instruct-2512-Q4_K_M.gguf,Ministral 3 3B (Q4),Ministral 3,3.0,3.0,dense,Q4_K_M,explicit registry,Ministral-3-3B-Instruct-2512-Q4_K_M.gguf
+SmolLM3-3B-Q4_K_M.gguf,SmolLM3 3B (Q4),SmolLM3,3.0,3.0,dense,Q4_K_M,explicit registry,SmolLM3-3B-Q4_K_M.gguf
+ministral3_3b_awq,Ministral 3 3B (AWQ),Ministral 3,3.0,3.0,dense,AWQ,explicit registry,ministral3_3b_awq
+Phi-4-mini-instruct-Q4_K_M.gguf,Phi-4 Mini 3.8B (Q4),Phi-4 Mini,3.8,3.8,dense,Q4_K_M,explicit registry,Phi-4-mini-instruct-Q4_K_M.gguf
+phi4mini_bf16,Phi-4 Mini 3.8B (bf16),Phi-4 Mini,3.8,3.8,dense,bf16,explicit registry,phi4mini_bf16
+phi4mini_gptq_4bit,Phi-4 Mini 3.8B (GPTQ-4),Phi-4 Mini,3.8,3.8,dense,GPTQ-4,explicit registry,phi4mini_gptq_4bit
+qwen3_4b_awq,Qwen 3 4B (AWQ),Qwen 3,4.0,4.0,dense,AWQ,explicit registry,qwen3_4b_awq
+granite4_htiny_bf16,Granite 4 H-Tiny (bf16),Granite 4,7.0,1.0,moe,bf16,explicit registry,granite4_htiny_bf16
+qwen2_5_7b_awq,Qwen 2.5 7B (AWQ),Qwen 2.5,7.62,7.62,dense,AWQ,explicit registry,qwen2_5_7b_awq
+ministral3_8b_awq,Ministral 3 8B (AWQ),Ministral 3,8.0,8.0,dense,AWQ,explicit registry,ministral3_8b_awq
+ministral3_14b,Ministral 3 14B,Ministral 3,14.0,14.0,dense,bf16,explicit registry,ministral3_14b
+phi4_14b_bf16,Phi-4 14B (bf16),Phi-4,14.0,14.0,dense,bf16,explicit registry,phi4_14b_bf16
+qwen3_30b_instruct_bf16,Qwen 3 30B-A3B (bf16),Qwen 3,30.5,3.3,moe,bf16,explicit registry,qwen3_30b_instruct_bf16
+kimi_linear_48b_bf16,Kimi Linear 48B-A3B (bf16),Kimi Linear,48.0,3.0,moe,bf16,explicit registry,kimi_linear_48b_bf16
+apertus_70b_instruct_bf16,Apertus 70B (bf16),Apertus,70.0,70.0,dense,bf16,explicit registry,apertus_70b_instruct_bf16
+llama3_3_70b_fp8,Llama 3.3 70B (FP8),Llama 3.3,70.0,70.0,dense,FP8,explicit registry,llama3_3_70b_fp8

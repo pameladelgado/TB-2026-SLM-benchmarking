@@ -1,0 +1,18 @@
+Context,Model,MMLU,GSM8K,HellaSwag
+Edge,Gemma 3 1B (Q8),0.315,0.4773,0.291
+Edge,Llama 3.2 1B (Q4),0.395,0.5195000000000001,0.251
+Edge,Phi-4 Mini 3.8B (Q4),0.564,0.6389,0.489
+Edge,SmolLM3 3B (Q4),0.52,0.5772,0.29
+GPU server,Llama 3.2 1B (bf16),0.43,0.435,0.23
+GPU server,Llama 3.3 70B (FP8),0.802,0.745,0.835
+GPU server,Ministral 3 14B,0.7,0.59,0.57
+GPU server,Ministral 3 3B (AWQ),0.64,0.51,0.46
+GPU server,Ministral 3 8B (AWQ),0.66,0.51,0.64
+GPU server,Phi-4 14B (bf16),0.82,0.55,0.85
+GPU server,Phi-4 Mini 3.8B (bf16),0.63,0.67,0.53
+GPU server,Qwen 2.5 1.5B (bf16),0.52,0.39,0.25
+GPU server,Qwen 3 30B-A3B (bf16),0.816,0.59,0.79
+Local CPU,Gemma 3 1B (Q8),0.31,0.4715,0.29
+Local CPU,Llama 3.2 1B (Q8),0.38,0.14,0.29
+Local CPU,Ministral 3 3B (Q4),0.63,0.5495,0.405
+Local CPU,Phi-4 Mini 3.8B (Q4),0.54,0.64,0.51

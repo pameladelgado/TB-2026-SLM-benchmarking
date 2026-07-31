@@ -1,0 +1,2 @@
+platform,source_file,rows,columns,status
+combined,/home/stephane/resource-efficiency-benchmark/results/report_grade_visualizations/normalized_summary_all.csv,119,45,loaded existing normalized summary

@@ -1,0 +1,24 @@
+context_order_position,context,context_display,model_order_position,model_display_canonical,x_position,gsm8k_accuracy,hellaswag_accuracy,mmlu_accuracy
+1,edge,Edge,1,Phi-4 Mini 3.8B (Q4),0.0,0.6389,0.489,0.564
+1,edge,Edge,2,SmolLM3 3B (Q4),1.0,0.5772,0.29,0.52
+1,edge,Edge,3,Llama 3.2 1B (Q4),2.0,0.5195000000000001,0.251,0.395
+1,edge,Edge,4,Gemma 3 1B (Q8),3.0,0.4773,0.291,0.315
+2,local_cpu,Local CPU,1,Phi-4 Mini 3.8B (Q4),5.15,0.64,0.51,0.54
+2,local_cpu,Local CPU,2,Ministral 3 3B (Q4),6.15,0.5495,0.405,0.63
+2,local_cpu,Local CPU,3,Gemma 3 1B (Q8),7.15,0.4715,0.29,0.31
+2,local_cpu,Local CPU,4,Llama 3.2 1B (Q8),8.15,0.14,0.29,0.38
+3,gpu_server,GPU server,1,Llama 3.3 70B (FP8),10.3,0.745,0.835,0.802
+3,gpu_server,GPU server,2,Kimi Linear 48B-A3B (bf16),11.3,0.71,0.24,0.45
+3,gpu_server,GPU server,3,Granite 4 H-Tiny (bf16),12.3,0.69,0.64,0.58
+3,gpu_server,GPU server,4,Phi-4 Mini 3.8B (bf16),13.3,0.67,0.53,0.63
+3,gpu_server,GPU server,5,Phi-4 Mini 3.8B (GPTQ-4),14.3,0.61,0.55,0.6
+3,gpu_server,GPU server,6,Apertus 70B (bf16),15.3,0.601,0.41,0.61
+3,gpu_server,GPU server,7,Ministral 3 14B,16.3,0.59,0.57,0.7
+3,gpu_server,GPU server,8,Qwen 3 30B-A3B (bf16),17.3,0.59,0.79,0.816
+3,gpu_server,GPU server,9,Phi-4 14B (bf16),18.3,0.55,0.85,0.82
+3,gpu_server,GPU server,10,Qwen 2.5 7B (AWQ),19.3,0.55,0.59,0.67
+3,gpu_server,GPU server,11,Qwen 3 4B (AWQ),20.3,0.54,0.69,0.71
+3,gpu_server,GPU server,12,Ministral 3 3B (AWQ),21.3,0.51,0.46,0.64
+3,gpu_server,GPU server,13,Ministral 3 8B (AWQ),22.3,0.51,0.64,0.66
+3,gpu_server,GPU server,14,Llama 3.2 1B (bf16),23.3,0.435,0.23,0.43
+3,gpu_server,GPU server,15,Qwen 2.5 1.5B (bf16),24.3,0.39,0.25,0.52

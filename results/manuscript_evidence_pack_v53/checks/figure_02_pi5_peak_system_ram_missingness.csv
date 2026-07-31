@@ -1,0 +1,17 @@
+model_configuration,benchmark,memory_value_gib,measurement_missing
+Llama 3.2 1B (Q4),dolly,2.491640625,False
+Llama 3.2 1B (Q4),gsm8k,2.44888671875,False
+Llama 3.2 1B (Q4),hellaswag,2.11037109375,False
+Llama 3.2 1B (Q4),mmlu,1.922060546875,False
+Gemma 3 1B (Q8),dolly,2.717744140625,False
+Gemma 3 1B (Q8),gsm8k,2.571103515625,False
+Gemma 3 1B (Q8),hellaswag,2.701015625,False
+Gemma 3 1B (Q8),mmlu,2.488818359375,False
+SmolLM3 3B (Q4),dolly,5.7957421875,False
+SmolLM3 3B (Q4),gsm8k,5.5419140625,False
+SmolLM3 3B (Q4),hellaswag,4.4241796875,False
+SmolLM3 3B (Q4),mmlu,3.89439453125,False
+Phi-4 Mini 3.8B (Q4),dolly,7.49509765625,False
+Phi-4 Mini 3.8B (Q4),gsm8k,7.034267578125,False
+Phi-4 Mini 3.8B (Q4),hellaswag,6.7769921875,False
+Phi-4 Mini 3.8B (Q4),mmlu,6.3643359375,False
